@@ -46,6 +46,11 @@ $lg-breakpoint: map-get($breakpoints, "lg");
 $xl-breakpoint: map-get($breakpoints, "xl");
 $xxl-breakpoint: map-get($breakpoints, "xxl");
 
+// Typography
+$font-family-base: "Inter", sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
 // Transitions
 $transition-base: all 0.3s ease; 
 
