@@ -1,8 +1,35 @@
-// Colors
-$primary: #2a45c2;
-$secondary: #3b4262;
-$white: #ffffff;
-$black: #000000;
+//Colors
+
+// Primary Color
+$primary: #FF5A5F;
+
+// Secondary Colors
+$secondary: #007A87;
+$accent: #FFB400;
+
+// Background Colors
+$background-light: #F9F9F9;
+$background-dark: #2C3E50;
+
+// Text Colors
+$text-primary: #2B2B2B;
+$text-secondary: #666666;
+$text-on-primary: #FFFFFF;
+
+// Borders and Separators
+$border-color: #E0E0E0;
+
+// Status Colors
+$success: #4CAF50;
+$warning: #FFC107;
+$error: #E74C3C;
+
+// Shadows and Transitions
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, #FF5A5F 0%, #FFB400 100%);
+$gradient-secondary: linear-gradient(135deg, #007A87 0%, #00B8D9 100%);
 
 // Breakpoints
 $breakpoints: (
