@@ -1,0 +1,26 @@
+{
+  "common": {
+    "getStarted": "Empezar",
+    "planYourTrip": "Planifica tu Viaje",
+    "destination": "Destino",
+    "interests": "Intereses",
+    "travelDates": "Fechas de Viaje",
+    "generateItinerary": "Generar Itinerario",
+    "regenerate": "Regenerar"
+  },
+  "features": {
+    "weather": "Pronóstico del Tiempo",
+    "attractions": "Principales Atracciones",
+    "transportation": "Transporte y Actividades",
+    "food": "Recomendaciones de Comida"
+  },
+  "planner": {
+    "title": "Planificación de Viajes Personalizada con IA",
+    "subtitle": "Planifica tu viaje con un itinerario personalizado basado en tus destinos, intereses y fechas de viaje.",
+    "destinationPlaceholder": "ej. Tokio",
+    "selectInterests": "Seleccionar...",
+    "customizedItinerary": "Tu Itinerario Personalizado para",
+    "day": "Día",
+    "loading": "Generando tu viaje perfecto..."
+  }
+} 

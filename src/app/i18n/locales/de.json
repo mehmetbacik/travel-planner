@@ -1,0 +1,26 @@
+{
+  "common": {
+    "getStarted": "Loslegen",
+    "planYourTrip": "Planen Sie Ihre Reise",
+    "destination": "Reiseziel",
+    "interests": "Interessen",
+    "travelDates": "Reisedaten",
+    "generateItinerary": "Reiseplan Erstellen",
+    "regenerate": "Neu Erstellen"
+  },
+  "features": {
+    "weather": "Wettervorhersage",
+    "attractions": "Top Sehenswürdigkeiten",
+    "transportation": "Transport & Aktivitäten",
+    "food": "Restaurantempfehlungen"
+  },
+  "planner": {
+    "title": "KI-gestützte Personalisierte Reiseplanung",
+    "subtitle": "Planen Sie Ihre Reise mit einem maßgeschneiderten Reiseplan basierend auf Ihren Zielen, Interessen und Reisedaten.",
+    "destinationPlaceholder": "z.B. Tokio",
+    "selectInterests": "Auswählen...",
+    "customizedItinerary": "Ihr Personalisierter Reiseplan für",
+    "day": "Tag",
+    "loading": "Ihr perfekter Reiseplan wird erstellt..."
+  }
+} 

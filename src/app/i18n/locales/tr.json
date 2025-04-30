@@ -1,0 +1,26 @@
+{
+  "common": {
+    "getStarted": "Başla",
+    "planYourTrip": "Seyahatini Planla",
+    "destination": "Varış Noktası",
+    "interests": "İlgi Alanları",
+    "travelDates": "Seyahat Tarihleri",
+    "generateItinerary": "Gezi Planı Oluştur",
+    "regenerate": "Yeniden Oluştur"
+  },
+  "features": {
+    "weather": "Hava Durumu Tahminleri",
+    "attractions": "Popüler Yerler",
+    "transportation": "Ulaşım ve Aktiviteler",
+    "food": "Yemek Önerileri"
+  },
+  "planner": {
+    "title": "Yapay Zeka Destekli Kişiselleştirilmiş Seyahat Planlama",
+    "subtitle": "Varış noktalarınız, ilgi alanlarınız ve seyahat tarihlerinize göre özelleştirilmiş bir gezi planı oluşturun.",
+    "destinationPlaceholder": "örn. Tokyo",
+    "selectInterests": "Seçiniz...",
+    "customizedItinerary": "için Özelleştirilmiş Gezi Planınız",
+    "day": "Gün",
+    "loading": "Mükemmel seyahatiniz oluşturuluyor..."
+  }
+} 
