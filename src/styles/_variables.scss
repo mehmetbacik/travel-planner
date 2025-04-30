@@ -1,0 +1,26 @@
+// Colors
+$primary: #2a45c2;
+$secondary: #3b4262;
+$white: #ffffff;
+$black: #000000;
+
+// Breakpoints
+$breakpoints: (
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px,
+);
+
+$sm-breakpoint: map-get($breakpoints, "sm");
+$md-breakpoint: map-get($breakpoints, "md");
+$lg-breakpoint: map-get($breakpoints, "lg");
+$xl-breakpoint: map-get($breakpoints, "xl");
+$xxl-breakpoint: map-get($breakpoints, "xxl");
+
+// Transitions
+$transition-base: all 0.3s ease; 
+
+// Spacing
+$spacing-unit: 0.25rem;
