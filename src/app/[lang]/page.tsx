@@ -5,10 +5,11 @@ import Features from '@/components/Features'
 import TripPlanner from '@/components/TripPlanner'
 
 export default async function Home({
-  params: { lang }
+  params,
 }: {
   params: { lang: Locale }
 }) {
+  const lang = params.lang
   const dict = await getDictionary(lang)
 
   return (
