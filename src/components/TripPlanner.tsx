@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { tripSchema, TripFormData } from '@/schemas/tripSchema'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 interface TripPlannerProps {
   dict: Dictionary
@@ -22,6 +23,8 @@ const interestOptions = [
 
 export default function TripPlanner({ dict }: TripPlannerProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const router = useRouter()
   
   const {
     register,
@@ -33,11 +36,31 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
 
   const onSubmit = async (data: TripFormData) => {
     setIsSubmitting(true)
+    setError(null)
+    
     try {
-      // TODO: Implement API call
-      console.log(data)
+      const response = await fetch('/api/trip', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to generate trip plan')
+      }
+
+      const result = await response.json()
+      
+      // Store the result in localStorage for the results page
+      localStorage.setItem('tripPlan', JSON.stringify(result))
+      
+      // Redirect to results page
+      router.push(`/results?destination=${encodeURIComponent(data.destination)}`)
     } catch (error) {
-      console.error(error)
+      console.error('Error:', error)
+      setError('Failed to generate trip plan. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -55,6 +78,11 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
           <h2 className="text-3xl font-bold text-center mb-8">
             {dict.common.planYourTrip}
           </h2>
+          {error && (
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-600">
+              {error}
+            </div>
+          )}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
