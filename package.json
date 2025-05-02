@@ -28,7 +28,8 @@
     "@hookform/resolvers": "^3.3.4",
     "@react-pdf/renderer": "^3.3.8",
     "html2canvas": "^1.4.1",
-    "jspdf": "^2.5.1"
+    "jspdf": "^2.5.1",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

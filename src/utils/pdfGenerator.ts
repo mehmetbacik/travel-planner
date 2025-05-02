@@ -1,6 +1,7 @@
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { useTranslation } from 'next-i18next';
+import { AppError, ErrorType, showErrorToast, showLoadingToast, dismissToast } from './errorHandler';
 
 interface PDFGeneratorProps {
   elementId: string;
@@ -12,7 +13,7 @@ export const generatePDF = async ({ elementId, fileName, title }: PDFGeneratorPr
   try {
     const element = document.getElementById(elementId);
     if (!element) {
-      throw new Error('Element not found');
+      throw new AppError('Element not found', ErrorType.NOT_FOUND);
     }
 
     const canvas = await html2canvas(element, {
@@ -62,10 +63,15 @@ export const usePDFGenerator = () => {
   const { t } = useTranslation();
 
   const downloadPDF = async (elementId: string, fileName: string, title: string) => {
+    const loadingToast = showLoadingToast(t('common:pdfGenerating'));
+    
     try {
       await generatePDF({ elementId, fileName, title });
+      dismissToast(loadingToast);
+      showSuccessToast(t('common:pdfGenerated'));
     } catch (error) {
-      console.error('PDF download error:', error);
+      dismissToast(loadingToast);
+      showErrorToast(error);
       throw error;
     }
   };
