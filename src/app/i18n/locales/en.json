@@ -6,21 +6,25 @@
     "interests": "Interests",
     "travelDates": "Travel Dates",
     "generateItinerary": "Generate Itinerary",
-    "regenerate": "Regenerate"
+    "regenerate": "Regenerate",
+    "downloadPDF": "Download PDF",
+    "pdfDownloadError": "An error occurred while downloading the PDF",
+    "pdfGenerating": "Generating PDF...",
+    "pdfGenerated": "PDF generated successfully"
   },
   "features": {
     "weather": "Weather Forecasts",
-    "attractions": "Top Attractions",
+    "attractions": "Popular Places",
     "transportation": "Transportation & Activities",
     "food": "Food Recommendations"
   },
   "planner": {
-    "title": "Personalized AI-Powered Travel Planning",
-    "subtitle": "Plan your trip with a customized itinerary based on your destinations, interests, and travel dates.",
-    "destinationPlaceholder": "e.g., Tokyo",
+    "title": "AI-Powered Personalized Travel Planning",
+    "subtitle": "Create a customized itinerary based on your destinations, interests, and travel dates.",
+    "destinationPlaceholder": "e.g. Tokyo",
     "selectInterests": "Select...",
-    "customizedItinerary": "Your Customized Itinerary for",
+    "customizedItinerary": "Customized Itinerary for",
     "day": "Day",
-    "loading": "Generating your perfect trip..."
+    "loading": "Creating your perfect trip..."
   }
 } 

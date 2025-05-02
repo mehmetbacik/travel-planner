@@ -6,7 +6,11 @@
     "interests": "İlgi Alanları",
     "travelDates": "Seyahat Tarihleri",
     "generateItinerary": "Gezi Planı Oluştur",
-    "regenerate": "Yeniden Oluştur"
+    "regenerate": "Yeniden Oluştur",
+    "downloadPDF": "PDF İndir",
+    "pdfDownloadError": "PDF indirme sırasında bir hata oluştu",
+    "pdfGenerating": "PDF oluşturuluyor...",
+    "pdfGenerated": "PDF başarıyla oluşturuldu"
   },
   "features": {
     "weather": "Hava Durumu Tahminleri",

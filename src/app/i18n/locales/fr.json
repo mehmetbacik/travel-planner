@@ -1,26 +1,30 @@
 {
   "common": {
     "getStarted": "Commencer",
-    "planYourTrip": "Planifiez Votre Voyage",
+    "planYourTrip": "Planifiez votre Voyage",
     "destination": "Destination",
     "interests": "Centres d'Intérêt",
     "travelDates": "Dates de Voyage",
     "generateItinerary": "Générer l'Itinéraire",
-    "regenerate": "Régénérer"
+    "regenerate": "Régénérer",
+    "downloadPDF": "Télécharger PDF",
+    "pdfDownloadError": "Une erreur s'est produite lors du téléchargement du PDF",
+    "pdfGenerating": "Génération du PDF...",
+    "pdfGenerated": "PDF généré avec succès"
   },
   "features": {
     "weather": "Prévisions Météo",
-    "attractions": "Meilleures Attractions",
+    "attractions": "Lieux Populaires",
     "transportation": "Transport et Activités",
     "food": "Recommandations Culinaires"
   },
   "planner": {
     "title": "Planification de Voyage Personnalisée par IA",
-    "subtitle": "Planifiez votre voyage avec un itinéraire personnalisé basé sur vos destinations, intérêts et dates de voyage.",
+    "subtitle": "Créez un itinéraire personnalisé basé sur vos destinations, centres d'intérêt et dates de voyage.",
     "destinationPlaceholder": "ex. Tokyo",
     "selectInterests": "Sélectionner...",
-    "customizedItinerary": "Votre Itinéraire Personnalisé pour",
+    "customizedItinerary": "Itinéraire Personnalisé pour",
     "day": "Jour",
-    "loading": "Génération de votre voyage parfait..."
+    "loading": "Création de votre voyage parfait..."
   }
 } 
