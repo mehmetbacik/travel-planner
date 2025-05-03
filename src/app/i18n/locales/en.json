@@ -16,22 +16,19 @@
     "pdfGenerated": "PDF generated successfully",
     "saving": "Saving...",
     "save": "Save",
-    "savingTrip": "Saving trip...",
+    "savingTrip": "Saving your trip...",
     "tripSaved": "Trip saved successfully!",
-    "tripSaveError": "An error occurred while saving the trip",
+    "tripSaveError": "Failed to save trip",
+    "recommendations": "AI Recommendations",
+    "activities": "Top Activities",
+    "localTips": "Local Tips",
+    "budgetTips": "Budget Tips",
+    "weatherInfo": "Weather Information",
     "validation": {
-      "destination": {
-        "required": "Destination is required"
-      },
-      "startDate": {
-        "required": "Start date is required"
-      },
-      "endDate": {
-        "required": "End date is required"
-      },
-      "budget": {
-        "min": "Budget must be 0 or greater"
-      }
+      "required": "{{field}} is required",
+      "invalidDate": "Invalid date",
+      "invalidBudget": "Budget must be a positive number",
+      "endDateBeforeStart": "End date must be after start date"
     }
   },
   "features": {
