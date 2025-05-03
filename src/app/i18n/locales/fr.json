@@ -5,6 +5,9 @@
     "destination": "Destination",
     "interests": "Centres d'Intérêt",
     "travelDates": "Dates de Voyage",
+    "startDate": "Date de Départ",
+    "endDate": "Date de Retour",
+    "budget": "Budget",
     "generateItinerary": "Générer l'Itinéraire",
     "regenerate": "Régénérer",
     "downloadPDF": "Télécharger PDF",
@@ -13,22 +16,19 @@
     "pdfGenerated": "PDF généré avec succès",
     "saving": "Enregistrement...",
     "save": "Enregistrer",
-    "savingTrip": "Enregistrement du voyage...",
+    "savingTrip": "Enregistrement de votre voyage...",
     "tripSaved": "Voyage enregistré avec succès !",
-    "tripSaveError": "Une erreur s'est produite lors de l'enregistrement du voyage",
+    "tripSaveError": "Échec de l'enregistrement du voyage",
+    "recommendations": "Recommandations IA",
+    "activities": "Meilleures Activités",
+    "localTips": "Conseils Locaux",
+    "budgetTips": "Conseils Budget",
+    "weatherInfo": "Informations Météo",
     "validation": {
-      "destination": {
-        "required": "La destination est obligatoire"
-      },
-      "startDate": {
-        "required": "La date de début est obligatoire"
-      },
-      "endDate": {
-        "required": "La date de fin est obligatoire"
-      },
-      "budget": {
-        "min": "Le budget doit être supérieur ou égal à 0"
-      }
+      "required": "{{field}} est requis",
+      "invalidDate": "Date invalide",
+      "invalidBudget": "Le budget doit être un nombre positif",
+      "endDateBeforeStart": "La date de fin doit être postérieure à la date de début"
     }
   },
   "features": {

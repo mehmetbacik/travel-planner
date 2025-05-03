@@ -1,37 +1,34 @@
 {
   "common": {
     "getStarted": "Başla",
-    "planYourTrip": "Seyahatini Planla",
-    "destination": "Varış Noktası",
+    "planYourTrip": "Seyahatinizi Planlayın",
+    "destination": "Destinasyon",
     "interests": "İlgi Alanları",
     "travelDates": "Seyahat Tarihleri",
     "startDate": "Başlangıç Tarihi",
     "endDate": "Bitiş Tarihi",
     "budget": "Bütçe",
-    "generateItinerary": "Gezi Planı Oluştur",
+    "generateItinerary": "Rota Oluştur",
     "regenerate": "Yeniden Oluştur",
     "downloadPDF": "PDF İndir",
-    "pdfDownloadError": "PDF indirme sırasında bir hata oluştu",
+    "pdfDownloadError": "PDF indirilirken bir hata oluştu",
     "pdfGenerating": "PDF oluşturuluyor...",
     "pdfGenerated": "PDF başarıyla oluşturuldu",
     "saving": "Kaydediliyor...",
     "save": "Kaydet",
-    "savingTrip": "Seyahat planı kaydediliyor...",
-    "tripSaved": "Seyahat planı başarıyla kaydedildi!",
-    "tripSaveError": "Seyahat planı kaydedilirken bir hata oluştu",
+    "savingTrip": "Seyahatiniz kaydediliyor...",
+    "tripSaved": "Seyahat başarıyla kaydedildi!",
+    "tripSaveError": "Seyahat kaydedilemedi",
+    "recommendations": "AI Önerileri",
+    "activities": "En İyi Aktiviteler",
+    "localTips": "Yerel İpuçları",
+    "budgetTips": "Bütçe İpuçları",
+    "weatherInfo": "Hava Durumu Bilgisi",
     "validation": {
-      "destination": {
-        "required": "Varış Noktası alanı zorunludur"
-      },
-      "startDate": {
-        "required": "Başlangıç tarihi zorunludur"
-      },
-      "endDate": {
-        "required": "Bitiş tarihi zorunludur"
-      },
-      "budget": {
-        "min": "Bütçe 0 veya daha büyük olmalıdır"
-      }
+      "required": "{{field}} alanı zorunludur",
+      "invalidDate": "Geçersiz tarih",
+      "invalidBudget": "Bütçe pozitif bir sayı olmalıdır",
+      "endDateBeforeStart": "Bitiş tarihi başlangıç tarihinden sonra olmalıdır"
     }
   },
   "features": {
@@ -41,11 +38,11 @@
     "food": "Yemek Önerileri"
   },
   "planner": {
-    "title": "Yapay Zeka Destekli Kişiselleştirilmiş Seyahat Planlama",
-    "subtitle": "Varış noktalarınız, ilgi alanlarınız ve seyahat tarihlerinize göre özelleştirilmiş bir gezi planı oluşturun.",
+    "title": "AI Destekli Kişiselleştirilmiş Seyahat Planlaması",
+    "subtitle": "Destinasyonlarınıza, ilgi alanlarınıza ve seyahat tarihlerinize göre özelleştirilmiş bir rota oluşturun.",
     "destinationPlaceholder": "örn. Tokyo",
-    "selectInterests": "Seçiniz...",
-    "customizedItinerary": "için Özelleştirilmiş Gezi Planınız",
+    "selectInterests": "Seçin...",
+    "customizedItinerary": "İçin Özelleştirilmiş Rota",
     "day": "Gün",
     "loading": "Mükemmel seyahatiniz oluşturuluyor..."
   }

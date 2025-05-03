@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { pdfService } from '@/services/pdf';
+import { pdfService } from './index';
 import { AppError } from '@/utils/errorHandler';
 
 export async function POST(request: Request) {

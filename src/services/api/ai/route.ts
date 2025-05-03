@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { aiService } from '@/services/api/ai';
+import { aiService } from './index';
 import { AppError } from '@/utils/errorHandler';
 
 export async function POST(request: Request) {

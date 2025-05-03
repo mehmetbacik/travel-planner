@@ -37,7 +37,7 @@ export function TripForm({ initialData, onSuccess }: TripFormProps) {
       const trip = await tripsApi.create(data);
 
       // Get AI recommendations
-      const recommendationsResponse = await fetch('/api/ai/recommendations', {
+      const recommendationsResponse = await fetch('/api/services/ai', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -54,7 +54,7 @@ export function TripForm({ initialData, onSuccess }: TripFormProps) {
       setRecommendations(recommendationsData);
 
       // Generate PDF
-      const pdfResponse = await fetch('/api/pdf/generate', {
+      const pdfResponse = await fetch('/api/services/pdf', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
