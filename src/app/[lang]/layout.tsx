@@ -2,6 +2,7 @@ import { Toaster } from 'react-hot-toast'
 import { Inter } from 'next/font/google'
 import { getDictionary } from '@/app/i18n/getDictionary'
 import { Language } from '@/app/i18n/settings'
+import { NotificationProvider } from '@/components/ui/Notification'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,6 +44,7 @@ export default async function RootLayout({
             },
           }}
         />
+        <NotificationProvider />
         {children}
       </body>
     </html>

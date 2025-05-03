@@ -10,7 +10,26 @@
     "downloadPDF": "PDF herunterladen",
     "pdfDownloadError": "Beim Herunterladen der PDF ist ein Fehler aufgetreten",
     "pdfGenerating": "PDF wird erstellt...",
-    "pdfGenerated": "PDF erfolgreich erstellt"
+    "pdfGenerated": "PDF erfolgreich erstellt",
+    "saving": "Wird gespeichert...",
+    "save": "Speichern",
+    "savingTrip": "Reise wird gespeichert...",
+    "tripSaved": "Reise erfolgreich gespeichert!",
+    "tripSaveError": "Beim Speichern der Reise ist ein Fehler aufgetreten",
+    "validation": {
+      "destination": {
+        "required": "Reiseziel ist erforderlich"
+      },
+      "startDate": {
+        "required": "Startdatum ist erforderlich"
+      },
+      "endDate": {
+        "required": "Enddatum ist erforderlich"
+      },
+      "budget": {
+        "min": "Budget muss 0 oder größer sein"
+      }
+    }
   },
   "features": {
     "weather": "Wettervorhersagen",

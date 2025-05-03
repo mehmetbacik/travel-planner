@@ -10,7 +10,26 @@
     "downloadPDF": "PDF İndir",
     "pdfDownloadError": "PDF indirme sırasında bir hata oluştu",
     "pdfGenerating": "PDF oluşturuluyor...",
-    "pdfGenerated": "PDF başarıyla oluşturuldu"
+    "pdfGenerated": "PDF başarıyla oluşturuldu",
+    "saving": "Kaydediliyor...",
+    "save": "Kaydet",
+    "savingTrip": "Seyahat planı kaydediliyor...",
+    "tripSaved": "Seyahat planı başarıyla kaydedildi!",
+    "tripSaveError": "Seyahat planı kaydedilirken bir hata oluştu",
+    "validation": {
+      "destination": {
+        "required": "Varış Noktası alanı zorunludur"
+      },
+      "startDate": {
+        "required": "Başlangıç tarihi zorunludur"
+      },
+      "endDate": {
+        "required": "Bitiş tarihi zorunludur"
+      },
+      "budget": {
+        "min": "Bütçe 0 veya daha büyük olmalıdır"
+      }
+    }
   },
   "features": {
     "weather": "Hava Durumu Tahminleri",

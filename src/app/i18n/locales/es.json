@@ -10,7 +10,26 @@
     "downloadPDF": "Descargar PDF",
     "pdfDownloadError": "Ocurrió un error al descargar el PDF",
     "pdfGenerating": "Generando PDF...",
-    "pdfGenerated": "PDF generado exitosamente"
+    "pdfGenerated": "PDF generado exitosamente",
+    "saving": "Guardando...",
+    "save": "Guardar",
+    "savingTrip": "Guardando viaje...",
+    "tripSaved": "¡Viaje guardado con éxito!",
+    "tripSaveError": "Ocurrió un error al guardar el viaje",
+    "validation": {
+      "destination": {
+        "required": "El destino es obligatorio"
+      },
+      "startDate": {
+        "required": "La fecha de inicio es obligatoria"
+      },
+      "endDate": {
+        "required": "La fecha de fin es obligatoria"
+      },
+      "budget": {
+        "min": "El presupuesto debe ser 0 o mayor"
+      }
+    }
   },
   "features": {
     "weather": "Pronósticos del Tiempo",
