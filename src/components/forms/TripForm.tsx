@@ -5,12 +5,19 @@ import { useTranslation } from 'next-i18next';
 import { tripSchema, TripFormData } from '@/schemas/tripSchema';
 import { showErrorToast, showSuccessToast, showLoadingToast, dismissToast } from '@/utils/errorHandler';
 import { AppError, ErrorType } from '@/utils/errorHandler';
+import { tripsApi } from '@/services/api/trips';
 
-export const TripForm = () => {
+interface TripFormProps {
+  initialData?: TripFormData;
+  onSuccess?: (data: TripFormData) => void;
+}
+
+export const TripForm = ({ initialData, onSuccess }: TripFormProps) => {
   const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm<TripFormData>({
-    resolver: zodResolver(tripSchema)
+    resolver: zodResolver(tripSchema),
+    defaultValues: initialData
   });
 
   const onSubmit = async (data: TripFormData) => {
@@ -18,11 +25,10 @@ export const TripForm = () => {
     setIsSubmitting(true);
 
     try {
-      // API call will be implemented here
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated API call
-      
+      const result = await tripsApi.create(data);
       dismissToast(loadingToast);
       showSuccessToast(t('common.tripSaved'));
+      onSuccess?.(result);
     } catch (error) {
       dismissToast(loadingToast);
       if (error instanceof AppError) {
@@ -52,6 +58,51 @@ export const TripForm = () => {
         />
         {errors.destination && (
           <p className="mt-1 text-sm text-red-600">{t(errors.destination.message as string)}</p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="startDate" className="block text-sm font-medium text-gray-700">
+          {t('common.startDate')}
+        </label>
+        <input
+          type="date"
+          id="startDate"
+          {...register('startDate')}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+        />
+        {errors.startDate && (
+          <p className="mt-1 text-sm text-red-600">{t(errors.startDate.message as string)}</p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="endDate" className="block text-sm font-medium text-gray-700">
+          {t('common.endDate')}
+        </label>
+        <input
+          type="date"
+          id="endDate"
+          {...register('endDate')}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+        />
+        {errors.endDate && (
+          <p className="mt-1 text-sm text-red-600">{t(errors.endDate.message as string)}</p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="budget" className="block text-sm font-medium text-gray-700">
+          {t('common.budget')}
+        </label>
+        <input
+          type="number"
+          id="budget"
+          {...register('budget', { valueAsNumber: true })}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+        />
+        {errors.budget && (
+          <p className="mt-1 text-sm text-red-600">{t(errors.budget.message as string)}</p>
         )}
       </div>
 
