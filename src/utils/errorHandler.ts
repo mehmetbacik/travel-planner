@@ -1,14 +1,6 @@
 import { toast } from 'react-hot-toast';
 
-export enum ErrorType {
-  NETWORK = 'NETWORK',
-  VALIDATION = 'VALIDATION',
-  AUTHENTICATION = 'AUTHENTICATION',
-  AUTHORIZATION = 'AUTHORIZATION',
-  NOT_FOUND = 'NOT_FOUND',
-  SERVER = 'SERVER',
-  UNKNOWN = 'UNKNOWN'
-}
+export type ErrorType = 'VALIDATION_ERROR' | 'NOT_FOUND' | 'UNAUTHORIZED' | 'FORBIDDEN' | 'INTERNAL_ERROR';
 
 export interface ErrorResponse {
   type: ErrorType;
@@ -18,23 +10,48 @@ export interface ErrorResponse {
 }
 
 export class AppError extends Error {
-  type: ErrorType;
-  code?: string;
-  details?: unknown;
-
-  constructor(message: string, type: ErrorType = ErrorType.UNKNOWN, code?: string, details?: unknown) {
+  constructor(
+    message: string,
+    public statusCode: number,
+    public code?: ErrorType
+  ) {
     super(message);
-    this.type = type;
-    this.code = code;
-    this.details = details;
     this.name = 'AppError';
   }
+
+  static isAppError(error: unknown): error is AppError {
+    return error instanceof AppError;
+  }
+
+  static fromApiError(error: unknown): AppError {
+    if (AppError.isAppError(error)) {
+      return error;
+    }
+
+    if (error instanceof Error) {
+      return new AppError(error.message, 500, 'INTERNAL_ERROR');
+    }
+
+    return new AppError('Beklenmeyen bir hata oluştu', 500, 'INTERNAL_ERROR');
+  }
 }
+
+export const handleApiError = (error: unknown): AppError => {
+  if (AppError.isAppError(error)) {
+    return error;
+  }
+
+  if (error instanceof Error) {
+    return new AppError(error.message, 500, 'INTERNAL_ERROR');
+  }
+
+  return new AppError('Beklenmeyen bir hata oluştu', 500, 'INTERNAL_ERROR');
+};
 
 export const handleError = (error: unknown): ErrorResponse => {
   if (error instanceof AppError) {
     return {
-      type: error.type,
+      type: error.code as ErrorType,
       message: error.message,
       code: error.code,
       details: error.details
@@ -43,13 +60,13 @@ export const handleError = (error: unknown): ErrorResponse => {
 
   if (error instanceof Error) {
     return {
-      type: ErrorType.UNKNOWN,
+      type: 'INTERNAL_ERROR',
       message: error.message
     };
   }
 
   return {
-    type: ErrorType.UNKNOWN,
+    type: 'INTERNAL_ERROR',
     message: 'An unexpected error occurred'
   };
 };

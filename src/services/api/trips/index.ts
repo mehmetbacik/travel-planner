@@ -1,145 +1,47 @@
-import { TripFormData } from '@/schemas/tripSchema';
-import { AppError, ErrorType } from '@/utils/errorHandler';
-
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
+import { apiClient } from '../client';
+import { Trip, TripCreateInput, TripUpdateInput } from '@/types/trip';
 
 export const tripsApi = {
-  async create(data: TripFormData) {
-    try {
-      const response = await fetch(`${API_BASE_URL}/trips`, {
-        method: 'POST',
+  async getAll(): Promise<Trip[]> {
+    return apiClient.get<Trip[]>('/trips');
+  },
+
+  async getById(id: string): Promise<Trip> {
+    return apiClient.get<Trip>(`/trips/${id}`);
+  },
+
+  async create(data: TripCreateInput): Promise<Trip> {
+    return apiClient.post<Trip>('/trips', data);
+  },
+
+  async update(id: string, data: TripUpdateInput): Promise<Trip> {
+    return apiClient.put<Trip>(`/trips/${id}`, data);
+  },
+
+  async delete(id: string): Promise<void> {
+    return apiClient.delete<void>(`/trips/${id}`);
+  },
+
+  async getRecommendations(destination: string, budget: number) {
+    return apiClient.post<{
+      activities: string[];
+      localTips: string[];
+      budgetTips: string[];
+      weatherInfo: string;
+    }>('/ai', { destination, budget });
+  },
+
+  async generatePDF(tripData: Trip, recommendations: any) {
+    const response = await apiClient.post<Blob>(
+      '/pdf',
+      { tripData, recommendations },
+      {
         headers: {
-          'Content-Type': 'application/json',
+          Accept: 'application/pdf',
         },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new AppError(
-          error.message || 'Failed to create trip',
-          ErrorType.SERVER,
-          error.code
-        );
       }
+    );
 
-      return await response.json();
-    } catch (error) {
-      if (error instanceof AppError) {
-        throw error;
-      }
-      throw new AppError(
-        'Network error occurred',
-        ErrorType.NETWORK
-      );
-    }
+    return response;
   },
-
-  async getAll() {
-    try {
-      const response = await fetch(`${API_BASE_URL}/trips`);
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new AppError(
-          error.message || 'Failed to fetch trips',
-          ErrorType.SERVER,
-          error.code
-        );
-      }
-
-      return await response.json();
-    } catch (error) {
-      if (error instanceof AppError) {
-        throw error;
-      }
-      throw new AppError(
-        'Network error occurred',
-        ErrorType.NETWORK
-      );
-    }
-  },
-
-  async getById(id: string) {
-    try {
-      const response = await fetch(`${API_BASE_URL}/trips/${id}`);
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new AppError(
-          error.message || 'Failed to fetch trip',
-          ErrorType.SERVER,
-          error.code
-        );
-      }
-
-      return await response.json();
-    } catch (error) {
-      if (error instanceof AppError) {
-        throw error;
-      }
-      throw new AppError(
-        'Network error occurred',
-        ErrorType.NETWORK
-      );
-    }
-  },
-
-  async update(id: string, data: Partial<TripFormData>) {
-    try {
-      const response = await fetch(`${API_BASE_URL}/trips/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new AppError(
-          error.message || 'Failed to update trip',
-          ErrorType.SERVER,
-          error.code
-        );
-      }
-
-      return await response.json();
-    } catch (error) {
-      if (error instanceof AppError) {
-        throw error;
-      }
-      throw new AppError(
-        'Network error occurred',
-        ErrorType.NETWORK
-      );
-    }
-  },
-
-  async delete(id: string) {
-    try {
-      const response = await fetch(`${API_BASE_URL}/trips/${id}`, {
-        method: 'DELETE',
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new AppError(
-          error.message || 'Failed to delete trip',
-          ErrorType.SERVER,
-          error.code
-        );
-      }
-
-      return await response.json();
-    } catch (error) {
-      if (error instanceof AppError) {
-        throw error;
-      }
-      throw new AppError(
-        'Network error occurred',
-        ErrorType.NETWORK
-      );
-    }
-  }
 }; 
