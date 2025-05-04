@@ -87,75 +87,91 @@ export function TripForm({ initialData, onSuccess }: TripFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      <div>
+    <form onSubmit={handleSubmit(onSubmit)} className="trip-form">
+      <div className="trip-form__field">
         <Label htmlFor="destination">{t('common.destination')}</Label>
         <Input
           id="destination"
           {...register('destination')}
           error={errors.destination?.message}
+          className={errors.destination ? 'error' : ''}
         />
+        {errors.destination && (
+          <span className="error-message">{errors.destination.message}</span>
+        )}
       </div>
 
-      <div>
+      <div className="trip-form__field">
         <Label htmlFor="startDate">{t('common.startDate')}</Label>
         <Input
           id="startDate"
           type="date"
           {...register('startDate')}
           error={errors.startDate?.message}
+          className={errors.startDate ? 'error' : ''}
         />
+        {errors.startDate && (
+          <span className="error-message">{errors.startDate.message}</span>
+        )}
       </div>
 
-      <div>
+      <div className="trip-form__field">
         <Label htmlFor="endDate">{t('common.endDate')}</Label>
         <Input
           id="endDate"
           type="date"
           {...register('endDate')}
           error={errors.endDate?.message}
+          className={errors.endDate ? 'error' : ''}
         />
+        {errors.endDate && (
+          <span className="error-message">{errors.endDate.message}</span>
+        )}
       </div>
 
-      <div>
+      <div className="trip-form__field">
         <Label htmlFor="budget">{t('common.budget')}</Label>
         <Input
           id="budget"
           type="number"
           {...register('budget', { valueAsNumber: true })}
           error={errors.budget?.message}
+          className={errors.budget ? 'error' : ''}
         />
+        {errors.budget && (
+          <span className="error-message">{errors.budget.message}</span>
+        )}
       </div>
 
-      <Button type="submit" loading={isLoading}>
+      <Button type="submit" loading={isLoading} className="trip-form__button">
         {t('common.save')}
       </Button>
 
       {recommendations && (
-        <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-          <h3 className="text-lg font-semibold mb-4">{t('common.recommendations')}</h3>
+        <div className="trip-form__recommendations">
+          <h3>{t('common.recommendations')}</h3>
           
-          <div className="mb-4">
-            <h4 className="font-medium mb-2">{t('common.activities')}</h4>
-            <ul className="list-disc list-inside">
+          <div>
+            <h4>{t('common.activities')}</h4>
+            <ul>
               {recommendations.activities.map((activity: string, index: number) => (
                 <li key={index}>{activity}</li>
               ))}
             </ul>
           </div>
 
-          <div className="mb-4">
-            <h4 className="font-medium mb-2">{t('common.localTips')}</h4>
-            <ul className="list-disc list-inside">
+          <div>
+            <h4>{t('common.localTips')}</h4>
+            <ul>
               {recommendations.localTips.map((tip: string, index: number) => (
                 <li key={index}>{tip}</li>
               ))}
             </ul>
           </div>
 
-          <div className="mb-4">
-            <h4 className="font-medium mb-2">{t('common.budgetTips')}</h4>
-            <ul className="list-disc list-inside">
+          <div>
+            <h4>{t('common.budgetTips')}</h4>
+            <ul>
               {recommendations.budgetTips.map((tip: string, index: number) => (
                 <li key={index}>{tip}</li>
               ))}
@@ -163,7 +179,7 @@ export function TripForm({ initialData, onSuccess }: TripFormProps) {
           </div>
 
           <div>
-            <h4 className="font-medium mb-2">{t('common.weatherInfo')}</h4>
+            <h4>{t('common.weatherInfo')}</h4>
             <p>{recommendations.weatherInfo}</p>
           </div>
         </div>
