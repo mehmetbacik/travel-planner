@@ -1,7 +1,7 @@
 {
   "common": {
     "getStarted": "Comenzar",
-    "planYourTrip": "Planifica tu Viaje",
+    "planYourTrip": "Planifica Tu Viaje",
     "destination": "Destino",
     "interests": "Intereses",
     "travelDates": "Fechas de Viaje",
@@ -11,15 +11,15 @@
     "generateItinerary": "Generar Itinerario",
     "regenerate": "Regenerar",
     "downloadPDF": "Descargar PDF",
-    "pdfDownloadError": "Ocurrió un error al descargar el PDF",
+    "pdfDownloadError": "Error al descargar el PDF",
     "pdfGenerating": "Generando PDF...",
-    "pdfGenerated": "PDF generado exitosamente",
+    "pdfGenerated": "PDF generado con éxito",
     "saving": "Guardando...",
     "save": "Guardar",
     "savingTrip": "Guardando tu viaje...",
-    "tripSaved": "¡Viaje guardado exitosamente!",
+    "tripSaved": "¡Viaje guardado con éxito!",
     "tripSaveError": "Error al guardar el viaje",
-    "recommendations": "Recomendaciones de IA",
+    "recommendations": "Recomendaciones IA",
     "activities": "Mejores Actividades",
     "localTips": "Consejos Locales",
     "budgetTips": "Consejos de Presupuesto",
@@ -32,18 +32,50 @@
     }
   },
   "features": {
-    "weather": "Pronósticos del Tiempo",
+    "weather": "Pronósticos del Clima",
     "attractions": "Lugares Populares",
     "transportation": "Transporte y Actividades",
-    "food": "Recomendaciones de Comida"
+    "food": "Recomendaciones Gastronómicas"
   },
   "planner": {
     "title": "Planificación de Viajes Personalizada con IA",
     "subtitle": "Crea un itinerario personalizado basado en tus destinos, intereses y fechas de viaje.",
     "destinationPlaceholder": "ej. Tokio",
     "selectInterests": "Seleccionar...",
-    "customizedItinerary": "Itinerario Personalizado para",
+    "customizedItinerary": "Itinerario Personalizado para Ti",
     "day": "Día",
     "loading": "Creando tu viaje perfecto..."
+  },
+  "home": {
+    "hero": {
+      "title": "Simplifica tu Planificación de Viajes",
+      "description": "Vive unas vacaciones inolvidables con nuestro planificador de viajes impulsado por IA. Recomendaciones personalizadas, gestión de presupuesto y más.",
+      "cta": {
+        "primary": "Comenzar",
+        "secondary": "Saber Más"
+      }
+    },
+    "features": {
+      "title": "¿Por Qué Elegirnos?",
+      "description": "Descubre nuestras características diseñadas para facilitar tu planificación de viajes.",
+      "cards": {
+        "destination": {
+          "title": "Recomendaciones Inteligentes de Destinos",
+          "description": "Obtén recomendaciones de destinos personalizadas basadas en tus intereses y presupuesto."
+        },
+        "planning": {
+          "title": "Planificación Fácil",
+          "description": "Planifica y gestiona todos los detalles de tu viaje desde un solo lugar."
+        },
+        "budget": {
+          "title": "Gestión de Presupuesto",
+          "description": "Sigue tus gastos y mantén tu presupuesto bajo control."
+        },
+        "recommendations": {
+          "title": "Recomendaciones Locales",
+          "description": "Descubre los mejores lugares y actividades en tu destino."
+        }
+      }
+    }
   }
 } 

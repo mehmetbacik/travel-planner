@@ -11,7 +11,7 @@
     "generateItinerary": "Rota Oluştur",
     "regenerate": "Yeniden Oluştur",
     "downloadPDF": "PDF İndir",
-    "pdfDownloadError": "PDF indirilirken bir hata oluştu",
+    "pdfDownloadError": "PDF indirme hatası",
     "pdfGenerating": "PDF oluşturuluyor...",
     "pdfGenerated": "PDF başarıyla oluşturuldu",
     "saving": "Kaydediliyor...",
@@ -19,7 +19,7 @@
     "savingTrip": "Seyahatiniz kaydediliyor...",
     "tripSaved": "Seyahat başarıyla kaydedildi!",
     "tripSaveError": "Seyahat kaydedilemedi",
-    "recommendations": "AI Önerileri",
+    "recommendations": "Yapay Zeka Önerileri",
     "activities": "En İyi Aktiviteler",
     "localTips": "Yerel İpuçları",
     "budgetTips": "Bütçe İpuçları",
@@ -38,12 +38,44 @@
     "food": "Yemek Önerileri"
   },
   "planner": {
-    "title": "AI Destekli Kişiselleştirilmiş Seyahat Planlaması",
+    "title": "Yapay Zeka Destekli Kişiselleştirilmiş Seyahat Planlaması",
     "subtitle": "Destinasyonlarınıza, ilgi alanlarınıza ve seyahat tarihlerinize göre özelleştirilmiş bir rota oluşturun.",
     "destinationPlaceholder": "örn. Tokyo",
     "selectInterests": "Seçin...",
-    "customizedItinerary": "İçin Özelleştirilmiş Rota",
+    "customizedItinerary": "Size Özel Rota",
     "day": "Gün",
     "loading": "Mükemmel seyahatiniz oluşturuluyor..."
+  },
+  "home": {
+    "hero": {
+      "title": "Seyahat Planlamanızı Kolaylaştırın",
+      "description": "Yapay zeka destekli seyahat planlayıcımızla unutulmaz bir tatil deneyimi yaşayın. Kişiselleştirilmiş öneriler, bütçe yönetimi ve daha fazlası.",
+      "cta": {
+        "primary": "Başla",
+        "secondary": "Daha Fazla Bilgi"
+      }
+    },
+    "features": {
+      "title": "Neden Bizi Seçmelisiniz?",
+      "description": "Seyahat planlamanızı kolaylaştırmak için tasarlanmış özelliklerimizi keşfedin.",
+      "cards": {
+        "destination": {
+          "title": "Akıllı Destinasyon Önerileri",
+          "description": "İlgi alanlarınıza ve bütçenize göre kişiselleştirilmiş destinasyon önerileri alın."
+        },
+        "planning": {
+          "title": "Kolay Planlama",
+          "description": "Seyahatinizin tüm detaylarını tek bir yerden planlayın ve yönetin."
+        },
+        "budget": {
+          "title": "Bütçe Yönetimi",
+          "description": "Harcamalarınızı takip edin ve bütçenizi kontrol altında tutun."
+        },
+        "recommendations": {
+          "title": "Yerel Öneriler",
+          "description": "Destinasyonunuzdaki en iyi yerleri ve aktiviteleri keşfedin."
+        }
+      }
+    }
   }
 } 

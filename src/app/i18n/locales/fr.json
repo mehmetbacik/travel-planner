@@ -1,7 +1,7 @@
 {
   "common": {
     "getStarted": "Commencer",
-    "planYourTrip": "Planifiez votre Voyage",
+    "planYourTrip": "Planifiez Votre Voyage",
     "destination": "Destination",
     "interests": "Centres d'Intérêt",
     "travelDates": "Dates de Voyage",
@@ -11,7 +11,7 @@
     "generateItinerary": "Générer l'Itinéraire",
     "regenerate": "Régénérer",
     "downloadPDF": "Télécharger PDF",
-    "pdfDownloadError": "Une erreur s'est produite lors du téléchargement du PDF",
+    "pdfDownloadError": "Erreur lors du téléchargement du PDF",
     "pdfGenerating": "Génération du PDF...",
     "pdfGenerated": "PDF généré avec succès",
     "saving": "Enregistrement...",
@@ -28,13 +28,13 @@
       "required": "{{field}} est requis",
       "invalidDate": "Date invalide",
       "invalidBudget": "Le budget doit être un nombre positif",
-      "endDateBeforeStart": "La date de fin doit être postérieure à la date de début"
+      "endDateBeforeStart": "La date de fin doit être après la date de début"
     }
   },
   "features": {
     "weather": "Prévisions Météo",
     "attractions": "Lieux Populaires",
-    "transportation": "Transport et Activités",
+    "transportation": "Transport & Activités",
     "food": "Recommandations Culinaires"
   },
   "planner": {
@@ -42,8 +42,40 @@
     "subtitle": "Créez un itinéraire personnalisé basé sur vos destinations, centres d'intérêt et dates de voyage.",
     "destinationPlaceholder": "ex. Tokyo",
     "selectInterests": "Sélectionner...",
-    "customizedItinerary": "Itinéraire Personnalisé pour",
+    "customizedItinerary": "Itinéraire Personnalisé pour Vous",
     "day": "Jour",
     "loading": "Création de votre voyage parfait..."
+  },
+  "home": {
+    "hero": {
+      "title": "Simplifiez Votre Planification de Voyage",
+      "description": "Vivez une expérience de vacances inoubliable avec notre planificateur de voyage alimenté par l'IA. Recommandations personnalisées, gestion du budget et plus encore.",
+      "cta": {
+        "primary": "Commencer",
+        "secondary": "En Savoir Plus"
+      }
+    },
+    "features": {
+      "title": "Pourquoi Nous Choisir ?",
+      "description": "Découvrez nos fonctionnalités conçues pour faciliter votre planification de voyage.",
+      "cards": {
+        "destination": {
+          "title": "Recommandations Intelligentes de Destinations",
+          "description": "Obtenez des recommandations de destinations personnalisées basées sur vos intérêts et votre budget."
+        },
+        "planning": {
+          "title": "Planification Facile",
+          "description": "Planifiez et gérez tous les détails de votre voyage depuis un seul endroit."
+        },
+        "budget": {
+          "title": "Gestion du Budget",
+          "description": "Suivez vos dépenses et gardez votre budget sous contrôle."
+        },
+        "recommendations": {
+          "title": "Recommandations Locales",
+          "description": "Découvrez les meilleurs endroits et activités de votre destination."
+        }
+      }
+    }
   }
 } 

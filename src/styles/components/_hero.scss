@@ -1,0 +1,51 @@
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: $spacing-2xl $spacing-lg;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('/images/hero-bg.jpg') center/cover no-repeat;
+  color: $color-white;
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-lg;
+    line-height: 1.2;
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-xl;
+    line-height: 1.6;
+  }
+
+  &__cta {
+    display: inline-flex;
+    gap: $spacing-md;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    &__title {
+      font-size: $font-size-3xl;
+    }
+
+    &__description {
+      font-size: $font-size-md;
+    }
+
+    &__cta {
+      flex-direction: column;
+    }
+  }
+} 

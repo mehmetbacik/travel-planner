@@ -5,30 +5,30 @@
     "destination": "Reiseziel",
     "interests": "Interessen",
     "travelDates": "Reisedaten",
-    "generateItinerary": "Reiseplan erstellen",
-    "regenerate": "Neu generieren",
+    "startDate": "Startdatum",
+    "endDate": "Enddatum",
+    "budget": "Budget",
+    "generateItinerary": "Reiseroute erstellen",
+    "regenerate": "Neu erstellen",
     "downloadPDF": "PDF herunterladen",
-    "pdfDownloadError": "Beim Herunterladen der PDF ist ein Fehler aufgetreten",
+    "pdfDownloadError": "Fehler beim Herunterladen der PDF",
     "pdfGenerating": "PDF wird erstellt...",
     "pdfGenerated": "PDF erfolgreich erstellt",
     "saving": "Wird gespeichert...",
     "save": "Speichern",
-    "savingTrip": "Reise wird gespeichert...",
+    "savingTrip": "Ihre Reise wird gespeichert...",
     "tripSaved": "Reise erfolgreich gespeichert!",
-    "tripSaveError": "Beim Speichern der Reise ist ein Fehler aufgetreten",
+    "tripSaveError": "Reise konnte nicht gespeichert werden",
+    "recommendations": "KI-Empfehlungen",
+    "activities": "Beste Aktivitäten",
+    "localTips": "Lokale Tipps",
+    "budgetTips": "Budget-Tipps",
+    "weatherInfo": "Wetterinformationen",
     "validation": {
-      "destination": {
-        "required": "Reiseziel ist erforderlich"
-      },
-      "startDate": {
-        "required": "Startdatum ist erforderlich"
-      },
-      "endDate": {
-        "required": "Enddatum ist erforderlich"
-      },
-      "budget": {
-        "min": "Budget muss 0 oder größer sein"
-      }
+      "required": "{{field}} ist erforderlich",
+      "invalidDate": "Ungültiges Datum",
+      "invalidBudget": "Budget muss eine positive Zahl sein",
+      "endDateBeforeStart": "Enddatum muss nach dem Startdatum liegen"
     }
   },
   "features": {
@@ -39,11 +39,43 @@
   },
   "planner": {
     "title": "KI-gestützte personalisierte Reiseplanung",
-    "subtitle": "Erstellen Sie einen personalisierten Reiseplan basierend auf Ihren Zielen, Interessen und Reisedaten.",
+    "subtitle": "Erstellen Sie eine personalisierte Reiseroute basierend auf Ihren Zielen, Interessen und Reisedaten.",
     "destinationPlaceholder": "z.B. Tokio",
     "selectInterests": "Auswählen...",
-    "customizedItinerary": "Personalisierter Reiseplan für",
+    "customizedItinerary": "Personalisierte Reiseroute für Sie",
     "day": "Tag",
     "loading": "Ihre perfekte Reise wird erstellt..."
+  },
+  "home": {
+    "hero": {
+      "title": "Vereinfachen Sie Ihre Reiseplanung",
+      "description": "Erleben Sie einen unvergesslichen Urlaub mit unserem KI-gestützten Reiseplaner. Personalisierte Empfehlungen, Budgetverwaltung und mehr.",
+      "cta": {
+        "primary": "Jetzt Starten",
+        "secondary": "Mehr Erfahren"
+      }
+    },
+    "features": {
+      "title": "Warum Uns Wählen?",
+      "description": "Entdecken Sie unsere Funktionen, die Ihre Reiseplanung einfacher machen.",
+      "cards": {
+        "destination": {
+          "title": "Intelligente Reiseziel-Empfehlungen",
+          "description": "Erhalten Sie personalisierte Reiseziel-Empfehlungen basierend auf Ihren Interessen und Ihrem Budget."
+        },
+        "planning": {
+          "title": "Einfache Planung",
+          "description": "Planen und verwalten Sie alle Details Ihrer Reise an einem Ort."
+        },
+        "budget": {
+          "title": "Budgetverwaltung",
+          "description": "Verfolgen Sie Ihre Ausgaben und behalten Sie Ihr Budget unter Kontrolle."
+        },
+        "recommendations": {
+          "title": "Lokale Empfehlungen",
+          "description": "Entdecken Sie die besten Orte und Aktivitäten an Ihrem Reiseziel."
+        }
+      }
+    }
   }
 } 

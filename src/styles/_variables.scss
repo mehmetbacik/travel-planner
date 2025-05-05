@@ -56,3 +56,31 @@ $transition-base: all 0.3s ease;
 
 // Spacing
 $spacing-unit: 0.25rem;
+
+// Component Specific Variables
+$color-white: $text-on-primary;
+$color-background: $background-light;
+$color-text: $text-primary;
+$color-text-light: $text-secondary;
+$color-primary: $primary;
+
+$spacing-sm: $spacing-unit * 2;
+$spacing-md: $spacing-unit * 4;
+$spacing-lg: $spacing-unit * 6;
+$spacing-xl: $spacing-unit * 8;
+$spacing-2xl: $spacing-unit * 12;
+
+$font-size-md: $font-size-base;
+$font-size-lg: $font-size-base * 1.25;
+$font-size-xl: $font-size-base * 1.5;
+$font-size-2xl: $font-size-base * 2;
+$font-size-3xl: $font-size-base * 2.5;
+$font-size-4xl: $font-size-base * 3;
+
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$border-radius-lg: 1rem;
+
+$shadow-md: 0 4px 6px $shadow-color;
+$shadow-lg: 0 10px 15px $shadow-color;

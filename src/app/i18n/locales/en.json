@@ -11,7 +11,7 @@
     "generateItinerary": "Generate Itinerary",
     "regenerate": "Regenerate",
     "downloadPDF": "Download PDF",
-    "pdfDownloadError": "An error occurred while downloading the PDF",
+    "pdfDownloadError": "Error downloading PDF",
     "pdfGenerating": "Generating PDF...",
     "pdfGenerated": "PDF generated successfully",
     "saving": "Saving...",
@@ -20,7 +20,7 @@
     "tripSaved": "Trip saved successfully!",
     "tripSaveError": "Failed to save trip",
     "recommendations": "AI Recommendations",
-    "activities": "Top Activities",
+    "activities": "Best Activities",
     "localTips": "Local Tips",
     "budgetTips": "Budget Tips",
     "weatherInfo": "Weather Information",
@@ -42,8 +42,40 @@
     "subtitle": "Create a customized itinerary based on your destinations, interests, and travel dates.",
     "destinationPlaceholder": "e.g. Tokyo",
     "selectInterests": "Select...",
-    "customizedItinerary": "Customized Itinerary for",
+    "customizedItinerary": "Customized Itinerary for You",
     "day": "Day",
     "loading": "Creating your perfect trip..."
+  },
+  "home": {
+    "hero": {
+      "title": "Simplify Your Travel Planning",
+      "description": "Experience an unforgettable vacation with our AI-powered travel planner. Personalized recommendations, budget management, and more.",
+      "cta": {
+        "primary": "Get Started",
+        "secondary": "Learn More"
+      }
+    },
+    "features": {
+      "title": "Why Choose Us?",
+      "description": "Discover our features designed to make your travel planning easier.",
+      "cards": {
+        "destination": {
+          "title": "Smart Destination Recommendations",
+          "description": "Get personalized destination recommendations based on your interests and budget."
+        },
+        "planning": {
+          "title": "Easy Planning",
+          "description": "Plan and manage all the details of your trip from one place."
+        },
+        "budget": {
+          "title": "Budget Management",
+          "description": "Track your expenses and keep your budget under control."
+        },
+        "recommendations": {
+          "title": "Local Recommendations",
+          "description": "Discover the best places and activities in your destination."
+        }
+      }
+    }
   }
 } 
