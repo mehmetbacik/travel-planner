@@ -24,6 +24,10 @@
     "localTips": "Yerel İpuçları",
     "budgetTips": "Bütçe İpuçları",
     "weatherInfo": "Hava Durumu Bilgisi",
+    "quickLinks": "Hızlı Bağlantılar",
+    "aboutUs": "Hakkımızda",
+    "contact": "İletişim",
+    "allRightsReserved": "Tüm hakları saklıdır",
     "validation": {
       "required": "{{field}} alanı zorunludur",
       "invalidDate": "Geçersiz tarih",
@@ -32,6 +36,7 @@
     }
   },
   "features": {
+    "title": "Özellikler",
     "weather": "Hava Durumu Tahminleri",
     "attractions": "Popüler Yerler",
     "transportation": "Ulaşım ve Aktiviteler",

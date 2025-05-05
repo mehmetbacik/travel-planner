@@ -1,79 +1,84 @@
 {
   "common": {
-    "getStarted": "Loslegen",
-    "planYourTrip": "Planen Sie Ihre Reise",
-    "destination": "Reiseziel",
-    "interests": "Interessen",
-    "travelDates": "Reisedaten",
-    "startDate": "Startdatum",
-    "endDate": "Enddatum",
+    "getStarted": "Get Started",
+    "planYourTrip": "Plan Your Trip",
+    "destination": "Destination",
+    "interests": "Interests",
+    "travelDates": "Travel Dates",
+    "startDate": "Start Date",
+    "endDate": "End Date",
     "budget": "Budget",
-    "generateItinerary": "Reiseroute erstellen",
-    "regenerate": "Neu erstellen",
-    "downloadPDF": "PDF herunterladen",
-    "pdfDownloadError": "Fehler beim Herunterladen der PDF",
-    "pdfGenerating": "PDF wird erstellt...",
-    "pdfGenerated": "PDF erfolgreich erstellt",
-    "saving": "Wird gespeichert...",
-    "save": "Speichern",
-    "savingTrip": "Ihre Reise wird gespeichert...",
-    "tripSaved": "Reise erfolgreich gespeichert!",
-    "tripSaveError": "Reise konnte nicht gespeichert werden",
-    "recommendations": "KI-Empfehlungen",
-    "activities": "Beste Aktivitäten",
-    "localTips": "Lokale Tipps",
-    "budgetTips": "Budget-Tipps",
-    "weatherInfo": "Wetterinformationen",
+    "generateItinerary": "Generate Itinerary",
+    "regenerate": "Regenerate",
+    "downloadPDF": "Download PDF",
+    "pdfDownloadError": "Error downloading PDF",
+    "pdfGenerating": "Generating PDF...",
+    "pdfGenerated": "PDF generated successfully",
+    "saving": "Saving...",
+    "save": "Save",
+    "savingTrip": "Saving your trip...",
+    "tripSaved": "Trip saved successfully!",
+    "tripSaveError": "Failed to save trip",
+    "recommendations": "AI Recommendations",
+    "activities": "Best Activities",
+    "localTips": "Local Tips",
+    "budgetTips": "Budget Tips",
+    "weatherInfo": "Weather Information",
+    "quickLinks": "Quick Links",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "allRightsReserved": "All rights reserved",
     "validation": {
-      "required": "{{field}} ist erforderlich",
-      "invalidDate": "Ungültiges Datum",
-      "invalidBudget": "Budget muss eine positive Zahl sein",
-      "endDateBeforeStart": "Enddatum muss nach dem Startdatum liegen"
+      "required": "{{field}} is required",
+      "invalidDate": "Invalid date",
+      "invalidBudget": "Budget must be a positive number",
+      "endDateBeforeStart": "End date must be after start date"
     }
   },
   "features": {
-    "weather": "Wettervorhersagen",
-    "attractions": "Beliebte Orte",
-    "transportation": "Transport & Aktivitäten",
-    "food": "Essensempfehlungen"
+    "title": "Features",
+    "weather": "Weather Forecasts",
+    "attractions": "Popular Attractions",
+    "transportation": "Transportation & Activities",
+    "food": "Food Recommendations"
   },
   "planner": {
-    "title": "KI-gestützte personalisierte Reiseplanung",
-    "subtitle": "Erstellen Sie eine personalisierte Reiseroute basierend auf Ihren Zielen, Interessen und Reisedaten.",
-    "destinationPlaceholder": "z.B. Tokio",
-    "selectInterests": "Auswählen...",
-    "customizedItinerary": "Personalisierte Reiseroute für Sie",
-    "day": "Tag",
-    "loading": "Ihre perfekte Reise wird erstellt..."
+    "title": "AI-Powered Personalized Travel Planning",
+    "subtitle": "Create a customized itinerary based on your destinations, interests, and travel dates.",
+    "destinationPlaceholder": "e.g. Tokyo",
+    "selectInterests": "Select...",
+    "customizedItinerary": "Your Customized Itinerary",
+    "day": "Day",
+    "loading": "Creating your perfect trip..."
   },
   "home": {
     "hero": {
-      "title": "Vereinfachen Sie Ihre Reiseplanung",
-      "description": "Erleben Sie einen unvergesslichen Urlaub mit unserem KI-gestützten Reiseplaner. Personalisierte Empfehlungen, Budgetverwaltung und mehr.",
+      "title": "Simplify Your Travel Planning",
+      "description": "Experience an unforgettable vacation with our AI-powered travel planner. Get personalized recommendations, budget management, and more.",
       "cta": {
-        "primary": "Jetzt Starten",
-        "secondary": "Mehr Erfahren"
+        "primary": "Get Started",
+        "secondary": "Learn More"
       }
     },
     "features": {
-      "title": "Warum Uns Wählen?",
-      "description": "Entdecken Sie unsere Funktionen, die Ihre Reiseplanung einfacher machen.",
+      "title": "Why Choose Us?",
+      "description": "Discover our features designed to make your travel planning easier.",
       "cards": {
         "destination": {
-          "title": "Intelligente Reiseziel-Empfehlungen",
-          "description": "Erhalten Sie personalisierte Reiseziel-Empfehlungen basierend auf Ihren Interessen und Ihrem Budget."
+          "title": "Smart Destination Suggestions",
+          "description": "Get personalized destination recommendations based on your interests and budget."
         },
         "planning": {
-          "title": "Einfache Planung",
-          "description": "Planen und verwalten Sie alle Details Ihrer Reise an einem Ort."
+          "title": "Easy Planning",
+          "description": "Plan and manage all details of your trip from one place."
         },
         "budget": {
-          "title": "Budgetverwaltung",
-          "description": "Verfolgen Sie Ihre Ausgaben und behalten Sie Ihr Budget unter Kontrolle."
+          "title": "Budget Management",
+          "description": "Track your expenses and keep your budget under control."
         },
         "recommendations": {
-          "title": "Lokale Empfehlungen",
-          "description": "Entdecken Sie die besten Orte und Aktivitäten an Ihrem Reiseziel."
+          "title": "Local Recommendations",
+          "description": "Discover the best places and activities in your destination."
         }
       }
     }

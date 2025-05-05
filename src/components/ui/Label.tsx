@@ -1,35 +1,24 @@
-import { LabelHTMLAttributes, forwardRef } from 'react';
-import { twMerge } from 'tailwind-merge';
+import * as React from "react";
+import * as LabelPrimitive from "@radix-ui/react-label";
+import { cva, type VariantProps } from "class-variance-authority";
 
-interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
-  required?: boolean;
-  variant?: 'default' | 'small';
-}
+import { cn } from "@/lib/utils";
 
-export const Label = forwardRef<HTMLLabelElement, LabelProps>(
-  ({ className, children, required, variant = 'default', ...props }, ref) => {
-    const getVariantClasses = () => {
-      switch (variant) {
-        case 'small':
-          return 'text-sm text-text-secondary';
-        default:
-          return 'text-base text-text-primary font-medium';
-      }
-    };
+const labelVariants = cva(
+  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+);
 
-    return (
-      <label
-        ref={ref}
-        className={twMerge(
-          'block mb-2',
-          getVariantClasses(),
-          className
-        )}
-        {...props}
-      >
-        {children}
-        {required && <span className="text-error ml-1">*</span>}
-      </label>
-    );
-  }
-); 
+const Label = React.forwardRef<
+  React.ElementRef<typeof LabelPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
+    VariantProps<typeof labelVariants>
+>(({ className, ...props }, ref) => (
+  <LabelPrimitive.Root
+    ref={ref}
+    className={cn(labelVariants(), className)}
+    {...props}
+  />
+));
+Label.displayName = LabelPrimitive.Root.displayName;
+
+export { Label }; 

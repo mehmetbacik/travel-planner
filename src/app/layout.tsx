@@ -1,27 +1,22 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "../styles/main.scss";
+import './i18n';
+import '@/styles/_globals.scss';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
+const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: "Travel Planner",
-  description:
-    "Travel Planner helps you create personalized travel plans automatically based on your travel dates and routes. It provides weather, transportation, event, and dining recommendations, all in one downloadable PDF.",
+export const metadata = {
+  title: 'Travel Planner - Plan Your Perfect Trip',
+  description: 'AI-powered travel planner to help you create the perfect itinerary for your next adventure.',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={inter.variable}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

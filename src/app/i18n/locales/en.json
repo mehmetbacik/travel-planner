@@ -24,6 +24,10 @@
     "localTips": "Local Tips",
     "budgetTips": "Budget Tips",
     "weatherInfo": "Weather Information",
+    "quickLinks": "Quick Links",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "allRightsReserved": "All rights reserved",
     "validation": {
       "required": "{{field}} is required",
       "invalidDate": "Invalid date",
@@ -32,8 +36,9 @@
     }
   },
   "features": {
+    "title": "Features",
     "weather": "Weather Forecasts",
-    "attractions": "Popular Places",
+    "attractions": "Popular Attractions",
     "transportation": "Transportation & Activities",
     "food": "Food Recommendations"
   },
@@ -42,14 +47,14 @@
     "subtitle": "Create a customized itinerary based on your destinations, interests, and travel dates.",
     "destinationPlaceholder": "e.g. Tokyo",
     "selectInterests": "Select...",
-    "customizedItinerary": "Customized Itinerary for You",
+    "customizedItinerary": "Your Customized Itinerary",
     "day": "Day",
     "loading": "Creating your perfect trip..."
   },
   "home": {
     "hero": {
       "title": "Simplify Your Travel Planning",
-      "description": "Experience an unforgettable vacation with our AI-powered travel planner. Personalized recommendations, budget management, and more.",
+      "description": "Experience an unforgettable vacation with our AI-powered travel planner. Get personalized recommendations, budget management, and more.",
       "cta": {
         "primary": "Get Started",
         "secondary": "Learn More"
@@ -60,12 +65,12 @@
       "description": "Discover our features designed to make your travel planning easier.",
       "cards": {
         "destination": {
-          "title": "Smart Destination Recommendations",
+          "title": "Smart Destination Suggestions",
           "description": "Get personalized destination recommendations based on your interests and budget."
         },
         "planning": {
           "title": "Easy Planning",
-          "description": "Plan and manage all the details of your trip from one place."
+          "description": "Plan and manage all details of your trip from one place."
         },
         "budget": {
           "title": "Budget Management",
