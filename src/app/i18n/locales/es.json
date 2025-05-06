@@ -1,86 +1,86 @@
 {
   "common": {
-    "getStarted": "Get Started",
-    "planYourTrip": "Plan Your Trip",
-    "destination": "Destination",
-    "interests": "Interests",
-    "travelDates": "Travel Dates",
-    "startDate": "Start Date",
-    "endDate": "End Date",
-    "budget": "Budget",
-    "generateItinerary": "Generate Itinerary",
-    "regenerate": "Regenerate",
-    "downloadPDF": "Download PDF",
-    "pdfDownloadError": "Error downloading PDF",
-    "pdfGenerating": "Generating PDF...",
-    "pdfGenerated": "PDF generated successfully",
-    "saving": "Saving...",
-    "save": "Save",
-    "savingTrip": "Saving your trip...",
-    "tripSaved": "Trip saved successfully!",
-    "tripSaveError": "Failed to save trip",
-    "recommendations": "AI Recommendations",
-    "activities": "Best Activities",
-    "localTips": "Local Tips",
-    "budgetTips": "Budget Tips",
-    "weatherInfo": "Weather Information",
-    "quickLinks": "Quick Links",
-    "aboutUs": "About Us",
-    "contact": "Contact",
-    "allRightsReserved": "All rights reserved",
+    "getStarted": "Comenzar",
+    "planYourTrip": "Planifica tu viaje",
+    "destination": "Destino",
+    "interests": "Intereses",
+    "travelDates": "Fechas de viaje",
+    "startDate": "Fecha de inicio",
+    "endDate": "Fecha de finalización",
+    "budget": "Presupuesto",
+    "generateItinerary": "Generar itinerario",
+    "regenerate": "Regenerar",
+    "downloadPDF": "Descargar PDF",
+    "pdfDownloadError": "Error al descargar el PDF",
+    "pdfGenerating": "Generando PDF...",
+    "pdfGenerated": "PDF generado con éxito",
+    "saving": "Guardando...",
+    "save": "Guardar",
+    "savingTrip": "Guardando tu viaje...",
+    "tripSaved": "¡Viaje guardado con éxito!",
+    "tripSaveError": "No se pudo guardar el viaje",
+    "recommendations": "Recomendaciones de IA",
+    "activities": "Mejores actividades",
+    "localTips": "Consejos locales",
+    "budgetTips": "Consejos de presupuesto",
+    "weatherInfo": "Información del clima",
+    "quickLinks": "Enlaces rápidos",
+    "aboutUs": "Sobre nosotros",
+    "contact": "Contacto",
+    "allRightsReserved": "Todos los derechos reservados",
     "validation": {
-      "required": "{{field}} is required",
-      "invalidDate": "Invalid date",
-      "invalidBudget": "Budget must be a positive number",
-      "endDateBeforeStart": "End date must be after start date"
+      "required": "{{field}} es obligatorio",
+      "invalidDate": "Fecha no válida",
+      "invalidBudget": "El presupuesto debe ser un número positivo",
+      "endDateBeforeStart": "La fecha de finalización debe ser posterior a la fecha de inicio"
     }
   },
   "features": {
-    "title": "Features",
-    "weather": "Weather Forecasts",
-    "attractions": "Popular Attractions",
-    "transportation": "Transportation & Activities",
-    "food": "Food Recommendations"
+    "title": "Características",
+    "weather": "Pronósticos del tiempo",
+    "attractions": "Atracciones populares",
+    "transportation": "Transporte y actividades",
+    "food": "Recomendaciones gastronómicas"
   },
   "planner": {
-    "title": "AI-Powered Personalized Travel Planning",
-    "subtitle": "Create a customized itinerary based on your destinations, interests, and travel dates.",
-    "destinationPlaceholder": "e.g. Tokyo",
-    "selectInterests": "Select...",
-    "customizedItinerary": "Your Customized Itinerary",
-    "day": "Day",
-    "loading": "Creating your perfect trip..."
+    "title": "Planificación de viajes personalizada con IA",
+    "subtitle": "Crea un itinerario personalizado según tus destinos, intereses y fechas de viaje.",
+    "destinationPlaceholder": "ej. Tokio",
+    "selectInterests": "Seleccionar...",
+    "customizedItinerary": "Tu itinerario personalizado",
+    "day": "Día",
+    "loading": "Creando tu viaje perfecto..."
   },
   "home": {
     "hero": {
-      "title": "Simplify Your Travel Planning",
-      "description": "Experience an unforgettable vacation with our AI-powered travel planner. Get personalized recommendations, budget management, and more.",
+      "title": "Simplifica la planificación de tu viaje",
+      "description": "Vive unas vacaciones inolvidables con nuestro planificador de viajes con tecnología de IA. Obtén recomendaciones personalizadas, gestión de presupuesto y más.",
       "cta": {
-        "primary": "Get Started",
-        "secondary": "Learn More"
+        "primary": "Comenzar",
+        "secondary": "Saber más"
       }
     },
     "features": {
-      "title": "Why Choose Us?",
-      "description": "Discover our features designed to make your travel planning easier.",
+      "title": "¿Por qué elegirnos?",
+      "description": "Descubre nuestras funciones diseñadas para facilitar la planificación de tu viaje.",
       "cards": {
         "destination": {
-          "title": "Smart Destination Suggestions",
-          "description": "Get personalized destination recommendations based on your interests and budget."
+          "title": "Sugerencias inteligentes de destinos",
+          "description": "Obtén recomendaciones personalizadas de destinos según tus intereses y presupuesto."
         },
         "planning": {
-          "title": "Easy Planning",
-          "description": "Plan and manage all details of your trip from one place."
+          "title": "Planificación sencilla",
+          "description": "Planifica y gestiona todos los detalles de tu viaje en un solo lugar."
         },
         "budget": {
-          "title": "Budget Management",
-          "description": "Track your expenses and keep your budget under control."
+          "title": "Gestión del presupuesto",
+          "description": "Controla tus gastos y mantén tu presupuesto bajo control."
         },
         "recommendations": {
-          "title": "Local Recommendations",
-          "description": "Discover the best places and activities in your destination."
+          "title": "Recomendaciones locales",
+          "description": "Descubre los mejores lugares y actividades en tu destino."
         }
       }
     }
   }
-} 
+}
