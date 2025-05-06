@@ -1,5 +1,7 @@
+'use client';
+
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { 
   Facebook, 
   Twitter, 
@@ -46,22 +48,22 @@ export const Footer = () => {
             <h3 className="text-xl font-bold mb-4">{t('common.quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/planner" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/planner" className="text-gray-400 hover:text-white transition-colors">
                   {t('common.planYourTrip')}
                 </Link>
               </li>
               <li>
-                <Link to="/features" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/features" className="text-gray-400 hover:text-white transition-colors">
                   {t('features.title')}
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
                   {t('common.aboutUs')}
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
                   {t('common.contact')}
                 </Link>
               </li>
