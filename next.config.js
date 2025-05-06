@@ -3,6 +3,7 @@ const nextConfig = {
   i18n: {
     locales: ['en', 'tr', 'es', 'de', 'fr'],
     defaultLocale: 'en',
+    localeDetection: true,
   },
   sassOptions: {
     includePaths: ['./src/styles'],

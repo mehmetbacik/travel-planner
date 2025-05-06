@@ -1,5 +1,7 @@
+'use client';
+
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { motion } from 'framer-motion';
 
@@ -34,15 +36,15 @@ export const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white"
-            >
-              <Link to="/planner">
+            <Link href="/planner">
+              <Button
+                variant="primary"
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white"
+              >
                 {t('home.hero.cta.primary')}
-              </Link>
-            </Button>
+              </Button>
+            </Link>
             
             <Button
               asChild
@@ -50,7 +52,7 @@ export const Hero = () => {
               variant="outline"
               className="border-primary text-primary hover:bg-primary/10"
             >
-              <Link to="/features">
+              <Link href="/features">
                 {t('home.hero.cta.secondary')}
               </Link>
             </Button>
