@@ -37,6 +37,10 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    detection: {
+      order: ['path', 'navigator'],
+      lookupFromPathIndex: 0,
+    },
   });
 
 export default i18n; 
