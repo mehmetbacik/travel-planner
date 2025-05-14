@@ -3,8 +3,7 @@
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
-import { Globe } from 'lucide-react';
-import { LanguageSwitcher } from './LanguageSwitcher';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 
 export const Navbar = () => {
   const { t } = useTranslation();
@@ -21,10 +20,10 @@ export const Navbar = () => {
             <Link href="/features">
               <Button variant="ghost">{t('nav.features')}</Button>
             </Link>
+            <LanguageSwitcher />
             <Link href="/planner">
               <Button variant="default">{t('nav.planner')}</Button>
             </Link>
-            <LanguageSwitcher />
           </div>
         </div>
       </div>

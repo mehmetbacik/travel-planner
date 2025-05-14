@@ -28,19 +28,30 @@ const resources = {
   },
 };
 
+// For error handling
+const handleError = (error: Error) => {
+  console.error('i18n initialization error:', error);
+};
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
     fallbackLng: 'en',
+    supportedLngs: ['en', 'tr', 'es', 'de', 'fr'],
     interpolation: {
       escapeValue: false,
     },
     detection: {
-      order: ['path', 'navigator'],
+      order: ['path', 'navigator', 'htmlTag'],
       lookupFromPathIndex: 0,
+      caches: ['localStorage'],
     },
-  });
+    react: {
+      useSuspense: false,
+    },
+  })
+  .catch(handleError);
 
 export default i18n; 

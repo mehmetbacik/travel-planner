@@ -30,24 +30,24 @@ export const Features = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="py-20 bg-background-light">
+    <section className="features-section">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="features-section__header"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">
+          <h2 className="features-section__title">
             {t('home.features.title')}
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="features-section__description">
             {t('home.features.description')}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="features-section__grid">
           {features.map((feature, index) => (
             <motion.div
               key={feature.key}
@@ -55,15 +55,15 @@ export const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
+              className="features-section__card"
             >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <feature.icon className="w-6 h-6 text-primary" />
+              <div className="features-section__card-icon">
+                <feature.icon />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-text-primary">
+              <h3 className="features-section__card-title">
                 {t(`home.features.cards.${feature.key}.title`)}
               </h3>
-              <p className="text-text-secondary">
+              <p className="features-section__card-description">
                 {t(`home.features.cards.${feature.key}.description`)}
               </p>
             </motion.div>
