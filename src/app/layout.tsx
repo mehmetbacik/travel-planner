@@ -1,5 +1,5 @@
 import './i18n';
-import '@/styles/_globals.scss';
+import '@/styles/main.scss';
 import { Inter } from 'next/font/google';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
