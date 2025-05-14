@@ -1,67 +1,42 @@
-'use client';
+"use client";
 
-import { useTranslation } from 'react-i18next';
-import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
+import { Dictionary } from '@/types/dictionary'
 
-export const Hero = () => {
-  const { t } = useTranslation();
+interface HeroProps {
+  dict: Dictionary
+}
 
+export default function Hero({ dict }: HeroProps) {
   return (
-    <section className="hero-section">
-      <div className="hero-section__content">
+    <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="relative z-10 text-center text-white px-4">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="hero-section__title"
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-6xl font-bold mb-6"
         >
-          {t('home.hero.title')}
+          {dict.planner.title}
         </motion.h1>
-        
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="hero-section__description"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto"
         >
-          {t('home.hero.description')}
+          {dict.planner.subtitle}
         </motion.p>
-
-        <motion.div
+        <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="hero-section__cta"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all"
         >
-          <Link href="/planner">
-            <Button
-              variant="primary"
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white"
-            >
-              {t('home.hero.cta.primary')}
-            </Button>
-          </Link>
-          
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-primary text-primary hover:bg-primary/10"
-          >
-            <Link href="/features">
-              {t('home.hero.cta.secondary')}
-            </Link>
-          </Button>
-        </motion.div>
-      </div>
-
-      <div className="hero-section__background">
-        <div className="hero-section__background-element hero-section__background-element--top-left" />
-        <div className="hero-section__background-element hero-section__background-element--bottom-right" />
+          {dict.common.getStarted}
+        </motion.button>
       </div>
     </section>
-  );
-}; 
+  )
+} 

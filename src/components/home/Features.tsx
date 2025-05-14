@@ -1,75 +1,52 @@
-import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { 
-  MapPin, 
-  Calendar, 
-  Wallet, 
-  Lightbulb 
-} from 'lucide-react';
+"use client";
+
+import { motion } from 'framer-motion'
+import { Dictionary } from '@/types/dictionary'
+
+interface FeaturesProps {
+  dict: Dictionary
+}
 
 const features = [
   {
-    icon: MapPin,
-    key: 'destination'
+    icon: '🌤️',
+    key: 'weather'
   },
   {
-    icon: Calendar,
-    key: 'planning'
+    icon: '🏛️',
+    key: 'attractions'
   },
   {
-    icon: Wallet,
-    key: 'budget'
+    icon: '🚗',
+    key: 'transportation'
   },
   {
-    icon: Lightbulb,
-    key: 'recommendations'
+    icon: '🍽️',
+    key: 'food'
   }
-];
+]
 
-export const Features = () => {
-  const { t } = useTranslation();
-
+export default function Features({ dict }: FeaturesProps) {
   return (
-    <section className="features-section">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="features-section__header"
-        >
-          <h2 className="features-section__title">
-            {t('home.features.title')}
-          </h2>
-          <p className="features-section__description">
-            {t('home.features.description')}
-          </p>
-        </motion.div>
-
-        <div className="features-section__grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.key}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="features-section__card"
+              className="bg-white p-6 rounded-lg shadow-lg text-center"
             >
-              <div className="features-section__card-icon">
-                <feature.icon />
-              </div>
-              <h3 className="features-section__card-title">
-                {t(`home.features.cards.${feature.key}.title`)}
+              <div className="text-4xl mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-semibold mb-2">
+                {dict.features[feature.key as keyof typeof dict.features]}
               </h3>
-              <p className="features-section__card-description">
-                {t(`home.features.cards.${feature.key}.description`)}
-              </p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  );
-}; 
+  )
+} 

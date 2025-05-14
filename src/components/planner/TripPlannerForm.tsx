@@ -70,9 +70,9 @@ export const TripPlannerForm = () => {
   const onSubmit = async (data: FormValues) => {
     setIsLoading(true);
     try {
-      // API çağrısı burada yapılacak
+      // API call will be made here
       console.log(data);
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simüle edilmiş API çağrısı
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulated API call
     } catch (error) {
       console.error('Error:', error);
     } finally {
