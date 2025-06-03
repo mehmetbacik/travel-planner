@@ -1,27 +1,36 @@
-import { Toaster } from 'react-hot-toast'
-import { Inter } from 'next/font/google'
-import { getDictionary } from '@/app/i18n/getDictionary'
-import { Language } from '@/app/i18n/settings'
-import { NotificationProvider } from '@/components/ui/Notification'
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
+import { Toaster } from 'react-hot-toast';
+import { Inter } from 'next/font/google';
+import { getDictionary } from '@/app/i18n/getDictionary';
+import { Language } from '@/app/i18n/settings';
+import { NotificationProvider } from '@/components/ui/Notification';
+import { Locale } from '../i18n/settings';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export async function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'tr' }, { lang: 'es' }, { lang: 'fr' }, { lang: 'de' }]
+  return [{ lang: 'en' }, { lang: 'tr' }, { lang: 'es' }, { lang: 'fr' }, { lang: 'de' }];
 }
 
-export default async function RootLayout({
+export default async function LocaleLayout({
   children,
   params: { lang },
 }: {
-  children: React.ReactNode
-  params: { lang: Language }
+  children: React.ReactNode;
+  params: { lang: Locale };
 }) {
-  const dict = await getDictionary(lang)
+  const dict = await getDictionary(lang);
 
   return (
     <html lang={lang} suppressHydrationWarning>
       <body className={inter.className} suppressHydrationWarning>
+        <Navbar currentLang={lang} />
+        <main className="min-h-screen">
+          <NotificationProvider />
+          {children}
+        </main>
+        <Footer currentLang={lang} />
         <Toaster
           position="top-right"
           toastOptions={{
@@ -44,9 +53,7 @@ export default async function RootLayout({
             },
           }}
         />
-        <NotificationProvider />
-        {children}
       </body>
     </html>
-  )
+  );
 } 
