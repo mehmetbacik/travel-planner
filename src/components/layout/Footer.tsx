@@ -8,7 +8,7 @@ interface FooterProps {
   currentLang: Locale;
 }
 
-export const Footer = ({ currentLang }: FooterProps) => {
+const Footer = ({ currentLang }: FooterProps) => {
   const { t } = useTranslation();
 
   return (
@@ -45,4 +45,6 @@ export const Footer = ({ currentLang }: FooterProps) => {
       </div>
     </footer>
   );
-}; 
+};
+
+export default Footer; 

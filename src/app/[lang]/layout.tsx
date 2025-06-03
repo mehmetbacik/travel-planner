@@ -8,12 +8,12 @@ import { Locale } from '../i18n/settings';
 const inter = Inter({ subsets: ['latin'] });
 
 // Client-side only components
-const Navbar = dynamic(() => import('@/components/layout/Navbar').then(mod => mod.Navbar), {
+const Navbar = dynamic(() => import('@/components/layout/Navbar'), {
   ssr: false,
   loading: () => <div className="h-16 bg-white shadow-sm" /> // Loading placeholder
 });
 
-const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => mod.Footer), {
+const Footer = dynamic(() => import('@/components/layout/Footer'), {
   ssr: false,
   loading: () => <div className="h-64 bg-gray-100" /> // Loading placeholder
 });

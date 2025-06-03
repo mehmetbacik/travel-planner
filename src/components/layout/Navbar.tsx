@@ -8,7 +8,7 @@ interface NavbarProps {
   currentLang: Locale;
 }
 
-export const Navbar = ({ currentLang }: NavbarProps) => {
+const Navbar = ({ currentLang }: NavbarProps) => {
   const { t } = useTranslation();
 
   return (
@@ -30,4 +30,6 @@ export const Navbar = ({ currentLang }: NavbarProps) => {
       </div>
     </nav>
   );
-}; 
+};
+
+export default Navbar; 
