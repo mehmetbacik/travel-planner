@@ -2,108 +2,45 @@
 
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin,
-  Mail,
-  Phone,
-  MapPin
-} from 'lucide-react';
+import { Locale } from '@/app/i18n/settings';
 
-export const Footer = () => {
+interface FooterProps {
+  currentLang: Locale;
+}
+
+export const Footer = ({ currentLang }: FooterProps) => {
   const { t } = useTranslation();
 
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-background-dark text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
+    <footer className="bg-gray-100">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">TravelPlanner</h3>
-            <p className="text-gray-400 mb-4">
-              {t('home.hero.description')}
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.about')}</h3>
+            <p className="text-gray-600">{t('footer.description')}</p>
           </div>
-
-          {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4">{t('common.quickLinks')}</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.links')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/planner" className="text-gray-400 hover:text-white transition-colors">
-                  {t('common.planYourTrip')}
+                <Link href={`/${currentLang}/planner`} className="text-gray-600 hover:text-primary">
+                  {t('nav.planner')}
                 </Link>
               </li>
               <li>
-                <Link href="/features" className="text-gray-400 hover:text-white transition-colors">
-                  {t('features.title')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
-                  {t('common.aboutUs')}
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
-                  {t('common.contact')}
+                <Link href={`/${currentLang}/about`} className="text-gray-600 hover:text-primary">
+                  {t('nav.about')}
                 </Link>
               </li>
             </ul>
           </div>
-
-          {/* Features */}
           <div>
-            <h3 className="text-xl font-bold mb-4">{t('features.title')}</h3>
-            <ul className="space-y-2">
-              <li className="text-gray-400">{t('features.weather')}</li>
-              <li className="text-gray-400">{t('features.attractions')}</li>
-              <li className="text-gray-400">{t('features.transportation')}</li>
-              <li className="text-gray-400">{t('features.food')}</li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">{t('common.contact')}</h3>
-            <ul className="space-y-4">
-              <li className="flex items-center space-x-2 text-gray-400">
-                <MapPin className="h-5 w-5" />
-                <span>123 Travel Street, City, Country</span>
-              </li>
-              <li className="flex items-center space-x-2 text-gray-400">
-                <Phone className="h-5 w-5" />
-                <span>+1 234 567 890</span>
-              </li>
-              <li className="flex items-center space-x-2 text-gray-400">
-                <Mail className="h-5 w-5" />
-                <span>info@travelplanner.com</span>
-              </li>
-            </ul>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.contact')}</h3>
+            <p className="text-gray-600">{t('footer.email')}</p>
           </div>
         </div>
-
-        {/* Copyright */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} TravelPlanner. {t('common.allRightsReserved')}</p>
+        <div className="mt-8 pt-8 border-t text-center text-gray-600">
+          <p>&copy; {new Date().getFullYear()} {t('common.appName')}. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

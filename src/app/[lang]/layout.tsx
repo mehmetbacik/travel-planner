@@ -1,13 +1,22 @@
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
+import dynamic from 'next/dynamic';
 import { Toaster } from 'react-hot-toast';
 import { Inter } from 'next/font/google';
 import { getDictionary } from '@/app/i18n/getDictionary';
-import { Language } from '@/app/i18n/settings';
 import { NotificationProvider } from '@/components/ui/Notification';
 import { Locale } from '../i18n/settings';
 
 const inter = Inter({ subsets: ['latin'] });
+
+// Client-side only components
+const Navbar = dynamic(() => import('@/components/layout/Navbar').then(mod => mod.Navbar), {
+  ssr: false,
+  loading: () => <div className="h-16 bg-white shadow-sm" /> // Loading placeholder
+});
+
+const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => mod.Footer), {
+  ssr: false,
+  loading: () => <div className="h-64 bg-gray-100" /> // Loading placeholder
+});
 
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'tr' }, { lang: 'es' }, { lang: 'fr' }, { lang: 'de' }];
@@ -41,14 +50,14 @@ export default async function LocaleLayout({
             },
             success: {
               duration: 3000,
-              theme: {
-                primary: '#4aed88',
+              style: {
+                background: '#4aed88',
               },
             },
             error: {
               duration: 4000,
-              theme: {
-                primary: '#ff4b4b',
+              style: {
+                background: '#ff4b4b',
               },
             },
           }}

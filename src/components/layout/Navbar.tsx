@@ -2,27 +2,28 @@
 
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
-import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { Locale } from '@/app/i18n/settings';
 
-export const Navbar = () => {
+interface NavbarProps {
+  currentLang: Locale;
+}
+
+export const Navbar = ({ currentLang }: NavbarProps) => {
   const { t } = useTranslation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+    <nav className="bg-white shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold">
+        <div className="flex justify-between items-center h-16">
+          <Link href={`/${currentLang}`} className="text-xl font-bold">
             {t('common.appName')}
           </Link>
-
-          <div className="flex items-center gap-4">
-            <Link href="/features">
-              <Button variant="ghost">{t('nav.features')}</Button>
+          <div className="flex space-x-4">
+            <Link href={`/${currentLang}/planner`} className="hover:text-primary">
+              {t('nav.planner')}
             </Link>
-            <LanguageSwitcher />
-            <Link href="/planner">
-              <Button variant="default">{t('nav.planner')}</Button>
+            <Link href={`/${currentLang}/about`} className="hover:text-primary">
+              {t('nav.about')}
             </Link>
           </div>
         </div>
