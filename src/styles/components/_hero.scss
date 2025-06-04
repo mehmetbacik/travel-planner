@@ -3,16 +3,32 @@
   min-height: 80vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
   padding: $spacing-2xl $spacing-lg;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-              url('/images/hero-bg.jpg') center/cover no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/hero-bg.png") center right/cover no-repeat;
   color: $color-white;
 
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
   &__content {
-    max-width: 800px;
-    margin: 0 auto;
+    position: relative;
+    max-width: 600px;
+    margin-left: $spacing-xl;
+    z-index: 2;
+    text-align: left;
+
+    @media (max-width: $md-breakpoint) {
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 $spacing-md;
+    }
   }
 
   &__title {
@@ -20,32 +36,46 @@
     font-weight: $font-weight-bold;
     margin-bottom: $spacing-lg;
     line-height: 1.2;
+
+    @media (max-width: $md-breakpoint) {
+      font-size: $font-size-3xl;
+    }
   }
 
   &__description {
     font-size: $font-size-lg;
     margin-bottom: $spacing-xl;
     line-height: 1.6;
-  }
 
-  &__cta {
-    display: inline-flex;
-    gap: $spacing-md;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    &__title {
-      font-size: $font-size-3xl;
-    }
-
-    &__description {
+    @media (max-width: $md-breakpoint) {
       font-size: $font-size-md;
     }
-
-    &__cta {
-      flex-direction: column;
-    }
   }
-} 
+
+&__cta {
+  background-color: $color-white;
+  color: $primary;
+  padding: $spacing-md $spacing-2xl;
+  border-radius: $border-radius-lg;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  transition: $transition-base;
+  border: none;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: lighten($color-white, 10%);
+    color: darken($primary, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: $md-breakpoint) {
+    width: 100%;
+    text-align: center;
+    padding: $spacing-md 0;
+  }
+}
+}
