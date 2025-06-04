@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Dictionary } from "@/types/dictionary";
+import heroBg from "@/assets/img/hero-bg.png";
 
 interface HeroProps {
   dict: Dictionary;
@@ -9,8 +10,15 @@ interface HeroProps {
 
 export default function Hero({ dict }: HeroProps) {
   return (
-    <section className="hero">
-      <div className="hero__overlay"></div>
+    <section
+      className="hero"
+      style={{
+        backgroundImage: `url(${heroBg.src})`,
+        backgroundPosition: "center right",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="hero__content">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

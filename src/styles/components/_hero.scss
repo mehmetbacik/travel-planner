@@ -5,16 +5,7 @@
   align-items: center;
   justify-content: flex-start;
   padding: $spacing-2xl $spacing-lg;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/img/hero-bg.png") center right/cover no-repeat;
-  color: $color-white;
-
-  &__overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
+  color: $primary;
 
   &__content {
     position: relative;
