@@ -28,7 +28,7 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: $spacing-xl;
     margin-top: $spacing-xl;
   }
@@ -41,16 +41,24 @@
   box-shadow: $shadow-md;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  &:hover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &:hover,
+  &:focus-within {
     transform: translateY(-5px);
     box-shadow: $shadow-lg;
+    outline: none;
   }
 
   &__icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: $spacing-md;
     color: $color-primary;
+    margin-bottom: $spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__title {
@@ -67,7 +75,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $md-breakpoint) {
   .features {
     padding: $spacing-xl $spacing-md;
 
@@ -83,4 +91,4 @@
       grid-template-columns: 1fr;
     }
   }
-} 
+}

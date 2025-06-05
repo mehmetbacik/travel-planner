@@ -1,52 +1,74 @@
 "use client";
 
-import { motion } from 'framer-motion'
-import { Dictionary } from '@/types/dictionary'
+import { motion } from "framer-motion";
+import { Dictionary } from "@/types/dictionary";
+import { 
+  IoSunnyOutline, 
+  IoBusinessOutline, 
+  IoCarOutline, 
+  IoRestaurantOutline 
+} from "react-icons/io5";
 
 interface FeaturesProps {
-  dict: Dictionary
+  dict: Dictionary;
 }
 
 const features = [
   {
-    icon: '🌤️',
-    key: 'weather'
+    icon: IoSunnyOutline,
+    key: "weather",
+    label: "Weather",
   },
   {
-    icon: '🏛️',
-    key: 'attractions'
+    icon: IoBusinessOutline,
+    key: "attractions",
+    label: "Attractions",
   },
   {
-    icon: '🚗',
-    key: 'transportation'
+    icon: IoCarOutline,
+    key: "transportation",
+    label: "Transportation",
   },
   {
-    icon: '🍽️',
-    key: 'food'
-  }
-]
+    icon: IoRestaurantOutline,
+    key: "food",
+    label: "Food",
+  },
+];
 
 export default function Features({ dict }: FeaturesProps) {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.key}
+    <section className="features" aria-labelledby="features-title">
+      <div className="features__container">
+        <header className="features__header">
+          <h2 id="features-title" className="features__title">
+            {dict.features.title}
+          </h2>
+          <p className="features__description">{dict.features.description}</p>
+        </header>
+
+        <div className="features__grid">
+          {features.map(({ icon: Icon, key }, index) => (
+            <motion.article
+              key={key}
+              className="feature-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-6 rounded-lg shadow-lg text-center"
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              tabIndex={0}
+              aria-label={dict.features[key as keyof typeof dict.features]}
             >
-              <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">
-                {dict.features[feature.key as keyof typeof dict.features]}
+              <div className="feature-card__icon" aria-hidden="true">
+                <Icon size={48} />
+              </div>
+              <h3 className="feature-card__title">
+                {dict.features[key as keyof typeof dict.features]}
               </h3>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>
     </section>
-  )
-} 
+  );
+}

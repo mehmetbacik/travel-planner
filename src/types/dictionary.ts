@@ -9,6 +9,8 @@ export interface Dictionary {
     regenerate: string
   }
   features: {
+    title: string
+    description: string
     weather: string
     attractions: string
     transportation: string
