@@ -24,5 +24,6 @@ export interface Dictionary {
     customizedItinerary: string
     day: string
     loading: string
+    errors: string;
   }
 } 

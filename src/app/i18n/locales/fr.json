@@ -49,7 +49,8 @@
     "selectInterests": "Sélectionner...",
     "customizedItinerary": "Votre itinéraire personnalisé",
     "day": "Jour",
-    "loading": "Création de votre voyage parfait..."
+    "loading": "Création de votre voyage parfait...",
+    "errors": "Échec de la génération du plan de voyage. Veuillez réessayer."
   },
   "home": {
     "hero": {

@@ -49,7 +49,8 @@
     "selectInterests": "Auswählen...",
     "customizedItinerary": "Dein individueller Reiseplan",
     "day": "Tag",
-    "loading": "Deine perfekte Reise wird erstellt..."
+    "loading": "Deine perfekte Reise wird erstellt...",
+    "errors": "Reiseplan konnte nicht erstellt werden. Bitte versuchen Sie es erneut."
   },
   "home": {
     "hero": {

@@ -49,7 +49,8 @@
     "selectInterests": "Select...",
     "customizedItinerary": "Your Customized Itinerary",
     "day": "Day",
-    "loading": "Creating your perfect trip..."
+    "loading": "Creating your perfect trip...",
+    "errors": "Failed to generate trip plan. Please try again."
   },
   "home": {
     "hero": {
