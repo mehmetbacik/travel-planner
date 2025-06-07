@@ -1,5 +1,5 @@
 import { jsPDF } from 'jspdf';
-import { TravelRecommendation } from '../ai';
+import { TravelRecommendation } from '@/services/api/ai';
 
 export const pdfService = {
   async generateTravelPlan(

@@ -1,15 +1,15 @@
 import { AppError, ErrorType } from '@/utils/errorHandler';
 
-const AI_API_URL = 'https://api.openai.com/v1/chat/completions';
-const AI_API_KEY = process.env.OPENAI_API_KEY;
-
-interface TravelRecommendation {
+export interface TravelRecommendation {
   destination: string;
   activities: string[];
   localTips: string[];
   budgetTips: string[];
   weatherInfo: string;
 }
+
+const AI_API_URL = 'https://api.openai.com/v1/chat/completions';
+const AI_API_KEY = process.env.OPENAI_API_KEY;
 
 export const aiService = {
   async getTravelRecommendations(destination: string, budget: number): Promise<TravelRecommendation> {
