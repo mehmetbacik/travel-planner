@@ -1,6 +1,6 @@
 import { getDictionary } from '../../i18n/getDictionary'
 import { Locale } from '../../i18n/settings'
-import TripResults from '@/components/TripResults'
+import TripResults from '@/components/planner/TripResults'
 
 export default async function ResultsPage({
   params: { lang },
