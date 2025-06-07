@@ -36,6 +36,7 @@ export const aiService = {
       if (!response.ok) {
         throw new AppError(
           'Failed to get AI recommendations',
+          500,
           ErrorType.SERVER
         );
       }
@@ -62,8 +63,9 @@ export const aiService = {
       }
       throw new AppError(
         'Failed to get AI recommendations',
+        500,
         ErrorType.NETWORK
       );
     }
   }
-}; 
+};

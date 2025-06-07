@@ -1,11 +1,19 @@
 import { toast } from 'react-hot-toast';
 
-export type ErrorType = 'VALIDATION_ERROR' | 'NOT_FOUND' | 'UNAUTHORIZED' | 'FORBIDDEN' | 'INTERNAL_ERROR';
+export enum ErrorType {
+  VALIDATION_ERROR = 'VALIDATION_ERROR',
+  NOT_FOUND = 'NOT_FOUND',
+  UNAUTHORIZED = 'UNAUTHORIZED',
+  FORBIDDEN = 'FORBIDDEN',
+  INTERNAL_ERROR = 'INTERNAL_ERROR',
+  SERVER = 'SERVER',
+  NETWORK = 'NETWORK'
+}
 
 export interface ErrorResponse {
   type: ErrorType;
   message: string;
-  code?: string;
+  code?: ErrorType;
   details?: unknown;
 }
 
@@ -13,7 +21,8 @@ export class AppError extends Error {
   constructor(
     message: string,
     public statusCode: number,
-    public code?: ErrorType
+    public code: ErrorType = ErrorType.INTERNAL_ERROR,
+    public details?: unknown
   ) {
     super(message);
     this.name = 'AppError';
@@ -29,10 +38,10 @@ export class AppError extends Error {
     }
 
     if (error instanceof Error) {
-      return new AppError(error.message, 500, 'INTERNAL_ERROR');
+      return new AppError(error.message, 500, ErrorType.INTERNAL_ERROR);
     }
 
-    return new AppError('Beklenmeyen bir hata oluştu', 500, 'INTERNAL_ERROR');
+    return new AppError('Beklenmeyen bir hata oluştu', 500, ErrorType.INTERNAL_ERROR);
   }
 }
 
@@ -42,16 +51,16 @@ export const handleApiError = (error: unknown): AppError => {
   }
 
   if (error instanceof Error) {
-    return new AppError(error.message, 500, 'INTERNAL_ERROR');
+    return new AppError(error.message, 500, ErrorType.INTERNAL_ERROR);
   }
 
-  return new AppError('Beklenmeyen bir hata oluştu', 500, 'INTERNAL_ERROR');
+  return new AppError('Beklenmeyen bir hata oluştu', 500, ErrorType.INTERNAL_ERROR);
 };
 
 export const handleError = (error: unknown): ErrorResponse => {
   if (error instanceof AppError) {
     return {
-      type: error.code as ErrorType,
+      type: error.code,
       message: error.message,
       code: error.code,
       details: error.details
@@ -60,13 +69,13 @@ export const handleError = (error: unknown): ErrorResponse => {
 
   if (error instanceof Error) {
     return {
-      type: 'INTERNAL_ERROR',
+      type: ErrorType.INTERNAL_ERROR,
       message: error.message
     };
   }
 
   return {
-    type: 'INTERNAL_ERROR',
+    type: ErrorType.INTERNAL_ERROR,
     message: 'An unexpected error occurred'
   };
 };
@@ -86,4 +95,4 @@ export const showLoadingToast = (message: string) => {
 
 export const dismissToast = (toastId: string) => {
   toast.dismiss(toastId);
-}; 
+};
