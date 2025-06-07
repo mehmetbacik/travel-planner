@@ -1,7 +1,14 @@
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
-import { useTranslation } from 'next-i18next';
-import { AppError, ErrorType, showErrorToast, showLoadingToast, dismissToast } from './errorHandler';
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+import { useTranslation } from "next-i18next";
+import {
+  AppError,
+  ErrorType,
+  showErrorToast,
+  showLoadingToast,
+  showSuccessToast,
+  dismissToast,
+} from "./errorHandler";
 
 interface PDFGeneratorProps {
   elementId: string;
@@ -9,11 +16,15 @@ interface PDFGeneratorProps {
   title: string;
 }
 
-export const generatePDF = async ({ elementId, fileName, title }: PDFGeneratorProps) => {
+export const generatePDF = async ({
+  elementId,
+  fileName,
+  title,
+}: PDFGeneratorProps) => {
   try {
     const element = document.getElementById(elementId);
     if (!element) {
-      throw new AppError('Element not found', ErrorType.NOT_FOUND);
+      throw new AppError("Element not found", 404, ErrorType.NOT_FOUND);
     }
 
     const canvas = await html2canvas(element, {
@@ -22,11 +33,11 @@ export const generatePDF = async ({ elementId, fileName, title }: PDFGeneratorPr
       logging: false,
     });
 
-    const imgData = canvas.toDataURL('image/png');
+    const imgData = canvas.toDataURL("image/png");
     const pdf = new jsPDF({
-      orientation: 'portrait',
-      unit: 'mm',
-      format: 'a4',
+      orientation: "portrait",
+      unit: "mm",
+      format: "a4",
     });
 
     const imgWidth = 210; // A4 width
@@ -36,25 +47,25 @@ export const generatePDF = async ({ elementId, fileName, title }: PDFGeneratorPr
 
     // Add title
     pdf.setFontSize(20);
-    pdf.text(title, 105, 20, { align: 'center' });
+    pdf.text(title, 105, 20, { align: "center" });
     position = 30;
 
     // Add content
-    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+    pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
     heightLeft -= 297; // A4 height
 
     // Add new pages if content exceeds one page
     while (heightLeft >= 0) {
       position = heightLeft - imgHeight;
       pdf.addPage();
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
       heightLeft -= 297;
     }
 
     // Download PDF
     pdf.save(`${fileName}.pdf`);
   } catch (error) {
-    console.error('PDF generation error:', error);
+    console.error("PDF generation error:", error);
     throw error;
   }
 };
@@ -62,19 +73,25 @@ export const generatePDF = async ({ elementId, fileName, title }: PDFGeneratorPr
 export const usePDFGenerator = () => {
   const { t } = useTranslation();
 
-  const downloadPDF = async (elementId: string, fileName: string, title: string) => {
-    const loadingToast = showLoadingToast(t('common:pdfGenerating'));
-    
+  const downloadPDF = async (
+    elementId: string,
+    fileName: string,
+    title: string
+  ) => {
+    const loadingToast = showLoadingToast(t("common:pdfGenerating"));
+
     try {
       await generatePDF({ elementId, fileName, title });
       dismissToast(loadingToast);
-      showSuccessToast(t('common:pdfGenerated'));
+      showSuccessToast(t("common:pdfGenerated"));
     } catch (error) {
       dismissToast(loadingToast);
-      showErrorToast(error);
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
+      showErrorToast(errorMessage);
       throw error;
     }
   };
 
   return { downloadPDF };
-}; 
+};
