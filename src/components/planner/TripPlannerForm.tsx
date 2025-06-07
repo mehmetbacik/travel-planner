@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import { format } from 'date-fns';
-import { Calendar } from '@/components/ui/Calendar';
-import { Button } from '@/components/ui/Button';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { format } from "date-fns";
+import { Calendar } from "@/components/ui/Calendar";
+import { Button } from "@/components/ui/Button";
 import {
   Form,
   FormControl,
@@ -13,42 +13,42 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/Form';
+} from "@/components/ui/Form";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/Popover';
-import { Input } from '@/components/ui/Input';
-import { cn } from '@/lib/utils';
-import { CalendarIcon } from 'lucide-react';
+} from "@/components/ui/Popover";
+import { Input } from "@/components/ui/Input";
+import { cn } from "@/lib/utils";
+import { CalendarIcon } from "lucide-react";
 
 const interests = [
-  'culture',
-  'nature',
-  'adventure',
-  'food',
-  'history',
-  'shopping',
-  'relaxation',
-  'nightlife',
+  "culture",
+  "nature",
+  "adventure",
+  "food",
+  "history",
+  "shopping",
+  "relaxation",
+  "nightlife",
 ] as const;
 
 const formSchema = z.object({
   destination: z.string().min(2, {
-    message: 'Destination must be at least 2 characters.',
+    message: "Destination must be at least 2 characters.",
   }),
   startDate: z.date({
-    required_error: 'Start date is required.',
+    required_error: "Start date is required.",
   }),
   endDate: z.date({
-    required_error: 'End date is required.',
+    required_error: "End date is required.",
   }),
   budget: z.string().refine((val) => !isNaN(Number(val)) && Number(val) > 0, {
-    message: 'Budget must be a positive number.',
+    message: "Budget must be a positive number.",
   }),
   interests: z.array(z.enum(interests)).min(1, {
-    message: 'Select at least one interest.',
+    message: "Select at least one interest.",
   }),
 });
 
@@ -61,8 +61,8 @@ export const TripPlannerForm = () => {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      destination: '',
-      budget: '',
+      destination: "",
+      budget: "",
       interests: [],
     },
   });
@@ -74,7 +74,7 @@ export const TripPlannerForm = () => {
       console.log(data);
       await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulated API call
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     } finally {
       setIsLoading(false);
     }
@@ -88,9 +88,12 @@ export const TripPlannerForm = () => {
           name="destination"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t('common.destination')}</FormLabel>
+              <FormLabel>{t("common.destination")}</FormLabel>
               <FormControl>
-                <Input placeholder={t('planner.destinationPlaceholder')} {...field} />
+                <Input
+                  placeholder={t("planner.destinationPlaceholder")}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -103,21 +106,21 @@ export const TripPlannerForm = () => {
             name="startDate"
             render={({ field }) => (
               <FormItem className="flex flex-col">
-                <FormLabel>{t('common.startDate')}</FormLabel>
+                <FormLabel>{t("common.startDate")}</FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
                       <Button
                         variant="outline"
                         className={cn(
-                          'w-full pl-3 text-left font-normal',
-                          !field.value && 'text-muted-foreground'
+                          "w-full pl-3 text-left font-normal",
+                          !field.value && "text-muted-foreground"
                         )}
                       >
                         {field.value ? (
-                          format(field.value, 'PPP')
+                          format(field.value, "PPP")
                         ) : (
-                          <span>{t('common.startDate')}</span>
+                          <span>{t("common.startDate")}</span>
                         )}
                         <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                       </Button>
@@ -129,7 +132,7 @@ export const TripPlannerForm = () => {
                       selected={field.value}
                       onSelect={field.onChange}
                       disabled={(date) =>
-                        date < new Date() || date > new Date('2025-01-01')
+                        date < new Date() || date > new Date("2025-01-01")
                       }
                       initialFocus
                     />
@@ -145,21 +148,21 @@ export const TripPlannerForm = () => {
             name="endDate"
             render={({ field }) => (
               <FormItem className="flex flex-col">
-                <FormLabel>{t('common.endDate')}</FormLabel>
+                <FormLabel>{t("common.endDate")}</FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
                       <Button
                         variant="outline"
                         className={cn(
-                          'w-full pl-3 text-left font-normal',
-                          !field.value && 'text-muted-foreground'
+                          "w-full pl-3 text-left font-normal",
+                          !field.value && "text-muted-foreground"
                         )}
                       >
                         {field.value ? (
-                          format(field.value, 'PPP')
+                          format(field.value, "PPP")
                         ) : (
-                          <span>{t('common.endDate')}</span>
+                          <span>{t("common.endDate")}</span>
                         )}
                         <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                       </Button>
@@ -171,8 +174,8 @@ export const TripPlannerForm = () => {
                       selected={field.value}
                       onSelect={field.onChange}
                       disabled={(date) =>
-                        date < form.getValues('startDate') ||
-                        date > new Date('2025-01-01')
+                        date < form.getValues("startDate") ||
+                        date > new Date("2025-01-01")
                       }
                       initialFocus
                     />
@@ -189,7 +192,7 @@ export const TripPlannerForm = () => {
           name="budget"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t('common.budget')}</FormLabel>
+              <FormLabel>{t("common.budget")}</FormLabel>
               <FormControl>
                 <Input
                   type="number"
@@ -208,13 +211,15 @@ export const TripPlannerForm = () => {
           name="interests"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{t('common.interests')}</FormLabel>
+              <FormLabel>{t("common.interests")}</FormLabel>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                 {interests.map((interest) => (
                   <Button
                     key={interest}
                     type="button"
-                    variant={field.value?.includes(interest) ? 'default' : 'outline'}
+                    variant={
+                      field.value?.includes(interest) ? "default" : "outline"
+                    }
                     className="capitalize"
                     onClick={() => {
                       const currentValue = field.value || [];
@@ -234,9 +239,9 @@ export const TripPlannerForm = () => {
         />
 
         <Button type="submit" className="w-full" disabled={isLoading}>
-          {isLoading ? t('planner.loading') : t('common.generateItinerary')}
+          {isLoading ? t("planner.loading") : t("common.generateItinerary")}
         </Button>
       </form>
     </Form>
   );
-}; 
+};
