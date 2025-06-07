@@ -37,6 +37,7 @@
   },
   "features": {
     "title": "Funktionen",
+    "description": "Intelligente Funktionen für eine einfache Reiseplanung.",
     "weather": "Wettervorhersagen",
     "attractions": "Beliebte Sehenswürdigkeiten",
     "transportation": "Transport & Aktivitäten",

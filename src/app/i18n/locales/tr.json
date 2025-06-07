@@ -37,6 +37,7 @@
   },
   "features": {
     "title": "Özellikler",
+    "description": "Seyahatinizi kolaylaştıran akıllı özellikler.",
     "weather": "Hava Durumu Tahminleri",
     "attractions": "Popüler Yerler",
     "transportation": "Ulaşım ve Aktiviteler",

@@ -37,6 +37,7 @@
   },
   "features": {
     "title": "Características",
+    "description": "Funciones inteligentes para planificar tu viaje fácilmente.",
     "weather": "Pronósticos del tiempo",
     "attractions": "Atracciones populares",
     "transportation": "Transporte y actividades",

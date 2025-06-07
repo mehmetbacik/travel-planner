@@ -37,6 +37,7 @@
   },
   "features": {
     "title": "Features",
+    "description": "Smart features that simplify your trip.",
     "weather": "Weather Forecasts",
     "attractions": "Popular Attractions",
     "transportation": "Transportation & Activities",
