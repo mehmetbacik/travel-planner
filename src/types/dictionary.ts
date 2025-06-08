@@ -1,5 +1,6 @@
 export interface Dictionary {
   common: {
+    appName: string
     getStarted: string
     planYourTrip: string
     destination: string
@@ -7,6 +8,10 @@ export interface Dictionary {
     travelDates: string
     generateItinerary: string
     regenerate: string
+  }
+  nav: {
+    planner: string
+    about: string
   }
   features: {
     title: string

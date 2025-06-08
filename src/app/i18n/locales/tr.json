@@ -1,5 +1,6 @@
 {
   "common": {
+    "appName": "TravelPlanner",
     "getStarted": "Başla",
     "planYourTrip": "Seyahatinizi Planlayın",
     "destination": "Varış Noktası",
@@ -34,6 +35,10 @@
       "invalidBudget": "Bütçe pozitif bir sayı olmalıdır",
       "endDateBeforeStart": "Bitiş tarihi başlangıç tarihinden sonra olmalıdır"
     }
+  },
+  "nav": {
+    "planner": "Planlayıcı",
+    "about": "Hakkında"
   },
   "features": {
     "title": "Özellikler",

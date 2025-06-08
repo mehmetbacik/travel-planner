@@ -1,5 +1,6 @@
 {
   "common": {
+    "appName": "TravelPlanner",
     "getStarted": "Commencer",
     "planYourTrip": "Planifiez votre voyage",
     "destination": "Destination",
@@ -34,6 +35,10 @@
       "invalidBudget": "Le budget doit être un nombre positif",
       "endDateBeforeStart": "La date de fin doit être postérieure à la date de début"
     }
+  },
+  "nav": {
+    "planner": "Planificateur",
+    "about": "À propos"
   },
   "features": {
     "title": "Fonctionnalités",

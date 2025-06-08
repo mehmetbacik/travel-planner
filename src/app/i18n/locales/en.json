@@ -1,5 +1,6 @@
 {
   "common": {
+    "appName": "TravelPlanner",
     "getStarted": "Get Started",
     "planYourTrip": "Plan Your Trip",
     "destination": "Destination",
@@ -34,6 +35,10 @@
       "invalidBudget": "Budget must be a positive number",
       "endDateBeforeStart": "End date must be after start date"
     }
+  },
+  "nav": {
+    "planner": "Planner",
+    "about": "About"
   },
   "features": {
     "title": "Features",
@@ -85,4 +90,4 @@
       }
     }
   }
-} 
+}
