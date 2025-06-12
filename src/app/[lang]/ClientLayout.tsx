@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import { NotificationProvider } from '@/components/ui/Notification';
 import { Locale } from '../i18n/settings';
 import dynamic from 'next/dynamic';
+import { Dictionary } from '@/types/dictionary';
 
 const Navbar = dynamic(() => import('@/components/layout/Navbar'), {
   ssr: false,
@@ -18,18 +19,18 @@ const Footer = dynamic(() => import('@/components/layout/Footer'), {
 interface ClientLayoutProps {
   children: React.ReactNode;
   lang: Locale;
-  dict: any;
+  dict: Dictionary;
 }
 
 export default function ClientLayout({ children, lang, dict }: ClientLayoutProps) {
   return (
     <>
-      <Navbar currentLang={lang} />
+      <Navbar currentLang={lang} dict={dict} />
       <main className="flex-grow">
         <NotificationProvider />
         {children}
       </main>
-      <Footer currentLang={lang} />
+      <Footer currentLang={lang} dict={dict} />
       <Toaster
         position="top-right"
         toastOptions={{

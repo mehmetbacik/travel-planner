@@ -6,8 +6,35 @@ export interface Dictionary {
     destination: string
     interests: string
     travelDates: string
+    startDate: string
+    endDate: string
+    budget: string
     generateItinerary: string
     regenerate: string
+    downloadPDF: string
+    pdfDownloadError: string
+    pdfGenerating: string
+    pdfGenerated: string
+    saving: string
+    save: string
+    savingTrip: string
+    tripSaved: string
+    tripSaveError: string
+    recommendations: string
+    activities: string
+    localTips: string
+    budgetTips: string
+    weatherInfo: string
+    quickLinks: string
+    aboutUs: string
+    contact: string
+    allRightsReserved: string
+    validation: {
+      required: string
+      invalidDate: string
+      invalidBudget: string
+      endDateBeforeStart: string
+    }
   }
   nav: {
     planner: string
@@ -29,6 +56,38 @@ export interface Dictionary {
     customizedItinerary: string
     day: string
     loading: string
-    errors: string;
+    errors: string
+  }
+  home: {
+    hero: {
+      title: string
+      description: string
+      cta: {
+        primary: string
+        secondary: string
+      }
+    }
+    features: {
+      title: string
+      description: string
+      cards: {
+        destination: {
+          title: string
+          description: string
+        }
+        planning: {
+          title: string
+          description: string
+        }
+        budget: {
+          title: string
+          description: string
+        }
+        recommendations: {
+          title: string
+          description: string
+        }
+      }
+    }
   }
 } 

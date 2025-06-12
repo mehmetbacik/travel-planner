@@ -1,14 +1,15 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { Locale } from "@/app/i18n/settings";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { Dictionary } from "@/types/dictionary";
 
 interface NavbarProps {
   currentLang: Locale;
+  dict: Dictionary;
 }
 
 const languages = {
@@ -19,8 +20,7 @@ const languages = {
   de: "Deutsch",
 } as const;
 
-const Navbar = ({ currentLang }: NavbarProps) => {
-  const { t } = useTranslation();
+const Navbar = ({ currentLang, dict }: NavbarProps) => {
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -52,13 +52,13 @@ const Navbar = ({ currentLang }: NavbarProps) => {
     <nav className="navbar">
       <div className="navbar__container">
         <Link href={`/${currentLang}`} className="navbar__logo">
-          {t("common.appName")}
+          {dict.common.appName}
         </Link>
 
         {/* Desktop */}
         <div className="navbar__links">
-          <Link href={`/${currentLang}/planner`}>{t("nav.planner")}</Link>
-          <Link href={`/${currentLang}/about`}>{t("nav.about")}</Link>
+          <Link href={`/${currentLang}/planner`}>{dict.nav.planner}</Link>
+          <Link href={`/${currentLang}/about`}>{dict.nav.about}</Link>
 
           <div className="navbar__language" ref={dropdownRef}>
             <button
@@ -117,13 +117,13 @@ const Navbar = ({ currentLang }: NavbarProps) => {
           href={`/${currentLang}/planner`}
           onClick={() => setIsMobileOpen(false)}
         >
-          {t("nav.planner")}
+          {dict.nav.planner}
         </Link>
         <Link
           href={`/${currentLang}/about`}
           onClick={() => setIsMobileOpen(false)}
         >
-          {t("nav.about")}
+          {dict.nav.about}
         </Link>
         <div className="navbar__language">
           <div className="navbar__language-menu">
