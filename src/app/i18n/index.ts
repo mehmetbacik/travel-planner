@@ -12,20 +12,40 @@ import fr from './locales/fr.json';
 
 const resources = {
   en: {
-    translation: en,
+    common: en.common,
+    nav: en.nav,
+    features: en.features,
+    planner: en.planner,
+    home: en.home
   },
   tr: {
-    translation: tr,
+    common: tr.common,
+    nav: tr.nav,
+    features: tr.features,
+    planner: tr.planner,
+    home: tr.home
   },
   es: {
-    translation: es,
+    common: es.common,
+    nav: es.nav,
+    features: es.features,
+    planner: es.planner,
+    home: es.home
   },
   de: {
-    translation: de,
+    common: de.common,
+    nav: de.nav,
+    features: de.features,
+    planner: de.planner,
+    home: de.home
   },
   fr: {
-    translation: fr,
-  },
+    common: fr.common,
+    nav: fr.nav,
+    features: fr.features,
+    planner: fr.planner,
+    home: fr.home
+  }
 };
 
 // For error handling
@@ -33,25 +53,31 @@ const handleError = (error: Error) => {
   console.error('i18n initialization error:', error);
 };
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources,
-    fallbackLng: 'en',
-    supportedLngs: ['en', 'tr', 'es', 'de', 'fr'],
-    interpolation: {
-      escapeValue: false,
-    },
-    detection: {
-      order: ['path', 'navigator', 'htmlTag'],
-      lookupFromPathIndex: 0,
-      caches: ['localStorage'],
-    },
-    react: {
-      useSuspense: false,
-    },
-  })
-  .catch(handleError);
+if (!i18n.isInitialized) {
+  i18n
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+      resources,
+      fallbackLng: 'en',
+      supportedLngs: ['en', 'tr', 'es', 'de', 'fr'],
+      defaultNS: 'common',
+      ns: ['common', 'nav', 'features', 'planner', 'home'],
+      interpolation: {
+        escapeValue: false,
+      },
+      detection: {
+        order: ['path', 'navigator', 'htmlTag'],
+        lookupFromPathIndex: 0,
+        caches: ['localStorage'],
+      },
+      react: {
+        useSuspense: false,
+        bindI18n: 'languageChanged loaded',
+        bindI18nStore: 'added removed',
+      },
+    })
+    .catch(handleError);
+}
 
 export default i18n; 

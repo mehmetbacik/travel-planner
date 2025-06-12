@@ -20,11 +20,18 @@ const languages = {
 } as const;
 
 const Navbar = ({ currentLang }: NavbarProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation(['common', 'nav']);
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Ensure language is set correctly on mount
+    if (i18n.language !== currentLang) {
+      i18n.changeLanguage(currentLang);
+    }
+  }, [currentLang, i18n]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -52,13 +59,13 @@ const Navbar = ({ currentLang }: NavbarProps) => {
     <nav className="navbar">
       <div className="navbar__container">
         <Link href={`/${currentLang}`} className="navbar__logo">
-          {t("common.appName")}
+          {t('common:appName')}
         </Link>
 
         {/* Desktop */}
         <div className="navbar__links">
-          <Link href={`/${currentLang}/planner`}>{t("nav.planner")}</Link>
-          <Link href={`/${currentLang}/about`}>{t("nav.about")}</Link>
+          <Link href={`/${currentLang}/planner`}>{t('nav:planner')}</Link>
+          <Link href={`/${currentLang}/about`}>{t('nav:about')}</Link>
 
           <div className="navbar__language" ref={dropdownRef}>
             <button
@@ -117,13 +124,13 @@ const Navbar = ({ currentLang }: NavbarProps) => {
           href={`/${currentLang}/planner`}
           onClick={() => setIsMobileOpen(false)}
         >
-          {t("nav.planner")}
+          {t('nav:planner')}
         </Link>
         <Link
           href={`/${currentLang}/about`}
           onClick={() => setIsMobileOpen(false)}
         >
-          {t("nav.about")}
+          {t('nav:about')}
         </Link>
         <div className="navbar__language">
           <div className="navbar__language-menu">
