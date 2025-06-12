@@ -28,8 +28,8 @@ const Navbar = ({ currentLang }: NavbarProps) => {
 
   useEffect(() => {
     // Ensure language is set correctly on mount
-    if (i18n.language !== currentLang) {
-      i18n.changeLanguage(currentLang);
+    if (i18n.language !== currentLang && i18n.isInitialized) {
+      i18n.changeLanguage(currentLang).catch(console.error);
     }
   }, [currentLang, i18n]);
 
@@ -47,12 +47,19 @@ const Navbar = ({ currentLang }: NavbarProps) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleLanguageChange = (lang: Locale) => {
-    const currentPath = window.location.pathname;
-    const newPath = currentPath.replace(`/${currentLang}`, `/${lang}`);
-    router.push(newPath);
-    setIsDropdownOpen(false);
-    setIsMobileOpen(false);
+  const handleLanguageChange = async (lang: Locale) => {
+    try {
+      if (i18n.isInitialized) {
+        await i18n.changeLanguage(lang);
+        const currentPath = window.location.pathname;
+        const newPath = currentPath.replace(`/${currentLang}`, `/${lang}`);
+        router.push(newPath);
+        setIsDropdownOpen(false);
+        setIsMobileOpen(false);
+      }
+    } catch (error) {
+      console.error('Language change error:', error);
+    }
   };
 
   return (
