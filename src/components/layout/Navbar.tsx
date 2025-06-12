@@ -20,18 +20,11 @@ const languages = {
 } as const;
 
 const Navbar = ({ currentLang }: NavbarProps) => {
-  const { t, i18n } = useTranslation(['common', 'nav']);
+  const { t } = useTranslation();
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Ensure language is set correctly on mount
-    if (i18n.language !== currentLang && i18n.isInitialized) {
-      i18n.changeLanguage(currentLang).catch(console.error);
-    }
-  }, [currentLang, i18n]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -47,32 +40,25 @@ const Navbar = ({ currentLang }: NavbarProps) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleLanguageChange = async (lang: Locale) => {
-    try {
-      if (i18n.isInitialized) {
-        await i18n.changeLanguage(lang);
-        const currentPath = window.location.pathname;
-        const newPath = currentPath.replace(`/${currentLang}`, `/${lang}`);
-        router.push(newPath);
-        setIsDropdownOpen(false);
-        setIsMobileOpen(false);
-      }
-    } catch (error) {
-      console.error('Language change error:', error);
-    }
+  const handleLanguageChange = (lang: Locale) => {
+    const currentPath = window.location.pathname;
+    const newPath = currentPath.replace(`/${currentLang}`, `/${lang}`);
+    router.push(newPath);
+    setIsDropdownOpen(false);
+    setIsMobileOpen(false);
   };
 
   return (
     <nav className="navbar">
       <div className="navbar__container">
         <Link href={`/${currentLang}`} className="navbar__logo">
-          {t('common:appName')}
+          {t("common.appName")}
         </Link>
 
         {/* Desktop */}
         <div className="navbar__links">
-          <Link href={`/${currentLang}/planner`}>{t('nav:planner')}</Link>
-          <Link href={`/${currentLang}/about`}>{t('nav:about')}</Link>
+          <Link href={`/${currentLang}/planner`}>{t("nav.planner")}</Link>
+          <Link href={`/${currentLang}/about`}>{t("nav.about")}</Link>
 
           <div className="navbar__language" ref={dropdownRef}>
             <button
@@ -131,13 +117,13 @@ const Navbar = ({ currentLang }: NavbarProps) => {
           href={`/${currentLang}/planner`}
           onClick={() => setIsMobileOpen(false)}
         >
-          {t('nav:planner')}
+          {t("nav.planner")}
         </Link>
         <Link
           href={`/${currentLang}/about`}
           onClick={() => setIsMobileOpen(false)}
         >
-          {t('nav:about')}
+          {t("nav.about")}
         </Link>
         <div className="navbar__language">
           <div className="navbar__language-menu">
