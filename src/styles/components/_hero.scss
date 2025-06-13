@@ -1,16 +1,37 @@
 .hero {
   position: relative;
-  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  height: 100vh;
   padding: $spacing-2xl $spacing-lg;
   color: $primary;
 
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-md $spacing-lg;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    opacity: 0.3;
+    background: $background-black;
+  }
+
   &__content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     position: relative;
-    max-width: 600px;
-    margin-left: $spacing-xl;
     z-index: 2;
     text-align: left;
 
@@ -43,30 +64,30 @@
     }
   }
 
-&__cta {
-  background-color: $color-white;
-  color: $primary;
-  padding: $spacing-md $spacing-2xl;
-  border-radius: $border-radius-lg;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
-  cursor: pointer;
-  transition: $transition-base;
-  border: none;
-  display: inline-block;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  &__cta {
+    background-color: $color-white;
+    color: $primary;
+    padding: $spacing-md $spacing-2xl;
+    border-radius: $border-radius-lg;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    transition: $transition-base;
+    border: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-  &:hover {
-    background-color: lighten($color-white, 10%);
-    color: darken($primary, 10%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  }
+    &:hover {
+      background-color: lighten($color-white, 10%);
+      color: darken($primary, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
 
-  @media (max-width: $md-breakpoint) {
-    width: 100%;
-    text-align: center;
-    padding: $spacing-md 0;
+    @media (max-width: $md-breakpoint) {
+      width: 100%;
+      text-align: center;
+      padding: $spacing-md 0;
+    }
   }
-}
 }
