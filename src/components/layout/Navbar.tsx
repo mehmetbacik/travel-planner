@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Locale } from "@/app/i18n/settings";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { Dictionary } from "@/types/dictionary";
+import ProjectLogo from "@/assets/img/logo.png";
 
 interface NavbarProps {
   currentLang: Locale;
@@ -52,7 +54,13 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
     <nav className="navbar">
       <div className="navbar__container">
         <Link href={`/${currentLang}`} className="navbar__logo">
-          {dict.common.appName}
+          <Image
+            src={ProjectLogo}
+            alt="Travel Planner"
+            width={150}
+            height={75}
+            priority
+          />
         </Link>
 
         {/* Desktop */}
