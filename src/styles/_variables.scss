@@ -1,26 +1,14 @@
 //Colors
-
-// Primary Color
 $primary: #FF5A5F;
-
-// Secondary Colors
 $secondary: #007A87;
 $accent: #FFB400;
-
-// Background Colors
 $background-light: #F9F9F9;
 $background-dark: #2C3E50;
 $background-black: #000000;
-
-// Text Colors
 $text-primary: #2B2B2B;
 $text-secondary: #666666;
 $text-on-primary: #FFFFFF;
-
-// Borders and Separators
 $border-color: #E0E0E0;
-
-// Status Colors
 $success: #4CAF50;
 $warning: #FFC107;
 $error: #E74C3C;
@@ -47,6 +35,12 @@ $lg-breakpoint: map-get($breakpoints, "lg");
 $xl-breakpoint: map-get($breakpoints, "xl");
 $xxl-breakpoint: map-get($breakpoints, "xxl");
 
+// Spacing
+$spacing-unit: 0.25rem;
+
+//Container
+$container-padding: $spacing-unit * 4;
+
 // Typography
 $font-family-base: "Inter", sans-serif;
 $font-size-base: 1rem;
@@ -54,9 +48,6 @@ $line-height-base: 1.5;
 
 // Transitions
 $transition-base: all 0.3s ease; 
-
-// Spacing
-$spacing-unit: 0.25rem;
 
 // Component Specific Variables
 $color-white: $text-on-primary;
