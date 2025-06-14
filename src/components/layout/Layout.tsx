@@ -10,7 +10,7 @@ interface LayoutProps {
 
 export const Layout = ({ children, currentLang }: LayoutProps) => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div>
       <Navbar currentLang={currentLang} />
       <main className="flex-grow">{children}</main>
       <Footer currentLang={currentLang} />

@@ -19,7 +19,7 @@ export default async function LocaleLayout({
   const dict = await getDictionary(lang);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div>
       <ClientLayout lang={lang} dict={dict}>
         {children}
       </ClientLayout>
