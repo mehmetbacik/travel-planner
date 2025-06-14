@@ -27,6 +27,7 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -37,9 +38,16 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
         setIsDropdownOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsSticky(window.scrollY > 30);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const handleLanguageChange = (lang: Locale) => {
@@ -51,7 +59,7 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isSticky ? "sticky" : ""}`}>
       <div className="navbar__container container">
         <Link href={`/${currentLang}`} className="navbar__logo">
           <Image
