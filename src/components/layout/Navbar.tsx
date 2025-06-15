@@ -2,25 +2,31 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { Locale } from "@/app/i18n/settings";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { Dictionary } from "@/types/dictionary";
 import ProjectLogo from "@/assets/img/logo.png";
+import enFlag from "@/assets/flags/en.png";
+import trFlag from "@/assets/flags/tr.png";
+import esFlag from "@/assets/flags/es.png";
+import frFlag from "@/assets/flags/fr.png";
+import deFlag from "@/assets/flags/de.png";
 
 interface NavbarProps {
   currentLang: Locale;
   dict: Dictionary;
 }
 
-const languages = {
-  en: "English",
-  tr: "Türkçe",
-  es: "Español",
-  fr: "Français",
-  de: "Deutsch",
-} as const;
+const languages: Record<Locale, { label: string; flag: StaticImageData }> = {
+  en: { label: "English", flag: enFlag },
+  tr: { label: "Türkçe", flag: trFlag },
+  es: { label: "Español", flag: esFlag },
+  fr: { label: "Français", flag: frFlag },
+  de: { label: "Deutsch", flag: deFlag },
+};
 
 const Navbar = ({ currentLang, dict }: NavbarProps) => {
   const router = useRouter();
@@ -81,7 +87,13 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="navbar__language-button"
             >
-              <span>{languages[currentLang]}</span>
+              <Image
+                src={languages[currentLang].flag}
+                alt={languages[currentLang].label}
+                width={24}
+                height={16}
+              />
+              <span>{languages[currentLang].label}</span>
               <svg
                 className={isDropdownOpen ? "rotate" : ""}
                 fill="none"
@@ -99,13 +111,14 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
 
             {isDropdownOpen && (
               <div className="navbar__language-menu">
-                {Object.entries(languages).map(([code, name]) => (
+                {Object.entries(languages).map(([code, { label, flag }]) => (
                   <button
                     key={code}
                     onClick={() => handleLanguageChange(code as Locale)}
                     className={currentLang === code ? "active" : ""}
                   >
-                    {name}
+                    <Image src={flag} alt={label} width={24} height={16} />
+                    <span>{label}</span>
                   </button>
                 ))}
               </div>
@@ -143,13 +156,14 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
         </Link>
         <div className="navbar__language">
           <div className="navbar__language-menu">
-            {Object.entries(languages).map(([code, name]) => (
+            {Object.entries(languages).map(([code, { label, flag }]) => (
               <button
                 key={code}
                 onClick={() => handleLanguageChange(code as Locale)}
                 className={currentLang === code ? "active" : ""}
               >
-                {name}
+                <Image src={flag} alt={label} width={24} height={16} />
+                <span>{label}</span>
               </button>
             ))}
           </div>
