@@ -37,6 +37,7 @@
     }
   },
   "nav": {
+    "home": "Anasayfa",
     "planner": "Planlayıcı",
     "about": "Hakkında"
   },

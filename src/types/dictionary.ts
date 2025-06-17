@@ -37,6 +37,7 @@ export interface Dictionary {
     }
   }
   nav: {
+    home: string
     planner: string
     about: string
   }

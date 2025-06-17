@@ -71,14 +71,15 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
           <Image
             src={ProjectLogo}
             alt="Travel Planner"
-            width={150}
-            height={75}
+            width={90}
+            height={50}
             priority
           />
         </Link>
 
         {/* Desktop */}
         <div className="navbar__links">
+          <Link href={`/${currentLang}/home`}>{dict.nav.home}</Link>
           <Link href={`/${currentLang}/planner`}>{dict.nav.planner}</Link>
           <Link href={`/${currentLang}/about`}>{dict.nav.about}</Link>
 

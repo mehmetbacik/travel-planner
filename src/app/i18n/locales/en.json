@@ -37,6 +37,7 @@
     }
   },
   "nav": {
+    "home": "Home",
     "planner": "Planner",
     "about": "About"
   },

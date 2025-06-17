@@ -37,6 +37,7 @@
     }
   },
   "nav": {
+    "home": "Startseite",
     "planner": "Planer",
     "about": "Über uns"
   },

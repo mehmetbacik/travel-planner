@@ -37,6 +37,7 @@
     }
   },
   "nav": {
+    "home": "Accueil",
     "planner": "Planificateur",
     "about": "À propos"
   },
