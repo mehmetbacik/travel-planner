@@ -140,14 +140,20 @@
         display: none;
         background: none;
         border: none;
-        font-size: $font-size-xl;
+        font-size: $font-size-2xl;
         cursor: pointer;
+        color: $color-white;
         @media (max-width: $md-breakpoint) {
             display: block;
         }
     }
     &__mobile-menu {
         display: none;
+        .navbar__mobile-close {
+            font-size: $font-size-2xl;
+            cursor: pointer;
+            color: $color-white;
+        }
         @media (max-width: $md-breakpoint) {
             position: fixed;
             top: 0;
