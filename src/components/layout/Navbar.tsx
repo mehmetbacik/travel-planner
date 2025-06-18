@@ -79,7 +79,7 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
 
         {/* Desktop */}
         <div className="navbar__links">
-          <Link href={`/${currentLang}/home`}>{dict.nav.home}</Link>
+          <Link href={`/${currentLang}/`}>{dict.nav.home}</Link>
           <Link href={`/${currentLang}/planner`}>{dict.nav.planner}</Link>
           <Link href={`/${currentLang}/about`}>{dict.nav.about}</Link>
 
