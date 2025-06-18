@@ -33,6 +33,7 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
@@ -43,10 +44,17 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
       ) {
         setIsDropdownOpen(false);
       }
+      if (
+        isMobileOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsMobileOpen(false);
+      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [isMobileOpen]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -133,7 +141,7 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileOpen ? <IoClose /> : <IoMenu />}
+          <IoMenu />
         </button>
       </div>
 
@@ -142,7 +150,19 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
         className={`navbar__mobile-menu ${
           isMobileOpen ? "navbar__mobile-menu--open" : ""
         }`}
+        ref={mobileMenuRef}
       >
+        <button
+          className="navbar__mobile-close"
+          onClick={() => setIsMobileOpen(false)}
+          aria-label="Close mobile menu"
+        >
+          <IoClose />
+        </button>
+
+        <Link href={`/${currentLang}/`} onClick={() => setIsMobileOpen(false)}>
+          {dict.nav.home}
+        </Link>
         <Link
           href={`/${currentLang}/planner`}
           onClick={() => setIsMobileOpen(false)}

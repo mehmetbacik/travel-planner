@@ -104,6 +104,9 @@
             padding: $spacing-sm;
             z-index: 10;
             width: 180px;
+            @media (max-width: $md-breakpoint) {
+              width: 100%;
+            }
             button {
                 width: 100%;
                 text-align: left;
