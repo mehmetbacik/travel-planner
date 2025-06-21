@@ -40,6 +40,8 @@ export interface Dictionary {
     home: string
     planner: string
     about: string
+    blog: string
+    contact: string
   }
   features: {
     title: string

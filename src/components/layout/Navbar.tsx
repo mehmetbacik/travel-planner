@@ -118,6 +118,24 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
             {dict.nav.about}
           </Link>
 
+          <Link
+            href={`/${currentLang}/blog`}
+            className={
+              pathname.startsWith(`/${currentLang}/blog`) ? "active" : ""
+            }
+          >
+            {dict.nav.blog}
+          </Link>
+
+          <Link
+            href={`/${currentLang}/contact`}
+            className={
+              pathname.startsWith(`/${currentLang}/contact`) ? "active" : ""
+            }
+          >
+            {dict.nav.contact}
+          </Link>
+
           <div className="navbar__language" ref={dropdownRef}>
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -211,6 +229,24 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
           onClick={() => setIsMobileOpen(false)}
         >
           {dict.nav.about}
+        </Link>
+        <Link
+          href={`/${currentLang}/blog`}
+          className={
+            pathname.startsWith(`/${currentLang}/blog`) ? "active" : ""
+          }
+          onClick={() => setIsMobileOpen(false)}
+        >
+          {dict.nav.blog}
+        </Link>
+        <Link
+          href={`/${currentLang}/contact`}
+          className={
+            pathname.startsWith(`/${currentLang}/contact`) ? "active" : ""
+          }
+          onClick={() => setIsMobileOpen(false)}
+        >
+          {dict.nav.contact}
         </Link>
         <div className="navbar__language">
           <div className="navbar__language-menu">

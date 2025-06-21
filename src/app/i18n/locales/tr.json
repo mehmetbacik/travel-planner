@@ -39,7 +39,9 @@
   "nav": {
     "home": "Anasayfa",
     "planner": "Planlayıcı",
-    "about": "Hakkında"
+    "about": "Hakkında",
+    "blog": "Blog",
+    "contact": "İletişim"
   },
   "features": {
     "title": "Özellikler",

@@ -39,7 +39,9 @@
   "nav": {
     "home": "Inicio",
     "planner": "Planificador",
-    "about": "Acerca de"
+    "about": "Acerca de",
+    "blog": "Blog",
+    "contact": "Contacto"
   },
   "features": {
     "title": "Características",
