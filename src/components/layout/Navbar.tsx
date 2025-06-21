@@ -5,7 +5,7 @@ import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import { Locale } from "@/app/i18n/settings";
 import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { Dictionary } from "@/types/dictionary";
 import ProjectLogo from "@/assets/img/logo.png";
@@ -35,6 +35,12 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const [isSticky, setIsSticky] = useState(false);
+
+  const rawPathname = usePathname();
+  const pathname =
+    rawPathname.length > 1 && rawPathname.endsWith("/")
+      ? rawPathname.slice(0, -1)
+      : rawPathname;
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -87,9 +93,30 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
 
         {/* Desktop */}
         <div className="navbar__links">
-          <Link href={`/${currentLang}/`}>{dict.nav.home}</Link>
-          <Link href={`/${currentLang}/planner`}>{dict.nav.planner}</Link>
-          <Link href={`/${currentLang}/about`}>{dict.nav.about}</Link>
+          <Link
+            href={`/${currentLang}`}
+            className={pathname === `/${currentLang}` ? "active" : ""}
+          >
+            {dict.nav.home}
+          </Link>
+
+          <Link
+            href={`/${currentLang}/planner`}
+            className={
+              pathname.startsWith(`/${currentLang}/planner`) ? "active" : ""
+            }
+          >
+            {dict.nav.planner}
+          </Link>
+
+          <Link
+            href={`/${currentLang}/about`}
+            className={
+              pathname.startsWith(`/${currentLang}/about`) ? "active" : ""
+            }
+          >
+            {dict.nav.about}
+          </Link>
 
           <div className="navbar__language" ref={dropdownRef}>
             <button
@@ -160,17 +187,27 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
           <IoClose />
         </button>
 
-        <Link href={`/${currentLang}/`} onClick={() => setIsMobileOpen(false)}>
+        <Link
+          href={`/${currentLang}`}
+          className={pathname === `/${currentLang}` ? "active" : ""}
+          onClick={() => setIsMobileOpen(false)}
+        >
           {dict.nav.home}
         </Link>
         <Link
           href={`/${currentLang}/planner`}
+          className={
+            pathname.startsWith(`/${currentLang}/planner`) ? "active" : ""
+          }
           onClick={() => setIsMobileOpen(false)}
         >
           {dict.nav.planner}
         </Link>
         <Link
           href={`/${currentLang}/about`}
+          className={
+            pathname.startsWith(`/${currentLang}/about`) ? "active" : ""
+          }
           onClick={() => setIsMobileOpen(false)}
         >
           {dict.nav.about}

@@ -58,6 +58,10 @@
             &:hover {
                 color: $color-primary;
             }
+            &.active {
+                color: $color-primary;
+                font-weight: $font-weight-bold;
+            }
         }
         @media (max-width: $md-breakpoint) {
             display: none;
