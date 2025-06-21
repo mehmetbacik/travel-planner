@@ -19,17 +19,18 @@ export default function Hero({ dict }: HeroProps) {
   }, []);
 
   return (
-    <section
-      className="hero"
-      style={{
-        backgroundImage: bgLoaded ? `url(${heroBg.src})` : "none",
-        backgroundPosition: "center right",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        opacity: bgLoaded ? 1 : 0,
-        transition: "opacity 0.8s ease-in-out",
-      }}
-    >
+    <section className="hero">
+      <div
+        className="hero__bg"
+        style={{
+          backgroundImage: bgLoaded ? `url(${heroBg.src})` : "none",
+          backgroundPosition: "center right",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          opacity: bgLoaded ? 1 : 0,
+          transition: "opacity 0.8s ease-in-out",
+        }}
+      ></div>
       <div className="hero__overlay"></div>
       <div className="hero__container">
         <div className="hero__content">
