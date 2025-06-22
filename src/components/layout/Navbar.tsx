@@ -80,7 +80,7 @@ const Navbar = ({ currentLang, dict }: NavbarProps) => {
 
   return (
     <nav className={`navbar ${isSticky ? "sticky" : ""}`}>
-      <div className="navbar__container container">
+      <div className="navbar__body container">
         <Link href={`/${currentLang}`} className="navbar__logo">
           <Image
             src={ProjectLogo}

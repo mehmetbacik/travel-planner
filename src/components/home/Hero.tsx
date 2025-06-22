@@ -32,9 +32,9 @@ export default function Hero({ dict }: HeroProps) {
         }}
       ></div>
       <div className="hero__overlay"></div>
-      <div className="hero__container">
+      <div className="hero__body container">
         <div className="hero__content">
-          <div>
+          <div className="hero__content__headline-wrapper">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: bgLoaded ? 1 : 0, y: bgLoaded ? 0 : 20 }}
@@ -60,7 +60,7 @@ export default function Hero({ dict }: HeroProps) {
               {dict.planner.description}
             </motion.p>
           </div>
-          <div>
+          <div className="hero__content__action-wrapper">
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: bgLoaded ? 1 : 0, y: bgLoaded ? 0 : 20 }}
