@@ -35,6 +35,14 @@ export default function Hero({ dict }: HeroProps) {
       <div className="hero__container">
         <div className="hero__content">
           <div>
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: bgLoaded ? 1 : 0, y: bgLoaded ? 0 : 20 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="hero__subtitle"
+            >
+              {dict.planner.subtitle}
+            </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: bgLoaded ? 1 : 0, y: bgLoaded ? 0 : 20 }}
@@ -49,7 +57,7 @@ export default function Hero({ dict }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hero__description"
             >
-              {dict.planner.subtitle}
+              {dict.planner.description}
             </motion.p>
           </div>
           <div>

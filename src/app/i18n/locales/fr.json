@@ -52,8 +52,9 @@
     "food": "Recommandations culinaires"
   },
   "planner": {
-    "title": "Votre Voyage, à Vos Conditions — Tout pour une Expérience de Voyage Personnalisée",
-    "subtitle": "Créez un itinéraire personnalisé selon vos destinations, centres d’intérêt et dates de voyage.",
+    "title": "Tout pour une Expérience de Voyage Personnalisée",
+    "subtitle": "Votre Voyage, à Vos Conditions",
+    "description": "Créez un itinéraire personnalisé selon vos destinations, centres d’intérêt et dates de voyage.",
     "destinationPlaceholder": "ex. Tokyo",
     "selectInterests": "Sélectionner...",
     "customizedItinerary": "Votre itinéraire personnalisé",

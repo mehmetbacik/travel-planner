@@ -52,8 +52,9 @@
     "food": "Food Recommendations"
   },
   "planner": {
-    "title": "Your Journey, Your Terms — All for a Truly Personal Travel Experience",
-    "subtitle": "Create a customized itinerary based on your destinations, interests, and travel dates.",
+    "title": "All for a Truly Personal Travel Experience",
+    "subtitle": "Your Journey, Your Terms",
+    "description": "Create a customized itinerary based on your destinations, interests, and travel dates.",
     "destinationPlaceholder": "e.g. Tokyo",
     "selectInterests": "Select...",
     "customizedItinerary": "Your Customized Itinerary",

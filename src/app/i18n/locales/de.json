@@ -52,8 +52,9 @@
     "food": "Kulinarische Empfehlungen"
   },
   "planner": {
-    "title": "Deine Reise, Zu Deinen Bedingungen — Alles für ein Persönliches Reiseerlebnis",
-    "subtitle": "Erstelle einen individuellen Reiseplan basierend auf deinem Reiseziel, deinen Interessen und Reisedaten.",
+    "title": "Alles für ein Persönliches Reiseerlebnis",
+    "subtitle": "Deine Reise, Zu Deinen Bedingungen",
+    "description": "Erstelle einen individuellen Reiseplan basierend auf deinem Reiseziel, deinen Interessen und Reisedaten.",
     "destinationPlaceholder": "z. B. Tokio",
     "selectInterests": "Auswählen...",
     "customizedItinerary": "Dein individueller Reiseplan",

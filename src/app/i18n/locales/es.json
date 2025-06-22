@@ -52,8 +52,9 @@
     "food": "Recomendaciones gastronómicas"
   },
   "planner": {
-    "title": "Tu Viaje, en Tus Condiciones — Todo para una Experiencia de Viaje Personalizada",
-    "subtitle": "Crea un itinerario personalizado según tus destinos, intereses y fechas de viaje.",
+    "title": "Todo para una Experiencia de Viaje Personalizada",
+    "subtitle": "Tu Viaje, en Tus Condiciones",
+    "description": "Crea un itinerario personalizado según tus destinos, intereses y fechas de viaje.",
     "destinationPlaceholder": "ej. Tokio",
     "selectInterests": "Seleccionar...",
     "customizedItinerary": "Tu itinerario personalizado",

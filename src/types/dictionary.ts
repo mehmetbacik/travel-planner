@@ -54,6 +54,7 @@ export interface Dictionary {
   planner: {
     title: string
     subtitle: string
+    description: string
     destinationPlaceholder: string
     selectInterests: string
     customizedItinerary: string

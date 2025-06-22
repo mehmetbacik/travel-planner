@@ -176,11 +176,15 @@
                 transform: translateX(0);
             }
             a {
-              color: $color-white;
-              font-size: $font-size-lg;
-              &:hover {
-                  color: $accent;
-              }
+                color: $color-white;
+                font-size: $font-size-lg;
+                &:hover {
+                    color: $color-primary;
+                }
+                &.active {
+                    color: $color-primary;
+                    font-weight: $font-weight-bold;
+                }
             }
         }
     }

@@ -52,8 +52,9 @@
     "food": "Yemek Önerileri"
   },
   "planner": {
-    "title": "Senin Yolculuğun, Senin Şartlarınla — Her Şey Kişisel Bir Yolculuk İçin",
-    "subtitle": "Destinasyonlarınıza, ilgi alanlarınıza ve seyahat tarihlerinize göre özelleştirilmiş bir rota oluşturun.",
+    "title": "Her Şey Kişisel Bir Yolculuk İçin",
+    "subtitle": "Senin Yolculuğun, Senin Şartlarınla",
+    "description": "Destinasyonlarınıza, ilgi alanlarınıza ve seyahat tarihlerinize göre özelleştirilmiş bir rota oluşturun.",
     "destinationPlaceholder": "örn. Tokyo",
     "selectInterests": "Seçin...",
     "customizedItinerary": "Size Özel Rota",
