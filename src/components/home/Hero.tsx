@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Dictionary } from "@/types/dictionary";
-import heroBg from "@/assets/img/hero-bg.jpg";
+import homeBg from "@/assets/img/home-bg.jpg";
 
 interface HeroProps {
   dict: Dictionary;
@@ -14,7 +14,7 @@ export default function Hero({ dict }: HeroProps) {
 
   useEffect(() => {
     const img = new Image();
-    img.src = heroBg.src;
+    img.src = homeBg.src;
     img.onload = () => setBgLoaded(true);
   }, []);
 
@@ -23,7 +23,7 @@ export default function Hero({ dict }: HeroProps) {
       <div
         className="hero__bg"
         style={{
-          backgroundImage: bgLoaded ? `url(${heroBg.src})` : "none",
+          backgroundImage: bgLoaded ? `url(${homeBg.src})` : "none",
           backgroundPosition: "center right",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
