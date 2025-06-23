@@ -1,9 +1,54 @@
+@import "@/styles/variables";
+
 .footer {
   background-color: $background-light;
   color: $text-secondary;
-  padding: $spacing-2xl $spacing-lg;
+  &__newsletter {
+    background-color: $primary;
+    padding: $spacing-xl 0;
+    &-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: $spacing-lg;
+    }
+    &-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-md;
+      margin-top: $spacing-md;
+    }
+    &-input {
+      padding: $spacing-md;
+      border: 1px solid $border-color;
+      border-radius: $border-radius-lg;
+      font-size: $font-size-md;
+      width: 100%;
+      max-width: 300px;
+      background-color: $background-light;
+      color: $color-white;
+      &:focus {
+        outline: none;
+        border-color: $primary;
+        box-shadow: 0 0 0 2px rgba($primary, 0.2);
+      }
+    }
+    &-button {
+      padding: $spacing-md $spacing-lg;
+      background-color: $primary;
+      color: $color-white;
+      border: none;
+      border-radius: $border-radius-lg;
+      cursor: pointer;
+      transition: $transition-base;
+      &:hover {
+        background-color: darken($primary, 10%);
+      }
+    }
+  }
 
-  .footer__container {
+  .footer__body {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: $spacing-xl;

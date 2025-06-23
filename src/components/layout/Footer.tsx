@@ -19,7 +19,25 @@ interface FooterProps {
 const Footer = ({ currentLang, dict }: FooterProps) => {
   return (
     <footer className="footer">
-      <div className="footer__container">
+      <div className="footer__newsletter">
+        <div className="footer__newsletter-body container">
+          <div className="footer__newsletter-section">
+            <h3 className="footer__newsletter-title">{dict.footer.newsletterTitle}</h3>
+            <p className="footer__newsletter-description">{dict.footer.newsletterDesc}</p>
+            <form className="footer__newsletter-form">
+              <input
+                type="email"
+                placeholder={dict.footer.emailPlaceholder}
+                className="footer__newsletter-input"
+              />
+              <button type="submit" className="footer__newsletter-button">
+                {dict.footer.subscribe}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div className="footer__body">
         <div className="footer__content">
           <div className="footer__section">
             <h3 className="footer__title">{dict.common.quickLinks}</h3>
@@ -49,21 +67,6 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
                 </a>
               </li>
             </ul>
-          </div>
-
-          <div className="footer__section">
-            <h3 className="footer__title">{dict.footer.newsletterTitle}</h3>
-            <p className="footer__description">{dict.footer.newsletterDesc}</p>
-            <form className="footer__form">
-              <input
-                type="email"
-                placeholder={dict.footer.emailPlaceholder}
-                className="footer__input"
-              />
-              <button type="submit" className="footer__button">
-                {dict.footer.subscribe}
-              </button>
-            </form>
           </div>
 
           <div className="footer__section">
@@ -112,7 +115,7 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
             </div>
           </div>
         </div>
-        
+
         <div className="footer__bottom">
           <p className="footer__copyright">
             © {new Date().getFullYear()} {dict.common.appName}.{" "}
