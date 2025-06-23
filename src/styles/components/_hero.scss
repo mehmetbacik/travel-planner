@@ -39,10 +39,9 @@
         text-align: left;
         width: 100%;
         @media (max-width: $md-breakpoint) {
-            max-width: 100%;
-            margin: 0 auto;
-            text-align: center;
-            padding: 0 $spacing-md;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         &__headline-wrapper {
             display: flex;
@@ -52,6 +51,11 @@
             gap: $spacing-lg;
             flex: 2;
             color: $text-on-primary;
+            @media (max-width: $md-breakpoint) {
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
             .hero__subtitle {
                 font-size: $font-size-lg;
             }
@@ -72,7 +76,7 @@
                 background-color: $color-white;
                 color: $primary;
                 padding: $spacing-md $spacing-2xl;
-                border-radius: $border-radius-lg;
+                border-radius: 8px;
                 font-size: $font-size-lg;
                 font-weight: $font-weight-semibold;
                 cursor: pointer;
@@ -81,15 +85,12 @@
                 display: inline-block;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                 &:hover {
-                    background-color: lighten($color-white, 10%);
-                    color: darken($primary, 10%);
-                    transform: translateY(-2px);
+                    background-color: $primary;
+                    color: $text-on-primary;
                     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
                 }
                 @media (max-width: $md-breakpoint) {
-                    width: 100%;
-                    text-align: center;
-                    padding: $spacing-md 0;
+                    padding: $spacing-sm $spacing-xl;
                 }
             }
         }
