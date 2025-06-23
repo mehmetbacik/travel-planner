@@ -33,7 +33,7 @@
     &__content {
         display: flex;
         align-items: center;
-        gap: $spacing-xl;
+        gap: $spacing-2xl;
         position: relative;
         z-index: 2;
         text-align: left;
@@ -45,53 +45,53 @@
             padding: 0 $spacing-md;
         }
         &__headline-wrapper {
-          flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: $spacing-lg;
+            flex: 2;
+            color: $text-on-primary;
+            .hero__subtitle {
+                font-size: $font-size-lg;
+            }
+            .hero__title {
+                font-size: $font-size-4xl;
+                font-weight: $font-weight-bold;
+                line-height: normal;
+            }
+            .hero__description {
+                font-size: $font-size-lg;
+            }
         }
         &__action-wrapper {
-          display: flex;
-          justify-content: center;
-          flex: 1;
-        }
-    }
-    &__title {
-        font-size: $font-size-4xl;
-        font-weight: $font-weight-bold;
-        margin-bottom: $spacing-lg;
-        line-height: 1.2;
-        @media (max-width: $md-breakpoint) {
-            font-size: $font-size-3xl;
-        }
-    }
-    &__description {
-        font-size: $font-size-lg;
-        margin-bottom: $spacing-xl;
-        line-height: 1.6;
-        @media (max-width: $md-breakpoint) {
-            font-size: $font-size-md;
-        }
-    }
-    &__cta {
-        background-color: $color-white;
-        color: $primary;
-        padding: $spacing-md $spacing-2xl;
-        border-radius: $border-radius-lg;
-        font-size: $font-size-lg;
-        font-weight: $font-weight-semibold;
-        cursor: pointer;
-        transition: $transition-base;
-        border: none;
-        display: inline-block;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        &:hover {
-            background-color: lighten($color-white, 10%);
-            color: darken($primary, 10%);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-        }
-        @media (max-width: $md-breakpoint) {
-            width: 100%;
-            text-align: center;
-            padding: $spacing-md 0;
+            display: flex;
+            justify-content: center;
+            flex: 1;
+            .hero__cta {
+                background-color: $color-white;
+                color: $primary;
+                padding: $spacing-md $spacing-2xl;
+                border-radius: $border-radius-lg;
+                font-size: $font-size-lg;
+                font-weight: $font-weight-semibold;
+                cursor: pointer;
+                transition: $transition-base;
+                border: none;
+                display: inline-block;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                &:hover {
+                    background-color: lighten($color-white, 10%);
+                    color: darken($primary, 10%);
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+                }
+                @media (max-width: $md-breakpoint) {
+                    width: 100%;
+                    text-align: center;
+                    padding: $spacing-md 0;
+                }
+            }
         }
     }
 }
