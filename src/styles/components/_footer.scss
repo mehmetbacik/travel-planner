@@ -1,8 +1,7 @@
 @import "@/styles/variables";
 
 .footer {
-  background-color: $background-light;
-  color: $text-secondary;
+  background-color: $color-background;
   &__newsletter {
     background-color: $primary;
     padding: $spacing-xl 0;
@@ -47,16 +46,25 @@
       }
     }
   }
+  &__content {
+    background-color: $color-background;
+    padding: $spacing-xl 0;
+    &-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-  .footer__body {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: $spacing-xl;
-
-    @media (min-width: $md-breakpoint) {
-      grid-template-columns: repeat(3, 1fr);
     }
   }
+  &__bottom {
+    background-color: $color-background;
+    padding-top: $spacing-xl;
+    border-top: 1px solid $border-color;
+    text-align: center;
+    font-size: $font-size-md;
+    color: $text-secondary;
+  }
+
 
   .footer__section {
     h3 {
@@ -86,14 +94,5 @@
         margin-top: $spacing-sm;
       }
     }
-  }
-
-  .footer__bottom {
-    margin-top: $spacing-2xl;
-    padding-top: $spacing-xl;
-    border-top: 1px solid $border-color;
-    text-align: center;
-    font-size: $font-size-md;
-    color: $text-secondary;
   }
 }
