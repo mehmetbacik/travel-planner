@@ -43,6 +43,13 @@
     "blog": "Blog",
     "contact": "Contact"
   },
+  "footer": {
+    "newsletterTitle": "Subscribe to our Newsletter",
+    "newsletterDesc": "Get the latest travel tips and updates delivered to your inbox.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "followUs": "Follow Us"
+  },
   "features": {
     "title": "Features",
     "description": "Smart features that simplify your trip.",

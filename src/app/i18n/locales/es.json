@@ -43,6 +43,13 @@
     "blog": "Blog",
     "contact": "Contacto"
   },
+  "footer": {
+    "newsletterTitle": "Suscríbete a nuestro boletín",
+    "newsletterDesc": "Recibe los últimos consejos y novedades de viaje en tu correo.",
+    "emailPlaceholder": "Introduce tu correo electrónico",
+    "subscribe": "Suscribirse",
+    "followUs": "Síguenos"
+  },
   "features": {
     "title": "Características",
     "description": "Funciones inteligentes para planificar tu viaje fácilmente.",

@@ -43,6 +43,13 @@ export interface Dictionary {
     blog: string
     contact: string
   }
+  footer: {
+    newsletterTitle: string
+    newsletterDesc: string
+    emailPlaceholder: string
+    subscribe: string
+    followUs: string
+  },
   features: {
     title: string
     description: string

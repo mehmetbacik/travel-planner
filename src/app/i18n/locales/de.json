@@ -43,6 +43,13 @@
     "blog": "Blog",
     "contact": "Kontakt"
   },
+  "footer": {
+    "newsletterTitle": "Abonniere unseren Newsletter",
+    "newsletterDesc": "Erhalte die neuesten Reisetipps und Updates direkt in dein Postfach.",
+    "emailPlaceholder": "Gib deine E-Mail-Adresse ein",
+    "subscribe": "Abonnieren",
+    "followUs": "Folge uns"
+  },
   "features": {
     "title": "Funktionen",
     "description": "Intelligente Funktionen für eine einfache Reiseplanung.",

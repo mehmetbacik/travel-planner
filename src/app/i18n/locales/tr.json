@@ -43,6 +43,13 @@
     "blog": "Blog",
     "contact": "İletişim"
   },
+  "footer": {
+    "newsletterTitle": "Bültenimize Abone Olun",
+    "newsletterDesc": "Son seyahat ipuçlarını ve güncellemeleri e-posta kutunuza alın.",
+    "emailPlaceholder": "E-posta adresinizi girin",
+    "subscribe": "Abone Ol",
+    "followUs": "Bizi Takip Edin"
+  },
   "features": {
     "title": "Özellikler",
     "description": "Seyahatinizi kolaylaştıran akıllı özellikler.",
@@ -94,4 +101,4 @@
       }
     }
   }
-} 
+}

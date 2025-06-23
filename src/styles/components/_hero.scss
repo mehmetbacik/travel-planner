@@ -50,7 +50,7 @@
             justify-content: center;
             gap: $spacing-lg;
             flex: 2;
-            color: $text-on-primary;
+            color: $color-white;
             @media (max-width: $md-breakpoint) {
                 align-items: center;
                 justify-content: center;
@@ -86,7 +86,7 @@
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                 &:hover {
                     background-color: $primary;
-                    color: $text-on-primary;
+                    color: $color-white;
                     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
                 }
                 @media (max-width: $md-breakpoint) {

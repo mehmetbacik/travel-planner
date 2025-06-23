@@ -43,6 +43,13 @@
     "blog": "Blog",
     "contact": "Contact"
   },
+  "footer": {
+    "newsletterTitle": "Abonnez-vous à notre newsletter",
+    "newsletterDesc": "Recevez les dernières astuces et actualités de voyage directement par email.",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "subscribe": "S'abonner",
+    "followUs": "Suivez-nous"
+  },
   "features": {
     "title": "Fonctionnalités",
     "description": "Des fonctionnalités intelligentes pour simplifier votre voyage.",
