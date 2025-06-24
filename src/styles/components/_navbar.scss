@@ -25,6 +25,10 @@
                 &:hover {
                     color: $color-primary;
                 }
+                &.active {
+                    color: $color-primary;
+                    font-weight: $font-weight-bold;
+                }
             }
         }
         .navbar__language {

@@ -44,10 +44,8 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
       <div className="footer__content">
         <div className="footer__content-body container">
           <div className="footer__section appName">
-            <h3 className="footer__title">{dict.common.appName}.</h3>
-            <p className="footer__description">
-              {dict.home.hero.description}
-            </p>
+            <h3 className="footer__appName-title">{dict.common.appName}.</h3>
+            <p className="footer__appName-description">{dict.home.hero.description}</p>
           </div>
           <div className="footer__section">
             <h3 className="footer__title">{dict.common.quickLinks}</h3>
@@ -75,9 +73,10 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
             <h3 className="footer__title">{dict.common.contact}</h3>
             <ul className="footer__links">
               <li>
-                <a href="mailto:contact@travelplanner.com">
-                  contact@travelplanner.com
-                </a>
+                <Link href={`/${currentLang}/planner`}>{dict.nav.planner}</Link>
+              </li>
+              <li>
+                <Link href={`/${currentLang}/about`}>{dict.nav.about}</Link>
               </li>
             </ul>
           </div>
