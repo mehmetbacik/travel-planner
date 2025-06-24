@@ -51,9 +51,19 @@
     padding: $spacing-xl 0;
     &-body {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-
+      gap: $spacing-2xl;
+      .footer {
+        &__section {
+          flex: 1;
+          &.appName {
+            .footer__title {
+              font-size: $font-size-2xl;
+            }
+          }
+        }
+      }
     }
   }
   &__bottom {
