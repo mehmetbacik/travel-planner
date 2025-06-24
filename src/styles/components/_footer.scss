@@ -60,6 +60,7 @@
           &.appName {
             flex: 2;
             border-right: solid 1px $border-color;
+            padding-right: $spacing-xl;
             .footer__appName-title {
               font-size: $font-size-2xl;
               font-weight: $font-weight-semibold;
@@ -67,15 +68,52 @@
               margin-bottom: $spacing-md;
             }
             .footer__appName-description {
-              font-size: $font-size-base * 0.85;
+              font-size: $font-size-base * 0.8;
               color: $color-text;
             }
           }
           .footer__title {
-              font-size: $font-size-lg;
+              font-size: $font-size-base * 0.95;
               font-weight: $font-weight-semibold;
               color: $color-text;
               margin-bottom: $spacing-md;
+          }
+          .footer__links {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-unit;
+            li {
+              a {
+                font-size: $font-size-base * 0.875;
+                color: $color-text;
+                transition: $transition-base;
+                &:hover {
+                  color: $primary;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+          .footer__socials {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: $spacing-unit;
+            margin-bottom: $spacing-md;
+            a {
+              color: $color-text;
+              font-size: $font-size-xl;
+              transition: $transition-base;
+              &:hover {
+                color: $primary;
+              }
+            }
+          }
+          .footer__apps {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: $spacing-unit;
           }
         }
       }
@@ -83,10 +121,10 @@
   }
   &__bottom {
     background-color: $color-background;
-    padding-top: $spacing-xl;
+    padding: $spacing-lg 0;
     border-top: 1px solid $border-color;
     text-align: center;
-    font-size: $font-size-md;
+    font-size: $font-size-base * 0.75;
     color: $text-secondary;
   }
 }

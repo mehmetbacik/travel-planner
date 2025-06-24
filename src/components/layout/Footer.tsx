@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   IoLogoInstagram,
   IoLogoFacebook,
@@ -10,6 +11,8 @@ import {
 } from "react-icons/io5";
 import { Locale } from "@/app/i18n/settings";
 import { Dictionary } from "@/types/dictionary";
+import GooglePlay from "@/assets/img/googleplay.svg";
+import AppStore from "@/assets/img/appstore.svg";
 
 interface FooterProps {
   currentLang: Locale;
@@ -143,6 +146,19 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
               >
                 <IoLogoLinkedin />
               </a>
+            </div>
+            <div className="footer__apps">
+              <Link href={`/${currentLang}/#`} className="footer__apps-content">
+                <Image
+                  src={GooglePlay}
+                  alt="Google Play"
+                  width={90}
+                  height={30}
+                />
+              </Link>
+              <Link href={`/${currentLang}/#`} className="footer__apps-content">
+                <Image src={AppStore} alt="App Store" width={90} height={30} />
+              </Link>
             </div>
           </div>
         </div>
