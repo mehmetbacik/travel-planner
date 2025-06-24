@@ -45,38 +45,58 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
         <div className="footer__content-body container">
           <div className="footer__section appName">
             <h3 className="footer__appName-title">{dict.common.appName}.</h3>
-            <p className="footer__appName-description">{dict.home.hero.description}</p>
+            <p className="footer__appName-description">
+              {dict.footer.description}
+            </p>
           </div>
           <div className="footer__section">
-            <h3 className="footer__title">{dict.common.quickLinks}</h3>
+            <h3 className="footer__title">{dict.footer.corporate}</h3>
             <ul className="footer__links">
               <li>
-                <Link href={`/${currentLang}/planner`}>{dict.nav.planner}</Link>
+                <Link href={`/${currentLang}/about`}>{dict.footer.about}</Link>
               </li>
               <li>
-                <Link href={`/${currentLang}/about`}>{dict.nav.about}</Link>
+                <Link href={`/${currentLang}/#`}>{dict.footer.media}</Link>
+              </li>
+              <li>
+                <Link href={`/${currentLang}/#`}>{dict.footer.culture}</Link>
+              </li>
+              <li>
+                <Link href={`/${currentLang}/#`}>{dict.footer.career}</Link>
               </li>
             </ul>
           </div>
           <div className="footer__section">
-            <h3 className="footer__title">{dict.common.aboutUs}</h3>
+            <h3 className="footer__title">{dict.footer.security}</h3>
             <ul className="footer__links">
               <li>
-                <Link href={`/${currentLang}/planner`}>{dict.nav.planner}</Link>
+                <Link href={`/${currentLang}/#`}>{dict.footer.rules}</Link>
               </li>
               <li>
-                <Link href={`/${currentLang}/about`}>{dict.nav.about}</Link>
+                <Link href={`/${currentLang}/#`}>{dict.footer.customer}</Link>
+              </li>
+              <li>
+                <Link href={`/${currentLang}/#`}>{dict.footer.cookies}</Link>
+              </li>
+              <li>
+                <Link href={`/${currentLang}/#`}>{dict.footer.privacy}</Link>
               </li>
             </ul>
           </div>
           <div className="footer__section">
-            <h3 className="footer__title">{dict.common.contact}</h3>
+            <h3 className="footer__title">{dict.footer.help}</h3>
             <ul className="footer__links">
               <li>
-                <Link href={`/${currentLang}/planner`}>{dict.nav.planner}</Link>
+                <Link href={`/${currentLang}/#`}>{dict.footer.write}</Link>
               </li>
               <li>
-                <Link href={`/${currentLang}/about`}>{dict.nav.about}</Link>
+                <Link href={`/${currentLang}/#`}>{dict.footer.faq}</Link>
+              </li>
+              <li>
+                <Link href={`/${currentLang}/#`}>{dict.footer.assistance}</Link>
+              </li>
+              <li>
+                <Link href={`/${currentLang}/#`}>{dict.footer.contact}</Link>
               </li>
             </ul>
           </div>

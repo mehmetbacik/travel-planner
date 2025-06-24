@@ -25,7 +25,6 @@ export interface Dictionary {
     localTips: string
     budgetTips: string
     weatherInfo: string
-    quickLinks: string
     aboutUs: string
     contact: string
     allRightsReserved: string
@@ -47,8 +46,24 @@ export interface Dictionary {
     newsletterTitle: string
     newsletterDesc: string
     emailPlaceholder: string
+    description: string
     subscribe: string
     followUs: string
+    corporate: string
+    about: string
+    media: string
+    culture: string
+    career: string
+    security: string
+    rules: string
+    customer: string
+    cookies: string
+    privacy: string
+    help: string
+    write: string
+    faq: string
+    assistance: string
+    contact: string
   },
   features: {
     title: string
