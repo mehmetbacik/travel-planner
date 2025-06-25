@@ -27,7 +27,7 @@
     "weatherInfo": "Weather Information",
     "aboutUs": "About Us",
     "contact": "Contact",
-    "allRightsReserved": "All rights reserved",
+    "allRightsReserved": "All rights reserved.",
     "validation": {
       "required": "{{field}} is required",
       "invalidDate": "Invalid date",

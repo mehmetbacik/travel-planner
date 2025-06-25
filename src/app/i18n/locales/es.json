@@ -27,7 +27,7 @@
     "weatherInfo": "Información del clima",
     "aboutUs": "Sobre nosotros",
     "contact": "Contacto",
-    "allRightsReserved": "Todos los derechos reservados",
+    "allRightsReserved": "Todos los derechos reservados.",
     "validation": {
       "required": "{{field}} es obligatorio",
       "invalidDate": "Fecha no válida",

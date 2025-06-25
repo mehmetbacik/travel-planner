@@ -25,22 +25,26 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
       <div className="footer__newsletter">
         <div className="footer__newsletter-body container">
           <div className="footer__newsletter-section">
-            <h3 className="footer__newsletter-title">
-              {dict.footer.newsletterTitle}
-            </h3>
-            <p className="footer__newsletter-description">
-              {dict.footer.newsletterDesc}
-            </p>
-            <form className="footer__newsletter-form">
-              <input
-                type="email"
-                placeholder={dict.footer.emailPlaceholder}
-                className="footer__newsletter-input"
-              />
-              <button type="submit" className="footer__newsletter-button">
-                {dict.footer.subscribe}
-              </button>
-            </form>
+            <div className="footer__newsletter-content">
+              <h3 className="footer__newsletter-content-title">
+                {dict.footer.newsletterTitle}
+              </h3>
+              <p className="footer__newsletter-content-description">
+                {dict.footer.newsletterDesc}
+              </p>
+            </div>
+            <div className="footer__newsletter-form">
+              <form>
+                <input
+                  type="email"
+                  placeholder={dict.footer.emailPlaceholder}
+                  className="footer__newsletter-form-input"
+                />
+                <button type="submit" className="footer__newsletter-form-button">
+                  {dict.footer.subscribe}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

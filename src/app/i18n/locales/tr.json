@@ -27,7 +27,7 @@
     "weatherInfo": "Hava Durumu Bilgisi",
     "aboutUs": "Hakkımızda",
     "contact": "İletişim",
-    "allRightsReserved": "Tüm hakları saklıdır",
+    "allRightsReserved": "Tüm hakları saklıdır.",
     "validation": {
       "required": "{{field}} alanı zorunludur",
       "invalidDate": "Geçersiz tarih",
