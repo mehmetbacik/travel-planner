@@ -8,6 +8,7 @@ import { tripSchema, TripFormData } from "@/schemas/tripSchema";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { getDummyTripPlan } from './dummyTripPlan';
 
 interface TripPlannerProps {
   dict: Dictionary;
@@ -57,29 +58,26 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
     setError(null);
 
     try {
-      const response = await fetch("/api/trip", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      // TODO: API connection
+      // const response = await fetch("/api/trip", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(data),
+      // });
+      // if (!response.ok) {
+      //   throw new Error("Failed to generate trip plan");
+      // }
+      // const result = await response.json();
 
-      if (!response.ok) {
-        throw new Error("Failed to generate trip plan");
-      }
-
-      const result = await response.json();
-
+      const result = getDummyTripPlan(dict, data);
       localStorage.setItem("tripPlan", JSON.stringify(result));
       router.push(
         `/results?destination=${encodeURIComponent(data.destination)}`
       );
     } catch (err) {
-      console.error("Error:", err);
-      setError(
-        dict.planner.errors || "Failed to generate trip plan. Please try again."
-      );
+      setError(dict.planner.errors || "Failed to generate trip plan. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
