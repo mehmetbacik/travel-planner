@@ -1,195 +1,198 @@
 @import "@/styles/variables";
 
 .navbar {
-    position: absolute;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    padding 0.3s ease, height 0.3s ease, position 0.3s ease;
+  padding: $spacing-lg $spacing-xl;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  &.sticky {
+    position: fixed;
     top: 0;
     left: 0;
+    background-color: $color-white;
+    box-shadow: $shadow-md;
+    height: 80px;
+    .navbar__links {
+      a {
+        color: $color-text;
+        &:hover {
+          color: $color-primary;
+        }
+        &.active {
+          color: $color-primary;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+    .navbar__language {
+      &-button {
+        color: $color-text;
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+    .navbar__toggle {
+      color: $color-text;
+    }
+  }
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    z-index: 1000;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease,
-      padding 0.3s ease, height 0.3s ease, position 0.3s ease;
-    padding: $spacing-lg $spacing-xl;
-    height: 100px;
+  }
+  &__logo {
+    text-decoration: none;
+  }
+  &__links {
     display: flex;
     align-items: center;
-    &.sticky {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: $color-white;
-        box-shadow: $shadow-md;
-        height: 80px;
-        .navbar__links {
-            a {
-                color: $color-text;
-                &:hover {
-                    color: $color-primary;
-                }
-                &.active {
-                    color: $color-primary;
-                    font-weight: $font-weight-bold;
-                }
-            }
-        }
-        .navbar__language {
-            &-button {
-                color: $color-text;
-                &:hover {
-                    color: $color-primary;
-                }
-            }
-        }
+    gap: $spacing-lg;
+    a {
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+      color: $color-white;
+      text-decoration: none;
+      transition: $transition-base;
+      &:hover {
+        color: $color-primary;
+      }
+      &.active {
+        color: $color-primary;
+        font-weight: $font-weight-bold;
+      }
     }
-    &__body {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    @media (max-width: $md-breakpoint) {
+      display: none;
+    }
+  }
+  &__language {
+    position: relative;
+    &-button {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+      color: $color-white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: $transition-base;
+      img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+      }
+      &:hover {
+        color: $color-primary;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+        transition: $transition-base;
+        &.rotate {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: $spacing-sm;
+      background-color: $color-white;
+      border-radius: $border-radius-lg;
+      box-shadow: $shadow-md;
+      padding: $spacing-sm;
+      z-index: 10;
+      width: 180px;
+      @media (max-width: $md-breakpoint) {
         width: 100%;
-    }
-    &__logo {
-        text-decoration: none;
-    }
-    &__links {
-        display: flex;
-        align-items: center;
-        gap: $spacing-lg;
-        a {
-            font-size: $font-size-md;
-            font-weight: $font-weight-semibold;
-            color: $color-white;
-            text-decoration: none;
-            transition: $transition-base;
-            &:hover {
-                color: $color-primary;
-            }
-            &.active {
-                color: $color-primary;
-                font-weight: $font-weight-bold;
-            }
-        }
-        @media (max-width: $md-breakpoint) {
-            display: none;
-        }
-    }
-    &__language {
-        position: relative;
-        &-button {
-            display: flex;
-            align-items: center;
-            gap: $spacing-sm;
-            font-size: $font-size-md;
-            font-weight: $font-weight-semibold;
-            color: $color-white;
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: $transition-base;
-            img {
-                width: 24px;
-                height: 24px;
-                object-fit: contain;
-            }
-            &:hover {
-                color: $color-primary;
-            }
-            svg {
-                width: 20px;
-                height: 20px;
-                transition: $transition-base;
-                &.rotate {
-                    transform: rotate(180deg);
-                }
-            }
-        }
-        &-menu {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            margin-top: $spacing-sm;
-            background-color: $color-white;
-            border-radius: $border-radius-lg;
-            box-shadow: $shadow-md;
-            padding: $spacing-sm;
-            z-index: 10;
-            width: 180px;
-            @media (max-width: $md-breakpoint) {
-              width: 100%;
-            }
-            button {
-                width: 100%;
-                text-align: left;
-                padding: $spacing-sm $spacing-md;
-                font-size: $font-size-md;
-                background: none;
-                border: none;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                gap: $spacing-sm;
-                img {
-                    width: 20px;
-                    height: 20px;
-                    object-fit: contain;
-                }
-                &.active {
-                    background-color: $color-primary;
-                    color: $color-white;
-                }
-                &:not(.active) {
-                    color: $color-text;
-                    &:hover {
-                        background-color: lighten($color-background, 5%);
-                    }
-                }
-            }
-        }
-    }
-    &__toggle {
-        display: none;
+      }
+      button {
+        width: 100%;
+        text-align: left;
+        padding: $spacing-sm $spacing-md;
+        font-size: $font-size-md;
         background: none;
         border: none;
-        font-size: $font-size-2xl;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        img {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+        }
+        &.active {
+          background-color: $color-primary;
+          color: $color-white;
+        }
+        &:not(.active) {
+          color: $color-text;
+          &:hover {
+            background-color: lighten($color-background, 5%);
+          }
+        }
+      }
+    }
+  }
+  &__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: $font-size-2xl;
+    cursor: pointer;
+    color: $color-white;
+    @media (max-width: $md-breakpoint) {
+      display: block;
+    }
+  }
+  &__mobile-menu {
+    display: none;
+    .navbar__mobile-close {
+      font-size: $font-size-2xl;
+      cursor: pointer;
+      color: $color-white;
+    }
+    @media (max-width: $md-breakpoint) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 75%;
+      height: 100%;
+      background-color: $background-dark;
+      padding: $spacing-xl;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+      z-index: 999;
+      &--open {
+        transform: translateX(0);
+      }
+      a {
         color: $color-white;
-        @media (max-width: $md-breakpoint) {
-            display: block;
+        font-size: $font-size-lg;
+        &:hover {
+          color: $color-primary;
         }
+        &.active {
+          color: $color-primary;
+          font-weight: $font-weight-bold;
+        }
+      }
     }
-    &__mobile-menu {
-        display: none;
-        .navbar__mobile-close {
-            font-size: $font-size-2xl;
-            cursor: pointer;
-            color: $color-white;
-        }
-        @media (max-width: $md-breakpoint) {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 75%;
-            height: 100%;
-            background-color: $background-dark;
-            padding: $spacing-xl;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            gap: $spacing-lg;
-            z-index: 999;
-            &--open {
-                transform: translateX(0);
-            }
-            a {
-                color: $color-white;
-                font-size: $font-size-lg;
-                &:hover {
-                    color: $color-primary;
-                }
-                &.active {
-                    color: $color-primary;
-                    font-weight: $font-weight-bold;
-                }
-            }
-        }
-    }
+  }
 }

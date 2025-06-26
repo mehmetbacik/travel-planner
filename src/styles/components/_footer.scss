@@ -12,6 +12,9 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: $spacing-lg;
+        @media (max-width: $md-breakpoint) {
+          flex-direction: column;
+        }
         .footer__newsletter-content {
           flex: 1;
           display: flex;
@@ -32,11 +35,18 @@
         }
         .footer__newsletter-form {
           flex: 1;
+          @media (max-width: $md-breakpoint) {
+            width: 100%;
+          }
           form {
             display: flex;
             align-items: center;
             justify-content: flex-end;
             gap: $spacing-lg;
+            @media (max-width: $md-breakpoint) {
+              flex-direction: column;
+              gap: $spacing-md;
+            }
           }
           &-input {
             padding: $spacing-md;
@@ -63,6 +73,9 @@
             border-radius: 8px;
             cursor: pointer;
             transition: $transition-base;
+            @media (max-width: $md-breakpoint) {
+              width: 100%;
+            }
             &:hover {
               background-color: $primary;
               color: $color-white;
