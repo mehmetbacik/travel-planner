@@ -12,6 +12,7 @@ import { getDummyTripPlan } from './dummyTripPlan';
 
 interface TripPlannerProps {
   dict: Dictionary;
+  lang: string;
 }
 
 function getLocalizedError(message: string | undefined, dict: Dictionary) {
@@ -31,7 +32,7 @@ function getLocalizedError(message: string | undefined, dict: Dictionary) {
   return message;
 }
 
-export default function TripPlanner({ dict }: TripPlannerProps) {
+export default function TripPlanner({ dict, lang }: TripPlannerProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
@@ -74,7 +75,7 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
       const result = getDummyTripPlan(dict, data);
       localStorage.setItem("tripPlan", JSON.stringify(result));
       router.push(
-        `/results?destination=${encodeURIComponent(data.destination)}`
+        `/${lang}/results?destination=${encodeURIComponent(data.destination)}`
       );
     } catch (err) {
       setError(dict.planner.errors || "Failed to generate trip plan. Please try again.");
