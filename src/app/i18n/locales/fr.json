@@ -4,12 +4,12 @@
     "getStarted": "Commencer",
     "planYourTrip": "Planifiez votre voyage",
     "destination": "Destination",
-    "interests": "Centres d’intérêt",
+    "interests": "Centres d'intérêt",
     "travelDates": "Dates de voyage",
     "startDate": "Date de début",
     "endDate": "Date de fin",
     "budget": "Budget",
-    "generateItinerary": "Générer l’itinéraire",
+    "generateItinerary": "Générer l'itinéraire",
     "regenerate": "Régénérer",
     "downloadPDF": "Télécharger le PDF",
     "pdfDownloadError": "Erreur lors du téléchargement du PDF",
@@ -19,8 +19,8 @@
     "save": "Enregistrer",
     "savingTrip": "Enregistrement de votre voyage...",
     "tripSaved": "Voyage enregistré avec succès !",
-    "tripSaveError": "Échec de l’enregistrement du voyage",
-    "recommendations": "Recommandations de l’IA",
+    "tripSaveError": "Échec de l'enregistrement du voyage",
+    "recommendations": "Recommandations de l'IA",
     "activities": "Meilleures activités",
     "localTips": "Conseils locaux",
     "budgetTips": "Astuces pour économiser",
@@ -29,16 +29,17 @@
     "contact": "Contact",
     "allRightsReserved": "Tous droits réservés.",
     "validation": {
-      "required": "{{field}} est requis",
+      "required": "Ce champ est requis",
       "invalidDate": "Date invalide",
       "invalidBudget": "Le budget doit être un nombre positif",
       "endDateBeforeStart": "La date de fin doit être postérieure à la date de début",
       "destination.required": "La destination est requise",
       "startDate.required": "La date de début est requise",
       "endDate.required": "La date de fin est requise",
-      "interests.required": "Sélectionnez au moins un centre d’intérêt",
+      "interests.required": "Sélectionnez au moins un centre d'intérêt",
       "budget.min": "Le budget doit être un nombre positif",
-      "Select at least one interest": "Sélectionnez au moins un centre d’intérêt"
+      "Select at least one interest": "Veuillez sélectionner au moins un centre d'intérêt",
+      "expectedArrayReceivedBoolean": "Veuillez sélectionner au moins un centre d'intérêt"
     }
   },
   "nav": {
@@ -52,7 +53,7 @@
     "newsletterTitle": "Abonnez-vous à notre newsletter",
     "newsletterDesc": "Recevez les dernières astuces et actualités de voyage directement par email.",
     "emailPlaceholder": "Entrez votre e-mail",
-    "description": "Vivez des vacances inoubliables grâce à notre planificateur de voyage alimenté par l’IA. Obtenez des recommandations personnalisées, gérez votre budget, et plus encore.",
+    "description": "Vivez des vacances inoubliables grâce à notre planificateur de voyage alimenté par l'IA. Obtenez des recommandations personnalisées, gérez votre budget, et plus encore.",
     "subscribe": "S'abonner",
     "followUs": "Suivez-nous",
     "corporate": "Entreprise",
@@ -82,7 +83,7 @@
   "planner": {
     "title": "Tout pour une Expérience de Voyage Personnalisée",
     "subtitle": "Votre Voyage, à Vos Conditions",
-    "description": "Créez un itinéraire personnalisé selon vos destinations, centres d’intérêt et dates de voyage.",
+    "description": "Créez un itinéraire personnalisé selon vos destinations, centres d'intérêt et dates de voyage.",
     "destinationPlaceholder": "ex. Tokyo",
     "selectInterests": "Sélectionner...",
     "customizedItinerary": "Votre itinéraire personnalisé",
@@ -93,7 +94,7 @@
   "home": {
     "hero": {
       "title": "Simplifiez la planification de votre voyage",
-      "description": "Vivez des vacances inoubliables grâce à notre planificateur de voyage alimenté par l’IA. Obtenez des recommandations personnalisées, gérez votre budget, et plus encore.",
+      "description": "Vivez des vacances inoubliables grâce à notre planificateur de voyage alimenté par l'IA. Obtenez des recommandations personnalisées, gérez votre budget, et plus encore.",
       "cta": {
         "primary": "Commencer",
         "secondary": "En savoir plus"

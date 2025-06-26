@@ -29,7 +29,7 @@
     "contact": "İletişim",
     "allRightsReserved": "Tüm hakları saklıdır.",
     "validation": {
-      "required": "{{field}} alanı zorunludur",
+      "required": "Bu alan zorunludur",
       "invalidDate": "Geçersiz tarih",
       "invalidBudget": "Bütçe pozitif bir sayı olmalıdır",
       "endDateBeforeStart": "Bitiş tarihi başlangıç tarihinden sonra olmalıdır",
@@ -38,7 +38,8 @@
       "endDate.required": "Bitiş tarihi zorunludur",
       "interests.required": "En az bir ilgi alanı seçmelisiniz",
       "budget.min": "Bütçe pozitif bir sayı olmalıdır",
-      "Select at least one interest": "En az bir ilgi alanı seçmelisiniz"
+      "Select at least one interest": "En az bir ilgi alanı seçmelisiniz",
+      "expectedArrayReceivedBoolean": "En az bir ilgi alanı seçmelisiniz"
     }
   },
   "nav": {

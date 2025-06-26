@@ -29,7 +29,7 @@
     "contact": "Contact",
     "allRightsReserved": "All rights reserved.",
     "validation": {
-      "required": "{{field}} is required",
+      "required": "This field is required",
       "invalidDate": "Invalid date",
       "invalidBudget": "Budget must be a positive number",
       "endDateBeforeStart": "End date must be after start date",
@@ -38,7 +38,8 @@
       "endDate.required": "End date is required",
       "interests.required": "Select at least one interest",
       "budget.min": "Budget must be a positive number",
-      "Select at least one interest": "Select at least one interest"
+      "Select at least one interest": "Select at least one interest",
+      "expectedArrayReceivedBoolean": "Select at least one interest"
     }
   },
   "nav": {

@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { tripSchema, TripFormData } from "@/schemas/tripSchema";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 interface TripPlannerProps {
   dict: Dictionary;
@@ -20,6 +21,23 @@ const interestOptions = [
   { value: "nightlife", label: "Nightlife" },
   { value: "relaxation", label: "Relaxation & Wellness" },
 ];
+
+function getLocalizedError(message: string | undefined, dict: Dictionary) {
+  if (!message) return "";
+  if (dict.common.validation?.[message as keyof typeof dict.common.validation]) {
+    return dict.common.validation[message as keyof typeof dict.common.validation];
+  }
+  if (message.includes(".")) {
+    const last = message.split(".").pop()!;
+    if (dict.common.validation?.[last as keyof typeof dict.common.validation]) {
+      return dict.common.validation[last as keyof typeof dict.common.validation];
+    }
+  }
+  if (message === "Expected array, received boolean") {
+    return dict.common.validation?.expectedArrayReceivedBoolean || message;
+  }
+  return message;
+}
 
 export default function TripPlanner({ dict }: TripPlannerProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -96,7 +114,7 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
               />
               {errors.destination && (
                 <p className="trip-planner__error-text">
-                  {dict.common.validation?.[errors.destination.message as keyof typeof dict.common.validation] || errors.destination.message}
+                  {getLocalizedError(errors.destination.message, dict)}
                 </p>
               )}
             </div>
@@ -122,7 +140,7 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
               </div>
               {errors.interests && (
                 <p className="trip-planner__error-text">
-                  {dict.common.validation?.[errors.interests.message as keyof typeof dict.common.validation] || errors.interests.message}
+                  {getLocalizedError(errors.interests.message, dict)}
                 </p>
               )}
             </div>
@@ -141,7 +159,7 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
                   />
                   {errors.startDate && (
                     <p className="trip-planner__error-text">
-                      {dict.common.validation?.[errors.startDate.message as keyof typeof dict.common.validation] || errors.startDate.message}
+                      {getLocalizedError(errors.startDate.message, dict)}
                     </p>
                   )}
                 </div>
@@ -155,7 +173,7 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
                   />
                   {errors.endDate && (
                     <p className="trip-planner__error-text">
-                      {dict.common.validation?.[errors.endDate.message as keyof typeof dict.common.validation] || errors.endDate.message}
+                      {getLocalizedError(errors.endDate.message, dict)}
                     </p>
                   )}
                 </div>

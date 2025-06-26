@@ -29,7 +29,7 @@
     "contact": "Contacto",
     "allRightsReserved": "Todos los derechos reservados.",
     "validation": {
-      "required": "{{field}} es obligatorio",
+      "required": "Este campo es obligatorio",
       "invalidDate": "Fecha no válida",
       "invalidBudget": "El presupuesto debe ser un número positivo",
       "endDateBeforeStart": "La fecha de finalización debe ser posterior a la fecha de inicio",
@@ -38,7 +38,8 @@
       "endDate.required": "La fecha de finalización es obligatoria",
       "interests.required": "Seleccione al menos un interés",
       "budget.min": "El presupuesto debe ser un número positivo",
-      "Select at least one interest": "Seleccione al menos un interés"
+      "Select at least one interest": "Seleccione al menos un interés",
+      "expectedArrayReceivedBoolean": "Seleccione al menos un interés"
     }
   },
   "nav": {
