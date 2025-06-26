@@ -40,6 +40,14 @@
       "budget.min": "Budget muss eine positive Zahl sein",
       "Select at least one interest": "Bitte wählen Sie mindestens ein Interessensgebiet aus",
       "expectedArrayReceivedBoolean": "Bitte wählen Sie mindestens ein Interessensgebiet aus"
+    },
+    "interestOptions": {
+      "culture": "Kultur & Geschichte",
+      "nature": "Natur & Outdoor",
+      "food": "Essen & Gastronomie",
+      "shopping": "Einkaufen",
+      "nightlife": "Nachtleben",
+      "relaxation": "Entspannung & Wellness"
     }
   },
   "nav": {

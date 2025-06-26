@@ -13,15 +13,6 @@ interface TripPlannerProps {
   dict: Dictionary;
 }
 
-const interestOptions = [
-  { value: "culture", label: "Culture & History" },
-  { value: "nature", label: "Nature & Outdoors" },
-  { value: "food", label: "Food & Dining" },
-  { value: "shopping", label: "Shopping" },
-  { value: "nightlife", label: "Nightlife" },
-  { value: "relaxation", label: "Relaxation & Wellness" },
-];
-
 function getLocalizedError(message: string | undefined, dict: Dictionary) {
   if (!message) return "";
   if (dict.common.validation?.[message as keyof typeof dict.common.validation]) {
@@ -51,6 +42,15 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
   } = useForm<TripFormData>({
     resolver: zodResolver(tripSchema),
   });
+
+  const interestOptions = [
+    { value: "culture", label: dict.common.interestOptions.culture },
+    { value: "nature", label: dict.common.interestOptions.nature },
+    { value: "food", label: dict.common.interestOptions.food },
+    { value: "shopping", label: dict.common.interestOptions.shopping },
+    { value: "nightlife", label: dict.common.interestOptions.nightlife },
+    { value: "relaxation", label: dict.common.interestOptions.relaxation },
+  ];
 
   const onSubmit = async (data: TripFormData) => {
     setIsSubmitting(true);

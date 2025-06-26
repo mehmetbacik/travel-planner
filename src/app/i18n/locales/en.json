@@ -40,6 +40,14 @@
       "budget.min": "Budget must be a positive number",
       "Select at least one interest": "Select at least one interest",
       "expectedArrayReceivedBoolean": "Select at least one interest"
+    },
+    "interestOptions": {
+      "culture": "Culture & History",
+      "nature": "Nature & Outdoors",
+      "food": "Food & Dining",
+      "shopping": "Shopping",
+      "nightlife": "Nightlife",
+      "relaxation": "Relaxation & Wellness"
     }
   },
   "nav": {

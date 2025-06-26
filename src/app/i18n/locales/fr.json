@@ -40,6 +40,14 @@
       "budget.min": "Le budget doit être un nombre positif",
       "Select at least one interest": "Veuillez sélectionner au moins un centre d'intérêt",
       "expectedArrayReceivedBoolean": "Veuillez sélectionner au moins un centre d'intérêt"
+    },
+    "interestOptions": {
+      "culture": "Culture & Histoire",
+      "nature": "Nature & Plein air",
+      "food": "Gastronomie & Restaurants",
+      "shopping": "Shopping",
+      "nightlife": "Vie nocturne",
+      "relaxation": "Détente & Bien-être"
     }
   },
   "nav": {

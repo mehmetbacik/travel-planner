@@ -39,6 +39,15 @@ export interface Dictionary {
       interests?: string;
       budget?: string;
       expectedArrayReceivedBoolean?: string;
+      [key: string]: string | undefined;
+    };
+    interestOptions: {
+      culture: string;
+      nature: string;
+      food: string;
+      shopping: string;
+      nightlife: string;
+      relaxation: string;
     };
   };
   nav: {

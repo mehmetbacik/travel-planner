@@ -40,6 +40,14 @@
       "budget.min": "Bütçe pozitif bir sayı olmalıdır",
       "Select at least one interest": "En az bir ilgi alanı seçmelisiniz",
       "expectedArrayReceivedBoolean": "En az bir ilgi alanı seçmelisiniz"
+    },
+    "interestOptions": {
+      "culture": "Kültür & Tarih",
+      "nature": "Doğa & Açık Hava",
+      "food": "Yemek & Restoran",
+      "shopping": "Alışveriş",
+      "nightlife": "Gece Hayatı",
+      "relaxation": "Rahatlama & Wellness"
     }
   },
   "nav": {
