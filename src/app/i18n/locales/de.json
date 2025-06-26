@@ -32,7 +32,13 @@
       "required": "{{field}} ist erforderlich",
       "invalidDate": "Ungültiges Datum",
       "invalidBudget": "Budget muss eine positive Zahl sein",
-      "endDateBeforeStart": "Enddatum muss nach dem Startdatum liegen"
+      "endDateBeforeStart": "Enddatum muss nach dem Startdatum liegen",
+      "destination.required": "Reiseziel ist erforderlich",
+      "startDate.required": "Startdatum ist erforderlich",
+      "endDate.required": "Enddatum ist erforderlich",
+      "interests.required": "Wählen Sie mindestens ein Interesse aus",
+      "budget.min": "Budget muss eine positive Zahl sein",
+      "Select at least one interest": "Wählen Sie mindestens ein Interesse aus"
     }
   },
   "nav": {

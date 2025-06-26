@@ -32,7 +32,13 @@
       "required": "{{field}} alanı zorunludur",
       "invalidDate": "Geçersiz tarih",
       "invalidBudget": "Bütçe pozitif bir sayı olmalıdır",
-      "endDateBeforeStart": "Bitiş tarihi başlangıç tarihinden sonra olmalıdır"
+      "endDateBeforeStart": "Bitiş tarihi başlangıç tarihinden sonra olmalıdır",
+      "destination.required": "Varış noktası zorunludur",
+      "startDate.required": "Başlangıç tarihi zorunludur",
+      "endDate.required": "Bitiş tarihi zorunludur",
+      "interests.required": "En az bir ilgi alanı seçmelisiniz",
+      "budget.min": "Bütçe pozitif bir sayı olmalıdır",
+      "Select at least one interest": "En az bir ilgi alanı seçmelisiniz"
     }
   },
   "nav": {

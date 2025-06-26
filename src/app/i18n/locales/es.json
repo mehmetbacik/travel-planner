@@ -32,7 +32,13 @@
       "required": "{{field}} es obligatorio",
       "invalidDate": "Fecha no válida",
       "invalidBudget": "El presupuesto debe ser un número positivo",
-      "endDateBeforeStart": "La fecha de finalización debe ser posterior a la fecha de inicio"
+      "endDateBeforeStart": "La fecha de finalización debe ser posterior a la fecha de inicio",
+      "destination.required": "El destino es obligatorio",
+      "startDate.required": "La fecha de inicio es obligatoria",
+      "endDate.required": "La fecha de finalización es obligatoria",
+      "interests.required": "Seleccione al menos un interés",
+      "budget.min": "El presupuesto debe ser un número positivo",
+      "Select at least one interest": "Seleccione al menos un interés"
     }
   },
   "nav": {

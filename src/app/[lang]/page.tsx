@@ -15,8 +15,8 @@ export default async function Home({
   return (
     <main className="min-h-screen">
       <Hero dict={dict} />
-      <Features dict={dict} />
       <TripPlanner dict={dict} />
+      <Features dict={dict} />
     </main>
   )
 } 

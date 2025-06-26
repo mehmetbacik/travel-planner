@@ -96,7 +96,7 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
               />
               {errors.destination && (
                 <p className="trip-planner__error-text">
-                  {errors.destination.message}
+                  {dict.common.validation?.[errors.destination.message as keyof typeof dict.common.validation] || errors.destination.message}
                 </p>
               )}
             </div>
@@ -122,7 +122,7 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
               </div>
               {errors.interests && (
                 <p className="trip-planner__error-text">
-                  {errors.interests.message}
+                  {dict.common.validation?.[errors.interests.message as keyof typeof dict.common.validation] || errors.interests.message}
                 </p>
               )}
             </div>
@@ -141,7 +141,7 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
                   />
                   {errors.startDate && (
                     <p className="trip-planner__error-text">
-                      {errors.startDate.message}
+                      {dict.common.validation?.[errors.startDate.message as keyof typeof dict.common.validation] || errors.startDate.message}
                     </p>
                   )}
                 </div>
@@ -155,7 +155,7 @@ export default function TripPlanner({ dict }: TripPlannerProps) {
                   />
                   {errors.endDate && (
                     <p className="trip-planner__error-text">
-                      {errors.endDate.message}
+                      {dict.common.validation?.[errors.endDate.message as keyof typeof dict.common.validation] || errors.endDate.message}
                     </p>
                   )}
                 </div>
