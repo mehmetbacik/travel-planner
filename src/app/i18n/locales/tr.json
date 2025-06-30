@@ -8,6 +8,8 @@
     "travelDates": "Seyahat Tarihleri",
     "startDate": "Başlangıç Tarihi",
     "endDate": "Bitiş Tarihi",
+    "currency": "Para Birimi",
+    "currencySelect": "Para birimi seçin",
     "budget": "Bütçe",
     "generateItinerary": "Rota Oluştur",
     "regenerate": "Yeniden Oluştur",
@@ -37,6 +39,7 @@
       "startDate.required": "Başlangıç tarihi zorunludur",
       "endDate.required": "Bitiş tarihi zorunludur",
       "interests.required": "En az bir ilgi alanı seçmelisiniz",
+      "budget.nan": "Lütfen bütçe için geçerli bir sayı girin",
       "budget.min": "Bütçe pozitif bir sayı olmalıdır",
       "Select at least one interest": "En az bir ilgi alanı seçmelisiniz",
       "expectedArrayReceivedBoolean": "En az bir ilgi alanı seçmelisiniz"

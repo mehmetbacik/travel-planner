@@ -8,6 +8,8 @@
     "travelDates": "Travel Dates",
     "startDate": "Start Date",
     "endDate": "End Date",
+    "currency": "Currency",
+    "currencySelect": "Select currency",
     "budget": "Budget",
     "generateItinerary": "Generate Itinerary",
     "regenerate": "Regenerate",
@@ -37,6 +39,7 @@
       "startDate.required": "Start date is required",
       "endDate.required": "End date is required",
       "interests.required": "Select at least one interest",
+      "budget.nan": "Please enter a valid number for budget",
       "budget.min": "Budget must be a positive number",
       "Select at least one interest": "Select at least one interest",
       "expectedArrayReceivedBoolean": "Select at least one interest"

@@ -8,6 +8,8 @@
     "travelDates": "Reisedaten",
     "startDate": "Startdatum",
     "endDate": "Enddatum",
+    "currency": "Währung",
+    "currencySelect": "Währung auswählen",
     "budget": "Budget",
     "generateItinerary": "Reiseplan erstellen",
     "regenerate": "Neu generieren",
@@ -37,6 +39,7 @@
       "startDate.required": "Startdatum ist erforderlich",
       "endDate.required": "Enddatum ist erforderlich",
       "interests.required": "Wählen Sie mindestens ein Interesse aus",
+      "budget.nan": "Bitte geben Sie eine gültige Zahl für das Budget ein",
       "budget.min": "Budget muss eine positive Zahl sein",
       "Select at least one interest": "Bitte wählen Sie mindestens ein Interessensgebiet aus",
       "expectedArrayReceivedBoolean": "Bitte wählen Sie mindestens ein Interessensgebiet aus"

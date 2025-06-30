@@ -8,6 +8,8 @@ export interface Dictionary {
     travelDates: string;
     startDate: string;
     endDate: string;
+    currency: string;
+    currencySelect: string;
     budget: string;
     generateItinerary: string;
     regenerate: string;

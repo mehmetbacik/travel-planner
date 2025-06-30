@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { getDummyTripPlan } from './dummyTripPlan';
+import { z } from "zod";
 
 interface TripPlannerProps {
   dict: Dictionary;
@@ -29,6 +30,9 @@ function getLocalizedError(message: string | undefined, dict: Dictionary) {
   if (message === "Expected array, received boolean") {
     return dict.common.validation?.expectedArrayReceivedBoolean || message;
   }
+  if (message === "Expected number, received nan") {
+    return dict.common.validation?.["budget.nan"] || message;
+  }
   return message;
 }
 
@@ -41,8 +45,8 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<TripFormData>({
-    resolver: zodResolver(tripSchema),
+  } = useForm<TripFormData & { currency: string }>({
+    resolver: zodResolver(tripSchema.extend({ currency: z.string().min(1, 'validation.currency.required') })),
   });
 
   const interestOptions = [
@@ -52,6 +56,13 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
     { value: "shopping", label: dict.common.interestOptions.shopping },
     { value: "nightlife", label: dict.common.interestOptions.nightlife },
     { value: "relaxation", label: dict.common.interestOptions.relaxation },
+  ];
+
+  const currencyOptions = [
+    { value: 'TRY', label: '₺ (TRY)' },
+    { value: 'USD', label: '$ (USD)' },
+    { value: 'EUR', label: '€ (EUR)' },
+    { value: 'GBP', label: '£ (GBP)' },
   ];
 
   const onSubmit = async (data: TripFormData) => {
@@ -73,7 +84,7 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
       // const result = await response.json();
 
       const result = getDummyTripPlan(dict, data);
-      localStorage.setItem("tripPlan", JSON.stringify(result));
+      localStorage.setItem("tripPlan", JSON.stringify({ ...result, currency: data.currency }));
       router.push(
         `/${lang}/results?destination=${encodeURIComponent(data.destination)}`
       );
@@ -178,24 +189,48 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
                 </div>
               </div>
             </div>
-            <div className="trip-planner__field">
-              <label className="trip-planner__label">
-                {dict.common.budget}
-              </label>
-              <input
-                {...register("budget", { valueAsNumber: true })}
-                type="number"
-                min={0}
-                placeholder="1000"
-                className={`trip-planner__input ${
-                  errors.budget ? "trip-planner__input--error" : ""
-                }`}
-              />
-              {errors.budget && (
-                <p className="trip-planner__error-text">
-                  {getLocalizedError(errors.budget.message, dict)}
-                </p>
-              )}
+            <div className="trip-planner__field trip-planner__field--budget-currency" style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+              <div style={{ flex: 2 }}>
+                <label className="trip-planner__label">
+                  {dict.common.budget}
+                </label>
+                <input
+                  {...register("budget", { valueAsNumber: true })}
+                  type="number"
+                  min={0}
+                  placeholder="1000"
+                  className={`trip-planner__input ${
+                    errors.budget ? "trip-planner__input--error" : ""
+                  }`}
+                />
+                {errors.budget && (
+                  <p className="trip-planner__error-text">
+                    {getLocalizedError(errors.budget.message, dict)}
+                  </p>
+                )}
+              </div>
+              <div style={{ flex: 1 }}>
+                <label className="trip-planner__label">
+                  {dict.common.currency || 'Currency'}
+                </label>
+                <select
+                  {...register("currency")}
+                  className={`trip-planner__input ${
+                    errors.currency ? "trip-planner__input--error" : ""
+                  }`}
+                  defaultValue="TRY"
+                >
+                  <option value="" disabled>{dict.common.currencySelect || 'Select currency'}</option>
+                  {currencyOptions.map(opt => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
+                </select>
+                {errors.currency && (
+                  <p className="trip-planner__error-text">
+                    {getLocalizedError(errors.currency.message, dict)}
+                  </p>
+                )}
+              </div>
             </div>
             <motion.button
               whileHover={{ scale: 1.02 }}

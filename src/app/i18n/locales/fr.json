@@ -8,6 +8,8 @@
     "travelDates": "Dates de voyage",
     "startDate": "Date de début",
     "endDate": "Date de fin",
+    "currency": "Devise",
+    "currencySelect": "Sélectionnez la devise",
     "budget": "Budget",
     "generateItinerary": "Générer l'itinéraire",
     "regenerate": "Régénérer",
@@ -37,6 +39,7 @@
       "startDate.required": "La date de début est requise",
       "endDate.required": "La date de fin est requise",
       "interests.required": "Sélectionnez au moins un centre d'intérêt",
+      "budget.nan": "Veuillez entrer un nombre valide pour le budget",
       "budget.min": "Le budget doit être un nombre positif",
       "Select at least one interest": "Veuillez sélectionner au moins un centre d'intérêt",
       "expectedArrayReceivedBoolean": "Veuillez sélectionner au moins un centre d'intérêt"

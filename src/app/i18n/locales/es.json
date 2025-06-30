@@ -8,6 +8,8 @@
     "travelDates": "Fechas de viaje",
     "startDate": "Fecha de inicio",
     "endDate": "Fecha de finalización",
+    "currency": "Moneda",
+    "currencySelect": "Seleccione la moneda",
     "budget": "Presupuesto",
     "generateItinerary": "Generar itinerario",
     "regenerate": "Regenerar",
@@ -37,6 +39,7 @@
       "startDate.required": "La fecha de inicio es obligatoria",
       "endDate.required": "La fecha de finalización es obligatoria",
       "interests.required": "Seleccione al menos un interés",
+      "budget.nan": "Por favor ingrese un número válido para el presupuesto",
       "budget.min": "El presupuesto debe ser un número positivo",
       "Select at least one interest": "Seleccione al menos un interés",
       "expectedArrayReceivedBoolean": "Seleccione al menos un interés"

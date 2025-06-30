@@ -17,7 +17,8 @@ export const tripSchema = z.object({
     type: z.string(),
     details: z.string(),
   }).optional(),
-  specialRequests: z.string().optional()
+  specialRequests: z.string().optional(),
+  currency: z.string().min(1, 'validation.currency.required'),
 })
 
 export type TripFormData = z.infer<typeof tripSchema> 
