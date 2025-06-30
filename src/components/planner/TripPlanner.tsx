@@ -178,6 +178,25 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
                 </div>
               </div>
             </div>
+            <div className="trip-planner__field">
+              <label className="trip-planner__label">
+                {dict.common.budget}
+              </label>
+              <input
+                {...register("budget", { valueAsNumber: true })}
+                type="number"
+                min={0}
+                placeholder="1000"
+                className={`trip-planner__input ${
+                  errors.budget ? "trip-planner__input--error" : ""
+                }`}
+              />
+              {errors.budget && (
+                <p className="trip-planner__error-text">
+                  {getLocalizedError(errors.budget.message, dict)}
+                </p>
+              )}
+            </div>
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
