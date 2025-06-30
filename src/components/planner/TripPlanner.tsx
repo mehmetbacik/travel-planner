@@ -98,13 +98,48 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
   return (
     <section className="trip-planner">
       <div className="trip-planner__container">
+        {/* Tab structure */}
+        <div style={{ display: 'flex', gap: 16, marginBottom: 32 }}>
+          <button
+            type="button"
+            className="trip-planner__tab trip-planner__tab--active"
+            style={{
+              padding: '10px 24px',
+              border: 'none',
+              borderBottom: '2px solid #2563eb',
+              background: 'none',
+              color: '#2563eb',
+              fontWeight: 600,
+              fontSize: 18,
+              cursor: 'pointer',
+            }}
+          >
+            {dict.common.planYourTrip || 'Planlayıcı'}
+          </button>
+          <button
+            type="button"
+            className="trip-planner__tab trip-planner__tab--disabled"
+            style={{
+              padding: '10px 24px',
+              border: 'none',
+              borderBottom: '2px solid #e5e7eb',
+              background: 'none',
+              color: '#9ca3af',
+              fontWeight: 600,
+              fontSize: 18,
+              cursor: 'not-allowed',
+            }}
+            disabled
+          >
+            {dict.common.comingSoon || 'Yakında'}
+          </button>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="trip-planner__card"
         >
-          <h2 className="trip-planner__title">{dict.common.planYourTrip}</h2>
           {error && <div className="trip-planner__error">{error}</div>}
           <form
             onSubmit={handleSubmit(onSubmit)}

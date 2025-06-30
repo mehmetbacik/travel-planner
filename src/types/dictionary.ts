@@ -51,6 +51,7 @@ export interface Dictionary {
       nightlife: string;
       relaxation: string;
     };
+    comingSoon: string;
   };
   nav: {
     home: string;
