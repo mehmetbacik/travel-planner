@@ -8,7 +8,7 @@ import { tripSchema, TripFormData } from "@/schemas/tripSchema";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { getDummyTripPlan } from './dummyTripPlan';
+import { getDummyTripPlan } from "./dummyTripPlan";
 import { z } from "zod";
 
 interface TripPlannerProps {
@@ -18,13 +18,19 @@ interface TripPlannerProps {
 
 function getLocalizedError(message: string | undefined, dict: Dictionary) {
   if (!message) return "";
-  if (dict.common.validation?.[message as keyof typeof dict.common.validation]) {
-    return dict.common.validation[message as keyof typeof dict.common.validation];
+  if (
+    dict.common.validation?.[message as keyof typeof dict.common.validation]
+  ) {
+    return dict.common.validation[
+      message as keyof typeof dict.common.validation
+    ];
   }
   if (message.includes(".")) {
     const last = message.split(".").pop()!;
     if (dict.common.validation?.[last as keyof typeof dict.common.validation]) {
-      return dict.common.validation[last as keyof typeof dict.common.validation];
+      return dict.common.validation[
+        last as keyof typeof dict.common.validation
+      ];
     }
   }
   if (message === "Expected array, received boolean") {
@@ -46,7 +52,11 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
     handleSubmit,
     formState: { errors },
   } = useForm<TripFormData & { currency: string }>({
-    resolver: zodResolver(tripSchema.extend({ currency: z.string().min(1, 'validation.currency.required') })),
+    resolver: zodResolver(
+      tripSchema.extend({
+        currency: z.string().min(1, "validation.currency.required"),
+      })
+    ),
   });
 
   const interestOptions = [
@@ -59,10 +69,10 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
   ];
 
   const currencyOptions = [
-    { value: 'TRY', label: '₺ (TRY)' },
-    { value: 'USD', label: '$ (USD)' },
-    { value: 'EUR', label: '€ (EUR)' },
-    { value: 'GBP', label: '£ (GBP)' },
+    { value: "TRY", label: "₺ (TRY)" },
+    { value: "USD", label: "$ (USD)" },
+    { value: "EUR", label: "€ (EUR)" },
+    { value: "GBP", label: "£ (GBP)" },
   ];
 
   const onSubmit = async (data: TripFormData) => {
@@ -84,12 +94,17 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
       // const result = await response.json();
 
       const result = getDummyTripPlan(dict, data);
-      localStorage.setItem("tripPlan", JSON.stringify({ ...result, currency: data.currency }));
+      localStorage.setItem(
+        "tripPlan",
+        JSON.stringify({ ...result, currency: data.currency })
+      );
       router.push(
         `/${lang}/results?destination=${encodeURIComponent(data.destination)}`
       );
     } catch (err) {
-      setError(dict.planner.errors || "Failed to generate trip plan. Please try again.");
+      setError(
+        dict.planner.errors || "Failed to generate trip plan. Please try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -99,39 +114,19 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
     <section className="trip-planner">
       <div className="trip-planner__container">
         {/* Tab structure */}
-        <div style={{ display: 'flex', gap: 16, marginBottom: 32 }}>
+        <div className="trip-planner__tab-wrapper">
           <button
             type="button"
-            className="trip-planner__tab trip-planner__tab--active"
-            style={{
-              padding: '10px 24px',
-              border: 'none',
-              borderBottom: '2px solid #2563eb',
-              background: 'none',
-              color: '#2563eb',
-              fontWeight: 600,
-              fontSize: 18,
-              cursor: 'pointer',
-            }}
+            className="trip-planner__tab-wrapper--tab trip-planner__tab-wrapper--tab--active"
           >
-            {dict.common.planYourTrip || 'Planlayıcı'}
+            {dict.common.planYourTrip || "Planner"}
           </button>
           <button
             type="button"
-            className="trip-planner__tab trip-planner__tab--disabled"
-            style={{
-              padding: '10px 24px',
-              border: 'none',
-              borderBottom: '2px solid #e5e7eb',
-              background: 'none',
-              color: '#9ca3af',
-              fontWeight: 600,
-              fontSize: 18,
-              cursor: 'not-allowed',
-            }}
+            className="trip-planner__tab-wrapper--tab trip-planner__tab-wrapper--tab--disabled"
             disabled
           >
-            {dict.common.comingSoon || 'Yakında'}
+            {dict.common.comingSoon || "Coming Soon"}
           </button>
         </div>
         <motion.div
@@ -224,7 +219,10 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
                 </div>
               </div>
             </div>
-            <div className="trip-planner__field trip-planner__field--budget-currency" style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+            <div
+              className="trip-planner__field trip-planner__field--budget-currency"
+              style={{ display: "flex", gap: 12, alignItems: "center" }}
+            >
               <div style={{ flex: 2 }}>
                 <label className="trip-planner__label">
                   {dict.common.budget}
@@ -246,7 +244,7 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
               </div>
               <div style={{ flex: 1 }}>
                 <label className="trip-planner__label">
-                  {dict.common.currency || 'Currency'}
+                  {dict.common.currency || "Currency"}
                 </label>
                 <select
                   {...register("currency")}
@@ -255,9 +253,13 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
                   }`}
                   defaultValue="TRY"
                 >
-                  <option value="" disabled>{dict.common.currencySelect || 'Select currency'}</option>
-                  {currencyOptions.map(opt => (
-                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  <option value="" disabled>
+                    {dict.common.currencySelect || "Select currency"}
+                  </option>
+                  {currencyOptions.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
                   ))}
                 </select>
                 {errors.currency && (
