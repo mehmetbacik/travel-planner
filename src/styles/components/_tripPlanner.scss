@@ -21,6 +21,7 @@
       border-radius: 8px 8px 0px 0px;
       transition: $transition-base;
       border-bottom: solid 1px $primary;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px -1px 4px;
       &--active {
         background-color: $color-white;
         color: $primary;
@@ -35,7 +36,7 @@
   &__card {
     background-color: $color-white;
     border-radius: 0px 0px 8px 8px;;
-    box-shadow: $shadow-lg;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: $spacing-xl $spacing-lg;
   }
 
