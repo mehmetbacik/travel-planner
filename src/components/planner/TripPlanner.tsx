@@ -224,54 +224,53 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
                 </div>
               </div>
             </div>
-            <div
-              className="trip-planner__field trip-planner__field--budget-currency"
-              style={{ display: "flex", gap: 12, alignItems: "center" }}
-            >
-              <div style={{ flex: 2 }}>
-                <label className="trip-planner__label">
-                  {dict.common.budget}
-                </label>
-                <input
-                  {...register("budget", { valueAsNumber: true })}
-                  type="number"
-                  min={0}
-                  placeholder="1000"
-                  className={`trip-planner__input ${
-                    errors.budget ? "trip-planner__input--error" : ""
-                  }`}
-                />
-                {errors.budget && (
-                  <p className="trip-planner__error-text">
-                    {getLocalizedError(errors.budget.message, dict)}
-                  </p>
-                )}
-              </div>
-              <div style={{ flex: 1 }}>
-                <label className="trip-planner__label">
-                  {dict.common.currency || "Currency"}
-                </label>
-                <select
-                  {...register("currency")}
-                  className={`trip-planner__input ${
-                    errors.currency ? "trip-planner__input--error" : ""
-                  }`}
-                  defaultValue="TRY"
-                >
-                  <option value="" disabled>
-                    {dict.common.currencySelect || "Select currency"}
-                  </option>
-                  {currencyOptions.map((opt) => (
-                    <option key={opt.value} value={opt.value}>
-                      {opt.label}
+            <div className="trip-planner__field">
+              <div className="trip-planner__date-grid">
+                <div className="trip-planner__field">
+                  <label className="trip-planner__label">
+                    {dict.common.budget}
+                  </label>
+                  <input
+                    {...register("budget", { valueAsNumber: true })}
+                    type="number"
+                    min={0}
+                    placeholder="1000"
+                    className={`trip-planner__input ${
+                      errors.budget ? "trip-planner__input--error" : ""
+                    }`}
+                  />
+                  {errors.budget && (
+                    <p className="trip-planner__error-text">
+                      {getLocalizedError(errors.budget.message, dict)}
+                    </p>
+                  )}
+                </div>
+                <div className="trip-planner__field">
+                  <label className="trip-planner__label">
+                    {dict.common.currency || "Currency"}
+                  </label>
+                  <select
+                    {...register("currency")}
+                    className={`trip-planner__input ${
+                      errors.currency ? "trip-planner__input--error" : ""
+                    }`}
+                    defaultValue="TRY"
+                  >
+                    <option value="" disabled>
+                      {dict.common.currencySelect || "Select currency"}
                     </option>
-                  ))}
-                </select>
-                {errors.currency && (
-                  <p className="trip-planner__error-text">
-                    {getLocalizedError(errors.currency.message, dict)}
-                  </p>
-                )}
+                    {currencyOptions.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.currency && (
+                    <p className="trip-planner__error-text">
+                      {getLocalizedError(errors.currency.message, dict)}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
             <motion.button
