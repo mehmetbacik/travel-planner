@@ -52,6 +52,9 @@ export interface Dictionary {
       relaxation: string;
     };
     comingSoon: string;
+    multiDestination: string;
+    addDestination: string;
+    removeDestination: string;
   };
   nav: {
     home: string;
