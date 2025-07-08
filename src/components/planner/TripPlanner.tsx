@@ -161,19 +161,22 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
               <label className="trip-planner__label">
                 {dict.common.destination}
               </label>
-              <div style={{ marginBottom: 8 }}>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={multiDestination}
-                    onChange={() => setMultiDestination((v) => !v)}
-                    style={{ marginRight: 8 }}
-                  />
-                  Çoklu destinasyon ekle
-                </label>
+              <div className="trip-planner__multi-destination-bar">
+                <div
+                  className={`trip-planner__toggle${multiDestination ? ' trip-planner__toggle--active' : ''}`}
+                  onClick={() => setMultiDestination((v) => !v)}
+                  role="button"
+                  tabIndex={0}
+                  aria-pressed={multiDestination}
+                >
+                  <div className="trip-planner__toggle-circle" />
+                </div>
+                <span style={{ fontWeight: 600, color: multiDestination ? '#FF5A5F' : '#666' }}>
+                  Çoklu destinasyon
+                </span>
               </div>
-              {fields.map((field, idx) => (
-                <div key={field.id} style={{ marginBottom: 16, border: "1px solid #eee", padding: 12, borderRadius: 8 }}>
+              {(multiDestination ? fields : [fields[0]]).map((field, idx) => (
+                <div key={field.id} className="trip-planner__destination-box">
                   <input
                     {...register(`destinations.${idx}.destination` as const)}
                     type="text"
@@ -193,7 +196,8 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
                     />
                   </div>
                   {multiDestination && fields.length > 1 && (
-                    <button type="button" onClick={() => remove(idx)} style={{ color: "red", marginTop: 4 }}>
+                    <button type="button" onClick={() => remove(idx)} className="trip-planner__button trip-planner__button--remove">
+                      <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="#fff" strokeWidth="2" d="M6 6l12 12M6 18L18 6"/></svg>
                       Kaldır
                     </button>
                   )}
@@ -207,8 +211,9 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
                 </div>
               ))}
               {multiDestination && (
-                <button type="button" onClick={() => append({ destination: "", startDate: "", endDate: "" })} style={{ marginTop: 8 }}>
-                  + Destinasyon Ekle
+                <button type="button" onClick={() => append({ destination: "", startDate: "", endDate: "" })} className="trip-planner__button trip-planner__button--add">
+                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#fff" strokeWidth="2" d="M12 5v14M5 12h14"/></svg>
+                  Destinasyon Ekle
                 </button>
               )}
             </div>
