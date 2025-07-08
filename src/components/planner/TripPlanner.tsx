@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { getDummyTripPlan } from "./dummyTripPlan";
 import { z } from "zod";
+import { useFieldArray } from "react-hook-form";
 
 interface TripPlannerProps {
   dict: Dictionary;
@@ -46,10 +47,12 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+  const [multiDestination, setMultiDestination] = useState(false);
 
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm<TripFormData & { currency: string }>({
     resolver: zodResolver(
@@ -57,6 +60,16 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
         currency: z.string().min(1, "validation.currency.required"),
       })
     ),
+    defaultValues: {
+      destinations: [
+        { destination: "", startDate: "", endDate: "" },
+      ],
+    },
+  });
+
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "destinations",
   });
 
   const interestOptions = [
@@ -75,10 +88,9 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
     { value: "GBP", label: "£ (GBP)" },
   ];
 
-  const onSubmit = async (data: TripFormData) => {
+  const onSubmit = async (data: TripFormData & { currency: string }) => {
     setIsSubmitting(true);
     setError(null);
-
     try {
       // TODO: API connection
       // const response = await fetch("/api/trip", {
@@ -99,7 +111,7 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
         JSON.stringify({ ...result, currency: data.currency })
       );
       router.push(
-        `/${lang}/results?destination=${encodeURIComponent(data.destination)}`
+        `/${lang}/results?destination=${encodeURIComponent(data.destinations[0].destination)}`
       );
     } catch (err) {
       setError(
@@ -149,18 +161,55 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
               <label className="trip-planner__label">
                 {dict.common.destination}
               </label>
-              <input
-                {...register("destination")}
-                type="text"
-                placeholder={dict.planner.destinationPlaceholder}
-                className={`trip-planner__input ${
-                  errors.destination ? "trip-planner__input--error" : ""
-                }`}
-              />
-              {errors.destination && (
-                <p className="trip-planner__error-text">
-                  {getLocalizedError(errors.destination.message, dict)}
-                </p>
+              <div style={{ marginBottom: 8 }}>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={multiDestination}
+                    onChange={() => setMultiDestination((v) => !v)}
+                    style={{ marginRight: 8 }}
+                  />
+                  Çoklu destinasyon ekle
+                </label>
+              </div>
+              {fields.map((field, idx) => (
+                <div key={field.id} style={{ marginBottom: 16, border: "1px solid #eee", padding: 12, borderRadius: 8 }}>
+                  <input
+                    {...register(`destinations.${idx}.destination` as const)}
+                    type="text"
+                    placeholder={dict.planner.destinationPlaceholder}
+                    className={`trip-planner__input ${errors.destinations?.[idx]?.destination ? "trip-planner__input--error" : ""}`}
+                  />
+                  <div className="trip-planner__date-grid">
+                    <input
+                      {...register(`destinations.${idx}.startDate` as const)}
+                      type="date"
+                      className={`trip-planner__input ${errors.destinations?.[idx]?.startDate ? "trip-planner__input--error" : ""}`}
+                    />
+                    <input
+                      {...register(`destinations.${idx}.endDate` as const)}
+                      type="date"
+                      className={`trip-planner__input ${errors.destinations?.[idx]?.endDate ? "trip-planner__input--error" : ""}`}
+                    />
+                  </div>
+                  {multiDestination && fields.length > 1 && (
+                    <button type="button" onClick={() => remove(idx)} style={{ color: "red", marginTop: 4 }}>
+                      Kaldır
+                    </button>
+                  )}
+                  {(errors.destinations?.[idx]?.destination || errors.destinations?.[idx]?.startDate || errors.destinations?.[idx]?.endDate) && (
+                    <p className="trip-planner__error-text">
+                      {getLocalizedError(errors.destinations?.[idx]?.destination?.message, dict) ||
+                        getLocalizedError(errors.destinations?.[idx]?.startDate?.message, dict) ||
+                        getLocalizedError(errors.destinations?.[idx]?.endDate?.message, dict)}
+                    </p>
+                  )}
+                </div>
+              ))}
+              {multiDestination && (
+                <button type="button" onClick={() => append({ destination: "", startDate: "", endDate: "" })} style={{ marginTop: 8 }}>
+                  + Destinasyon Ekle
+                </button>
               )}
             </div>
             <div className="trip-planner__field">
@@ -188,41 +237,6 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
                   {getLocalizedError(errors.interests.message, dict)}
                 </p>
               )}
-            </div>
-            <div className="trip-planner__field">
-              <label className="trip-planner__label">
-                {dict.common.travelDates}
-              </label>
-              <div className="trip-planner__date-grid">
-                <div>
-                  <input
-                    {...register("startDate")}
-                    type="date"
-                    className={`trip-planner__input ${
-                      errors.startDate ? "trip-planner__input--error" : ""
-                    }`}
-                  />
-                  {errors.startDate && (
-                    <p className="trip-planner__error-text">
-                      {getLocalizedError(errors.startDate.message, dict)}
-                    </p>
-                  )}
-                </div>
-                <div>
-                  <input
-                    {...register("endDate")}
-                    type="date"
-                    className={`trip-planner__input ${
-                      errors.endDate ? "trip-planner__input--error" : ""
-                    }`}
-                  />
-                  {errors.endDate && (
-                    <p className="trip-planner__error-text">
-                      {getLocalizedError(errors.endDate.message, dict)}
-                    </p>
-                  )}
-                </div>
-              </div>
             </div>
             <div className="trip-planner__field">
               <div className="trip-planner__date-grid">
