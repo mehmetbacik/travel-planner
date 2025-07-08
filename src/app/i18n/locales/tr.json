@@ -52,7 +52,10 @@
       "nightlife": "Gece Hayatı",
       "relaxation": "Rahatlama & Sağlık"
     },
-    "comingSoon": "Yakında"
+    "comingSoon": "Yakında",
+    "multiDestination": "Çoklu Destinasyon",
+    "addDestination": "Destinasyon Ekle",
+    "removeDestination": "Kaldır"
   },
   "nav": {
     "home": "Anasayfa",

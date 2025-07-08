@@ -52,7 +52,10 @@
       "nightlife": "Vida Nocturna",
       "relaxation": "Relajación y Bienestar"
     },
-    "comingSoon": "Próximamente"
+    "comingSoon": "Próximamente",
+    "multiDestination": "Múltiples destinos",
+    "addDestination": "Agregar destino",
+    "removeDestination": "Eliminar"
   },
   "nav": {
     "home": "Inicio",

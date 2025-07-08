@@ -52,7 +52,10 @@
       "nightlife": "Nightlife",
       "relaxation": "Relaxation & Wellness"
     },
-    "comingSoon": "Coming Soon"
+    "comingSoon": "Coming Soon",
+    "multiDestination": "Multi Destination",
+    "addDestination": "Add Destination",
+    "removeDestination": "Remove"
   },
   "nav": {
     "home": "Home",

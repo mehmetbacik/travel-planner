@@ -52,7 +52,10 @@
       "nightlife": "Nachtleben",
       "relaxation": "Entspannung & Wellness"
     },
-    "comingSoon": "Demnächst"
+    "comingSoon": "Demnächst",
+    "multiDestination": "Mehrere Ziele",
+    "addDestination": "Ziel hinzufügen",
+    "removeDestination": "Entfernen"
   },
   "nav": {
     "home": "Startseite",

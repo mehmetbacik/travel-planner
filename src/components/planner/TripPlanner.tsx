@@ -172,7 +172,7 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
                   <div className="trip-planner__toggle-circle" />
                 </div>
                 <span style={{ fontWeight: 600, color: multiDestination ? '#FF5A5F' : '#666' }}>
-                  Çoklu destinasyon
+                  {dict.common.multiDestination}
                 </span>
               </div>
               {(multiDestination ? fields : [fields[0]]).map((field, idx) => (
@@ -198,7 +198,7 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
                   {multiDestination && fields.length > 1 && (
                     <button type="button" onClick={() => remove(idx)} className="trip-planner__button trip-planner__button--remove">
                       <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="#fff" strokeWidth="2" d="M6 6l12 12M6 18L18 6"/></svg>
-                      Kaldır
+                      {dict.common.removeDestination}
                     </button>
                   )}
                   {(errors.destinations?.[idx]?.destination || errors.destinations?.[idx]?.startDate || errors.destinations?.[idx]?.endDate) && (
@@ -213,7 +213,7 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
               {multiDestination && (
                 <button type="button" onClick={() => append({ destination: "", startDate: "", endDate: "" })} className="trip-planner__button trip-planner__button--add">
                   <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#fff" strokeWidth="2" d="M12 5v14M5 12h14"/></svg>
-                  Destinasyon Ekle
+                  {dict.common.addDestination}
                 </button>
               )}
             </div>
