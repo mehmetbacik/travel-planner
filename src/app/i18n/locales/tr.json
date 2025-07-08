@@ -47,10 +47,12 @@
     "interestOptions": {
       "culture": "Kültür & Tarih",
       "nature": "Doğa & Açık Hava",
-      "food": "Yemek & Restoran",
+      "food": "Yemek & Gastronomi",
       "shopping": "Alışveriş",
-      "nightlife": "Gece Hayatı",
-      "relaxation": "Rahatlama & Sağlık"
+      "nightlife": "Gece Hayatı & Eğlence",
+      "relaxation": "Rahatlama & Dinlenme",
+      "adventure": "Macera & Spor",
+      "art": "Sanat & Performans"
     },
     "comingSoon": "Yakında",
     "multiDestination": "Çoklu Destinasyon",

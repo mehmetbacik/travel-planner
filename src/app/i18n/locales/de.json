@@ -49,8 +49,10 @@
       "nature": "Natur & Outdoor",
       "food": "Essen & Gastronomie",
       "shopping": "Einkaufen",
-      "nightlife": "Nachtleben",
-      "relaxation": "Entspannung & Wellness"
+      "nightlife": "Nachtleben & Unterhaltung",
+      "relaxation": "Entspannung & Erholung",
+      "adventure": "Abenteuer & Sport",
+      "art": "Kunst & Aufführung"
     },
     "comingSoon": "Demnächst",
     "multiDestination": "Mehrere Ziele",

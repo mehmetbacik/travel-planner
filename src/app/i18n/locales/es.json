@@ -47,10 +47,12 @@
     "interestOptions": {
       "culture": "Cultura e Historia",
       "nature": "Naturaleza y Aire Libre",
-      "food": "Comida y Restaurantes",
+      "food": "Comida y Gastronomía",
       "shopping": "Compras",
-      "nightlife": "Vida Nocturna",
-      "relaxation": "Relajación y Bienestar"
+      "nightlife": "Vida Nocturna y Entretenimiento",
+      "relaxation": "Relajación & Descanso",
+      "adventure": "Aventura y Deportes",
+      "art": "Arte y Espectáculos"
     },
     "comingSoon": "Próximamente",
     "multiDestination": "Múltiples destinos",

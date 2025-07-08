@@ -79,6 +79,8 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
     { value: "shopping", label: dict.common.interestOptions.shopping },
     { value: "nightlife", label: dict.common.interestOptions.nightlife },
     { value: "relaxation", label: dict.common.interestOptions.relaxation },
+    { value: "adventure", label: dict.common.interestOptions.adventure },
+    { value: "art", label: dict.common.interestOptions.art },
   ];
 
   const currencyOptions = [

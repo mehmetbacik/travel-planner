@@ -50,6 +50,8 @@ export interface Dictionary {
       shopping: string;
       nightlife: string;
       relaxation: string;
+      adventure: string;
+      art: string;
     };
     comingSoon: string;
     multiDestination: string;
