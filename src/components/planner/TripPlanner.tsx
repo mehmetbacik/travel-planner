@@ -61,9 +61,7 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
       })
     ),
     defaultValues: {
-      destinations: [
-        { destination: "", startDate: "", endDate: "" },
-      ],
+      destinations: [{ destination: "", startDate: "", endDate: "" }],
     },
   });
 
@@ -113,7 +111,9 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
         JSON.stringify({ ...result, currency: data.currency })
       );
       router.push(
-        `/${lang}/results?destination=${encodeURIComponent(data.destinations[0].destination)}`
+        `/${lang}/results?destination=${encodeURIComponent(
+          data.destinations[0].destination
+        )}`
       );
     } catch (err) {
       setError(
@@ -160,22 +160,31 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
             className="trip-planner__form"
           >
             <div className="trip-planner__field">
-              <label className="trip-planner__label">
-                {dict.common.destination}
-              </label>
-              <div className="trip-planner__multi-destination-bar">
-                <div
-                  className={`trip-planner__toggle${multiDestination ? ' trip-planner__toggle--active' : ''}`}
-                  onClick={() => setMultiDestination((v) => !v)}
-                  role="button"
-                  tabIndex={0}
-                  aria-pressed={multiDestination}
-                >
-                  <div className="trip-planner__toggle-circle" />
+              <div className="trip-planner__destination-header">
+                <label className="trip-planner__label">
+                  {dict.common.destination}
+                </label>
+                <div className="trip-planner__multi-destination-bar">
+                  <div
+                    className={`trip-planner__toggle${
+                      multiDestination ? " trip-planner__toggle--active" : ""
+                    }`}
+                    onClick={() => setMultiDestination((v) => !v)}
+                    role="button"
+                    tabIndex={0}
+                    aria-pressed={multiDestination}
+                  >
+                    <div className="trip-planner__toggle-circle" />
+                  </div>
+                  <span
+                    style={{
+                      fontWeight: 600,
+                      color: multiDestination ? "#FF5A5F" : "#666",
+                    }}
+                  >
+                    {dict.common.multiDestination}
+                  </span>
                 </div>
-                <span style={{ fontWeight: 600, color: multiDestination ? '#FF5A5F' : '#666' }}>
-                  {dict.common.multiDestination}
-                </span>
               </div>
               {(multiDestination ? fields : [fields[0]]).map((field, idx) => (
                 <div key={field.id} className="trip-planner__destination-box">
@@ -183,38 +192,84 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
                     {...register(`destinations.${idx}.destination` as const)}
                     type="text"
                     placeholder={dict.planner.destinationPlaceholder}
-                    className={`trip-planner__input ${errors.destinations?.[idx]?.destination ? "trip-planner__input--error" : ""}`}
+                    className={`trip-planner__input ${
+                      errors.destinations?.[idx]?.destination
+                        ? "trip-planner__input--error"
+                        : ""
+                    }`}
                   />
                   <div className="trip-planner__date-grid">
                     <input
                       {...register(`destinations.${idx}.startDate` as const)}
                       type="date"
-                      className={`trip-planner__input ${errors.destinations?.[idx]?.startDate ? "trip-planner__input--error" : ""}`}
+                      className={`trip-planner__input ${
+                        errors.destinations?.[idx]?.startDate
+                          ? "trip-planner__input--error"
+                          : ""
+                      }`}
                     />
                     <input
                       {...register(`destinations.${idx}.endDate` as const)}
                       type="date"
-                      className={`trip-planner__input ${errors.destinations?.[idx]?.endDate ? "trip-planner__input--error" : ""}`}
+                      className={`trip-planner__input ${
+                        errors.destinations?.[idx]?.endDate
+                          ? "trip-planner__input--error"
+                          : ""
+                      }`}
                     />
                   </div>
                   {multiDestination && fields.length > 1 && (
-                    <button type="button" onClick={() => remove(idx)} className="trip-planner__button trip-planner__button--remove">
-                      <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="#fff" strokeWidth="2" d="M6 6l12 12M6 18L18 6"/></svg>
+                    <button
+                      type="button"
+                      onClick={() => remove(idx)}
+                      className="trip-planner__button trip-planner__button--remove"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke="#fff"
+                          strokeWidth="2"
+                          d="M6 6l12 12M6 18L18 6"
+                        />
+                      </svg>
                       {dict.common.removeDestination}
                     </button>
                   )}
-                  {(errors.destinations?.[idx]?.destination || errors.destinations?.[idx]?.startDate || errors.destinations?.[idx]?.endDate) && (
+                  {(errors.destinations?.[idx]?.destination ||
+                    errors.destinations?.[idx]?.startDate ||
+                    errors.destinations?.[idx]?.endDate) && (
                     <p className="trip-planner__error-text">
-                      {getLocalizedError(errors.destinations?.[idx]?.destination?.message, dict) ||
-                        getLocalizedError(errors.destinations?.[idx]?.startDate?.message, dict) ||
-                        getLocalizedError(errors.destinations?.[idx]?.endDate?.message, dict)}
+                      {getLocalizedError(
+                        errors.destinations?.[idx]?.destination?.message,
+                        dict
+                      ) ||
+                        getLocalizedError(
+                          errors.destinations?.[idx]?.startDate?.message,
+                          dict
+                        ) ||
+                        getLocalizedError(
+                          errors.destinations?.[idx]?.endDate?.message,
+                          dict
+                        )}
                     </p>
                   )}
                 </div>
               ))}
               {multiDestination && (
-                <button type="button" onClick={() => append({ destination: "", startDate: "", endDate: "" })} className="trip-planner__button trip-planner__button--add">
-                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="#fff" strokeWidth="2" d="M12 5v14M5 12h14"/></svg>
+                <button
+                  type="button"
+                  onClick={() =>
+                    append({ destination: "", startDate: "", endDate: "" })
+                  }
+                  className="trip-planner__button trip-planner__button--add"
+                >
+                  <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+                    <path stroke="#fff" strokeWidth="2" d="M12 5v14M5 12h14" />
+                  </svg>
                   {dict.common.addDestination}
                 </button>
               )}
