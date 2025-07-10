@@ -2,12 +2,6 @@
   background-color: $background-light;
   padding: $spacing-2xl 0;
 
-  &__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 $spacing-lg;
-  }
-
   &__tab-wrapper {
     display: flex;
     align-items: center;
@@ -35,25 +29,18 @@
 
   &__card {
     background-color: $color-white;
-    border-radius: 0px 0px 8px 8px;;
+    border-radius: 0px 8px 8px 8px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: $spacing-xl $spacing-lg;
   }
 
-  &__title {
-    font-size: $font-size-3xl;
-    font-weight: $font-weight-bold;
-    color: $color-text;
-    text-align: center;
-    margin-bottom: $spacing-xl;
-  }
-
   &__error {
+    font-size: $font-size-base * 0.85;
     background-color: lighten($error, 40%);
     color: $error;
     border: 1px solid $error;
-    border-radius: $border-radius-lg;
-    padding: $spacing-md;
+    border-radius: 8px;
+    padding: $spacing-sm;
     margin-bottom: $spacing-lg;
     font-weight: $font-weight-semibold;
   }
@@ -61,7 +48,7 @@
   &__form {
     display: flex;
     flex-direction: column;
-    gap: $spacing-lg;
+    gap: $spacing-md;
   }
 
   &__field {
@@ -77,10 +64,43 @@
   }
 
   &__label {
-    font-size: $font-size-base;
-    font-weight: $font-weight-semibold;
+    font-size: $font-size-base * 0.85;
+    font-weight: $font-weight-bold;
     color: $color-text;
     margin-bottom: $spacing-sm;
+  }
+
+  &__multi-destination-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__toggle {
+    width: 48px;
+    height: 28px;
+    background: $border-color;
+    border-radius: 14px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-right: $spacing-md;
+    &--active {
+      background: $primary;
+    }
+    &-circle {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 22px;
+      height: 22px;
+      background: $color-white;
+      border-radius: 50%;
+      transition: left 0.2s;
+    }
+    &--active &-circle {
+      left: 23px;
+    }
   }
 
   &__input {
@@ -90,18 +110,15 @@
     font-size: $font-size-base;
     color: $color-text;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-
     &:focus {
       border-color: $color-primary;
-      box-shadow: 0 0 0 3px rgba(255, 90, 95, 0.3); 
+      box-shadow: 0 0 0 3px rgba(255, 90, 95, 0.3);
       outline: none;
     }
-
     &--error {
       border-color: $error;
-
       &:focus {
-        box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3); 
+        box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3);
       }
     }
   }
@@ -190,39 +207,6 @@
     }
   }
 
-  &__multi-destination-bar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  &__toggle {
-    width: 48px;
-    height: 28px;
-    background: $border-color;
-    border-radius: 14px;
-    position: relative;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin-right: $spacing-md;
-    &--active {
-      background: $primary;
-    }
-    &-circle {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 22px;
-      height: 22px;
-      background: $color-white;
-      border-radius: 50%;
-      transition: left 0.2s;
-    }
-    &--active &-circle {
-      left: 23px;
-    }
-  }
-
   &__destination-box {
     background: $background-light;
     border: 1px solid $border-color;
@@ -254,7 +238,8 @@
       background: $color-white;
       color: $primary;
       border: 1.5px solid $primary;
-      &:hover, &.trip-planner__button--active {
+      &:hover,
+      &.trip-planner__button--active {
         background: $primary;
         color: $color-white;
       }

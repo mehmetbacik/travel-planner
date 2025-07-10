@@ -126,7 +126,7 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
 
   return (
     <section className="trip-planner">
-      <div className="trip-planner__container">
+      <div className="trip-planner__body container">
         {/* Tab structure */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
