@@ -226,16 +226,16 @@
   }
 
   &__button {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    font-size: $font-size-base;
+    justify-content: center;
+    font-size: $font-size-base * 0.85;
     font-weight: $font-weight-semibold;
-    border-radius: $border-radius-lg;
-    padding: $spacing-sm $spacing-lg;
+    border-radius: 8px;
+    padding: $spacing-sm;
     border: none;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    margin-top: $spacing-sm;
+    transition: $transition-base;
     &--secondary {
       background: $color-white;
       color: $primary;
@@ -247,27 +247,25 @@
       }
     }
     &--add {
-      background: $success;
+      background: $primary;
       color: $color-white;
       margin-left: 0;
       svg {
         margin-right: 6px;
       }
       &:hover {
-        background: darken($success, 10%);
+        background: darken($primary, 10%);
       }
     }
     &--remove {
       background: $error;
       color: $color-white;
       position: absolute;
-      right: $spacing-md;
-      top: $spacing-md;
-      padding: $spacing-sm $spacing-md;
+      border-radius: 50%;
+      right: 2px;
+      top: 2px;
+      padding: $spacing-unit;
       font-size: $font-size-md;
-      svg {
-        margin-right: 4px;
-      }
       &:hover {
         background: darken($error, 10%);
       }
