@@ -2,13 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-  IoLogoInstagram,
-  IoLogoFacebook,
-  IoLogoTwitter,
-  IoLogoYoutube,
-  IoLogoLinkedin,
-} from "react-icons/io5";
+import { Icon } from "@iconify/react";
 import { Locale } from "@/app/i18n/settings";
 import { Dictionary } from "@/types/dictionary";
 import GooglePlay from "@/assets/img/googleplay.svg";
@@ -40,7 +34,10 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
                   placeholder={dict.footer.emailPlaceholder}
                   className="footer__newsletter-form-input"
                 />
-                <button type="submit" className="footer__newsletter-form-button">
+                <button
+                  type="submit"
+                  className="footer__newsletter-form-button"
+                >
                   {dict.footer.subscribe}
                 </button>
               </form>
@@ -116,7 +113,7 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
-                <IoLogoInstagram />
+                <Icon icon="mdi:instagram" width="24" height="24" />
               </a>
               <a
                 href="https://facebook.com"
@@ -124,7 +121,7 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
                 rel="noopener noreferrer"
                 aria-label="Facebook"
               >
-                <IoLogoFacebook />
+                <Icon icon="mdi:facebook" width="24" height="24" />
               </a>
               <a
                 href="https://twitter.com"
@@ -132,7 +129,7 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
                 rel="noopener noreferrer"
                 aria-label="Twitter"
               >
-                <IoLogoTwitter />
+                <Icon icon="mdi:twitter" width="24" height="24" />
               </a>
               <a
                 href="https://youtube.com"
@@ -140,7 +137,7 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
                 rel="noopener noreferrer"
                 aria-label="YouTube"
               >
-                <IoLogoYoutube />
+                <Icon icon="mdi:youtube" width="24" height="24" />
               </a>
               <a
                 href="https://linkedin.com"
@@ -148,9 +145,10 @@ const Footer = ({ currentLang, dict }: FooterProps) => {
                 rel="noopener noreferrer"
                 aria-label="Linkedin"
               >
-                <IoLogoLinkedin />
+                <Icon icon="mdi:linkedin" width="24" height="24" />
               </a>
             </div>
+
             <div className="footer__apps">
               <Link href={`/${currentLang}/#`} className="footer__apps-content">
                 <Image
