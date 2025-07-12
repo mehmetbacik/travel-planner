@@ -2,7 +2,6 @@ import { getDictionary } from '../i18n/getDictionary'
 import { Locale } from '../i18n/settings'
 import Hero from '@/components/home/Hero'
 import Features from '@/components/home/Features'
-import TripPlanner from '@/components/planner/TripPlanner'
 
 export default async function Home({
   params,
@@ -13,9 +12,8 @@ export default async function Home({
   const dict = await getDictionary(lang)
 
   return (
-    <main className="min-h-screen">
+    <main>
       <Hero dict={dict} />
-      <TripPlanner dict={dict} lang={lang} />
       <Features dict={dict} />
     </main>
   )
