@@ -2,12 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Dictionary } from "@/types/dictionary";
-import { 
-  IoSunnyOutline, 
-  IoBusinessOutline, 
-  IoCarOutline, 
-  IoRestaurantOutline 
-} from "react-icons/io5";
+import { Icon } from "@iconify/react";
 
 interface FeaturesProps {
   dict: Dictionary;
@@ -15,24 +10,20 @@ interface FeaturesProps {
 
 const features = [
   {
-    icon: IoSunnyOutline,
+    icon: "mdi:weather-sunny",
     key: "weather",
-    label: "Weather",
   },
   {
-    icon: IoBusinessOutline,
+    icon: "mdi:map-marker-outline",
     key: "attractions",
-    label: "Attractions",
   },
   {
-    icon: IoCarOutline,
+    icon: "mdi:car",
     key: "transportation",
-    label: "Transportation",
   },
   {
-    icon: IoRestaurantOutline,
+    icon: "mdi:silverware-fork-knife",
     key: "food",
-    label: "Food",
   },
 ];
 
@@ -48,7 +39,7 @@ export default function Features({ dict }: FeaturesProps) {
         </header>
 
         <div className="features__grid">
-          {features.map(({ icon: Icon, key }, index) => (
+          {features.map(({ icon, key }, index) => (
             <motion.article
               key={key}
               className="feature-card"
@@ -60,7 +51,7 @@ export default function Features({ dict }: FeaturesProps) {
               aria-label={dict.features[key as keyof typeof dict.features]}
             >
               <div className="feature-card__icon" aria-hidden="true">
-                <Icon size={48} />
+                <Icon icon={icon} width="48" height="48" />
               </div>
               <h3 className="feature-card__title">
                 {dict.features[key as keyof typeof dict.features]}
