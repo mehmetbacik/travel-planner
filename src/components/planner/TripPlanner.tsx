@@ -349,8 +349,6 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
               </div>
             </div>
             <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isSubmitting}
               className="trip-planner__submit"

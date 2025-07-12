@@ -54,7 +54,6 @@
   &__field {
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
   }
 
   &__destination-header {
@@ -67,6 +66,7 @@
     font-size: $font-size-base * 0.85;
     font-weight: $font-weight-bold;
     color: $color-text;
+    margin-bottom: $spacing-sm;
   }
 
   &__multi-destination-bar {
@@ -75,6 +75,7 @@
     align-items: center;
     gap: $spacing-sm;
     font-size: $font-size-base * 0.85;
+    margin-bottom: $spacing-sm;
     span {
       line-height: 0;
     }
@@ -192,9 +193,6 @@
     }
   }
 
-
-  
-
   &__checkbox-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -229,20 +227,18 @@
     &:checked {
       background-color: $color-primary;
       border-color: $color-primary;
-
       &::after {
         content: "✓";
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -55%);
-        font-size: 14px;
+        transform: translate(-50%, -50%);
+        font-size: $font-size-base * 0.85;
         color: $color-white;
       }
     }
-
     &:focus-visible {
-      outline: 2px solid $color-primary;
+      outline: solid 2px $color-primary;
       outline-offset: 2px;
     }
   }
@@ -251,7 +247,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $spacing-md;
-
     input {
       width: 100%;
     }
@@ -266,21 +261,15 @@
   &__submit {
     background-color: $color-primary;
     color: $color-white;
-    font-weight: $font-weight-bold;
-    padding: $spacing-md;
+    font-size: $font-size-base * 0.85;
+    font-weight: $font-weight-semibold;
+    padding: $spacing-sm;
     border: none;
-    border-radius: $border-radius-lg;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: $font-size-lg;
-    transition: background-color 0.3s ease;
-
-    &:hover:not(:disabled) {
-      background-color: darken($color-primary, 10%);
-    }
-
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
+    transition: $transition-base;
+    &:hover {
+      background: darken($primary, 10%);
     }
   }
 }
