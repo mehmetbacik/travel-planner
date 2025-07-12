@@ -1,9 +1,9 @@
-.planner {
+.hero {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: calc(100vh - 200px);
+  height: 100vh;
   padding: $spacing-2xl $spacing-lg;
   color: $primary;
   &__bg {
@@ -56,10 +56,10 @@
         justify-content: center;
         text-align: center;
       }
-      .planner__subtitle {
+      .hero__subtitle {
         font-size: $font-size-lg;
       }
-      .planner__title {
+      .hero__title {
         font-size: $font-size-4xl;
         font-weight: $font-weight-bold;
         line-height: normal;
@@ -68,7 +68,7 @@
           padding-right: 0;
         }
       }
-      .planner__description {
+      .hero__description {
         font-size: $font-size-lg;
       }
     }
@@ -76,7 +76,7 @@
       display: flex;
       justify-content: center;
       flex: 1;
-      .planner__cta {
+      .hero__cta {
         background-color: $color-white;
         color: $primary;
         padding: $spacing-md $spacing-2xl;
