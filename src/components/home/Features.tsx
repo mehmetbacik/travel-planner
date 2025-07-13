@@ -52,16 +52,20 @@ export default function Features({ dict }: FeaturesProps) {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               tabIndex={0}
-              aria-label={`${dict.features[key]} - ${dict.features[descriptionKey]}`}
+              aria-label={`${
+                dict.features[key as keyof typeof dict.features]
+              } - ${
+                dict.features[descriptionKey as keyof typeof dict.features]
+              }`}
             >
               <div className="feature-card__icon" aria-hidden="true">
                 <Icon icon={icon} width="48" height="48" />
               </div>
               <h3 className="feature-card__title">
-                {dict.features[key]}
+                {dict.features[key as keyof typeof dict.features]}
               </h3>
               <p className="feature-card__description">
-                {dict.features[descriptionKey]}
+                {dict.features[descriptionKey as keyof typeof dict.features]}
               </p>
             </motion.article>
           ))}
