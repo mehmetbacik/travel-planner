@@ -93,9 +93,13 @@
     "title": "Funktionen",
     "description": "Intelligente Funktionen für eine einfache Reiseplanung.",
     "weather": "Wettervorhersagen",
+    "weatherdesc": "Erhalten Sie maßgeschneiderte Wettervorhersagen, um besser zu planen",
     "attractions": "Beliebte Sehenswürdigkeiten",
+    "attractionsdesc": "Entdecken Sie Highlights und verborgene Schätze an Ihrem Reiseziel",
     "transportation": "Transport & Aktivitäten",
-    "food": "Kulinarische Empfehlungen"
+    "transportationdesc": "Finden Sie die besten Fortbewegungsmöglichkeiten, von Bussen bis zu Mietwagen",
+    "food": "Kulinarische Empfehlungen",
+    "fooddesc": "Kosten Sie authentische Gerichte und entdecken Sie kulinarische Highlights"
   },
   "planner": {
     "title": "Alles für ein Persönliches Reiseerlebnis",

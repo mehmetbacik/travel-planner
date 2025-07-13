@@ -93,9 +93,13 @@
     "title": "Fonctionnalités",
     "description": "Des fonctionnalités intelligentes pour simplifier votre voyage.",
     "weather": "Prévisions météo",
+    "weatherdesc": "Recevez des prévisions personnalisées pour mieux organiser votre voyage",
     "attractions": "Attractions populaires",
+    "attractionsdesc": "Découvrez les incontournables et trésors cachés de votre destination",
     "transportation": "Transport et activités",
-    "food": "Recommandations culinaires"
+    "transportationdesc": "Trouvez les meilleurs moyens de vous déplacer, des bus locaux aux voitures de location",
+    "food": "Recommandations culinaires",
+    "fooddesc": "Goûtez des plats authentiques et découvrez des délices culinaires"
   },
   "planner": {
     "title": "Tout pour une Expérience de Voyage Personnalisée",

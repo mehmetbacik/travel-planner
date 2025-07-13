@@ -12,18 +12,22 @@ const features = [
   {
     icon: "mdi:weather-sunny",
     key: "weather",
+    descriptionKey: "weatherdesc",
   },
   {
     icon: "mdi:map-marker-outline",
     key: "attractions",
+    descriptionKey: "attractionsdesc",
   },
   {
     icon: "mdi:car",
     key: "transportation",
+    descriptionKey: "transportationdesc",
   },
   {
     icon: "mdi:silverware-fork-knife",
     key: "food",
+    descriptionKey: "fooddesc",
   },
 ];
 
@@ -39,7 +43,7 @@ export default function Features({ dict }: FeaturesProps) {
         </header>
 
         <div className="features__grid">
-          {features.map(({ icon, key }, index) => (
+          {features.map(({ icon, key, descriptionKey }, index) => (
             <motion.article
               key={key}
               className="feature-card"
@@ -48,14 +52,17 @@ export default function Features({ dict }: FeaturesProps) {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               tabIndex={0}
-              aria-label={dict.features[key as keyof typeof dict.features]}
+              aria-label={`${dict.features[key]} - ${dict.features[descriptionKey]}`}
             >
               <div className="feature-card__icon" aria-hidden="true">
                 <Icon icon={icon} width="48" height="48" />
               </div>
               <h3 className="feature-card__title">
-                {dict.features[key as keyof typeof dict.features]}
+                {dict.features[key]}
               </h3>
+              <p className="feature-card__description">
+                {dict.features[descriptionKey]}
+              </p>
             </motion.article>
           ))}
         </div>

@@ -92,9 +92,13 @@ export interface Dictionary {
     title: string;
     description: string;
     weather: string;
+    weatherdesc: string;
     attractions: string;
+    attractionsdesc: string;
     transportation: string;
+    transportationdesc: string;
     food: string;
+    fooddesc: string;
   };
   planner: {
     title: string;

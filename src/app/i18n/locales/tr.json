@@ -93,9 +93,13 @@
     "title": "Özellikler",
     "description": "Seyahatinizi kolaylaştıran akıllı özellikler.",
     "weather": "Hava Durumu Tahminleri",
+    "weatherdesc": "Daha iyi hazırlık yapmanız için size özel hava durumu tahminleri alın",
     "attractions": "Popüler Yerler",
+    "attractionsdesc": "Gideceğiniz yerde mutlaka görülmesi gereken yerleri ve gizli hazineleri keşfedin",
     "transportation": "Ulaşım ve Aktiviteler",
-    "food": "Yemek Önerileri"
+    "transportationdesc": "Yerel otobüslerden araç kiralamaya en iyi ulaşım yöntemlerini bulun",
+    "food": "Yemek Önerileri",
+    "fooddesc": "Yöresel yemekleri tadın ve mutfak harikalarını keşfedin"
   },
   "planner": {
     "title": "Her Şey Kişisel Bir Yolculuk İçin",
