@@ -33,7 +33,7 @@ const features = [
 
 export default function Features({ dict }: FeaturesProps) {
   return (
-    <section className="features" aria-labelledby="features-title">
+    <section className="features" aria-labelledby="features">
       <div className="features__body container">
         <header className="features__header">
           <h2 id="features-title" className="features__title">
