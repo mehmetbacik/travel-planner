@@ -1,15 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Locale } from "@/app/i18n/settings";
 import { motion } from "framer-motion";
 import { Dictionary } from "@/types/dictionary";
 import homeBg from "@/assets/img/home-bg.jpg";
 
 interface HeroProps {
+  currentLang: Locale;
   dict: Dictionary;
 }
 
-export default function Hero({ dict }: HeroProps) {
+export default function Hero({ currentLang, dict }: HeroProps) {
   const [bgLoaded, setBgLoaded] = useState(false);
 
   useEffect(() => {
@@ -61,14 +64,16 @@ export default function Hero({ dict }: HeroProps) {
             </motion.p>
           </div>
           <div className="hero__content__action-wrapper">
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: bgLoaded ? 1 : 0, y: bgLoaded ? 0 : 20 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="hero__cta"
-            >
-              {dict.common.getStarted}
-            </motion.button>
+            <Link href={`/${currentLang}/planner`}>
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: bgLoaded ? 1 : 0, y: bgLoaded ? 0 : 20 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="hero__cta"
+              >
+                {dict.common.getStarted}
+              </motion.span>
+            </Link>
           </div>
         </div>
       </div>
