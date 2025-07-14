@@ -34,7 +34,7 @@ const features = [
 export default function Features({ dict }: FeaturesProps) {
   return (
     <section className="features" aria-labelledby="features-title">
-      <div className="features__container">
+      <div className="features__body container">
         <header className="features__header">
           <h2 id="features-title" className="features__title">
             {dict.features.title}
@@ -42,11 +42,11 @@ export default function Features({ dict }: FeaturesProps) {
           <p className="features__description">{dict.features.description}</p>
         </header>
 
-        <div className="features__grid">
+        <div className="features__content">
           {features.map(({ icon, key, descriptionKey }, index) => (
             <motion.article
               key={key}
-              className="feature-card"
+              className="features__card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -58,13 +58,13 @@ export default function Features({ dict }: FeaturesProps) {
                 dict.features[descriptionKey as keyof typeof dict.features]
               }`}
             >
-              <div className="feature-card__icon" aria-hidden="true">
+              <div className="features__card-icon" aria-hidden="true">
                 <Icon icon={icon} width="48" height="48" />
               </div>
-              <h3 className="feature-card__title">
+              <h3 className="features__card-title">
                 {dict.features[key as keyof typeof dict.features]}
               </h3>
-              <p className="feature-card__description">
+              <p className="features__card-description">
                 {dict.features[descriptionKey as keyof typeof dict.features]}
               </p>
             </motion.article>
