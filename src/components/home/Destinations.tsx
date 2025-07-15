@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { Dictionary } from "@/types/dictionary";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -21,7 +22,7 @@ interface DestinationCard {
   country: string;
   days: number;
   cost: string;
-  img: string;
+  img: StaticImageData;
 }
 
 const DESTINATIONS: DestinationCard[] = [
@@ -30,42 +31,42 @@ const DESTINATIONS: DestinationCard[] = [
     country: "Turkiye",
     days: 5,
     cost: "$700 - $1100",
-    img: {IstanbulImg},
+    img: IstanbulImg,
   },
   {
     name: "Paris",
     country: "France",
     days: 5,
     cost: "$1200 - $1800",
-    img: {ParisImg},
+    img: ParisImg,
   },
   {
     name: "Barcelona",
     country: "Spain",
     days: 4,
     cost: "$900 - $1400",
-    img: {BarcelonaImg},
+    img: BarcelonaImg,
   },
   {
     name: "Berlin",
     country: "Germany",
     days: 3,
     cost: "$800 - $1200",
-    img: {BerlinImg},
+    img: BerlinImg,
   },
   {
     name: "London",
     country: "England",
     days: 4,
     cost: "$1300 - $2000",
-    img: {LondonImg},
+    img: LondonImg,
   },
   {
     name: "Madrid",
     country: "Spain",
     days: 3,
     cost: "$850 - $1300",
-    img: {MadridImg},
+    img: MadridImg,
   },
 ];
 
