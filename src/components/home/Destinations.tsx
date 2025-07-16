@@ -138,7 +138,7 @@ export default function Destinations({ dict }: DestinationsProps) {
           <h2 id="destinations-title" className="destinations__title">
             {dict.destinations.title}
           </h2>
-          <p className="destinaitons__description">
+          <p className="destinations__description">
             {dict.destinations.description}
           </p>
         </div>
@@ -174,7 +174,7 @@ export default function Destinations({ dict }: DestinationsProps) {
                   <div className="destinations__info">
                     <h3>{dest.name}</h3>
                     <p>{dest.country}</p>
-                    <div className="destinations__meta">
+                    <div className="destinations__summary">
                       <span>
                         {dest.days} {dict.planner.day}
                       </span>
