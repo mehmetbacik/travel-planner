@@ -100,6 +100,10 @@ export interface Dictionary {
     food: string;
     fooddesc: string;
   };
+  destinations: {
+    title: string;
+    description: string;
+  };
   planner: {
     title: string;
     subtitle: string;

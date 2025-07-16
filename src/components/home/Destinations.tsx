@@ -136,10 +136,10 @@ export default function Destinations({ dict }: DestinationsProps) {
       <div className="destinations__body container">
         <div className="destinations__header">
           <h2 id="destinations-title" className="destinations__title">
-            {dict.home.features.cards.destination.title}
+            {dict.destinations.title}
           </h2>
-          <p className="features__description">
-            {dict.home.features.cards.destination.description}
+          <p className="destinaitons__description">
+            {dict.destinations.description}
           </p>
         </div>
         <div className="destinations__slider">

@@ -91,7 +91,7 @@
   },
   "features": {
     "title": "Características",
-    "description": "Funciones inteligentes para planificar tu viaje fácilmente.",
+    "description": "Funciones inteligentes para planificar tu viaje fácilmente",
     "weather": "Pronósticos del tiempo",
     "weatherdesc": "Obtén pronósticos personalizados para empacar y planificar mejor",
     "attractions": "Atracciones populares",
@@ -100,6 +100,10 @@
     "transportationdesc": "Descubre las mejores formas de moverte, desde buses locales hasta autos de alquiler",
     "food": "Recomendaciones gastronómicas",
     "fooddesc": "Prueba platos auténticos y descubre delicias culinarias"
+  },
+  "destinations": {
+    "title": "Destinos Populares",
+    "description": "Descubre tu próximo viaje soñado"
   },
   "planner": {
     "title": "Todo para una Experiencia de Viaje Personalizada",

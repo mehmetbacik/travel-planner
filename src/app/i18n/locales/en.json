@@ -91,7 +91,7 @@
   },
   "features": {
     "title": "Features",
-    "description": "Smart features that simplify your trip.",
+    "description": "Smart features that simplify your trip",
     "weather": "Weather Forecasts",
     "weatherdesc": "Get tailored weather forecasts to pack and plan better",
     "attractions": "Popular Attractions",
@@ -100,6 +100,10 @@
     "transportationdesc": "Find the best ways to get around, from local buses to car rentals",
     "food": "Food Recommendations",
     "fooddesc": "Taste authentic dishes and uncover culinary delights"
+  },
+  "destinations": {
+    "title": "Popular Destinations",
+    "description": "Explore your next dream trip"
   },
   "planner": {
     "title": "All for a Truly Personal Travel Experience",
