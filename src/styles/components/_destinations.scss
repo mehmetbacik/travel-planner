@@ -66,8 +66,13 @@
   transform: translateY(-4px) scale(1.03);
 }
 
-.destinations__flag {
+.destinations__img {
+  position: relative;
+  width: 100%;
   margin-bottom: 1rem;
+  aspect-ratio: 3 / 4;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .destinations__info h3 {

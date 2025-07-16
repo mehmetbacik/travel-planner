@@ -163,12 +163,12 @@ export default function Destinations({ dict }: DestinationsProps) {
                   onClick={() => handleCardClick(dest)}
                   style={{ height: "100%" }}
                 >
-                  <div className="destinations__flag">
+                  <div className="destinations__img">
                     <Image
                       src={dest.img}
                       alt={dest.country}
-                      width={32}
-                      height={24}
+                      fill
+                      style={{ objectFit: "cover" }}
                     />
                   </div>
                   <div className="destinations__info">
