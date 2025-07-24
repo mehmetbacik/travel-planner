@@ -150,8 +150,8 @@ export default function Destinations({ dict }: DestinationsProps) {
             pagination={{ clickable: true }}
             breakpoints={{
               0: { slidesPerView: 1 },
-              600: { slidesPerView: 2 },
-              900: { slidesPerView: 3 },
+              600: { slidesPerView: 3 },
+              900: { slidesPerView: 4 },
             }}
           >
             {DESTINATIONS.map((dest) => (
@@ -170,7 +170,7 @@ export default function Destinations({ dict }: DestinationsProps) {
                   </div>
                   <div className="destinations__info">
                     <div className="destinations__headline">
-                      <h3>{dest.name},</h3>
+                      <span>{dest.name},</span>
                       <p>{dest.country}</p>
                     </div>
                     <div className="destinations__summary">

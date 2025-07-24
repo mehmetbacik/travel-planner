@@ -38,6 +38,7 @@
     .swiper {
       width: 100%;
       padding: $spacing-md;
+      padding-bottom: $spacing-xl;
       @media (max-width: $md-breakpoint) {
         padding-bottom: $spacing-lg;
       }
@@ -47,6 +48,17 @@
           justify-content: center;
           align-items: stretch;
           height: auto;
+        }
+      }
+      .swiper-pagination {
+        transform: translateY(10px);
+        .swiper-pagination-bullet {
+          height: 5px;
+          width: 20px;
+          border-radius: 8px;
+          &-active {
+            background: $primary;
+          }
         }
       }
     }
@@ -70,6 +82,9 @@
       transform: translateY(-5px);
       box-shadow: $shadow-lg;
       outline: none;
+      .destinations__headline {
+        color: $primary;
+      }
     }
   }
 
@@ -93,21 +108,15 @@
     display: flex;
     align-items: center;
     gap: $spacing-unit;
-    h3 {
-      font-size: $font-size-md;
-      font-weight: $font-weight-bold;
-    }
-    p {
-      font-size: $font-size-base;
-      color: $color-text;
-    }
+    color: $color-text;
+    font-size: $font-size-md;
+    transition: $transition-base;
   }
 
   &__summary {
     display: flex;
     justify-content: space-between;
-    gap: $spacing-md;
-    font-size: $font-size-base * 0.85;
+    font-size: $font-size-base * 0.875;
     color: $color-text;
   }
 }
