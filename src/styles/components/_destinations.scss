@@ -37,6 +37,7 @@
     margin: 0 auto;
     .swiper {
       width: 100%;
+      padding: $spacing-md;
       @media (max-width: $md-breakpoint) {
         padding-bottom: $spacing-lg;
       }
@@ -63,6 +64,7 @@
     align-items: center;
     height: 100%;
     transition: $transition-base;
+    box-shadow: $shadow-md;
     &:hover,
     &:focus-within {
       transform: translateY(-5px);
@@ -74,28 +76,36 @@
   &__img {
     position: relative;
     width: 100%;
-    margin-bottom: $spacing-md;
     aspect-ratio: 3 / 4;
-    border-radius: $border-radius-lg;
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
     overflow: hidden;
   }
 
   &__info {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    padding: $spacing-md;
+    width: 100%;
+  }
+
+  &__headline {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit;
     h3 {
       font-size: $font-size-md;
       font-weight: $font-weight-bold;
-      margin-bottom: $spacing-sm;
     }
     p {
       font-size: $font-size-base;
       color: $color-text;
-      margin-bottom: $spacing-sm;
     }
   }
 
   &__summary {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: $spacing-md;
     font-size: $font-size-base * 0.85;
     color: $color-text;

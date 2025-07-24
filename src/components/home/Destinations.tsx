@@ -145,23 +145,20 @@ export default function Destinations({ dict }: DestinationsProps) {
         <div className="destinations__slider">
           <Swiper
             modules={[Navigation, Pagination]}
-            spaceBetween={24}
-            slidesPerView={3}
-            navigation
+            spaceBetween={32}
+            slidesPerView={4}
             pagination={{ clickable: true }}
             breakpoints={{
               0: { slidesPerView: 1 },
               600: { slidesPerView: 2 },
               900: { slidesPerView: 3 },
             }}
-            style={{ width: "100%", padding: "1rem 0" }}
           >
             {DESTINATIONS.map((dest) => (
               <SwiperSlide key={dest.name}>
                 <div
                   className="destinations__card"
                   onClick={() => handleCardClick(dest)}
-                  style={{ height: "100%" }}
                 >
                   <div className="destinations__img">
                     <Image
@@ -172,8 +169,10 @@ export default function Destinations({ dict }: DestinationsProps) {
                     />
                   </div>
                   <div className="destinations__info">
-                    <h3>{dest.name}</h3>
-                    <p>{dest.country}</p>
+                    <div className="destinations__headline">
+                      <h3>{dest.name},</h3>
+                      <p>{dest.country}</p>
+                    </div>
                     <div className="destinations__summary">
                       <span>
                         {dest.days} {dict.planner.day}
