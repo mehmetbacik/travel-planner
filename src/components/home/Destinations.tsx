@@ -27,43 +27,43 @@ interface DestinationCard {
 
 const DESTINATIONS: DestinationCard[] = [
   {
-    name: "Istanbul",
-    country: "Turkiye",
+    name: "istanbul",
+    country: "turkiye",
     days: 5,
     cost: "$700 - $1100",
     img: IstanbulImg,
   },
   {
-    name: "Paris",
-    country: "France",
+    name: "paris",
+    country: "france",
     days: 5,
     cost: "$1200 - $1800",
     img: ParisImg,
   },
   {
-    name: "Barcelona",
-    country: "Spain",
+    name: "barcelona",
+    country: "spain",
     days: 4,
     cost: "$900 - $1400",
     img: BarcelonaImg,
   },
   {
-    name: "Berlin",
-    country: "Germany",
+    name: "berlin",
+    country: "germany",
     days: 3,
     cost: "$800 - $1200",
     img: BerlinImg,
   },
   {
-    name: "London",
-    country: "England",
+    name: "london",
+    country: "england",
     days: 4,
     cost: "$1300 - $2000",
     img: LondonImg,
   },
   {
-    name: "Madrid",
-    country: "Spain",
+    name: "madrid",
+    country: "spain",
     days: 3,
     cost: "$850 - $1300",
     img: MadridImg,
@@ -90,7 +90,8 @@ export default function Destinations({ dict }: DestinationsProps) {
                 {
                   time: "09:00",
                   activity: "City Tour",
-                  location: destination.name + " Center",
+                  location:
+                    dict.destinations.items[destination.name] + " Center",
                 },
               ],
             },
@@ -100,7 +101,8 @@ export default function Destinations({ dict }: DestinationsProps) {
                 {
                   time: "10:00",
                   activity: "Museum Visit",
-                  location: destination.name + " Museum",
+                  location:
+                    dict.destinations.items[destination.name] + " Center",
                 },
               ],
             },
@@ -170,8 +172,8 @@ export default function Destinations({ dict }: DestinationsProps) {
                   </div>
                   <div className="destinations__info">
                     <div className="destinations__headline">
-                      <span>{dest.name},</span>
-                      <p>{dest.country}</p>
+                      <span>{dict.destinations.items[dest.name]},</span>
+                      <p>{dict.destinations.countries[dest.country]}</p>
                     </div>
                     <div className="destinations__summary">
                       <span>
