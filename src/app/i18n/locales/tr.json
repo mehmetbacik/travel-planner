@@ -103,7 +103,22 @@
   },
   "destinations": {
     "title": "Popüler Rotalar",
-    "description": "Hayalinizdeki seyahate şimdi göz atın"
+    "description": "Hayalinizdeki seyahate şimdi göz atın",
+    "items": {
+      "istanbul": "İstanbul",
+      "paris": "Paris",
+      "barcelona": "Barselona",
+      "berlin": "Berlin",
+      "london": "Londra",
+      "madrid": "Madrid"
+    },
+    "countries": {
+      "turkiye": "Türkiye",
+      "france": "Fransa",
+      "spain": "İspanya",
+      "germany": "Almanya",
+      "england": "İngiltere"
+    }
   },
   "planner": {
     "title": "Her Şey Kişisel Bir Yolculuk İçin",

@@ -103,7 +103,22 @@
   },
   "destinations": {
     "title": "Beliebte Reiseziele",
-    "description": "Entdecken Sie Ihre Traumreise"
+    "description": "Entdecken Sie Ihre Traumreise",
+    "items": {
+      "istanbul": "Istanbul",
+      "paris": "Paris",
+      "barcelona": "Barcelona",
+      "berlin": "Berlin",
+      "london": "London",
+      "madrid": "Madrid"
+    },
+    "countries": {
+      "turkiye": "Türkei",
+      "france": "Frankreich",
+      "spain": "Spanien",
+      "germany": "Deutschland",
+      "england": "England"
+    }
   },
   "planner": {
     "title": "Alles für ein Persönliches Reiseerlebnis",

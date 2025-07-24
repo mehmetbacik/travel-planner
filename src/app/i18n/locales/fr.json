@@ -103,7 +103,22 @@
   },
   "destinations": {
     "title": "Destinations Populaires",
-    "description": "Explorez le voyage de vos rêves"
+    "description": "Explorez le voyage de vos rêves",
+    "items": {
+      "istanbul": "Istanbul",
+      "paris": "Paris",
+      "barcelona": "Barcelone",
+      "berlin": "Berlin",
+      "london": "Londres",
+      "madrid": "Madrid"
+    },
+    "countries": {
+      "turkiye": "Turquie",
+      "france": "France",
+      "spain": "Espagne",
+      "germany": "Allemagne",
+      "england": "Angleterre"
+    }
   },
   "planner": {
     "title": "Tout pour une Expérience de Voyage Personnalisée",

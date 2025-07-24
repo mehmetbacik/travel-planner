@@ -103,7 +103,22 @@
   },
   "destinations": {
     "title": "Popular Destinations",
-    "description": "Explore your next dream trip"
+    "description": "Explore your next dream trip",
+    "items": {
+      "istanbul": "Istanbul",
+      "paris": "Paris",
+      "barcelona": "Barcelona",
+      "berlin": "Berlin",
+      "london": "London",
+      "madrid": "Madrid"
+    },
+    "countries": {
+      "turkiye": "Turkey",
+      "france": "France",
+      "spain": "Spain",
+      "germany": "Germany",
+      "england": "England"
+    }
   },
   "planner": {
     "title": "All for a Truly Personal Travel Experience",
