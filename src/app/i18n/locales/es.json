@@ -122,7 +122,27 @@
   },
   "testimonials": {
     "title": "Testimonios",
-    "description": "La confianza de viajeros de todo el mundo"
+    "description": "La confianza de viajeros de todo el mundo",
+    "user1": {
+      "name": "Emily R.",
+      "comment": "¡TravelPlanner hizo que mi viaje fuera muy fácil y divertido! Muy recomendable.",
+      "location": "Londres, Reino Unido"
+    },
+    "user2": {
+      "name": "Carlos M.",
+      "comment": "¡Una experiencia increíble! Todo fue muy sencillo y organizado.",
+      "location": "Madrid, España"
+    },
+    "user3": {
+      "name": "Sophie L.",
+      "comment": "Me encantó el itinerario personalizado. ¡Gracias!",
+      "location": "París, Francia"
+    },
+    "user4": {
+      "name": "Anna K.",
+      "comment": "¡La mejor experiencia de planificación de viajes que he tenido!",
+      "location": "Berlín, Alemania"
+    }
   },
   "planner": {
     "title": "Todo para una Experiencia de Viaje Personalizada",

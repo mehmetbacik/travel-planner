@@ -122,7 +122,27 @@
   },
   "testimonials": {
     "title": "Kundenstimmen",
-    "description": "Vertrauen von Reisenden weltweit"
+    "description": "Vertrauen von Reisenden weltweit",
+    "user1": {
+      "name": "Emily R.",
+      "comment": "TravelPlanner hat meine Reise so einfach und angenehm gemacht! Sehr zu empfehlen.",
+      "location": "London, Großbritannien"
+    },
+    "user2": {
+      "name": "Carlos M.",
+      "comment": "Eine unglaubliche Erfahrung! Alles war so einfach und organisiert.",
+      "location": "Madrid, Spanien"
+    },
+    "user3": {
+      "name": "Sophie L.",
+      "comment": "Ich habe die personalisierte Reiseroute geliebt. Danke!",
+      "location": "Paris, Frankreich"
+    },
+    "user4": {
+      "name": "Anna K.",
+      "comment": "Die beste Reiseplanungserfahrung, die ich je hatte!",
+      "location": "Berlin, Deutschland"
+    }
   },
   "planner": {
     "title": "Alles für ein Persönliches Reiseerlebnis",

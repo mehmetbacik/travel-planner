@@ -122,7 +122,27 @@
   },
   "testimonials": {
     "title": "Görüşler",
-    "description": "Dünyanın dört bir yanından gezginlerin güveniyle"
+    "description": "Dünyanın dört bir yanından gezginlerin güveniyle",
+    "user1": {
+      "name": "Emily R.",
+      "comment": "TravelPlanner seyahatimi çok kolay ve keyifli hale getirdi! Kesinlikle tavsiye ederim.",
+      "location": "Londra, İngiltere"
+    },
+    "user2": {
+      "name": "Carlos M.",
+      "comment": "Harika bir deneyimdi! Her şey çok basit ve düzenliydi.",
+      "location": "Madrid, İspanya"
+    },
+    "user3": {
+      "name": "Sophie L.",
+      "comment": "Kişiselleştirilmiş rotayı çok sevdim. Teşekkürler!",
+      "location": "Paris, Fransa"
+    },
+    "user4": {
+      "name": "Anna K.",
+      "comment": "Şimdiye kadar yaşadığım en iyi seyahat planlama deneyimi!",
+      "location": "Berlin, Almanya"
+    }
   },
   "planner": {
     "title": "Her Şey Kişisel Bir Yolculuk İçin",
