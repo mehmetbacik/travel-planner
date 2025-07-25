@@ -5,9 +5,8 @@ import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import { Dictionary } from "@/types/dictionary";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import IstanbulImg from "@/assets/destination/istanbul.jpg";
@@ -146,7 +145,7 @@ export default function Destinations({ dict }: DestinationsProps) {
         </div>
         <div className="destinations__slider">
           <Swiper
-            modules={[Navigation, Pagination]}
+            modules={[Pagination]}
             spaceBetween={32}
             slidesPerView={4}
             pagination={{ clickable: true }}
