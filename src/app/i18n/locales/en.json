@@ -104,7 +104,7 @@
   "destinations": {
     "title": "Popular Destinations",
     "description": "Explore your next dream trip",
-    "items": {
+    "cities": {
       "istanbul": "Istanbul",
       "paris": "Paris",
       "barcelona": "Barcelona",
@@ -119,6 +119,10 @@
       "germany": "Germany",
       "england": "England"
     }
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "description": "Trusted by travelers around the world."
   },
   "planner": {
     "title": "All for a Truly Personal Travel Experience",

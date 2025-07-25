@@ -104,7 +104,7 @@
   "destinations": {
     "title": "Beliebte Reiseziele",
     "description": "Entdecken Sie Ihre Traumreise",
-    "items": {
+    "cities": {
       "istanbul": "Istanbul",
       "paris": "Paris",
       "barcelona": "Barcelona",
@@ -119,6 +119,10 @@
       "germany": "Deutschland",
       "england": "England"
     }
+  },
+  "testimonials": {
+    "title": "Kundenstimmen",
+    "description": "Vertrauen von Reisenden weltweit."
   },
   "planner": {
     "title": "Alles für ein Persönliches Reiseerlebnis",

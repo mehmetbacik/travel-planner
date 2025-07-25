@@ -104,7 +104,7 @@
   "destinations": {
     "title": "Popüler Rotalar",
     "description": "Hayalinizdeki seyahate şimdi göz atın",
-    "items": {
+    "cities": {
       "istanbul": "İstanbul",
       "paris": "Paris",
       "barcelona": "Barselona",
@@ -119,6 +119,10 @@
       "germany": "Almanya",
       "england": "İngiltere"
     }
+  },
+  "testimonials": {
+    "title": "Görüşler",
+    "description": "Dünyanın dört bir yanından gezginlerin güveniyle."
   },
   "planner": {
     "title": "Her Şey Kişisel Bir Yolculuk İçin",

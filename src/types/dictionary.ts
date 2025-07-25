@@ -103,8 +103,12 @@ export interface Dictionary {
   destinations: {
     title: string;
     description: string;
-    items: Record<string, string>;
+    cities: Record<string, string>;
     countries: Record<string, string>;
+  };
+  testimonials: {
+    title: string;
+    description: string;
   };
   planner: {
     title: string;

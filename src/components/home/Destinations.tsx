@@ -91,7 +91,7 @@ export default function Destinations({ dict }: DestinationsProps) {
                   time: "09:00",
                   activity: "City Tour",
                   location:
-                    dict.destinations.items[destination.name] + " Center",
+                    dict.destinations.cities[destination.name] + " Center",
                 },
               ],
             },
@@ -102,7 +102,7 @@ export default function Destinations({ dict }: DestinationsProps) {
                   time: "10:00",
                   activity: "Museum Visit",
                   location:
-                    dict.destinations.items[destination.name] + " Center",
+                    dict.destinations.cities[destination.name] + " Center",
                 },
               ],
             },
@@ -172,7 +172,7 @@ export default function Destinations({ dict }: DestinationsProps) {
                   </div>
                   <div className="destinations__info">
                     <div className="destinations__headline">
-                      <span>{dict.destinations.items[dest.name]},</span>
+                      <span>{dict.destinations.cities[dest.name]},</span>
                       <p>{dict.destinations.countries[dest.country]}</p>
                     </div>
                     <div className="destinations__summary">
