@@ -31,4 +31,90 @@
     margin: 0 auto;
   }
 
+  &__slider {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    .swiper {
+      width: 100%;
+      padding: $spacing-md;
+      padding-bottom: $spacing-xl;
+      @media (max-width: $md-breakpoint) {
+        padding-bottom: $spacing-lg;
+      }
+      .swiper-wrapper {
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: stretch;
+          height: auto;
+        }
+      }
+      .swiper-pagination {
+        transform: translateY(10px);
+        .swiper-pagination-bullet {
+          height: 5px;
+          width: 20px;
+          border-radius: 8px;
+          &-active {
+            background: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  &__card {
+    display: block;
+    background-color: $color-white;
+    box-shadow: $shadow-md;
+    border-radius: $border-radius-lg;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    transition: $transition-base;
+    box-shadow: $shadow-md;
+    &:hover,
+    &:focus-within {
+      transform: translateY(-5px);
+      box-shadow: $shadow-lg;
+      outline: none;
+      .destinations__headline {
+        color: $primary;
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+    width: 100%;
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+    overflow: hidden;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    padding: $spacing-md;
+    width: 100%;
+  }
+
+  &__comment {
+    font-size: 1.1rem;
+    color: $color-text;
+    margin-bottom: 0.5rem;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.95rem;
+    color: $color-text-light;
+  }
 }
