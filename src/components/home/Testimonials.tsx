@@ -2,9 +2,10 @@
 
 import type { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import Image from "next/image";
 import { Dictionary } from "@/types/dictionary";
 
@@ -71,11 +72,11 @@ export default function Testimonials({ dict }: TestimonialsProps) {
         </div>
         <div className="testimonials__slider">
           <Swiper
-            modules={[Pagination]}
+            modules={[Navigation, Pagination]}
             spaceBetween={24}
             slidesPerView={1}
             pagination={{ clickable: true }}
-            style={{ width: "100%", padding: "1rem 0" }}
+            navigation
           >
             {TESTIMONIALS.map((item, idx) => (
               <SwiperSlide key={idx}>
