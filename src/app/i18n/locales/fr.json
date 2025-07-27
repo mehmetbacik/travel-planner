@@ -124,22 +124,22 @@
     "title": "Témoignages",
     "description": "La confiance de voyageurs du monde entier",
     "user1": {
-      "name": "Emily R.",
+      "name": "James Walker",
       "comment": "TravelPlanner a rendu mon voyage si facile et agréable ! Je recommande vivement.",
       "location": "Londres, Royaume-Uni"
     },
     "user2": {
-      "name": "Carlos M.",
+      "name": "Liam Bennett",
       "comment": "Une expérience incroyable ! Tout était si simple et organisé.",
       "location": "Madrid, Espagne"
     },
     "user3": {
-      "name": "Sophie L.",
+      "name": "Emily Brooks",
       "comment": "J'ai adoré l'itinéraire personnalisé. Merci !",
       "location": "Paris, France"
     },
     "user4": {
-      "name": "Anna K.",
+      "name": "Olivia Hayes",
       "comment": "La meilleure expérience de planification de voyage que j'ai jamais eue !",
       "location": "Berlin, Allemagne"
     }

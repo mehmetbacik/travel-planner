@@ -35,6 +35,7 @@
     display: block;
     width: 100%;
     margin: 0 auto;
+    padding: 0 $spacing-lg;
     .swiper {
       width: 100%;
       padding: $spacing-md;
@@ -66,55 +67,45 @@
 
   &__card {
     display: block;
-    background-color: $color-white;
-    box-shadow: $shadow-md;
-    border-radius: $border-radius-lg;
     width: 100%;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
-    transition: $transition-base;
-    box-shadow: $shadow-md;
-    &:hover,
-    &:focus-within {
-      transform: translateY(-5px);
-      box-shadow: $shadow-lg;
-      outline: none;
-      .destinations__headline {
-        color: $primary;
-      }
-    }
+    gap: $spacing-sm;
   }
 
   &__img {
-    position: relative;
-    width: 100%;
-    border-radius: $border-radius-lg $border-radius-lg 0 0;
-    overflow: hidden;
+    border: solid 2px $primary;
+    border-radius: 50%;
+    padding: $spacing-unit;
+    img {
+      border-radius: 50%;
+    }
   }
 
-  &__info {
+  &__content {
     display: flex;
     flex-direction: column;
     gap: $spacing-sm;
-    padding: $spacing-md;
+    padding: 0 $spacing-md;
     width: 100%;
   }
 
   &__comment {
-    font-size: 1.1rem;
+    font-size: $font-size-md;
     color: $color-text;
-    margin-bottom: 0.5rem;
+    margin-bottom: $spacing-sm;
+    text-align: center;
   }
 
   &__meta {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.2rem;
-    font-size: 0.95rem;
+    gap: $spacing-unit;
+    font-size: $font-size-base * 0.875;
     color: $color-text-light;
   }
 }

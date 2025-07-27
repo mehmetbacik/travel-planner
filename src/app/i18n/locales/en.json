@@ -124,22 +124,22 @@
     "title": "Testimonials",
     "description": "Trusted by travelers around the world",
     "user1": {
-      "name": "Emily R.",
+      "name": "James Walker",
       "comment": "TravelPlanner made my trip so easy and enjoyable! Highly recommended.",
       "location": "London, UK"
     },
     "user2": {
-      "name": "Carlos M.",
+      "name": "Liam Bennett",
       "comment": "An amazing experience! Everything was so simple and organized.",
       "location": "Madrid, Spain"
     },
     "user3": {
-      "name": "Sophie L.",
+      "name": "Emily Brooks",
       "comment": "I loved the personalized itinerary. Thank you!",
       "location": "Paris, France"
     },
     "user4": {
-      "name": "Anna K.",
+      "name": "Olivia Hayes",
       "comment": "The best travel planning experience I've ever had!",
       "location": "Berlin, Germany"
     }

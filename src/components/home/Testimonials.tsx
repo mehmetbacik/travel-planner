@@ -89,10 +89,7 @@ export default function Testimonials({ dict }: TestimonialsProps) {
                       height={64}
                     />
                   </div>
-                  <div className="testimonials__info">
-                    <p className="testimonials__comment">
-                      {getNestedValue(dict, item.commentKey)}
-                    </p>
+                  <div className="testimonials__content">
                     <div className="testimonials__meta">
                       <span className="testimonials__name">
                         {getNestedValue(dict, item.nameKey)}
@@ -101,6 +98,9 @@ export default function Testimonials({ dict }: TestimonialsProps) {
                         {getNestedValue(dict, item.locationKey)}
                       </span>
                     </div>
+                    <p className="testimonials__comment">
+                      {getNestedValue(dict, item.commentKey)}
+                    </p>
                   </div>
                 </div>
               </SwiperSlide>
