@@ -2,7 +2,7 @@
 
 import type { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -72,9 +72,13 @@ export default function Testimonials({ dict }: TestimonialsProps) {
         </div>
         <div className="testimonials__slider">
           <Swiper
-            modules={[Navigation, Pagination]}
+            modules={[Autoplay, Navigation, Pagination]}
             spaceBetween={24}
             slidesPerView={1}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             pagination={{ clickable: true }}
             navigation
           >

@@ -62,6 +62,27 @@
           }
         }
       }
+      .swiper-button-prev, 
+      .swiper-button-next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-white;
+        background-color: $primary;
+        border: solid 1px $primary;
+        border-radius: 50%;
+        padding: $spacing-unit * 2;
+        width: 30px;
+        height: 30px;
+        transition: $transition-base;
+        &::after {
+          font-size: $font-size-md;
+        }
+        &:hover {
+          background-color: $color-white;
+          color: $primary;
+        }
+      }
     }
   }
 
