@@ -14,9 +14,9 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
     <main>
       <Hero dict={dict} currentLang={lang} />
       <Features dict={dict} />
-      <Destinations dict={dict}/>
-      <Testimonials dict={dict}/>
-      <InteractiveWorldMap dict={dict}/>
+      <Destinations dict={dict} />
+      <InteractiveWorldMap dict={dict} />
+      <Testimonials dict={dict} />
     </main>
   );
 }

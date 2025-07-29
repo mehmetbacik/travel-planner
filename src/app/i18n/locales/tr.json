@@ -145,8 +145,8 @@
     }
   },
   "interactiveWorldMap": {
-    "title": "title",
-    "description": "description"
+    "title": "Dünyayı Keşfet",
+    "description": "Harita üzerinden ülkeleri incele ve kendi yolculuğunu başlat"
   },
   "planner": {
     "title": "Her Şey Kişisel Bir Yolculuk İçin",

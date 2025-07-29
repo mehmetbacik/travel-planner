@@ -144,6 +144,10 @@
       "location": "Berlin, Allemagne"
     }
   },
+  "interactiveWorldMap": {
+    "title": "Explore le Monde",
+    "description": "Explore les pays sur la carte et commence ton propre voyage"
+  },
   "planner": {
     "title": "Tout pour une Expérience de Voyage Personnalisée",
     "subtitle": "Votre Voyage, à Vos Conditions",
