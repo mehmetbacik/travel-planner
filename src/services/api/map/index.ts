@@ -1,0 +1,121 @@
+export interface Country {
+  name: {
+    common: string;
+    official: string;
+    nativeName?: {
+      [key: string]: {
+        official: string;
+        common: string;
+      };
+    };
+  };
+  tld: string[];
+  cca2: string;
+  ccn3: string;
+  cca3: string;
+  currencies?: {
+    [key: string]: {
+      name: string;
+      symbol: string;
+    };
+  };
+  capital: string[];
+  region: string;
+  subregion: string;
+  languages?: {
+    [key: string]: string;
+  };
+  latlng: number[];
+  borders: string[];
+  area: number;
+  population: number;
+  flags: {
+    png: string;
+    svg: string;
+    alt: string;
+  };
+  coatOfArms?: {
+    png: string;
+    svg: string;
+  };
+  timezones: string[];
+  continents: string[];
+  startOfWeek: string;
+  car: {
+    signs: string[];
+    side: string;
+  };
+  postalCode?: {
+    format: string;
+    regex: string;
+  };
+}
+
+export interface CountryMapData {
+  id: string;
+  name: string;
+  path: string;
+  countryCode: string;
+  region: string;
+  population: number;
+  area: number;
+  capital: string[];
+  flag: string;
+}
+
+// Fetch all countries from REST Countries API
+export const fetchAllCountries = async (): Promise<Country[]> => {
+  try {
+    const response = await fetch('https://restcountries.com/v3.1/all');
+    if (!response.ok) {
+      throw new Error('Failed to fetch countries');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching countries:', error);
+    throw error;
+  }
+};
+
+// Fetch country by name
+export const fetchCountryByName = async (name: string): Promise<Country[]> => {
+  try {
+    const response = await fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(name)}`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch country');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching country:', error);
+    throw error;
+  }
+};
+
+// Fetch country by code
+export const fetchCountryByCode = async (code: string): Promise<Country> => {
+  try {
+    const response = await fetch(`https://restcountries.com/v3.1/alpha/${code}`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch country');
+    }
+    const countries = await response.json();
+    return countries[0];
+  } catch (error) {
+    console.error('Error fetching country:', error);
+    throw error;
+  }
+};
+
+// Get countries by region
+export const fetchCountriesByRegion = async (region: string): Promise<Country[]> => {
+  try {
+    const response = await fetch(`https://restcountries.com/v3.1/region/${encodeURIComponent(region)}`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch countries by region');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching countries by region:', error);
+    throw error;
+  }
+}; 
