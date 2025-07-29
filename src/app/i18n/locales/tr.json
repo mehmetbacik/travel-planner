@@ -144,6 +144,10 @@
       "location": "Berlin, Almanya"
     }
   },
+  "interactiveWorldMap": {
+    "title": "title",
+    "description": "description"
+  },
   "planner": {
     "title": "Her Şey Kişisel Bir Yolculuk İçin",
     "subtitle": "Senin Yolculuğun, Senin Şartlarınla",

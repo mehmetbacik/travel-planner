@@ -1,0 +1,33 @@
+.interactiveWorldMap {
+  padding: $spacing-2xl $spacing-lg;
+  background-color: $color-white;
+  @media (max-width: $md-breakpoint) {
+    padding: $spacing-xl $spacing-md;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-lg;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: $spacing-sm;
+  }
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-text;
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    color: $color-text-light;
+    margin: 0 auto;
+  }
+}

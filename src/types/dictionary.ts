@@ -110,6 +110,10 @@ export interface Dictionary {
     title: string;
     description: string;
   };
+  interactiveWorldMap: {
+    title: string;
+    description: string;
+  };
   planner: {
     title: string;
     subtitle: string;
