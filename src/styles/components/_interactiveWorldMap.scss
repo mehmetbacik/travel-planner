@@ -129,6 +129,11 @@
           }
         }
       }
+      
+      // Ensure tooltip is visible
+      .country-tooltip {
+        z-index: 9999 !important;
+      }
     }
     
     .map-loading {
@@ -328,6 +333,8 @@
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
+  max-width: 200px;
+  word-wrap: break-word;
   
   &::before {
     content: '';

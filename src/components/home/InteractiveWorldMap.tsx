@@ -31,6 +31,7 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
         const countries = await fetchAllCountries();
         setCountriesData(countries);
         console.log(`Loaded ${countries.length} countries from API`);
+        console.log('Sample countries:', countries.slice(0, 3).map(c => ({ name: c.name.common, cca3: c.cca3 })));
       } catch (error) {
         console.error('Error loading countries data:', error);
       } finally {
@@ -47,25 +48,72 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
 
   const handleCountryClick = async (geo: any) => {
     const countryCode = geo.properties.ISO_A3;
+    const countryName = geo.properties.NAME;
+    
+    console.log('Clicked country code:', countryCode, 'name:', countryName);
+    console.log('Available country codes:', countriesData.slice(0, 5).map(c => c.cca3));
+    
     if (!countryCode) return;
 
-    // Find country from already loaded data
-    const country = countriesData.find(c => c.cca3 === countryCode);
+    // Use the same matching logic as getCountryData
+    let country = countriesData.find(c => c.cca3 === countryCode);
+    
+    // If not found, try to find by name
+    if (!country && countryName) {
+      country = countriesData.find(c => 
+        c.name.common.toLowerCase() === countryName.toLowerCase() ||
+        c.name.official.toLowerCase() === countryName.toLowerCase()
+      );
+    }
+    
+    // If still not found, try partial name matching
+    if (!country && countryName) {
+      country = countriesData.find(c => 
+        c.name.common.toLowerCase().includes(countryName.toLowerCase()) ||
+        countryName.toLowerCase().includes(c.name.common.toLowerCase())
+      );
+    }
+    
+    console.log('Found country:', country?.name.common);
+    
     if (country) {
       setSelectedCountry(country);
       setIsModalOpen(true);
     } else {
-      // Fallback to API call if not found in loaded data
-      setIsLoading(true);
-      try {
-        const fetchedCountry = await fetchCountryByCode(countryCode);
-        setSelectedCountry(fetchedCountry);
-        setIsModalOpen(true);
-      } catch (error) {
-        console.error('Error fetching country details:', error);
-      } finally {
-        setIsLoading(false);
-      }
+      // Show basic modal with map data
+      const basicCountry: Country = {
+        name: {
+          common: countryName || 'Unknown Country',
+          official: countryName || 'Unknown Country'
+        },
+        tld: [],
+        cca2: '',
+        ccn3: '',
+        cca3: countryCode || '',
+        capital: ['Unknown'],
+        region: 'Unknown',
+        subregion: 'Unknown',
+        population: 0,
+        area: 0,
+        currencies: {},
+        languages: {},
+        latlng: [0, 0],
+        borders: [],
+        flags: {
+          png: '',
+          svg: '',
+          alt: 'Flag not available'
+        },
+        timezones: ['Unknown'],
+        continents: ['Unknown'],
+        startOfWeek: 'monday',
+        car: {
+          signs: [],
+          side: 'right'
+        }
+      };
+      setSelectedCountry(basicCountry);
+      setIsModalOpen(true);
     }
   };
 
@@ -79,14 +127,44 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
 
   const getCountryData = (geo: any): Country | undefined => {
     const countryCode = geo.properties.ISO_A3;
-    return countriesData.find(country => country.cca3 === countryCode);
+    const countryName = geo.properties.NAME;
+    
+    // Try to find by ISO_A3 code first
+    let country = countriesData.find(country => country.cca3 === countryCode);
+    
+    // If not found, try to find by name
+    if (!country && countryName) {
+      country = countriesData.find(country => 
+        country.name.common.toLowerCase() === countryName.toLowerCase() ||
+        country.name.official.toLowerCase() === countryName.toLowerCase()
+      );
+    }
+    
+    // If still not found, try partial name matching
+    if (!country && countryName) {
+      country = countriesData.find(country => 
+        country.name.common.toLowerCase().includes(countryName.toLowerCase()) ||
+        countryName.toLowerCase().includes(country.name.common.toLowerCase())
+      );
+    }
+    
+    console.log('Looking for country code:', countryCode, 'name:', countryName, 'Found:', country?.name.common);
+    return country;
   };
 
   const handleCountryHover = (geo: any) => {
     const countryData = getCountryData(geo);
+    console.log('Hovering over country:', countryData?.name.common);
+    
+    // Always show tooltip with country name from map data if API data not found
+    const countryName = geo.properties.NAME || 'Unknown Country';
+    
     if (countryData) {
       setHoveredCountry(geo.rsmKey);
       setTooltipContent(countryData.name.common);
+    } else {
+      setHoveredCountry(geo.rsmKey);
+      setTooltipContent(countryName);
     }
   };
 
@@ -120,6 +198,26 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
           <p className="interactiveWorldMap__description">
             {dict.interactiveWorldMap.description}
           </p>
+          {!isLoadingCountries && (
+            <div className="map-stats">
+              <div className="stat-item">
+                <span className="stat-number">{worldStats.totalCountries}</span>
+                <span className="stat-label">Countries</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">{formatNumber(worldStats.totalPopulation)}</span>
+                <span className="stat-label">Total Population</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">{formatNumber(worldStats.totalArea)}</span>
+                <span className="stat-label">Total Area (km²)</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">{worldStats.regions}</span>
+                <span className="stat-label">Regions</span>
+              </div>
+            </div>
+          )}
         </div>
         <div className="interactiveWorldMap__content">
           <motion.div 
