@@ -66,11 +66,42 @@ export interface CountryMapData {
 // Fetch all countries from REST Countries API
 export const fetchAllCountries = async (): Promise<Country[]> => {
   try {
-    const response = await fetch('https://restcountries.com/v3.1/all');
+    console.log('Fetching countries from API...');
+    
+    // Try the main endpoint first
+    let response = await fetch('https://restcountries.com/v3.1/all', {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    // If main endpoint fails, try alternative
     if (!response.ok) {
-      throw new Error('Failed to fetch countries');
+      console.log('Main endpoint failed, trying alternative...');
+      response = await fetch('https://restcountries.com/v3.1/independent?status=true', {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+      });
     }
-    return await response.json();
+    
+    console.log('API Response status:', response.status);
+    console.log('API Response headers:', response.headers);
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('API Error response:', errorText);
+      throw new Error(`Failed to fetch countries: ${response.status} ${response.statusText}`);
+    }
+    
+    const data = await response.json();
+    console.log('API Response data length:', data.length);
+    console.log('Sample API data:', data.slice(0, 2));
+    return data;
   } catch (error) {
     console.error('Error fetching countries:', error);
     throw error;

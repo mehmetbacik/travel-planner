@@ -13,6 +13,9 @@ interface InteractiveWorldMapProps {
 // World map topology data - using a more detailed map
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
+// Fallback map data if the main source fails
+const fallbackGeoUrl = "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
+
 export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) {
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
@@ -34,6 +37,9 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
         console.log('Sample countries:', countries.slice(0, 3).map(c => ({ name: c.name.common, cca3: c.cca3 })));
       } catch (error) {
         console.error('Error loading countries data:', error);
+        // Set empty array to prevent infinite loading
+        setCountriesData([]);
+        console.log('Continuing without API data - map will still be interactive');
       } finally {
         setIsLoadingCountries(false);
       }
@@ -47,13 +53,16 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
   };
 
   const handleCountryClick = async (geo: any) => {
-    const countryCode = geo.properties.ISO_A3;
-    const countryName = geo.properties.NAME;
+    const countryCode = geo.properties.ISO_A3 || geo.properties.iso_a3;
+    const countryName = geo.properties.NAME || geo.properties.name;
     
     console.log('Clicked country code:', countryCode, 'name:', countryName);
     console.log('Available country codes:', countriesData.slice(0, 5).map(c => c.cca3));
     
-    if (!countryCode) return;
+    if (!countryCode && !countryName) {
+      console.log('No country code or name found');
+      return;
+    }
 
     // Use the same matching logic as getCountryData
     let country = countriesData.find(c => c.cca3 === countryCode);
@@ -126,8 +135,12 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
   };
 
   const getCountryData = (geo: any): Country | undefined => {
-    const countryCode = geo.properties.ISO_A3;
-    const countryName = geo.properties.NAME;
+    const countryCode = geo.properties.ISO_A3 || geo.properties.iso_a3;
+    const countryName = geo.properties.NAME || geo.properties.name;
+    
+    // Debug: Log all available properties
+    console.log('Map geo properties:', geo.properties);
+    console.log('Available property keys:', Object.keys(geo.properties));
     
     // Try to find by ISO_A3 code first
     let country = countriesData.find(country => country.cca3 === countryCode);
@@ -157,7 +170,7 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
     console.log('Hovering over country:', countryData?.name.common);
     
     // Always show tooltip with country name from map data if API data not found
-    const countryName = geo.properties.NAME || 'Unknown Country';
+    const countryName = geo.properties.NAME || geo.properties.name || 'Unknown Country';
     
     if (countryData) {
       setHoveredCountry(geo.rsmKey);
@@ -230,7 +243,7 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
               <div className="map-loading">
                 <div className="loading-spinner"></div>
                 <p>Loading world data...</p>
-                <p className="loading-subtitle">Fetching {countriesData.length} countries</p>
+                <p className="loading-subtitle">Fetching country information</p>
               </div>
             ) : (
               <ComposableMap
