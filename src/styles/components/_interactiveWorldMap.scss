@@ -31,6 +31,43 @@
     margin: 0 auto;
   }
 
+  .map-stats {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-xl;
+    margin-top: $spacing-lg;
+    flex-wrap: wrap;
+    
+    @media (max-width: $md-breakpoint) {
+      gap: $spacing-lg;
+    }
+    
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: $spacing-md;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      min-width: 120px;
+      
+      .stat-number {
+        font-size: $font-size-xl;
+        font-weight: $font-weight-bold;
+        color: $color-primary;
+        margin-bottom: $spacing-sm;
+      }
+      
+      .stat-label {
+        font-size: $font-size-md;
+        color: $color-text-light;
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+
   &__content {
     width: 100%;
     max-width: 800px;
@@ -69,14 +106,57 @@
         transition: all 0.3s ease;
         cursor: pointer;
         
-        &:hover {
-          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-          transform: scale(1.02);
+        &.has-data {
+          cursor: pointer;
+          
+          &:hover {
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            transform: scale(1.02);
+          }
+          
+          &.hovered {
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+            animation: countryPulse 1s ease-in-out infinite;
+          }
         }
         
-        &.hovered {
-          filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
-          animation: countryPulse 1s ease-in-out infinite;
+        &.no-data {
+          cursor: default;
+          opacity: 0.6;
+          
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+    
+    .map-loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      gap: $spacing-lg;
+      
+      .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid $color-primary;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      p {
+        color: $color-text-light;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        margin: 0;
+        
+        &.loading-subtitle {
+          font-size: $font-size-md;
+          opacity: 0.7;
         }
       }
     }

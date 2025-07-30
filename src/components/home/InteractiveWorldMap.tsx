@@ -10,7 +10,7 @@ interface InteractiveWorldMapProps {
   dict: Dictionary;
 }
 
-// World map topology data
+// World map topology data - using a more detailed map
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) {
@@ -18,21 +18,27 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingCountries, setIsLoadingCountries] = useState(true);
   const [countriesData, setCountriesData] = useState<Country[]>([]);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+  const [tooltipContent, setTooltipContent] = useState<string>("");
 
-  // Load country data from API
+  // Load all countries data from API once
   useEffect(() => {
-    const loadCountryData = async () => {
+    const loadAllCountriesData = async () => {
+      setIsLoadingCountries(true);
       try {
         const countries = await fetchAllCountries();
         setCountriesData(countries);
+        console.log(`Loaded ${countries.length} countries from API`);
       } catch (error) {
-        console.error('Error loading country data:', error);
+        console.error('Error loading countries data:', error);
+      } finally {
+        setIsLoadingCountries(false);
       }
     };
 
-    loadCountryData();
+    loadAllCountriesData();
   }, []);
 
   const handleMouseMove = (event: React.MouseEvent) => {
@@ -43,15 +49,23 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
     const countryCode = geo.properties.ISO_A3;
     if (!countryCode) return;
 
-    setIsLoading(true);
-    try {
-      const country = await fetchCountryByCode(countryCode);
+    // Find country from already loaded data
+    const country = countriesData.find(c => c.cca3 === countryCode);
+    if (country) {
       setSelectedCountry(country);
       setIsModalOpen(true);
-    } catch (error) {
-      console.error('Error fetching country details:', error);
-    } finally {
-      setIsLoading(false);
+    } else {
+      // Fallback to API call if not found in loaded data
+      setIsLoading(true);
+      try {
+        const fetchedCountry = await fetchCountryByCode(countryCode);
+        setSelectedCountry(fetchedCountry);
+        setIsModalOpen(true);
+      } catch (error) {
+        console.error('Error fetching country details:', error);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -63,10 +77,38 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
     return `${formatNumber(area)} km²`;
   };
 
-  const getCountryData = (geo: any) => {
+  const getCountryData = (geo: any): Country | undefined => {
     const countryCode = geo.properties.ISO_A3;
     return countriesData.find(country => country.cca3 === countryCode);
   };
+
+  const handleCountryHover = (geo: any) => {
+    const countryData = getCountryData(geo);
+    if (countryData) {
+      setHoveredCountry(geo.rsmKey);
+      setTooltipContent(countryData.name.common);
+    }
+  };
+
+  const handleCountryLeave = () => {
+    setHoveredCountry(null);
+    setTooltipContent("");
+  };
+
+  // Calculate world statistics
+  const worldStats = useMemo(() => {
+    const totalCountries = countriesData.length;
+    const totalPopulation = countriesData.reduce((sum, country) => sum + country.population, 0);
+    const totalArea = countriesData.reduce((sum, country) => sum + country.area, 0);
+    const regions = [...new Set(countriesData.map(country => country.region))];
+    
+    return {
+      totalCountries,
+      totalPopulation,
+      totalArea,
+      regions: regions.length
+    };
+  }, [countriesData]);
 
   return (
     <section className="interactiveWorldMap" aria-labelledby="interactiveWorldMap">
@@ -86,61 +128,70 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <ComposableMap
-              projection="geoEqualEarth"
-              projectionConfig={{
-                scale: 147,
-                center: [0, 0]
-              }}
-              className="world-map"
-              onMouseMove={handleMouseMove}
-            >
-              <ZoomableGroup maxZoom={4} minZoom={1}>
-                <Geographies geography={geoUrl}>
-                  {({ geographies }) =>
-                    geographies.map((geo) => {
-                      const countryData = getCountryData(geo);
-                      const isHovered = hoveredCountry === geo.rsmKey;
-                      
-                      return (
-                        <motion.g key={geo.rsmKey}>
-                          <Geography
-                            geography={geo}
-                            onClick={() => handleCountryClick(geo)}
-                            onMouseEnter={() => setHoveredCountry(geo.rsmKey)}
-                            onMouseLeave={() => setHoveredCountry(null)}
-                            style={{
-                              default: {
-                                fill: countryData ? "#4caf50" : "#e0e0e0",
-                                stroke: "#2e7d32",
-                                strokeWidth: 0.5,
-                                outline: "none",
-                              },
-                              hover: {
-                                fill: "#ff9800",
-                                stroke: "#f57c00",
-                                strokeWidth: 1,
-                                outline: "none",
-                              },
-                              pressed: {
-                                fill: "#ff5722",
-                                stroke: "#d84315",
-                                strokeWidth: 1,
-                                outline: "none",
-                              },
-                            }}
-                            className={`country-geography ${isHovered ? 'hovered' : ''}`}
-                          />
-                        </motion.g>
-                      );
-                    })
-                  }
-                </Geographies>
-              </ZoomableGroup>
-            </ComposableMap>
+            {isLoadingCountries ? (
+              <div className="map-loading">
+                <div className="loading-spinner"></div>
+                <p>Loading world data...</p>
+                <p className="loading-subtitle">Fetching {countriesData.length} countries</p>
+              </div>
+            ) : (
+              <ComposableMap
+                projection="geoMercator"
+                projectionConfig={{
+                  scale: 120,
+                  center: [0, 20]
+                }}
+                className="world-map"
+                onMouseMove={handleMouseMove}
+              >
+                <ZoomableGroup maxZoom={5} minZoom={1}>
+                  <Geographies geography={geoUrl}>
+                    {({ geographies }: { geographies: any[] }) =>
+                      geographies.map((geo: any) => {
+                        const countryData = getCountryData(geo);
+                        const isHovered = hoveredCountry === geo.rsmKey;
+                        const hasData = !!countryData;
+                        
+                        return (
+                          <motion.g key={geo.rsmKey}>
+                            <Geography
+                              geography={geo}
+                              onClick={() => handleCountryClick(geo)}
+                              onMouseEnter={() => handleCountryHover(geo)}
+                              onMouseLeave={handleCountryLeave}
+                              style={{
+                                default: {
+                                  fill: hasData ? "#4caf50" : "#e0e0e0",
+                                  stroke: hasData ? "#2e7d32" : "#bdbdbd",
+                                  strokeWidth: 0.5,
+                                  outline: "none",
+                                },
+                                hover: {
+                                  fill: hasData ? "#ff9800" : "#e0e0e0",
+                                  stroke: hasData ? "#f57c00" : "#bdbdbd",
+                                  strokeWidth: 1.5,
+                                  outline: "none",
+                                },
+                                pressed: {
+                                  fill: hasData ? "#ff5722" : "#e0e0e0",
+                                  stroke: hasData ? "#d84315" : "#bdbdbd",
+                                  strokeWidth: 2,
+                                  outline: "none",
+                                },
+                              }}
+                              className={`country-geography ${isHovered ? 'hovered' : ''} ${hasData ? 'has-data' : 'no-data'}`}
+                            />
+                          </motion.g>
+                        );
+                      })
+                    }
+                  </Geographies>
+                </ZoomableGroup>
+              </ComposableMap>
+            )}
             
             {/* Tooltip */}
-            {hoveredCountry && (
+            {hoveredCountry && tooltipContent && (
               <motion.div
                 className="country-tooltip"
                 style={{
@@ -152,7 +203,7 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.2 }}
               >
-                {hoveredCountry}
+                {tooltipContent}
               </motion.div>
             )}
           </motion.div>
