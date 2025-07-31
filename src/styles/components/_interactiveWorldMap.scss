@@ -31,46 +31,8 @@
     margin: 0 auto;
   }
 
-  .map-stats {
-    display: flex;
-    justify-content: center;
-    gap: $spacing-xl;
-    margin-top: $spacing-lg;
-    flex-wrap: wrap;
-    
-    @media (max-width: $md-breakpoint) {
-      gap: $spacing-lg;
-    }
-    
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: $spacing-md;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      min-width: 120px;
-      
-      .stat-number {
-        font-size: $font-size-xl;
-        font-weight: $font-weight-bold;
-        color: $color-primary;
-        margin-bottom: $spacing-sm;
-      }
-      
-      .stat-label {
-        font-size: $font-size-md;
-        color: $color-text-light;
-        font-weight: $font-weight-semibold;
-      }
-    }
-  }
-
   &__content {
     width: 100%;
-    max-width: 800px;
     margin: 0 auto;
     position: relative;
     
@@ -81,9 +43,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       
       @media (max-width: $md-breakpoint) {

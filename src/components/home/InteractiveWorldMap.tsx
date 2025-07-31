@@ -211,26 +211,6 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
           <p className="interactiveWorldMap__description">
             {dict.interactiveWorldMap.description}
           </p>
-          {!isLoadingCountries && (
-            <div className="map-stats">
-              <div className="stat-item">
-                <span className="stat-number">{worldStats.totalCountries}</span>
-                <span className="stat-label">Countries</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">{formatNumber(worldStats.totalPopulation)}</span>
-                <span className="stat-label">Total Population</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">{formatNumber(worldStats.totalArea)}</span>
-                <span className="stat-label">Total Area (km²)</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">{worldStats.regions}</span>
-                <span className="stat-label">Regions</span>
-              </div>
-            </div>
-          )}
         </div>
         <div className="interactiveWorldMap__content">
           <motion.div 
