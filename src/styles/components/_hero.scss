@@ -1,4 +1,4 @@
-.planner {
+.chero {
   position: relative;
   display: flex;
   align-items: center;
@@ -56,15 +56,15 @@
         justify-content: center;
         text-align: center;
       }
-      .planner__subtitle {
+      .chero__subtitle {
         font-size: $font-size-lg;
       }
-      .planner__title {
+      .chero__title {
         font-size: $font-size-4xl;
         font-weight: $font-weight-bold;
         line-height: normal;
       }
-      .planner__description {
+      .chero__description {
         font-size: $font-size-lg;
         text-align: center;
       }
