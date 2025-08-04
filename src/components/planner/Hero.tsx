@@ -60,16 +60,6 @@ export default function Hero({ dict }: HeroProps) {
               {dict.planner.description}
             </motion.p>
           </div>
-          <div className="planner__content__action-wrapper">
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: bgLoaded ? 1 : 0, y: bgLoaded ? 0 : 20 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="planner__cta"
-            >
-              {dict.common.getStarted}
-            </motion.button>
-          </div>
         </div>
       </div>
     </section>
