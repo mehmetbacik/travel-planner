@@ -149,9 +149,9 @@
     "description": "Explora países en el mapa y comienza tu propio viaje"
   },
   "planner": {
-    "title": "Todo para una Experiencia de Viaje Personalizada",
-    "subtitle": "Tu Viaje, en Tus Condiciones",
-    "description": "Crea un itinerario personalizado según tus destinos, intereses y fechas de viaje.",
+    "title": "Personaliza Tu Plan de Viaje",
+    "subtitle": "Elige tus fechas, define tus intereses y te diseñamos una ruta a medida",
+    "description": "Piensa en cada detalle antes de partir. Descubre con un itinerario completamente personalizado según tus fechas, preferencias e intereses de viaje.",
     "destinationPlaceholder": "ej. Tokio",
     "selectInterests": "Seleccionar...",
     "customizedItinerary": "Tu itinerario personalizado",

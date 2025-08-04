@@ -149,9 +149,9 @@
     "description": "Erkunde Länder auf der Karte und starte deine eigene Reise"
   },
   "planner": {
-    "title": "Alles für ein Persönliches Reiseerlebnis",
-    "subtitle": "Deine Reise, Zu Deinen Bedingungen",
-    "description": "Erstelle einen individuellen Reiseplan basierend auf deinem Reiseziel, deinen Interessen und Reisedaten.",
+    "title": "Personalisieren Sie Ihre Reiseplanung",
+    "subtitle": "Wählen Sie Ihre Reisedaten und Interessen – wir erstellen Ihre individuelle Route",
+    "description": "Denken Sie an jedes Detail, bevor Sie aufbrechen. Starten Sie Ihre Reise mit einem maßgeschneiderten Plan, der auf Ihren Reisedaten, Interessen und bevorzugten Verkehrsmitteln basiert.",
     "destinationPlaceholder": "z. B. Tokio",
     "selectInterests": "Auswählen...",
     "customizedItinerary": "Dein individueller Reiseplan",

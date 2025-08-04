@@ -149,9 +149,9 @@
     "description": "Harita üzerinden ülkeleri incele ve kendi yolculuğunu başlat"
   },
   "planner": {
-    "title": "Her Şey Kişisel Bir Yolculuk İçin",
-    "subtitle": "Senin Yolculuğun, Senin Şartlarınla",
-    "description": "Destinasyonlarınıza, ilgi alanlarınıza ve seyahat tarihlerinize göre özelleştirilmiş bir rota oluşturun.",
+    "title": "Seyahat Planınızı Kişiselleştirin",
+    "subtitle": "Tarihlerinizi Belirleyin, İlgi Alanlarınızı Seçin, Size Özel Rota Hazırlayalım",
+    "description": "Yola çıkmadan önce her detayı düşünün. Seyahat tarihlerinize, ilgi alanlarınıza ve ulaşım tercihlerinize göre oluşturulan, tamamen size özel bir planla keşfetmeye başlayın.",
     "destinationPlaceholder": "örn. Tokyo",
     "selectInterests": "Seçin...",
     "customizedItinerary": "Size Özel Rota",
