@@ -161,11 +161,11 @@
   },
   "home": {
     "hero": {
-      "title": "Simplifiez la planification de votre voyage",
-      "description": "Vivez des vacances inoubliables grâce à notre planificateur de voyage alimenté par l'IA. Obtenez des recommandations personnalisées, gérez votre budget, et plus encore.",
+      "title": "Tout pour une Expérience de Voyage Personnalisée",
+      "subtitle": "Votre Voyage, à Vos Conditions",
+      "description": "Créez un itinéraire personnalisé selon vos destinations, centres d'intérêt et dates de voyage.",
       "cta": {
-        "primary": "Commencer",
-        "secondary": "En savoir plus"
+        "primary": "Commencer"
       }
     },
     "features": {

@@ -161,11 +161,11 @@
   },
   "home": {
     "hero": {
-      "title": "Vereinfache deine Reiseplanung",
-      "description": "Erlebe einen unvergesslichen Urlaub mit unserem KI-gestützten Reiseplaner. Erhalte personalisierte Empfehlungen, Budgetverwaltung und mehr.",
+      "title": "Alles für ein Persönliches Reiseerlebnis",
+      "subtitle": "Deine Reise, Zu Deinen Bedingungen",
+      "description": "Erstelle einen individuellen Reiseplan basierend auf deinem Reiseziel, deinen Interessen und Reisedaten.",
       "cta": {
-        "primary": "Loslegen",
-        "secondary": "Mehr erfahren"
+        "primary": "Loslegen"
       }
     },
     "features": {

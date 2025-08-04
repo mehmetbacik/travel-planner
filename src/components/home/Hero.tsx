@@ -44,7 +44,7 @@ export default function Hero({ currentLang, dict }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hero__subtitle"
             >
-              {dict.planner.subtitle}
+              {dict.home.hero.subtitle}
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export default function Hero({ currentLang, dict }: HeroProps) {
               transition={{ duration: 0.8 }}
               className="hero__title"
             >
-              {dict.planner.title}
+              {dict.home.hero.title}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export default function Hero({ currentLang, dict }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hero__description"
             >
-              {dict.planner.description}
+              {dict.home.hero.description}
             </motion.p>
           </div>
           <div className="hero__content__action-wrapper">
@@ -71,7 +71,7 @@ export default function Hero({ currentLang, dict }: HeroProps) {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="hero__cta"
               >
-                {dict.common.getStarted}
+                {dict.home.hero.cta.primary}
               </motion.span>
             </Link>
           </div>

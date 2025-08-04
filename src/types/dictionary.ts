@@ -128,10 +128,10 @@ export interface Dictionary {
   home: {
     hero: {
       title: string;
+      subtitle: string;
       description: string;
       cta: {
         primary: string;
-        secondary: string;
       };
     };
     features: {

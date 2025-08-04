@@ -161,11 +161,11 @@
   },
   "home": {
     "hero": {
-      "title": "Seyahat Planlamanızı Kolaylaştırın",
-      "description": "Yapay zeka destekli seyahat planlayıcımızla unutulmaz bir tatil deneyimi yaşayın. Kişiselleştirilmiş öneriler, bütçe yönetimi ve daha fazlası.",
+      "title": "Her Şey Kişisel Bir Yolculuk İçin",
+      "subtitle": "Senin Yolculuğun, Senin Şartlarınla",
+      "description": "Destinasyonlarınıza, ilgi alanlarınıza ve seyahat tarihlerinize göre özelleştirilmiş bir rota oluşturun.",
       "cta": {
-        "primary": "Başla",
-        "secondary": "Daha Fazla Bilgi"
+        "primary": "Başla"
       }
     },
     "features": {

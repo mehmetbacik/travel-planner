@@ -161,11 +161,11 @@
   },
   "home": {
     "hero": {
-      "title": "Simplifica la planificación de tu viaje",
-      "description": "Vive unas vacaciones inolvidables con nuestro planificador de viajes con tecnología de IA. Obtén recomendaciones personalizadas, gestión de presupuesto y más.",
+      "title": "Todo para una Experiencia de Viaje Personalizada",
+      "subtitle": "Tu Viaje, en Tus Condiciones",
+      "description": "Crea un itinerario personalizado según tus destinos, intereses y fechas de viaje.",
       "cta": {
-        "primary": "Comenzar",
-        "secondary": "Saber más"
+        "primary": "Comenzar"
       }
     },
     "features": {

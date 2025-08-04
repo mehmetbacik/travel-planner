@@ -161,11 +161,11 @@
   },
   "home": {
     "hero": {
-      "title": "Simplify Your Travel Planning",
-      "description": "Experience an unforgettable vacation with our AI-powered travel planner. Get personalized recommendations, budget management, and more.",
+      "title": "All for a Truly Personal Travel Experience",
+      "subtitle": "Your Journey, Your Terms",
+      "description": "Create a customized itinerary based on your destinations, interests, and travel dates.",
       "cta": {
-        "primary": "Get Started",
-        "secondary": "Learn More"
+        "primary": "Get Started"
       }
     },
     "features": {
