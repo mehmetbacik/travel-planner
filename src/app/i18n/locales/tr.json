@@ -164,6 +164,11 @@
     "subtitle": "Kişiselleştirilmiş seyahat deneyiminizin arkasındaki vizyon",
     "description": "Seyahati sadece bir yerden bir yere gitmek olarak görmüyoruz. Bizim için bu, sizin benzersiz ilgi alanlarınıza göre şekillenen özel bir yolculuktur. İşte bu yüzden her planın arkasında sizin hikayeniz var."
   },
+  "blog": {
+    "title": "İlham Veren Seyahat Hikayeleri",
+    "subtitle": "Gerçek Deneyimlerden İlham Alın",
+    "description": "Dünyayı gezen gezginlerin paylaştığı ipuçları, rotalar ve deneyimlerle dolu blog yazılarımızı keşfedin. Kendi yolculuğunuzu planlamadan önce ilham alın."
+  },
   "home": {
     "hero": {
       "title": "Her Şey Kişisel Bir Yolculuk İçin",

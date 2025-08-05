@@ -164,6 +164,11 @@
     "subtitle": "The vision behind your personalized travel experience",
     "description": "We see travel as more than just getting from one place to another. For us, it’s a unique journey shaped around your personal interests. That’s why every plan starts with your story."
   },
+  "blog": {
+    "title": "Inspiring Travel Stories",
+    "subtitle": "Real Experiences, Real Inspiration",
+    "description": "Explore blog posts filled with tips, routes, and reflections from real travelers. Get inspired before planning your own adventure."
+  },
   "home": {
     "hero": {
       "title": "All for a Truly Personal Travel Experience",

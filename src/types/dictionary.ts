@@ -130,6 +130,11 @@ export interface Dictionary {
     subtitle: string;
     description: string;
   };
+  blog: {
+    title: string;
+    subtitle: string;
+    description: string;
+  };
   home: {
     hero: {
       title: string;
