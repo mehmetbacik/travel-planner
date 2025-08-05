@@ -125,6 +125,11 @@ export interface Dictionary {
     loading: string;
     errors: string;
   };
+  about: {
+    title: string;
+    subtitle: string;
+    description: string;
+  };
   home: {
     hero: {
       title: string;

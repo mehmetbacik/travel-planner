@@ -159,6 +159,11 @@
     "loading": "Création de votre voyage parfait...",
     "errors": "Échec de la génération du plan de voyage. Veuillez réessayer."
   },
+  "about": {
+    "title": "Une Nouvelle Façon d’Explorer",
+    "subtitle": "La vision derrière votre expérience de voyage personnalisée",
+    "description": "Pour nous, voyager ne se résume pas à aller d’un point A à un point B. C’est un voyage unique, façonné autour de vos centres d’intérêt. C’est pourquoi chaque plan commence par votre histoire."
+  },
   "home": {
     "hero": {
       "title": "Tout pour une Expérience de Voyage Personnalisée",

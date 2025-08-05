@@ -159,6 +159,11 @@
     "loading": "Creando tu viaje perfecto...",
     "errors": "No se pudo generar el plan de viaje. Por favor, inténtelo de nuevo."
   },
+  "about": {
+    "title": "Una Nueva Forma de Explorar",
+    "subtitle": "La visión detrás de tu experiencia de viaje personalizada",
+    "description": "Para nosotros, viajar es más que ir de un lugar a otro. Es un viaje único adaptado a tus intereses personales. Por eso, cada plan comienza con tu historia."
+  },
   "home": {
     "hero": {
       "title": "Todo para una Experiencia de Viaje Personalizada",

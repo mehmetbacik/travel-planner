@@ -159,6 +159,11 @@
     "loading": "Deine perfekte Reise wird erstellt...",
     "errors": "Reiseplan konnte nicht erstellt werden. Bitte versuchen Sie es erneut."
   },
+  "about": {
+    "title": "Ein Neuer Weg zu Entdecken",
+    "subtitle": "Die Vision hinter deinem personalisierten Reiseerlebnis",
+    "description": "Für uns ist Reisen mehr als nur von A nach B zu gelangen. Es ist eine einzigartige Reise, die sich nach deinen persönlichen Interessen richtet. Deshalb beginnt jeder Plan mit deiner Geschichte."
+  },
   "home": {
     "hero": {
       "title": "Alles für ein Persönliches Reiseerlebnis",

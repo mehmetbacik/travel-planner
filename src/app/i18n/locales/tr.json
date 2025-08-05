@@ -159,6 +159,11 @@
     "loading": "Mükemmel seyahatiniz oluşturuluyor...",
     "errors": "Seyahat planı oluşturulamadı. Lütfen tekrar deneyiniz."
   },
+  "about": {
+    "title": "Keşfetmenin Yeni Yolu",
+    "subtitle": "Kişiselleştirilmiş seyahat deneyiminizin arkasındaki vizyon",
+    "description": "Seyahati sadece bir yerden bir yere gitmek olarak görmüyoruz. Bizim için bu, sizin benzersiz ilgi alanlarınıza göre şekillenen özel bir yolculuktur. İşte bu yüzden her planın arkasında sizin hikayeniz var."
+  },
   "home": {
     "hero": {
       "title": "Her Şey Kişisel Bir Yolculuk İçin",
