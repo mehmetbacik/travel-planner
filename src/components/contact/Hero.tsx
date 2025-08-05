@@ -41,7 +41,7 @@ export default function Hero({ dict }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="chero__subtitle"
             >
-              {dict.planner.subtitle}
+              {dict.contact.subtitle}
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export default function Hero({ dict }: HeroProps) {
               transition={{ duration: 0.8 }}
               className="chero__title"
             >
-              {dict.planner.title}
+              {dict.contact.title}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export default function Hero({ dict }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="chero__description"
             >
-              {dict.planner.description}
+              {dict.contact.description}
             </motion.p>
           </div>
         </div>

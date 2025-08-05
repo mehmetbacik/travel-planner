@@ -135,6 +135,11 @@ export interface Dictionary {
     subtitle: string;
     description: string;
   };
+  contact: {
+    title: string;
+    subtitle: string;
+    description: string;
+  };
   home: {
     hero: {
       title: string;
