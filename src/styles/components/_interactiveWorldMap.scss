@@ -33,9 +33,10 @@
 
   &__content {
     width: 100%;
+    max-width: 800px;
     margin: 0 auto;
     position: relative;
-    
+
     .world-map-container {
       position: relative;
       width: 100%;
@@ -43,83 +44,70 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      
+
       @media (max-width: $md-breakpoint) {
         height: 400px;
       }
-      
+
       @media (max-width: $sm-breakpoint) {
         height: 300px;
       }
     }
-    
+
     .world-map {
       width: 100%;
       height: 100%;
-      max-width: 800px;
-      max-height: 500px;
+      max-width: 700px;
+      max-height: 350px;
       cursor: pointer;
-      
-      .rsm-geography {
+
+      .ocean-bg {
+        fill: #e3f2fd;
+        transition: fill 0.3s ease;
+      }
+
+      .country-path {
+        fill: #4caf50;
+        stroke: #2e7d32;
+        stroke-width: 1;
         transition: all 0.3s ease;
         cursor: pointer;
-        
-        &.has-data {
-          cursor: pointer;
-          
-          &:hover {
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-            transform: scale(1.02);
-          }
-          
-          &.hovered {
-            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
-            animation: countryPulse 1s ease-in-out infinite;
-          }
+
+        &:hover {
+          fill: #ff9800;
+          stroke: #f57c00;
+          stroke-width: 2;
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+          transform: scale(1.02);
         }
-        
-        &.no-data {
-          cursor: default;
+
+        &.hovered {
+          fill: #ff5722;
+          stroke: #d84315;
+          stroke-width: 2;
+          filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+          animation: countryPulse 1s ease-in-out infinite;
+        }
+      }
+
+      .grid-lines {
+        opacity: 0.3;
+        transition: opacity 0.3s ease;
+
+        &:hover {
           opacity: 0.6;
-          
-          &:hover {
-            opacity: 0.8;
-          }
         }
       }
-      
-      // Ensure tooltip is visible
-      .country-tooltip {
-        z-index: 9999 !important;
-      }
-    }
-    
-    .map-loading {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      gap: $spacing-lg;
-      
-      .loading-spinner {
-        width: 60px;
-        height: 60px;
-        border: 6px solid #f3f3f3;
-        border-top: 6px solid $color-primary;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-      
-      p {
-        color: $color-text-light;
-        font-size: $font-size-lg;
-        font-weight: $font-weight-semibold;
-        margin: 0;
-        
-        &.loading-subtitle {
-          font-size: $font-size-md;
+
+      .continents-outline {
+        opacity: 0.4;
+        transition: opacity 0.3s ease;
+
+        &:hover {
           opacity: 0.7;
         }
       }
@@ -151,7 +139,7 @@
   max-height: 80vh;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  
+
   .modal-loading {
     display: flex;
     flex-direction: column;
@@ -159,7 +147,7 @@
     justify-content: center;
     padding: $spacing-2xl;
     gap: $spacing-lg;
-    
+
     .loading-spinner {
       width: 40px;
       height: 40px;
@@ -168,13 +156,13 @@
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
-    
+
     p {
       color: $color-text-light;
       font-size: $font-size-lg;
     }
   }
-  
+
   .modal-content {
     .modal-header {
       display: flex;
@@ -183,38 +171,38 @@
       padding: $spacing-xl;
       border-bottom: 1px solid $border-color;
       position: relative;
-      
+
       .country-flag {
         width: 60px;
         height: 40px;
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        
+
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
-      
+
       .country-info {
         flex: 1;
-        
+
         h3 {
           font-size: $font-size-xl;
           font-weight: $font-weight-bold;
           color: $color-text;
           margin: 0 0 $spacing-sm 0;
         }
-        
+
         .official-name {
           font-size: $font-size-md;
           color: $color-text-light;
           margin: 0;
         }
       }
-      
+
       .modal-close {
         position: absolute;
         top: $spacing-lg;
@@ -231,42 +219,42 @@
         align-items: center;
         justify-content: center;
         transition: all 0.3s ease;
-        
+
         &:hover {
           background: $color-background;
           color: $color-text;
         }
       }
     }
-    
+
     .modal-body {
       padding: $spacing-xl;
       max-height: 60vh;
       overflow-y: auto;
-      
+
       .country-details {
         display: flex;
         flex-direction: column;
         gap: $spacing-md;
-        
+
         .detail-row {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
           padding: $spacing-sm 0;
           border-bottom: 1px solid $border-color;
-          
+
           &:last-child {
             border-bottom: none;
           }
-          
+
           .label {
             font-weight: $font-weight-semibold;
             color: $color-text;
             min-width: 120px;
             margin-right: $spacing-md;
           }
-          
+
           .value {
             color: $color-text-light;
             text-align: right;
@@ -276,6 +264,15 @@
         }
       }
     }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -292,11 +289,9 @@
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
-  max-width: 200px;
-  word-wrap: break-word;
-  
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: -4px;
@@ -331,11 +326,6 @@
   100% {
     transform: scale(1);
   }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 // Responsive adjustments
