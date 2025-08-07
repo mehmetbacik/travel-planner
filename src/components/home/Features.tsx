@@ -41,7 +41,6 @@ export default function Features({ dict }: FeaturesProps) {
           </h2>
           <p className="features__description">{dict.features.description}</p>
         </div>
-
         <div className="features__content">
           {features.map(({ icon, key, descriptionKey }, index) => (
             <motion.article
