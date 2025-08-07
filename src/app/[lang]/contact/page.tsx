@@ -1,6 +1,7 @@
 import { getDictionary } from "../../i18n/getDictionary";
 import { Locale } from "../../i18n/settings";
 import Hero from "@/components/contact/Hero";
+import Contact from "@/components/contact/Contact";
 
 export default async function ContactPage({
   params,
@@ -13,6 +14,7 @@ export default async function ContactPage({
   return (
     <main>
       <Hero dict={dict} />
+      <Contact />
     </main>
   );
 }
