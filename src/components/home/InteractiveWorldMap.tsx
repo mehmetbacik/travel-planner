@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fetchAllCountries, Country } from "@/services/api/map";
+import mapImg from "@/assets/img/map.png";
 
 interface ContinentPoint {
   id: string;
@@ -45,6 +46,14 @@ export default function InteractiveMap({ dict }: InteractiveMapProps) {
     setTooltipPos({ x: e.clientX, y: e.clientY });
   };
 
+  const [bgLoaded, setBgLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = mapImg.src;
+    img.onload = () => setBgLoaded(true);
+  }, []);
+
   // Filter
   const filteredCountries = selectedContinent
     ? countries.filter(
@@ -75,54 +84,70 @@ export default function InteractiveMap({ dict }: InteractiveMapProps) {
           </p>
         </div>
         <div className="interactiveWorldMap__content">
-          <div className="world-map-container" style={{ position: "relative" }}>
-            {continentPoints.map(({ id, name, coords }) => (
-              <motion.circle
-                key={id}
-                cx={coords.x}
-                cy={coords.y}
-                r={10}
-                fill="#007bff"
-                stroke="#004085"
-                strokeWidth={2}
-                style={{ cursor: "pointer" }}
-                animate={{
-                  scale: hoveredContinent === id ? 1.3 : 1,
-                  opacity: hoveredContinent === id ? 1 : 0.8,
-                }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                onMouseEnter={(e) => {
-                  setHoveredContinent(id);
-                  handleContinentMouseMove(e);
-                }}
-                onMouseMove={handleContinentMouseMove}
-                onMouseLeave={() => setHoveredContinent(null)}
-                onClick={() => setSelectedContinent(id)}
-              />
-            ))}
+          <div
+            className="mapImg"
+            style={{
+              backgroundImage: bgLoaded ? `url(${mapImg.src})` : "none",
+              backgroundPosition: "center right",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              opacity: bgLoaded ? 1 : 0,
+              transition: "opacity 0.8s ease-in-out",
+            }}
+          >
+            {" "}
+            <div
+              className="world-map-container"
+              style={{ position: "relative" }}
+            >
+              {continentPoints.map(({ id, name, coords }) => (
+                <motion.circle
+                  key={id}
+                  cx={coords.x}
+                  cy={coords.y}
+                  r={10}
+                  fill="#007bff"
+                  stroke="#004085"
+                  strokeWidth={2}
+                  style={{ cursor: "pointer" }}
+                  animate={{
+                    scale: hoveredContinent === id ? 1.3 : 1,
+                    opacity: hoveredContinent === id ? 1 : 0.8,
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  onMouseEnter={(e) => {
+                    setHoveredContinent(id);
+                    handleContinentMouseMove(e);
+                  }}
+                  onMouseMove={handleContinentMouseMove}
+                  onMouseLeave={() => setHoveredContinent(null)}
+                  onClick={() => setSelectedContinent(id)}
+                />
+              ))}
 
-            {hoveredContinent && (
-              <motion.div
-                className="tooltip"
-                style={{
-                  position: "fixed",
-                  top: tooltipPos.y + 15,
-                  left: tooltipPos.x + 15,
-                  backgroundColor: "rgba(0,0,0,0.7)",
-                  color: "#fff",
-                  padding: "5px 10px",
-                  borderRadius: 4,
-                  pointerEvents: "none",
-                  fontSize: 12,
-                }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.2 }}
-              >
-                {continentPoints.find((c) => c.id === hoveredContinent)?.name}
-              </motion.div>
-            )}
+              {hoveredContinent && (
+                <motion.div
+                  className="tooltip"
+                  style={{
+                    position: "fixed",
+                    top: tooltipPos.y + 15,
+                    left: tooltipPos.x + 15,
+                    backgroundColor: "rgba(0,0,0,0.7)",
+                    color: "#fff",
+                    padding: "5px 10px",
+                    borderRadius: 4,
+                    pointerEvents: "none",
+                    fontSize: 12,
+                  }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {continentPoints.find((c) => c.id === hoveredContinent)?.name}
+                </motion.div>
+              )}
+            </div>
           </div>
           <AnimatePresence>
             {selectedContinent && (
