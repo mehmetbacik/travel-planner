@@ -162,7 +162,12 @@
   "about": {
     "title": "A New Way to Explore",
     "subtitle": "The vision behind your personalized travel experience",
-    "description": "We see travel as more than just getting from one place to another. For us, it’s a unique journey shaped around your personal interests. That’s why every plan starts with your story."
+    "description": "We see travel as more than just getting from one place to another. For us, it’s a unique journey shaped around your personal interests. That’s why every plan starts with your story.",
+    "content": {
+      "title": "Our Story",
+      "subtitle": "Every journey is an adventure",
+      "description": "At Travel Planner, our goal is to transform your trip from just a route plan into an unforgettable experience. Every traveler’s journey is unique; that’s why we provide personalized recommendations, make it easy for you to explore the places you’ll visit, and support you every step of the way. Whether it’s nature adventures or cultural routes, we ensure that every detail of your journey is thoughtfully planned. Our story merges with your story, and together we set sail for new adventures."
+    }
   },
   "blog": {
     "title": "Inspiring Travel Stories",

@@ -27,18 +27,6 @@ export default function About() {
             eros vel, dictum velit. Quisque tincidunt lectus quis dui lobortis
             porta.
           </p>
-          <p>
-            Vestibulum bibendum dapibus libero a vestibulum. Cras fringilla elit
-            lorem, a posuere ex porttitor eleifend. Duis bibendum dictum odio,
-            vel vehicula mi pulvinar eu. Praesent dignissim, ligula quis auctor
-            placerat, odio elit imperdiet diam, vel vulputate quam arcu non
-            augue. Sed a gravida enim. Proin lacinia luctus dui faucibus
-            sodales. In et massa a nisi semper ullamcorper sit amet quis leo.
-            Aenean eget nunc non velit dapibus ullamcorper. Fusce viverra dui et
-            tempus cursus. Aliquam lectus orci, dapibus sed gravida id,
-            tincidunt quis lorem. Sed fringilla nunc vel risus ultrices, a
-            dictum est sodales.
-          </p>
         </div>
       </div>
     </section>

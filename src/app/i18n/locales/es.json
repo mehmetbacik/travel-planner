@@ -162,7 +162,12 @@
   "about": {
     "title": "Una Nueva Forma de Explorar",
     "subtitle": "La visión detrás de tu experiencia de viaje personalizada",
-    "description": "Para nosotros, viajar es más que ir de un lugar a otro. Es un viaje único adaptado a tus intereses personales. Por eso, cada plan comienza con tu historia."
+    "description": "Para nosotros, viajar es más que ir de un lugar a otro. Es un viaje único adaptado a tus intereses personales. Por eso, cada plan comienza con tu historia.",
+    "content": {
+      "title": "Nuestra Historia",
+      "subtitle": "Cada viaje es una aventura",
+      "description": "En Travel Planner, nuestro objetivo es transformar tu viaje de un simple plan de ruta a una experiencia inolvidable. El viaje de cada usuario es único; por eso ofrecemos recomendaciones personalizadas, facilitamos la exploración de los lugares que visitarás y te acompañamos en cada paso del camino. Ya sea aventuras en la naturaleza o rutas culturales, nos aseguramos de que cada detalle de tu viaje esté cuidadosamente planificado. Nuestra historia se une a la tuya y juntos nos embarcamos en nuevas aventuras."
+    }
   },
   "blog": {
     "title": "Historias de Viaje Inspiradoras",
