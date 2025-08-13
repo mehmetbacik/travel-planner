@@ -14,7 +14,7 @@ export default async function AboutPage({
   return (
     <main>
       <Hero dict={dict} />
-      <About />
+      <About dict={dict} />
     </main>
   );
 }

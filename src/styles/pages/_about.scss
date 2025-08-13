@@ -35,12 +35,6 @@
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: $spacing-xl;
     padding: $spacing-md;
-    @media (max-width: $md-breakpoint) {
-      grid-template-columns: 1fr;
-    }
   }
 }
