@@ -37,4 +37,30 @@
   &__content {
     padding: $spacing-md;
   }
+
+  &__stats {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-md;
+    margin-top: $spacing-md;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__stat-number {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $primary;
+    transition: $transition-base;
+  }
+
+  &__stat-label {
+    font-size: $font-size-base;
+    color: $color-text;
+    margin-top: $spacing-unit;
+  }
 }
