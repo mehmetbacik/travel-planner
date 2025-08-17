@@ -12,6 +12,14 @@ interface CounterItem {
   value: number;
 }
 
+interface InstagramPost {
+  id: number;
+  username: string;
+  location: string;
+  image: string;
+  caption: string;
+}
+
 export default function About({ dict }: AboutProps) {
   const counters: CounterItem[] = [
     { label: "Planned Trips", value: 120 },
@@ -20,6 +28,31 @@ export default function About({ dict }: AboutProps) {
   ];
 
   const [counts, setCounts] = useState(counters.map(() => 0));
+
+  // Fake Instagram Posts
+  const instagramPosts: InstagramPost[] = [
+    {
+      id: 1,
+      username: "traveler_01",
+      location: "Paris, France",
+      image: "/images/instagram/paris.jpg",
+      caption: "Exploring the city of lights ✨ #ParisTrip",
+    },
+    {
+      id: 2,
+      username: "wanderlust_92",
+      location: "Tokyo, Japan",
+      image: "/images/instagram/tokyo.jpg",
+      caption: "A taste of Tokyo nights 🌸",
+    },
+    {
+      id: 3,
+      username: "explorer_life",
+      location: "New York, USA",
+      image: "/images/instagram/nyc.jpg",
+      caption: "Central Park mornings 🗽",
+    },
+  ];
 
   useEffect(() => {
     counters.forEach((counter, index) => {
@@ -65,6 +98,29 @@ export default function About({ dict }: AboutProps) {
               <span className="about__stat-label">{counter.label}</span>
             </div>
           ))}
+        </div>
+
+        {/* Instagram Style Posts */}
+        <div className="about__instagram">
+          <h3 className="about__instagram-title">Traveler Stories</h3>
+          <div className="about__instagram-grid">
+            {instagramPosts.map((post) => (
+              <div className="about__instagram-post" key={post.id}>
+                <div className="about__instagram-header">
+                  <span className="about__instagram-username">
+                    @{post.username}
+                  </span>
+                  <span className="about__instagram-location">
+                    {post.location}
+                  </span>
+                </div>
+                <div className="about__instagram-image">
+                  <img src={post.image} alt={post.caption} />
+                </div>
+                <div className="about__instagram-caption">{post.caption}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
