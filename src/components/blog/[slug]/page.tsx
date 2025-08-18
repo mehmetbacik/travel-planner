@@ -1,30 +1,30 @@
 import React from "react";
 
 interface BlogDetailPageProps {
-  params: { id: string };
+  params: { slug: string };
 }
 
 const mockBlogPosts = [
   {
-    id: "1",
+    slug: "exploring-hidden-gems-istanbul",
     title: "Exploring the Hidden Gems of Istanbul",
     content:
       "Here you can write the full blog post about Istanbul’s hidden gems...",
   },
   {
-    id: "2",
+    slug: "top-5-hiking-trails-balkans",
     title: "Top 5 Hiking Trails in the Balkans",
     content: "Detailed article about Balkan hiking trails...",
   },
   {
-    id: "3",
+    slug: "photography-tips-for-beginners",
     title: "Photography Tips for Beginners",
     content: "Beginner-friendly photography guide...",
   },
 ];
 
 export default function BlogDetailPage({ params }: BlogDetailPageProps) {
-  const post = mockBlogPosts.find((p) => p.id === params.id);
+  const post = mockBlogPosts.find((p) => p.slug === params.slug);
 
   if (!post) {
     return <div>Blog post not found</div>;

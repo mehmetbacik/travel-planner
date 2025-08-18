@@ -6,6 +6,7 @@ import Link from "next/link";
 const blogPosts = [
   {
     id: 1,
+    slug: "exploring-hidden-gems-istanbul",
     title: "Exploring the Hidden Gems of Istanbul",
     description:
       "Discover the less-known but breathtaking spots of Istanbul beyond the usual tourist paths.",
@@ -15,6 +16,7 @@ const blogPosts = [
   },
   {
     id: 2,
+    slug: "top-5-hiking-trails-balkans",
     title: "Top 5 Hiking Trails in the Balkans",
     description:
       "A curated list of the most scenic and adventurous hiking trails in the Balkan Peninsula.",
@@ -24,6 +26,7 @@ const blogPosts = [
   },
   {
     id: 3,
+    slug: "photography-tips-for-beginners",
     title: "Photography Tips for Beginners",
     description:
       "Learn essential techniques to improve your photography skills and capture better shots.",
@@ -61,7 +64,7 @@ export default function Blog() {
                     {new Date(post.date).toLocaleDateString()}
                   </span>
                 </div>
-                <Link href={`/blog/${post.id}`} className="blog__item-button">
+                <Link href={`/blog/${post.slug}`} className="blog__item-button">
                   Devamını Oku
                 </Link>
               </div>
