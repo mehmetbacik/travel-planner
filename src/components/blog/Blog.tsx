@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 const blogPosts = [
@@ -34,9 +34,43 @@ const blogPosts = [
     author: "Jane Smith",
     thumbnail: "/images/blog/photography.jpg",
   },
+  {
+    id: 4,
+    slug: "hidden-cafes-istanbul",
+    title: "Hidden Cafes of Istanbul",
+    description: "A guide to Istanbul’s coziest and most secret cafes.",
+    date: "2025-06-20",
+    author: "Mehmet Bacik",
+    thumbnail: "/images/blog/cafe.jpg",
+  },
+  {
+    id: 5,
+    slug: "mountain-biking-balkans",
+    title: "Mountain Biking in the Balkans",
+    description: "Exciting trails for biking enthusiasts across the Balkans.",
+    date: "2025-05-15",
+    author: "John Doe",
+    thumbnail: "/images/blog/biking.jpg",
+  },
 ];
 
+const POSTS_PER_PAGE = 3;
+
 export default function Blog() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
+
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  const currentPosts = blogPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+
+  const handlePrev = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
+  const handleNext = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+
   return (
     <section className="blog" aria-labelledby="blog-title">
       <div className="blog__body container">
@@ -50,7 +84,7 @@ export default function Blog() {
         </div>
 
         <div className="blog__list">
-          {blogPosts.map((post) => (
+          {currentPosts.map((post) => (
             <article key={post.id} className="blog__item">
               <div className="blog__item-thumbnail">
                 <img src={post.thumbnail} alt={post.title} />
@@ -71,6 +105,28 @@ export default function Blog() {
             </article>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <div className="blog__pagination">
+            <button
+              onClick={handlePrev}
+              disabled={currentPage === 1}
+              className="blog__pagination-btn"
+            >
+              Önceki
+            </button>
+            <span className="blog__pagination-info">
+              {currentPage} / {totalPages}
+            </span>
+            <button
+              onClick={handleNext}
+              disabled={currentPage === totalPages}
+              className="blog__pagination-btn"
+            >
+              Sonraki
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
