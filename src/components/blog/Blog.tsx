@@ -10,6 +10,7 @@ const blogPosts = [
       "Discover the less-known but breathtaking spots of Istanbul beyond the usual tourist paths.",
     date: "2025-08-10",
     author: "John Doe",
+    thumbnail: "/images/blog/istanbul.jpg",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const blogPosts = [
       "A curated list of the most scenic and adventurous hiking trails in the Balkan Peninsula.",
     date: "2025-07-25",
     author: "John Doe",
+    thumbnail: "/images/blog/balkans.jpg",
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ const blogPosts = [
       "Learn essential techniques to improve your photography skills and capture better shots.",
     date: "2025-06-30",
     author: "Jane Smith",
+    thumbnail: "/images/blog/photography.jpg",
   },
 ];
 
@@ -45,13 +48,18 @@ export default function Blog() {
         <div className="blog__list">
           {blogPosts.map((post) => (
             <article key={post.id} className="blog__item">
-              <h3 className="blog__item-title">{post.title}</h3>
-              <p className="blog__item-description">{post.description}</p>
-              <div className="blog__item-meta">
-                <span className="blog__item-author">{post.author}</span>
-                <span className="blog__item-date">
-                  {new Date(post.date).toLocaleDateString()}
-                </span>
+              <div className="blog__item-thumbnail">
+                <img src={post.thumbnail} alt={post.title} />
+              </div>
+              <div className="blog__item-content">
+                <h3 className="blog__item-title">{post.title}</h3>
+                <p className="blog__item-description">{post.description}</p>
+                <div className="blog__item-meta">
+                  <span className="blog__item-author">{post.author}</span>
+                  <span className="blog__item-date">
+                    {new Date(post.date).toLocaleDateString()}
+                  </span>
+                </div>
               </div>
             </article>
           ))}
