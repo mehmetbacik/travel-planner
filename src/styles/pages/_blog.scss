@@ -44,7 +44,7 @@
     }
   }
 
-    &__list {
+  &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
@@ -107,7 +107,7 @@
     font-size: 1rem;
     line-height: 1.5;
     color: #444;
-    margin-bottom: auto;
+    margin-bottom: 1rem;
   }
 
   &__item-meta {
@@ -115,7 +115,7 @@
     justify-content: space-between;
     font-size: 0.9rem;
     color: #777;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   &__item-author {
@@ -124,5 +124,27 @@
 
   &__item-date {
     font-style: italic;
+  }
+
+  &__item-button {
+    align-self: flex-start;
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #0077ff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #005fcc;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
   }
 }

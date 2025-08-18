@@ -60,6 +60,9 @@ export default function Blog() {
                     {new Date(post.date).toLocaleDateString()}
                   </span>
                 </div>
+                <a href="#" className="blog__item-button">
+                  Devamını Oku
+                </a>
               </div>
             </article>
           ))}
