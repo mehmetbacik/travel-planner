@@ -75,6 +75,27 @@ export default function Blog() {
     setCurrentPage(page);
   };
 
+  const getPageNumbers = () => {
+    const pages: (number | string)[] = [];
+    for (let i = 1; i <= totalPages; i++) {
+      if (
+        i === 1 ||
+        i === totalPages ||
+        (i >= currentPage - 1 && i <= currentPage + 1)
+      ) {
+        pages.push(i);
+      } else if (
+        (i === currentPage - 2 && currentPage > 3) ||
+        (i === currentPage + 2 && currentPage < totalPages - 2)
+      ) {
+        pages.push("ellipsis");
+      }
+    }
+    return pages.filter(
+      (page, index, arr) => page !== "ellipsis" || arr[index - 1] !== "ellipsis"
+    );
+  };
+
   return (
     <section className="blog" aria-labelledby="blog-title">
       <div className="blog__body container">
@@ -121,20 +142,23 @@ export default function Blog() {
             </button>
 
             <div className="blog__pagination-pages">
-              {Array.from({ length: totalPages }, (_, index) => {
-                const page = index + 1;
-                return (
+              {getPageNumbers().map((page, index) =>
+                page === "ellipsis" ? (
+                  <span key={`ellipsis-${index}`} className="blog__pagination-ellipsis">
+                    …
+                  </span>
+                ) : (
                   <button
                     key={page}
-                    onClick={() => handlePageClick(page)}
+                    onClick={() => handlePageClick(page as number)}
                     className={`blog__pagination-page ${
                       currentPage === page ? "active" : ""
                     }`}
                   >
                     {page}
                   </button>
-                );
-              })}
+                )
+              )}
             </div>
 
             <button
