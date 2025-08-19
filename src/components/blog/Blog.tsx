@@ -71,6 +71,10 @@ export default function Blog() {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
 
+  const handlePageClick = (page: number) => {
+    setCurrentPage(page);
+  };
+
   return (
     <section className="blog" aria-labelledby="blog-title">
       <div className="blog__body container">
@@ -115,9 +119,24 @@ export default function Blog() {
             >
               Önceki
             </button>
-            <span className="blog__pagination-info">
-              {currentPage} / {totalPages}
-            </span>
+
+            <div className="blog__pagination-pages">
+              {Array.from({ length: totalPages }, (_, index) => {
+                const page = index + 1;
+                return (
+                  <button
+                    key={page}
+                    onClick={() => handlePageClick(page)}
+                    className={`blog__pagination-page ${
+                      currentPage === page ? "active" : ""
+                    }`}
+                  >
+                    {page}
+                  </button>
+                );
+              })}
+            </div>
+
             <button
               onClick={handleNext}
               disabled={currentPage === totalPages}
