@@ -6,8 +6,12 @@ import { motion } from "framer-motion";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 
-const markerIcon = new L.Icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+const markerWithGlow = L.divIcon({
+  className: "custom-marker",
+  html: `
+    <div class="contact__marker-glow"></div>
+    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" style="width:32px;height:32px;" />
+  `,
   iconSize: [32, 32],
   iconAnchor: [16, 32],
 });
@@ -108,13 +112,17 @@ export default function Contact() {
               center={[41.0082, 28.9784]}
               zoom={12}
               scrollWheelZoom={false}
-              style={{ height: "400px", borderRadius: "12px", marginTop: "2rem" }}
+              style={{
+                height: "400px",
+                borderRadius: "12px",
+                marginTop: "2rem",
+              }}
             >
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={[41.0082, 28.9784]} icon={markerIcon}>
+              <Marker position={[41.0082, 28.9784]} icon={markerWithGlow}>
                 <Popup>Travel Planner HQ - Istanbul</Popup>
               </Marker>
             </MapContainer>
