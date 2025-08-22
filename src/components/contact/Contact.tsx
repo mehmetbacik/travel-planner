@@ -1,9 +1,16 @@
 "use client";
 
 import React from "react";
-
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+
+const markerIcon = new L.Icon({
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+});
 
 export default function Contact() {
   return (
@@ -13,7 +20,7 @@ export default function Contact() {
           <h2 id="contact-title" className="contact__title">
             Contact
           </h2>
-          <p className="contactv__description">
+          <p className="contact__description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
@@ -89,6 +96,29 @@ export default function Contact() {
               Send Message
             </button>
           </motion.form>
+
+          {/* ANIMATED MAP */}
+          <motion.div
+            className="contact__map"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <MapContainer
+              center={[41.0082, 28.9784]}
+              zoom={12}
+              scrollWheelZoom={false}
+              style={{ height: "400px", borderRadius: "12px", marginTop: "2rem" }}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[41.0082, 28.9784]} icon={markerIcon}>
+                <Popup>Travel Planner HQ - Istanbul</Popup>
+              </Marker>
+            </MapContainer>
+          </motion.div>
         </div>
       </div>
     </section>

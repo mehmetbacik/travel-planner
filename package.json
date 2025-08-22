@@ -25,6 +25,7 @@
     "i18next": "^23.7.16",
     "i18next-browser-languagedetector": "^7.2.0",
     "jspdf": "^2.5.1",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.323.0",
     "negotiator": "^0.6.3",
     "next": "14.1.0",
@@ -36,11 +37,13 @@
     "react-hot-toast": "^2.4.1",
     "react-i18next": "^14.0.1",
     "react-icons": "^5.5.0",
+    "react-leaflet": "^5.0.0",
     "sass": "^1.71.0",
     "swiper": "^11.2.10",
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.20",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^20.11.16",
     "@types/react": "^18.2.52",
