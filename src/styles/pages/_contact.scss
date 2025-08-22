@@ -119,35 +119,96 @@
   }
 }
 
-.contact__map {
-  margin-top: 3rem;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
+.contact__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
-.contact__marker-glow {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(87, 204, 153, 0.5);
-  position: absolute;
-  top: -16px;
-  left: -16px;
-  animation: pulse 1.5s infinite;
+  .contact__header {
+    text-align: center;
+    margin-bottom: 2rem;
 
-  @keyframes pulse {
-    0% {
-      transform: scale(0.7);
-      opacity: 0.7;
+    .contact__title {
+      font-size: 2rem;
+      font-weight: 700;
     }
-    50% {
-      transform: scale(1.4);
-      opacity: 0.3;
+
+    .contact__description {
+      font-size: 1rem;
+      color: $text-secondary;
     }
-    100% {
-      transform: scale(0.7);
-      opacity: 0.7;
+  }
+
+  .contact__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .contact__info {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+
+      .contact__card {
+        flex: 1;
+        min-width: 200px;
+        padding: 1rem;
+        border-radius: 12px;
+        background: $background-light;
+        box-shadow: $shadow-md;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .contact__icon {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+          color: $primary;
+        }
+
+        h3 {
+          margin: 0.5rem 0;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 0.9rem;
+          color: $color-text;
+        }
+      }
+    }
+
+    .contact__form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .contact__form-group {
+        input,
+        textarea {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          border-radius: 8px;
+          border: 1px solid $border-color;
+          font-size: 1rem;
+        }
+      }
+
+      .contact__button {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        border: none;
+        background: $primary;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background: darken($primary, 10%);
+        }
+      }
     }
   }
 }

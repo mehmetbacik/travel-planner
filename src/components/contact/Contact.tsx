@@ -3,32 +3,37 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
+import { GoogleMap, Marker, LoadScript } from "@react-google-maps/api";
 
-const markerWithGlow = L.divIcon({
-  className: "custom-marker",
-  html: `
-    <div class="contact__marker-glow"></div>
-    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" style="width:32px;height:32px;" />
-  `,
-  iconSize: [32, 32],
-  iconAnchor: [16, 32],
-});
+const containerStyle = {
+  width: "100%",
+  height: "400px",
+  borderRadius: "12px",
+};
+
+const center = {
+  lat: 41.0082,
+  lng: 28.9784,
+};
 
 export default function Contact() {
   return (
     <section className="contact" aria-labelledby="contact">
       <div className="contact__body container">
+        {/* Header */}
         <div className="contact__header">
           <h2 id="contact-title" className="contact__title">
             Contact
           </h2>
           <p className="contact__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Reach out to us for planning your next adventure. We’d love to hear
+            from you!
           </p>
         </div>
+
+        {/* Info & Form */}
         <div className="contact__content">
+          {/* Contact Info Cards */}
           <motion.div
             className="contact__info"
             initial="hidden"
@@ -71,6 +76,7 @@ export default function Contact() {
             ))}
           </motion.div>
 
+          {/* Contact Form */}
           <motion.form
             className="contact__form"
             initial={{ opacity: 0, y: 40 }}
@@ -101,31 +107,25 @@ export default function Contact() {
             </button>
           </motion.form>
 
-          {/* ANIMATED MAP */}
+          {/* Google Map */}
           <motion.div
             className="contact__map"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
+            style={{ marginTop: "2rem" }}
           >
-            <MapContainer
-              center={[41.0082, 28.9784]}
-              zoom={12}
-              scrollWheelZoom={false}
-              style={{
-                height: "400px",
-                borderRadius: "12px",
-                marginTop: "2rem",
-              }}
+            <LoadScript
+              googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}
             >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker position={[41.0082, 28.9784]} icon={markerWithGlow}>
-                <Popup>Travel Planner HQ - Istanbul</Popup>
-              </Marker>
-            </MapContainer>
+              <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={center}
+                zoom={12}
+              >
+                <Marker position={center} />
+              </GoogleMap>
+            </LoadScript>
           </motion.div>
         </div>
       </div>
