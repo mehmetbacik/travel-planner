@@ -3,7 +3,7 @@
 import { Dictionary } from "@/types/dictionary";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { fetchAllCountries, fetchCountryByCode, Country, CountryMapData } from "@/services/api/map";
+import { fetchAllCountries, fetchCountryByName, Country, CountryMapData } from "@/services/api/map";
 
 interface InteractiveWorldMapProps {
   dict: Dictionary;
@@ -27,7 +27,7 @@ const continents: Continent[] = [
     path: "M 50 30 L 180 30 L 180 120 L 50 120 Z",
     color: "#4CAF50",
     hoverColor: "#66BB6A",
-    countries: ["USA", "Canada", "Mexico", "Cuba", "Jamaica", "Haiti", "Dominican Republic", "Puerto Rico", "Guatemala", "Honduras", "El Salvador", "Nicaragua", "Costa Rica", "Panama"],
+    countries: ["United States", "Canada", "Mexico", "Cuba", "Jamaica", "Haiti", "Dominican Republic", "Puerto Rico", "Guatemala", "Honduras", "El Salvador", "Nicaragua", "Costa Rica", "Panama"],
     description: "From the frozen tundra of Canada to the tropical beaches of Mexico"
   },
   {
@@ -108,13 +108,35 @@ export default function InteractiveWorldMap({ dict }: InteractiveWorldMapProps) 
   const handleCountryClick = async (countryName: string) => {
     setIsLoading(true);
     try {
-      const country = countriesData.find(c => c.name.common === countryName);
+      // First try to find in already loaded countries data
+      let country = countriesData.find(c => c.name.common === countryName);
+      
+      // If not found, try to find by partial match
+      if (!country) {
+        country = countriesData.find(c => 
+          c.name.common.toLowerCase().includes(countryName.toLowerCase()) ||
+          c.name.official.toLowerCase().includes(countryName.toLowerCase())
+        );
+      }
+      
+      // If still not found, fetch from API
+      if (!country) {
+        const apiCountries = await fetchCountryByName(countryName);
+        if (apiCountries && apiCountries.length > 0) {
+          country = apiCountries[0];
+        }
+      }
+      
       if (country) {
         setSelectedCountry(country);
         setIsModalOpen(true);
+      } else {
+        console.error('Country not found:', countryName);
+        // You could add a toast notification here
       }
     } catch (error) {
       console.error('Error fetching country details:', error);
+      // You could add a toast notification here
     } finally {
       setIsLoading(false);
     }
