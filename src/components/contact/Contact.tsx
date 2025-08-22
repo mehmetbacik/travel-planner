@@ -2,6 +2,9 @@
 
 import React from "react";
 
+import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
+
 export default function Contact() {
   return (
     <section className="contact" aria-labelledby="contact">
@@ -15,30 +18,77 @@ export default function Contact() {
           </p>
         </div>
         <div className="contact__content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            mauris massa, viverra ac leo a, pharetra condimentum quam. Donec
-            scelerisque pellentesque condimentum. Sed molestie mollis urna,
-            vitae mollis felis molestie eu. Aliquam dictum metus quis risus
-            finibus, a lacinia mauris porttitor. Mauris cursus sagittis erat, ut
-            lobortis magna congue vel. Vivamus dapibus aliquam facilisis. Duis
-            lorem velit, dapibus at odio feugiat, lobortis facilisis nisl.
-            Maecenas suscipit fringilla orci. Sed et enim ornare, vestibulum
-            eros vel, dictum velit. Quisque tincidunt lectus quis dui lobortis
-            porta.
-          </p>
-          <p>
-            Vestibulum bibendum dapibus libero a vestibulum. Cras fringilla elit
-            lorem, a posuere ex porttitor eleifend. Duis bibendum dictum odio,
-            vel vehicula mi pulvinar eu. Praesent dignissim, ligula quis auctor
-            placerat, odio elit imperdiet diam, vel vulputate quam arcu non
-            augue. Sed a gravida enim. Proin lacinia luctus dui faucibus
-            sodales. In et massa a nisi semper ullamcorper sit amet quis leo.
-            Aenean eget nunc non velit dapibus ullamcorper. Fusce viverra dui et
-            tempus cursus. Aliquam lectus orci, dapibus sed gravida id,
-            tincidunt quis lorem. Sed fringilla nunc vel risus ultrices, a
-            dictum est sodales.
-          </p>
+          <motion.div
+            className="contact__info"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+            }}
+          >
+            {[
+              {
+                icon: "mdi:email-outline",
+                title: "Email",
+                value: "support@travelplanner.com",
+              },
+              {
+                icon: "mdi:phone-outline",
+                title: "Phone",
+                value: "+90 555 123 4567",
+              },
+              {
+                icon: "mdi:map-marker-outline",
+                title: "Address",
+                value: "Istanbul, Turkey",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="contact__card"
+                variants={{
+                  hidden: { opacity: 0, scale: 0.9 },
+                  visible: { opacity: 1, scale: 1 },
+                }}
+                transition={{ duration: 0.4 }}
+              >
+                <Icon icon={item.icon} className="contact__icon" />
+                <h3>{item.title}</h3>
+                <p>{item.value}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.form
+            className="contact__form"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="contact__form-group">
+              <input type="text" name="name" placeholder="Your Name" required />
+            </div>
+            <div className="contact__form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div className="contact__form-group">
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows={5}
+                required
+              />
+            </div>
+            <button type="submit" className="contact__button">
+              Send Message
+            </button>
+          </motion.form>
         </div>
       </div>
     </section>
