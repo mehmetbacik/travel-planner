@@ -110,7 +110,7 @@ export default function About({ dict }: AboutProps) {
             <div className="about__stat" key={counter.key}>
               <span className="about__stat-number">{counts[index]}</span>
               <span className="about__stat-label">
-                {dict.about.counters[counter.key]}
+                {dict.about.counters?.[counter.key] ?? counter.key}
               </span>
             </div>
           ))}

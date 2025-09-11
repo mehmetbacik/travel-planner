@@ -167,6 +167,11 @@
       "title": "Unsere Geschichte",
       "subtitle": "Jede Reise ist ein Abenteuer",
       "description": "Bei Travel Planner ist es unser Ziel, Ihre Reise von einem einfachen Routenplan in ein unvergessliches Erlebnis zu verwandeln. Jede Reise eines Nutzers ist einzigartig; deshalb bieten wir personalisierte Empfehlungen, erleichtern die Erkundung der Orte, die Sie besuchen werden, und begleiten Sie auf jedem Schritt Ihres Weges. Ob Naturabenteuer oder kulturelle Routen, wir stellen sicher, dass jedes Detail Ihrer Reise sorgfältig geplant ist. Unsere Geschichte verschmilzt mit Ihrer, und gemeinsam begeben wir uns auf neue Abenteuer."
+    },
+    "counters": {
+      "plannedTrips": "Geplante Reisen",
+      "visitedCities": "Besuchte Städte",
+      "happyTravelers": "Glückliche Reisende"
     }
   },
   "blog": {
