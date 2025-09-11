@@ -134,6 +134,11 @@ export interface Dictionary {
       subtitle: string;
       description: string;
     };
+    counters: {
+      plannedTrips: string;
+      visitedCities: string;
+      happyTravelers: string;
+    };
   };
   blog: {
     title: string;

@@ -2,14 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import { Dictionary } from "@/types/dictionary";
+import { counters } from "@/services/data/counters";
+import { CounterItem } from "@/types/about";
 
 interface AboutProps {
   dict: Dictionary;
-}
-
-interface CounterItem {
-  label: string;
-  value: number;
 }
 
 interface InstagramPost {
@@ -21,12 +18,6 @@ interface InstagramPost {
 }
 
 export default function About({ dict }: AboutProps) {
-  const counters: CounterItem[] = [
-    { label: "Planned Trips", value: 120 },
-    { label: "Visited Cities", value: 45 },
-    { label: "Happy Travelers", value: 300 },
-  ];
-
   const [counts, setCounts] = useState(counters.map(() => 0));
 
   // Fake Instagram Posts
@@ -91,15 +82,6 @@ export default function About({ dict }: AboutProps) {
           <p>{dict.about.content.description}</p>
         </div>
 
-        <div className="about__stats">
-          {counters.map((counter, index) => (
-            <div className="about__stat" key={index}>
-              <span className="about__stat-number">{counts[index]}</span>
-              <span className="about__stat-label">{counter.label}</span>
-            </div>
-          ))}
-        </div>
-
         {/* Instagram Style Posts */}
         <div className="about__instagram">
           <h3 className="about__instagram-title">Traveler Stories</h3>
@@ -121,6 +103,17 @@ export default function About({ dict }: AboutProps) {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="about__stats">
+          {counters.map((counter, index) => (
+            <div className="about__stat" key={counter.key}>
+              <span className="about__stat-number">{counts[index]}</span>
+              <span className="about__stat-label">
+                {dict.about.counters[counter.key]}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
