@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Dictionary } from "@/types/dictionary";
 import { counters } from "@/services/data/counters";
-import { CounterItem } from "@/types/about";
+import { CounterItem } from "@/types/counter";
 
 interface AboutProps {
   dict: Dictionary;

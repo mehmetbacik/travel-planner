@@ -1,4 +1,4 @@
-import { CounterItem } from "@/types/about";
+import { CounterItem } from "@/types/counter";
 
 export const counters: CounterItem[] = [
   { key: "plannedTrips", value: 120 },
