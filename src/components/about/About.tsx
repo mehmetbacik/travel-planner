@@ -4,46 +4,14 @@ import React, { useEffect, useState } from "react";
 import { Dictionary } from "@/types/dictionary";
 import { counters } from "@/services/data/counters";
 import { CounterItem } from "@/types/counter";
+import { instagramPosts, InstagramPost } from "@/services/data/instagramPosts";
 
 interface AboutProps {
   dict: Dictionary;
 }
 
-interface InstagramPost {
-  id: number;
-  username: string;
-  location: string;
-  image: string;
-  caption: string;
-}
-
 export default function About({ dict }: AboutProps) {
   const [counts, setCounts] = useState(counters.map(() => 0));
-
-  // Fake Instagram Posts
-  const instagramPosts: InstagramPost[] = [
-    {
-      id: 1,
-      username: "traveler_01",
-      location: "Paris, France",
-      image: "/images/instagram/paris.jpg",
-      caption: "Exploring the city of lights ✨ #ParisTrip",
-    },
-    {
-      id: 2,
-      username: "wanderlust_92",
-      location: "Tokyo, Japan",
-      image: "/images/instagram/tokyo.jpg",
-      caption: "A taste of Tokyo nights 🌸",
-    },
-    {
-      id: 3,
-      username: "explorer_life",
-      location: "New York, USA",
-      image: "/images/instagram/nyc.jpg",
-      caption: "Central Park mornings 🗽",
-    },
-  ];
 
   useEffect(() => {
     counters.forEach((counter, index) => {
