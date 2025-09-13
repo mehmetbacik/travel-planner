@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Dictionary } from "@/types/dictionary";
 import { counters } from "@/services/data/counters";
 import { CounterItem } from "@/types/counter";
-import { instagramPosts, InstagramPost } from "@/services/data/instagramPosts";
+import { instagramPosts } from "@/services/data/instagramPosts";
 
 interface AboutProps {
   dict: Dictionary;
