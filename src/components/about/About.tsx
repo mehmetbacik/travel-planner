@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { Dictionary } from "@/types/dictionary";
 import { counters } from "@/services/data/counters";
 import { CounterItem } from "@/types/counter";
@@ -65,7 +66,7 @@ export default function About({ dict }: AboutProps) {
                   </span>
                 </div>
                 <div className="about__instagram-image">
-                  <img src={post.image} alt={post.caption} />
+                  <Image src={post.image} alt={post.caption} />
                 </div>
                 <div className="about__instagram-caption">{post.caption}</div>
               </div>
