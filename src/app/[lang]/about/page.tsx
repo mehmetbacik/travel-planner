@@ -1,7 +1,7 @@
 import { getDictionary } from "../../i18n/getDictionary";
 import { Locale } from "../../i18n/settings";
 import Hero from "@/components/about/Hero";
-import About from "@/components/about/About";
+import About from "@/components/about/About/About";
 
 export default async function AboutPage({
   params,
