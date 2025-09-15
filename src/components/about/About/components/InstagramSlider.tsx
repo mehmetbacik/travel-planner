@@ -7,11 +7,16 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { instagramPosts } from "@/services/data/instagramPosts";
+import { Dictionary } from "@/types/dictionary";
 
-export default function InstagramSlider() {
+interface AboutContentProps {
+  dict: Dictionary;
+}
+
+export default function InstagramSlider({ dict }: AboutContentProps) {
   return (
     <div className="about__instagram">
-      <h3 className="about__instagram-title">Traveler Stories</h3>
+      <h3 className="about__instagram-title">{dict.about.content.storiesTitle}</h3>
       <div className="about__instagram-slider">
         <Swiper
           modules={[Autoplay, Pagination]}

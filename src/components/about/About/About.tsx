@@ -17,7 +17,7 @@ export default function About({ dict }: AboutProps) {
       <div className="about__body container">
         <AboutHeader dict={dict} />
         <AboutContent dict={dict} />
-        <InstagramSlider />
+        <InstagramSlider dict={dict}/>
         <AboutStats dict={dict} />
       </div>
     </section>

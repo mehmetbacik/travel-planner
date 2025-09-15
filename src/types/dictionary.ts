@@ -133,6 +133,7 @@ export interface Dictionary {
       title: string;
       subtitle: string;
       description: string;
+      storiesTitle: string;
     };
     counters: {
       plannedTrips: string;
