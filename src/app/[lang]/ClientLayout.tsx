@@ -11,7 +11,7 @@ const Navbar = dynamic(() => import('@/components/layout/Navbar/Navbar'), {
   loading: () => <div className="h-16 bg-white shadow-sm" />
 });
 
-const Footer = dynamic(() => import('@/components/layout/Footer'), {
+const Footer = dynamic(() => import('@/components/layout/Footer/Footer'), {
   ssr: false,
   loading: () => <div className="h-64 bg-gray-100" />
 });
