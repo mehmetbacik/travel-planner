@@ -6,7 +6,7 @@ import { Locale } from '../i18n/settings';
 import dynamic from 'next/dynamic';
 import { Dictionary } from '@/types/dictionary';
 
-const Navbar = dynamic(() => import('@/components/layout/Navbar'), {
+const Navbar = dynamic(() => import('@/components/layout/Navbar/Navbar'), {
   ssr: false,
   loading: () => <div className="h-16 bg-white shadow-sm" />
 });
