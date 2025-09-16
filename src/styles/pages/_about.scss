@@ -109,6 +109,25 @@
   &__instagram {
     width: 100%;
     margin-top: $spacing-lg;
+    &-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: $spacing-sm;
+    }
+    &-title {
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-bold;
+      color: $color-text;
+    }
+    &-description {
+      font-size: $font-size-lg;
+      color: $color-text-light;
+      margin: 0 auto;
+    }
+
     &__slider {
       display: block;
       width: 100%;
@@ -173,11 +192,6 @@
         }
       }
     }
-    &-title {
-      font-size: $font-size-base;
-      font-weight: $font-weight-bold;
-      margin-bottom: $spacing-md;
-    }
     &-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -191,7 +205,7 @@
       display: flex;
       flex-direction: column;
     }
-    &-header {
+    &-postHeader {
       padding: $spacing-md;
       display: flex;
       justify-content: space-between;

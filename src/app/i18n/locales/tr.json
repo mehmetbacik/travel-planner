@@ -167,7 +167,8 @@
       "title": "Bizim Hikayemiz",
       "subtitle": "Sıradan rotaları unutun, maceraya hazır olun",
       "description": "Travel Planner olarak amacımız, seyahatinizi sadece bir rota planı olmaktan çıkarıp, unutulmaz bir deneyime dönüştürmek. Her kullanıcının yolculuğu benzersizdir; bu yüzden size özel öneriler sunuyor, ziyaret edeceğiniz yerleri keşfetmenizi kolaylaştırıyor ve her adımda yanınızda oluyoruz. İster doğa keşifleri, ister kültürel rotalar olsun, her seyahatinizin detaylarını düşünerek planlamanızı sağlıyoruz. Bizim hikayemiz, sizin hikayenizle birleşiyor ve birlikte yeni maceralara yelken açıyoruz.",
-      "storiesTitle": "Gezginlerimizin Instagram Anları"
+      "storiesTitle": "Gezginlerimizin Instagram Anları",
+      "storiesSubTitle": "Her karede bir yolculuk, her yolculukta yeni bir keşif"
     },
     "counters": {
       "plannedTrips": "Planlanan Seyahatler",

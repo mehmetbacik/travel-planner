@@ -16,7 +16,14 @@ interface AboutContentProps {
 export default function InstagramSlider({ dict }: AboutContentProps) {
   return (
     <div className="about__instagram">
-      <h3 className="about__instagram-title">{dict.about.content.storiesTitle}</h3>
+      <div className="about__instagram-header">
+        <h2 className="about__instagram-title">
+          {dict.about.content.storiesTitle}
+        </h2>
+        <p className="about__instagram-description">
+          {dict.about.content.storiesSubTitle}
+        </p>
+      </div>
       <div className="about__instagram-slider">
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -32,7 +39,7 @@ export default function InstagramSlider({ dict }: AboutContentProps) {
         >
           {instagramPosts.map((post) => (
             <SwiperSlide className="about__instagram-post" key={post.id}>
-              <div className="about__instagram-header">
+              <div className="about__instagram-postHeader">
                 <span className="about__instagram-username">
                   @{post.username}
                 </span>
