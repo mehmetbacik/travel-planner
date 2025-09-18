@@ -142,6 +142,11 @@ export interface Dictionary {
       plannedTrips: string;
       visitedCities: string;
       happyTravelers: string;
+      countriesExplored: string;
+      localExperiences: string;
+      culturalEvents: string;
+      photosCaptured: string;
+      reviewsCollected: string;
     };
   };
   blog: {

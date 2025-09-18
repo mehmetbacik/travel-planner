@@ -3,7 +3,6 @@ export type CounterKey =
   | "visitedCities"
   | "happyTravelers"
   | "countriesExplored"
-  | "travelGuidesShared"
   | "localExperiences"
   | "culturalEvents"
   | "photosCaptured"
