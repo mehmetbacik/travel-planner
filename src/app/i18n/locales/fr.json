@@ -173,9 +173,15 @@
       "statsSubTitle": "Chaque chiffre reflète une idée concrétisée"
     },
     "counters": {
-      "plannedTrips": "Voyages Prévu",
+      "plannedTrips": "Voyages Planifiés",
       "visitedCities": "Villes Visitées",
-      "happyTravelers": "Voyageurs Heureux"
+      "happyTravelers": "Voyageurs Heureux",
+      "countriesExplored": "Pays Explorés",
+      "travelGuidesShared": "Guides de Voyage Partagés",
+      "localExperiences": "Expériences Locales",
+      "culturalEvents": "Événements Culturels",
+      "photosCaptured": "Photos Capturées",
+      "reviewsCollected": "Avis Collectés"
     }
   },
   "blog": {

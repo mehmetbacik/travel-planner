@@ -173,9 +173,15 @@
       "statsSubTitle": "Her rakam, hayata geçirilen bir fikrin göstergesi"
     },
     "counters": {
-      "plannedTrips": "Planlanan Seyahatler",
+      "plannedTrips": "Planlanan Geziler",
       "visitedCities": "Ziyaret Edilen Şehirler",
-      "happyTravelers": "Mutlu Gezginler"
+      "happyTravelers": "Mutlu Gezginler",
+      "countriesExplored": "Keşfedilen Ülkeler",
+      "travelGuidesShared": "Paylaşılan Seyahat Rehberleri",
+      "localExperiences": "Yerel Deneyimler",
+      "culturalEvents": "Kültürel Etkinlikler",
+      "photosCaptured": "Çekilen Fotoğraflar",
+      "reviewsCollected": "Toplanan Yorumlar"
     }
   },
   "blog": {

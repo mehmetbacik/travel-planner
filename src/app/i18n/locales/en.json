@@ -175,7 +175,13 @@
     "counters": {
       "plannedTrips": "Planned Trips",
       "visitedCities": "Visited Cities",
-      "happyTravelers": "Happy Travelers"
+      "happyTravelers": "Happy Travelers",
+      "countriesExplored": "Countries Explored",
+      "travelGuidesShared": "Travel Guides Shared",
+      "localExperiences": "Local Experiences",
+      "culturalEvents": "Cultural Events",
+      "photosCaptured": "Photos Captured",
+      "reviewsCollected": "Reviews Collected"
     }
   },
   "blog": {
