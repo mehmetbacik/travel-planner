@@ -135,6 +135,8 @@ export interface Dictionary {
       description: string;
       storiesTitle: string;
       storiesSubTitle: string;
+      statsTitle: string;
+      statsSubTitle: string;
     };
     counters: {
       plannedTrips: string;

@@ -168,7 +168,9 @@
       "subtitle": "Oubliez les itinéraires ordinaires, préparez-vous pour l'aventure",
       "description": "Chez Travel Planner, notre objectif est de transformer votre voyage d'un simple itinéraire en une expérience inoubliable. Le parcours de chaque voyageur est unique ; c'est pourquoi nous proposons des recommandations personnalisées, facilitons l'exploration des lieux que vous visiterez et vous accompagnons à chaque étape. Que ce soit pour des aventures en pleine nature ou des itinéraires culturels, nous veillons à ce que chaque détail de votre voyage soit soigneusement planifié. Notre histoire se mêle à la vôtre et ensemble, nous partons pour de nouvelles aventures.",
       "storiesTitle": "Moments de Nos Voyageurs",
-      "storiesSubTitle": "Un voyage dans chaque image, une nouvelle découverte à chaque voyage"
+      "storiesSubTitle": "Un voyage dans chaque image, une nouvelle découverte à chaque voyage",
+      "statsTitle": "Notre Voyage en Chiffres",
+      "statsSubTitle": "Chaque chiffre reflète une idée concrétisée"
     },
     "counters": {
       "plannedTrips": "Voyages Prévu",
