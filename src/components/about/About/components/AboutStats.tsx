@@ -38,9 +38,7 @@ export default function AboutStats({ dict }: AboutStatsProps) {
   return (
     <div className="about__stats">
       <div className="about__stats-header">
-        <h2 className="about__stats-title">
-          {dict.about.content.statsTitle}
-        </h2>
+        <h2 className="about__stats-title">{dict.about.content.statsTitle}</h2>
         <p className="about__stats-description">
           {dict.about.content.statsSubTitle}
         </p>
@@ -48,11 +46,18 @@ export default function AboutStats({ dict }: AboutStatsProps) {
       <div className="about__stats-content">
         {counters.map((counter, index) => (
           <div className="about__stat" key={counter.key}>
+            <div className="about__stat-headline">
+              <span className="about__stat-label">
+                {dict.about.counters[counter.key] ?? counter.key}
+              </span>
+              <Icon
+                className="about__stat-icon"
+                icon={counter.icon}
+                width={32}
+                height={32}
+              />
+            </div>
             <span className="about__stat-number">{counts[index]}</span>
-            <span className="about__stat-label">
-              {dict.about.counters[counter.key] ?? counter.key}
-            </span>
-            <Icon icon={counter.icon} width={32} height={32} />
           </div>
         ))}
       </div>
