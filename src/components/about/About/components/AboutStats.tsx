@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { counters } from "@/services/data/counters";
 import { Dictionary } from "@/types/dictionary";
+import { Icon } from "@iconify/react";
 
 interface AboutStatsProps {
   dict: Dictionary;
@@ -51,6 +52,7 @@ export default function AboutStats({ dict }: AboutStatsProps) {
             <span className="about__stat-label">
               {dict.about.counters[counter.key] ?? counter.key}
             </span>
+            <Icon icon={counter.icon} width={32} height={32} />
           </div>
         ))}
       </div>

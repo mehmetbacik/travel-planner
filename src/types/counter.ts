@@ -11,4 +11,5 @@ export type CounterKey =
 export interface CounterItem {
   key: CounterKey;
   value: number;
+  icon: string;
 }
