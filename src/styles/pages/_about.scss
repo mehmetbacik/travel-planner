@@ -221,6 +221,7 @@
       font-size: $font-size-base;
       color: $color-text;
       font-weight: 600;
+      text-align: left;
       @media (max-width: $md-breakpoint) {
         font-size: $font-size-md;
       }
