@@ -6,7 +6,7 @@ import BlogHeader from "./components/BlogHeader";
 import BlogList from "./components/BlogList";
 import Pagination from "./components/Pagination";
 
-const POSTS_PER_PAGE = 3;
+const POSTS_PER_PAGE = 9;
 
 export default function Blog() {
   const [currentPage, setCurrentPage] = useState(1);

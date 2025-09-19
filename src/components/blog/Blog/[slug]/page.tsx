@@ -1,39 +1,45 @@
 import React from "react";
+import { blogPosts } from "@/services/data/blogPosts";
+import { BlogPost } from "@/types/blog";
 
 interface BlogDetailPageProps {
   params: { slug: string };
 }
 
-const mockBlogPosts = [
-  {
-    slug: "exploring-hidden-gems-istanbul",
-    title: "Exploring the Hidden Gems of Istanbul",
-    content:
-      "Here you can write the full blog post about Istanbul’s hidden gems...",
-  },
-  {
-    slug: "top-5-hiking-trails-balkans",
-    title: "Top 5 Hiking Trails in the Balkans",
-    content: "Detailed article about Balkan hiking trails...",
-  },
-  {
-    slug: "photography-tips-for-beginners",
-    title: "Photography Tips for Beginners",
-    content: "Beginner-friendly photography guide...",
-  },
-];
-
 export default function BlogDetailPage({ params }: BlogDetailPageProps) {
-  const post = mockBlogPosts.find((p) => p.slug === params.slug);
+  const post: BlogPost | undefined = blogPosts.find(
+    (p) => p.slug === params.slug
+  );
 
   if (!post) {
-    return <div>Blog post not found</div>;
+    return (
+      <section className="blog-detail container">
+        <h1 className="blog-detail__title">Blog post not found</h1>
+        <p className="blog-detail__content">
+          The blog post you are looking for does not exist.
+        </p>
+      </section>
+    );
   }
 
   return (
     <section className="blog-detail container">
-      <h1 className="blog-detail__title">{post.title}</h1>
-      <p className="blog-detail__content">{post.content}</p>
+      <div className="blog-detail__header">
+        <h1 className="blog-detail__title">{post.title}</h1>
+        <div className="blog-detail__meta">
+          <span className="blog-detail__author">{post.author}</span>
+          <span className="blog-detail__date">
+            {new Date(post.date).toLocaleDateString()}
+          </span>
+        </div>
+      </div>
+
+      <div className="blog-detail__thumbnail">
+        <img src={post.thumbnail} alt={post.title} />
+      </div>
+      <article className="blog-detail__content">
+        <p>{post.description}</p>
+      </article>
     </section>
   );
 }
