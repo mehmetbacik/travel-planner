@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { BlogPost } from "@/types/blog";
 
 interface BlogCardProps {
@@ -10,7 +11,7 @@ export default function BlogCard({ post }: BlogCardProps) {
   return (
     <article className="blog__item">
       <div className="blog__item-thumbnail">
-        <img src={post.thumbnail} alt={post.title} />
+        <Image src={post.thumbnail} alt={post.title} />
       </div>
       <div className="blog__item-content">
         <h3 className="blog__item-title">{post.title}</h3>

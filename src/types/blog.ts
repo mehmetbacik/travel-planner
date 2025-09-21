@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 export interface BlogPost {
   id: number;
   slug: string;
@@ -5,5 +6,5 @@ export interface BlogPost {
   description: string;
   date: string;
   author: string;
-  thumbnail: string;
+  thumbnail: StaticImageData;
 }

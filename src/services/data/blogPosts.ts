@@ -1,5 +1,21 @@
 import { BlogPost } from "@/types/blog";
 
+import BlogImg1 from "@/assets/blog/istanbul.jpg";
+import BlogImg2 from "@/assets/blog/balkans.jpg";
+import BlogImg3 from "@/assets/blog/photography.jpg";
+import BlogImg4 from "@/assets/blog/cafe.jpg";
+import BlogImg5 from "@/assets/blog/biking.jpg";
+import BlogImg6 from "@/assets/blog/streetfood.jpg";
+import BlogImg7 from "@/assets/blog/roadtrip.jpg";
+import BlogImg8 from "@/assets/blog/istanbulphoto.jpg";
+import BlogImg9 from "@/assets/blog/winter.jpg";
+import BlogImg10 from "@/assets/blog/bosphorus.jpg";
+import BlogImg11 from "@/assets/blog/folk.jpg";
+import BlogImg12 from "@/assets/blog/market.jpg";
+import BlogImg13 from "@/assets/blog/nature.jpg";
+import BlogImg14 from "@/assets/blog/sunset.jpg";
+import BlogImg15 from "@/assets/blog/cuisine.jpg";
+
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
@@ -9,7 +25,7 @@ export const blogPosts: BlogPost[] = [
       "Discover the less-known but breathtaking spots of Istanbul beyond the usual tourist paths.",
     date: "2025-08-10",
     author: "John Doe",
-    thumbnail: "/images/blog/istanbul.jpg",
+    thumbnail: BlogImg1,
   },
   {
     id: 2,
@@ -19,7 +35,7 @@ export const blogPosts: BlogPost[] = [
       "A curated list of the most scenic and adventurous hiking trails in the Balkan Peninsula.",
     date: "2025-07-25",
     author: "John Doe",
-    thumbnail: "/images/blog/balkans.jpg",
+    thumbnail: BlogImg2,
   },
   {
     id: 3,
@@ -29,7 +45,7 @@ export const blogPosts: BlogPost[] = [
       "Learn essential techniques to improve your photography skills and capture better shots.",
     date: "2025-06-30",
     author: "Jane Smith",
-    thumbnail: "/images/blog/photography.jpg",
+    thumbnail: BlogImg3,
   },
   {
     id: 4,
@@ -38,7 +54,7 @@ export const blogPosts: BlogPost[] = [
     description: "A guide to Istanbul’s coziest and most secret cafes.",
     date: "2025-06-20",
     author: "Jane Smith",
-    thumbnail: "/images/blog/cafe.jpg",
+    thumbnail: BlogImg4,
   },
   {
     id: 5,
@@ -47,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     description: "Exciting trails for biking enthusiasts across the Balkans.",
     date: "2025-05-15",
     author: "John Doe",
-    thumbnail: "/images/blog/biking.jpg",
+    thumbnail: BlogImg5,
   },
   {
     id: 6,
@@ -57,7 +73,7 @@ export const blogPosts: BlogPost[] = [
       "Taste the authentic flavors of Istanbul through its street food culture.",
     date: "2025-05-01",
     author: "John Doe",
-    thumbnail: "/images/blog/streetfood.jpg",
+    thumbnail: BlogImg6,
   },
   {
     id: 7,
@@ -67,7 +83,7 @@ export const blogPosts: BlogPost[] = [
       "Plan your journey through the Balkans with must-visit cities and routes.",
     date: "2025-04-20",
     author: "John Doe",
-    thumbnail: "/images/blog/roadtrip.jpg",
+    thumbnail: BlogImg7,
   },
   {
     id: 8,
@@ -77,7 +93,7 @@ export const blogPosts: BlogPost[] = [
       "Capture stunning views of the city from iconic and hidden locations.",
     date: "2025-04-10",
     author: "Jane Smith",
-    thumbnail: "/images/blog/istanbulphoto.jpg",
+    thumbnail: BlogImg8,
   },
   {
     id: 9,
@@ -87,7 +103,7 @@ export const blogPosts: BlogPost[] = [
       "Experience cozy villages and snowy mountains in the Balkan region.",
     date: "2025-03-18",
     author: "John Doe",
-    thumbnail: "/images/blog/winter.jpg",
+    thumbnail: BlogImg9,
   },
   {
     id: 10,
@@ -97,7 +113,7 @@ export const blogPosts: BlogPost[] = [
       "Discover Istanbul’s beauty from the waters of the Bosphorus Strait.",
     date: "2025-03-05",
     author: "John Doe",
-    thumbnail: "/images/blog/bosphorus.jpg",
+    thumbnail: BlogImg10,
   },
   {
     id: 11,
@@ -107,7 +123,7 @@ export const blogPosts: BlogPost[] = [
       "Dive into traditions, music, and dances unique to the Balkans.",
     date: "2025-02-22",
     author: "Jane Smith",
-    thumbnail: "/images/blog/folk.jpg",
+    thumbnail: BlogImg11,
   },
   {
     id: 12,
@@ -117,7 +133,7 @@ export const blogPosts: BlogPost[] = [
       "From the Grand Bazaar to local street markets, explore shopping in Istanbul.",
     date: "2025-02-10",
     author: "John Doe",
-    thumbnail: "/images/blog/market.jpg",
+    thumbnail: BlogImg12,
   },
   {
     id: 13,
@@ -127,7 +143,7 @@ export const blogPosts: BlogPost[] = [
       "Tips and best locations for capturing the natural beauty of the Balkans.",
     date: "2025-01-25",
     author: "Jane Smith",
-    thumbnail: "/images/blog/nature.jpg",
+    thumbnail: BlogImg13,
   },
   {
     id: 14,
@@ -136,7 +152,7 @@ export const blogPosts: BlogPost[] = [
     description: "Where to watch the most stunning sunsets across the city.",
     date: "2025-01-12",
     author: "Jane Smith",
-    thumbnail: "/images/blog/sunset.jpg",
+    thumbnail: BlogImg14,
   },
   {
     id: 15,
@@ -146,6 +162,6 @@ export const blogPosts: BlogPost[] = [
       "Discover hearty flavors and traditional dishes across the Balkans.",
     date: "2024-12-28",
     author: "John Doe",
-    thumbnail: "/images/blog/cuisine.jpg",
+    thumbnail: BlogImg15,
   },
 ];
