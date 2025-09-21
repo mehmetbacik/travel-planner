@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { blogPosts } from "@/services/data/blogPosts";
 import { BlogPost } from "@/types/blog";
 
@@ -35,7 +36,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
       </div>
 
       <div className="blog-detail__thumbnail">
-        <img src={post.thumbnail} alt={post.title} />
+        <Image src={post.thumbnail} alt={post.title} />
       </div>
       <article className="blog-detail__content">
         <p>{post.description}</p>
