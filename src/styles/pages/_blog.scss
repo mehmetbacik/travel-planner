@@ -49,11 +49,11 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
-    @media (max-width: 992px) {
+    @media (max-width: $lg-breakpoint) {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: $md-breakpoint) {
       grid-template-columns: 1fr;
     }
   }
@@ -61,9 +61,9 @@
   &__item {
     display: flex;
     flex-direction: column;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    background-color: #fff;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    background-color: $color-white;
     overflow: hidden;
     transition: box-shadow 0.3s ease;
 
@@ -90,32 +90,32 @@
   }
 
   &__item-content {
-    padding: 1.5rem;
+    padding: $spacing-lg;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
   }
 
   &__item-title {
-    font-size: 1.4rem;
+    font-size: $font-size-lg;
     font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: #222;
+    margin-bottom: $spacing-md;
+    color: $color-text;
   }
 
   &__item-description {
-    font-size: 1rem;
+    font-size: $font-size-base;
     line-height: 1.5;
-    color: #444;
-    margin-bottom: 1rem;
+    color: $color-text;
+    margin-bottom: $spacing-lg;
   }
 
   &__item-meta {
     display: flex;
     justify-content: space-between;
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 1rem;
+    font-size: $font-size-base * 0.9;
+    color: $color-text-light;
+    margin-bottom: $spacing-lg;
   }
 
   &__item-author {
@@ -129,17 +129,16 @@
   &__item-button {
     align-self: flex-start;
     display: inline-block;
-    padding: 0.5rem 1.2rem;
-    font-size: 0.95rem;
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-base * 0.95;
     font-weight: 500;
-    color: #fff;
-    background-color: #0077ff;
-    border-radius: 6px;
+    color: $color-white;
+    background-color: $primary;
+    border-radius: 8px;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
 
     &:hover {
-      background-color: #005fcc;
       transform: translateY(-2px);
     }
 
@@ -152,58 +151,58 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
   }
 
   &__pagination-btn {
-    padding: 0.5rem 1rem;
-    background-color: #0077ff;
-    color: #fff;
+    padding: $spacing-sm $spacing-lg;
+    background-color: $primary;
+    color: $color-white;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 
     &:hover:not(:disabled) {
-      background-color: #005fcc;
+      background-color: $primary;
     }
 
     &:disabled {
-      background-color: #ccc;
+      background-color: $background-light;
       cursor: not-allowed;
     }
   }
 
   &__pagination-info {
-    font-size: 1rem;
-    color: #555;
+    font-size: $font-size-base;
+    color: $color-text;
   }
 }
 
 .blog-detail {
-  padding: 4rem 0;
+  padding: $spacing-xl 0;
   max-width: 800px;
   margin: 0 auto;
 
   &__title {
-    font-size: 2rem;
+    font-size: $font-size-2xl;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: $spacing-lg;
   }
 
   &__content {
-    font-size: 1.1rem;
+    font-size: $font-family-base;
     line-height: 1.6;
-    color: #333;
+    color: $color-text;
   }
 }
 
 .blog-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  padding: 20px;
+  gap: $spacing-md;
+  padding: $spacing-md;
 
   .blog-item {
     background-color: $background-light;
@@ -224,16 +223,16 @@
     }
 
     .content {
-      padding: 16px;
+      padding: $spacing-md;
 
       h3 {
-        font-size: 1.2rem;
+        font-size: $font-size-base;
         color: $color-text;
         margin-bottom: 8px;
       }
 
       p {
-        font-size: 0.95rem;
+        font-size: $font-size-base * 0.95;
         color: $color-text;
       }
     }
@@ -243,13 +242,13 @@
 .blog-pagination {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
+  gap: $spacing-md;
+  margin: $spacing-lg 0;
 
   .page-item {
-    padding: 8px 12px;
+    padding: $spacing-sm $spacing-lg;
     border: 1px solid $border-color;
-    border-radius: 4px;
+    border-radius: 8px;
     background: $background-light;
     cursor: pointer;
     transition: background 0.2s ease;
@@ -260,7 +259,7 @@
 
     &.active {
       background: $primary;
-      color: #fff;
+      color: $color-white;
       font-weight: bold;
     }
 
@@ -268,7 +267,7 @@
       cursor: default;
       background: transparent;
       border: none;
-      font-size: 1rem;
+      font-size: $font-size-base;
     }
   }
 }
