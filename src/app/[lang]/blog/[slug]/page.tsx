@@ -2,14 +2,19 @@ import React from "react";
 import Image from "next/image";
 import { blogPosts } from "@/services/data/blogPosts";
 import { BlogPost } from "@/types/blog";
+import { getDictionary } from "../../../i18n/getDictionary";
+import { Locale } from "../../../i18n/settings";
 
 interface BlogDetailPageProps {
-  params: { slug: string };
+  params: { slug: string; lang: Locale };
 }
 
-export default function BlogDetailPage({ params }: BlogDetailPageProps) {
+export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
+  const { slug, lang } = params;
+  const dict = await getDictionary(lang);
+  
   const post: BlogPost | undefined = blogPosts.find(
-    (p) => p.slug === params.slug
+    (p) => p.slug === slug
   );
 
   if (!post) {

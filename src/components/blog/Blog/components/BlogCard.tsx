@@ -2,12 +2,14 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { BlogPost } from "@/types/blog";
+import { Locale } from "@/app/i18n/settings";
 
 interface BlogCardProps {
   post: BlogPost;
+  lang: Locale;
 }
 
-export default function BlogCard({ post }: BlogCardProps) {
+export default function BlogCard({ post, lang }: BlogCardProps) {
   return (
     <article className="blog__item">
       <div className="blog__item-thumbnail">
@@ -22,7 +24,7 @@ export default function BlogCard({ post }: BlogCardProps) {
             {new Date(post.date).toLocaleDateString()}
           </span>
         </div>
-        <Link href={`/blog/${post.slug}`} className="blog__item-button">
+        <Link href={`/${lang}/blog/${post.slug}`} className="blog__item-button">
           Devamını Oku
         </Link>
       </div>

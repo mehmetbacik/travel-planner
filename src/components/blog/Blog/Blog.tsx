@@ -2,13 +2,18 @@
 
 import React, { useState } from "react";
 import { blogPosts } from "@/services/data/blogPosts";
+import { Locale } from "@/app/i18n/settings";
 import BlogHeader from "./components/BlogHeader";
 import BlogList from "./components/BlogList";
 import Pagination from "./components/Pagination";
 
 const POSTS_PER_PAGE = 9;
 
-export default function Blog() {
+interface BlogProps {
+  lang: Locale;
+}
+
+export default function Blog({ lang }: BlogProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
 
@@ -20,7 +25,7 @@ export default function Blog() {
       <div className="blog__body container">
         <BlogHeader />
 
-        <BlogList posts={currentPosts} />
+        <BlogList posts={currentPosts} lang={lang} />
 
         {totalPages > 1 && (
           <Pagination

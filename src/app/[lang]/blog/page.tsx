@@ -14,7 +14,7 @@ export default async function BlogPage({
   return (
     <main>
       <Hero dict={dict} />
-      <Blog />
+      <Blog lang={lang} />
     </main>
   );
 }
