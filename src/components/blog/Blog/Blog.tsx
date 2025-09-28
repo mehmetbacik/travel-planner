@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Dictionary } from "@/types/dictionary";
 import { blogPosts } from "@/services/data/blogPosts";
 import { Locale } from "@/app/i18n/settings";
 import BlogHeader from "./components/BlogHeader";
@@ -11,9 +12,10 @@ const POSTS_PER_PAGE = 9;
 
 interface BlogProps {
   lang: Locale;
+  dict: Dictionary;
 }
 
-export default function Blog({ lang }: BlogProps) {
+export default function Blog({ lang, dict }: BlogProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
 
@@ -23,9 +25,9 @@ export default function Blog({ lang }: BlogProps) {
   return (
     <section className="blog" aria-labelledby="blog-title">
       <div className="blog__body container">
-        <BlogHeader />
+        <BlogHeader dict={dict} />
 
-        <BlogList posts={currentPosts} lang={lang} />
+        <BlogList posts={currentPosts} lang={lang} dict={dict}/>
 
         {totalPages > 1 && (
           <Pagination

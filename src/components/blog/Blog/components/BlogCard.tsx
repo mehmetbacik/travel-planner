@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Dictionary } from "@/types/dictionary";
 import Link from "next/link";
 import Image from "next/image";
 import * as Tooltip from "@radix-ui/react-tooltip";
@@ -10,6 +11,7 @@ import { Locale } from "@/app/i18n/settings";
 interface BlogCardProps {
   post: BlogPost;
   lang: Locale;
+  dict: Dictionary;
 }
 
 function truncateText(text: string, limit: number) {
@@ -17,7 +19,7 @@ function truncateText(text: string, limit: number) {
   return text.length > limit ? text.substring(0, limit) + "..." : text;
 }
 
-export default function BlogCard({ post, lang }: BlogCardProps) {
+export default function BlogCard({ post, lang, dict }: BlogCardProps) {
   return (
     <article className="blog__item">
       <div className="blog__item-thumbnail">
@@ -74,7 +76,7 @@ export default function BlogCard({ post, lang }: BlogCardProps) {
         </div>
 
         <Link href={`/${lang}/blog/${post.slug}`} className="blog__item-button">
-          Devamını Oku
+          {dict.blog.content.readmore}
         </Link>
       </div>
     </article>
