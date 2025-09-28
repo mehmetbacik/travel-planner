@@ -186,7 +186,12 @@
   "blog": {
     "title": "Inspiring Travel Stories",
     "subtitle": "Real Experiences, Real Inspiration",
-    "description": "Explore blog posts filled with tips, routes, and reflections from real travelers. Get inspired before planning your own adventure."
+    "description": "Explore blog posts filled with tips, routes, and reflections from real travelers. Get inspired before planning your own adventure.",
+    "content": {
+      "title": "On the Road",
+      "subtitle": "Learn from experiences, chart your own path",
+      "readmore": "Read More"
+    }
   },
   "contact": {
     "title": "Get in Touch",

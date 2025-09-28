@@ -186,7 +186,12 @@
   "blog": {
     "title": "İlham Veren Seyahat Hikayeleri",
     "subtitle": "Gerçek Deneyimlerden İlham Alın",
-    "description": "Dünyayı gezen gezginlerin paylaştığı ipuçları, rotalar ve deneyimlerle dolu blog yazılarımızı keşfedin. Kendi yolculuğunuzu planlamadan önce ilham alın."
+    "description": "Dünyayı gezen gezginlerin paylaştığı ipuçları, rotalar ve deneyimlerle dolu blog yazılarımızı keşfedin. Kendi yolculuğunuzu planlamadan önce ilham alın.",
+    "content": {
+      "title": "Yolda Olanlar",
+      "subtitle": "Deneyimlerden öğrenin, kendi yolunuzu çizin",
+      "readmore": "Devamını Oku"
+    }
   },
   "contact": {
     "title": "Bizimle İletişime Geçin",

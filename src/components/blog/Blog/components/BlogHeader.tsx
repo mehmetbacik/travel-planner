@@ -1,14 +1,17 @@
 import React from "react";
+import { Dictionary } from "@/types/dictionary";
 
-export default function BlogHeader() {
+interface BlogHeaderProps {
+  dict: Dictionary;
+}
+
+export default function BlogHeader({ dict }: BlogHeaderProps) {
   return (
     <div className="blog__header">
       <h2 id="blog-title" className="blog__title">
-        Blog
+        {dict.blog.content.title}
       </h2>
-      <p className="blog__description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
+      <p className="blog__description">{dict.blog.content.subtitle}</p>
     </div>
   );
 }

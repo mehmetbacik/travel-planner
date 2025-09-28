@@ -186,7 +186,12 @@
   "blog": {
     "title": "Inspirierende Reisegeschichten",
     "subtitle": "Echte Erlebnisse, Echte Inspiration",
-    "description": "Entdecke unsere Blogbeiträge mit wertvollen Tipps, Routen und Erfahrungen von Reisenden aus aller Welt. Lass dich inspirieren, bevor du deine eigene Reise planst."
+    "description": "Entdecke unsere Blogbeiträge mit wertvollen Tipps, Routen und Erfahrungen von Reisenden aus aller Welt. Lass dich inspirieren, bevor du deine eigene Reise planst.",
+    "content": {
+      "title": "Unterwegs",
+      "subtitle": "Aus Erfahrungen lernen und deinen eigenen Weg finden",
+      "readmore": "Weiterlesen"
+    }
   },
   "contact": {
     "title": "Kontaktieren Sie Uns",

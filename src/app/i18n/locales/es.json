@@ -186,7 +186,12 @@
   "blog": {
     "title": "Historias de Viaje Inspiradoras",
     "subtitle": "Experiencias Reales que Inspiran",
-    "description": "Descubre artículos llenos de consejos, rutas y vivencias de viajeros reales. Inspírate antes de comenzar tu propia aventura."
+    "description": "Descubre artículos llenos de consejos, rutas y vivencias de viajeros reales. Inspírate antes de comenzar tu propia aventura.",
+    "content": {
+      "title": "En el Camino",
+      "subtitle": "Aprende de las experiencias y traza tu propio camino",
+      "readmore": "Leer Más"
+    }
   },
   "contact": {
     "title": "Ponte en Contacto",

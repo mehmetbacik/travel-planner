@@ -186,7 +186,12 @@
   "blog": {
     "title": "Histoires de Voyage Inspirantes",
     "subtitle": "Des Expériences Réelles Qui Inspirent",
-    "description": "Parcourez nos articles de blog riches en conseils, itinéraires et récits de voyageurs. Inspirez-vous avant de planifier votre propre aventure."
+    "description": "Parcourez nos articles de blog riches en conseils, itinéraires et récits de voyageurs. Inspirez-vous avant de planifier votre propre aventure.",
+    "content": {
+      "title": "En Route",
+      "subtitle": "Apprenez de vos expériences et tracez votre propre chemin",
+      "readmore": "Lire la suite"
+    }
   },
   "contact": {
     "title": "Contactez-Nous",
