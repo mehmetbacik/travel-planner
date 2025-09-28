@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import * as Tooltip from "@radix-ui/react-tooltip";
 import { BlogPost } from "@/types/blog";
 import { Locale } from "@/app/i18n/settings";
 
@@ -21,16 +24,55 @@ export default function BlogCard({ post, lang }: BlogCardProps) {
         <Image src={post.thumbnail} alt={post.title} />
       </div>
       <div className="blog__item-content">
-        <h3 className="blog__item-title">{truncateText(post.title, 25)}</h3>
-        <p className="blog__item-description">
-          {truncateText(post.description, 70)}
-        </p>
+        {/* Title */}
+        <Tooltip.Provider delayDuration={100}>
+          <Tooltip.Root>
+            <Tooltip.Trigger asChild>
+              <h3 className="blog__item-title">
+                {truncateText(post.title, 25)}
+              </h3>
+            </Tooltip.Trigger>
+            <Tooltip.Portal>
+              <Tooltip.Content
+                className="tooltip-content"
+                side="top"
+                sideOffset={6}
+              >
+                {post.title}
+                <Tooltip.Arrow className="tooltip-arrow" />
+              </Tooltip.Content>
+            </Tooltip.Portal>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+
+        {/* Description */}
+        <Tooltip.Provider delayDuration={100}>
+          <Tooltip.Root>
+            <Tooltip.Trigger asChild>
+              <p className="blog__item-description">
+                {truncateText(post.description, 65)}
+              </p>
+            </Tooltip.Trigger>
+            <Tooltip.Portal>
+              <Tooltip.Content
+                className="tooltip-content"
+                side="top"
+                sideOffset={6}
+              >
+                {post.description}
+                <Tooltip.Arrow className="tooltip-arrow" />
+              </Tooltip.Content>
+            </Tooltip.Portal>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+
         <div className="blog__item-meta">
           <span className="blog__item-author">{post.author}</span>
           <span className="blog__item-date">
             {new Date(post.date).toLocaleDateString()}
           </span>
         </div>
+
         <Link href={`/${lang}/blog/${post.slug}`} className="blog__item-button">
           Devamını Oku
         </Link>
