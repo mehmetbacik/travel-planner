@@ -8,7 +8,7 @@ import BlogHeader from "./components/BlogHeader";
 import BlogList from "./components/BlogList";
 import Pagination from "./components/Pagination";
 
-const POSTS_PER_PAGE = 9;
+const POSTS_PER_PAGE = 6;
 
 interface BlogProps {
   lang: Locale;

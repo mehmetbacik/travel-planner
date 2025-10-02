@@ -1,4 +1,5 @@
 import React from "react";
+import { Icon } from "@iconify/react";
 
 interface PaginationProps {
   currentPage: number;
@@ -47,7 +48,7 @@ export default function Pagination({
         disabled={currentPage === 1}
         className="blog__pagination-btn"
       >
-        Önceki
+        <Icon icon="mdi:chevron-left" width={20} height={20} />
       </button>
 
       <div className="blog__pagination-pages">
@@ -78,7 +79,7 @@ export default function Pagination({
         disabled={currentPage === totalPages}
         className="blog__pagination-btn"
       >
-        Sonraki
+        <Icon icon="mdi:chevron-right" width={20} height={20} />
       </button>
     </div>
   );

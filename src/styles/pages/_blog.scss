@@ -151,32 +151,81 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: $spacing-md;
-    margin-top: $spacing-lg;
+    gap: $spacing-sm;
+    margin-top: $spacing-xl;
+    flex-wrap: wrap;
   }
 
   &__pagination-btn {
     padding: $spacing-sm $spacing-lg;
-    background-color: $primary;
-    color: $color-white;
+    font-size: $font-size-base;
+    font-weight: 500;
     border: none;
     border-radius: 8px;
+    background-color: $primary;
+    height: -webkit-fill-available;
+    color: $color-white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 
     &:hover:not(:disabled) {
-      background-color: $primary;
+      background-color: darken($primary, 5%);
+      transform: translateY(-2px);
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(0);
     }
 
     &:disabled {
       background-color: $background-light;
+      color: $color-text-light;
       cursor: not-allowed;
+      box-shadow: none;
     }
   }
 
-  &__pagination-info {
+  &__pagination-pages {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__pagination-page {
+    padding: $spacing-sm $spacing-md;
+    width: 40px;
+    text-align: center;
     font-size: $font-size-base;
+    font-weight: 500;
     color: $color-text;
+    background-color: $background-light;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease,
+      box-shadow 0.25s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: lighten($primary, 40%);
+      color: $primary;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    &.active {
+      background-color: $primary;
+      color: $color-white;
+      border-color: $primary;
+      font-weight: 600;
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__pagination-ellipsis {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-base;
+    color: $color-text-light;
+    user-select: none;
   }
 }
 
@@ -235,39 +284,6 @@
         font-size: $font-size-base * 0.95;
         color: $color-text;
       }
-    }
-  }
-}
-
-.blog-pagination {
-  display: flex;
-  justify-content: center;
-  gap: $spacing-md;
-  margin: $spacing-lg 0;
-
-  .page-item {
-    padding: $spacing-sm $spacing-lg;
-    border: 1px solid $border-color;
-    border-radius: 8px;
-    background: $background-light;
-    cursor: pointer;
-    transition: background 0.2s ease;
-
-    &:hover {
-      background: $primary;
-    }
-
-    &.active {
-      background: $primary;
-      color: $color-white;
-      font-weight: bold;
-    }
-
-    &.ellipsis {
-      cursor: default;
-      background: transparent;
-      border: none;
-      font-size: $font-size-base;
     }
   }
 }
