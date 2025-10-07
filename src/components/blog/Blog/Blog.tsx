@@ -26,9 +26,7 @@ export default function Blog({ lang, dict }: BlogProps) {
     <section className="blog" aria-labelledby="blog-title">
       <div className="blog__body container">
         <BlogHeader dict={dict} />
-
         <BlogList posts={currentPosts} lang={lang} dict={dict}/>
-
         {totalPages > 1 && (
           <Pagination
             currentPage={currentPage}
