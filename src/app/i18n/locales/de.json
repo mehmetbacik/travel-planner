@@ -196,7 +196,11 @@
   "contact": {
     "title": "Kontaktieren Sie Uns",
     "subtitle": "Für Fragen, Feedback oder Kooperationen",
-    "description": "Wir sind für Sie da. Kontaktieren Sie uns bei Fragen, teilen Sie Ihre Gedanken mit uns oder schlagen Sie eine Zusammenarbeit vor – wir freuen uns auf Ihre Nachricht."
+    "description": "Wir sind für Sie da. Kontaktieren Sie uns bei Fragen, teilen Sie Ihre Gedanken mit uns oder schlagen Sie eine Zusammenarbeit vor – wir freuen uns auf Ihre Nachricht.",
+    "content": {
+      "title": "Alles Beginnt mit einer Nachricht",
+      "subtitle": "Nehmen Sie Kontakt auf, um neue Ideen, Inspirationen und Projekte zu teilen"
+    }
   },
   "home": {
     "hero": {

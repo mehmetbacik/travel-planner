@@ -1,17 +1,24 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import { Dictionary } from "@/types/dictionary";
+import { Locale } from "@/app/i18n/settings";
 import { motion } from "framer-motion";
 import ContactHeader from "./components/ContactHeader";
 import ContactInfo from "./components/ContactInfo";
 import ContactForm from "./components/ContactForm";
 import ContactMap from "./components/ContactMap";
 
-export default function Contact() {
+interface ContactProps {
+  lang: Locale;
+  dict: Dictionary;
+}
+
+export default function Contact({ lang, dict }: ContactProps) {
   return (
     <section className="contact" aria-labelledby="contact">
       <div className="contact__body container">
-        <ContactHeader />
+        <ContactHeader dict={dict} />
 
         <div className="contact__content">
           <motion.div

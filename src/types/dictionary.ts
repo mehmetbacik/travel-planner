@@ -163,6 +163,10 @@ export interface Dictionary {
     title: string;
     subtitle: string;
     description: string;
+    content: {
+      title: string;
+      subtitle: string;
+    };
   };
   home: {
     hero: {

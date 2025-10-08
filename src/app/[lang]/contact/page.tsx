@@ -14,7 +14,7 @@ export default async function ContactPage({
   return (
     <main>
       <Hero dict={dict} />
-      <Contact />
+      <Contact lang={lang} dict={dict}/>
     </main>
   );
 }

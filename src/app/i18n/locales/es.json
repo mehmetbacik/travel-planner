@@ -196,7 +196,11 @@
   "contact": {
     "title": "Ponte en Contacto",
     "subtitle": "Para Preguntas, Comentarios o Colaboraciones",
-    "description": "Estamos aquí para ayudarte. Escríbenos si tienes preguntas, deseas compartir tus ideas o proponer una colaboración. ¡Nos encantará escucharte!"
+    "description": "Estamos aquí para ayudarte. Escríbenos si tienes preguntas, deseas compartir tus ideas o proponer una colaboración. ¡Nos encantará escucharte!",
+    "content": {
+      "title": "Todo Empieza con un Mensaje",
+      "subtitle": "Ponte en contacto para compartir nuevas ideas, inspiraciones y proyectos"
+    }
   },
   "home": {
     "hero": {

@@ -1,13 +1,18 @@
 import React from "react";
+import { Dictionary } from "@/types/dictionary";
 
-export default function ContactHeader() {
+interface ContactHeaderProps {
+  dict: Dictionary;
+}
+
+export default function ContactHeader({ dict }: ContactHeaderProps) {
   return (
     <div className="contact__header">
-      <h2 id="contact-title" className="contact__title">
-        Contact
+      <h2 id="contact__title" className="contact__title">
+        {dict.contact.content.title}
       </h2>
       <p className="contact__description">
-        Reach out to us for planning your next adventure. We’d love to hear from you!
+        {dict.contact.content.subtitle}
       </p>
     </div>
   );

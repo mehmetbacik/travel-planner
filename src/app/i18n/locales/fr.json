@@ -196,7 +196,11 @@
   "contact": {
     "title": "Contactez-Nous",
     "subtitle": "Pour Toute Question, Retour ou Collaboration",
-    "description": "Nous sommes là pour vous. N’hésitez pas à nous écrire pour poser une question, partager vos idées ou proposer une collaboration. Nous serons ravis de vous lire."
+    "description": "Nous sommes là pour vous. N’hésitez pas à nous écrire pour poser une question, partager vos idées ou proposer une collaboration. Nous serons ravis de vous lire.",
+    "content": {
+      "title": "Tout Commence par un Message",
+      "subtitle": "Contactez-nous pour partager de nouvelles idées, inspirations et projets"
+    }
   },
   "home": {
     "hero": {
