@@ -200,6 +200,11 @@
     "content": {
       "title": "Everything Starts with a Message",
       "subtitle": "Get in touch to share new ideas, inspirations, and projects"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
     }
   },
   "home": {

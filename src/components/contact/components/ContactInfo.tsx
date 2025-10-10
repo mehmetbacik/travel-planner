@@ -1,26 +1,17 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import { contactItems } from "@/services/data/contactItems";
+import { Dictionary } from "@/types/dictionary";
 
-const contactItems = [
-  {
-    icon: "mdi:email-outline",
-    title: "Email",
-    value: "support@travelplanner.com",
-  },
-  {
-    icon: "mdi:phone-outline",
-    title: "Phone",
-    value: "+90 555 123 4567",
-  },
-  {
-    icon: "mdi:map-marker-outline",
-    title: "Address",
-    value: "Istanbul, Turkey",
-  },
-];
+interface ContactInfoProps {
+  dict: Dictionary;
+}
 
-export default function ContactInfo() {
+export default function ContactInfo({ dict }: ContactInfoProps) {
+
   return (
     <div className="contact__info">
       {contactItems.map((item, index) => (
@@ -34,7 +25,7 @@ export default function ContactInfo() {
           transition={{ duration: 0.4 }}
         >
           <Icon icon={item.icon} className="contact__icon" />
-          <h3>{item.title}</h3>
+          <h3>{dict.contact.info[item.titleContact] ?? item.titleContact}</h3>
           <p>{item.value}</p>
         </motion.div>
       ))}

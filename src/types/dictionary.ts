@@ -167,6 +167,11 @@ export interface Dictionary {
       title: string;
       subtitle: string;
     };
+    info: {
+      email: string;
+      phone: string;
+      address: string;
+    };
   };
   home: {
     hero: {

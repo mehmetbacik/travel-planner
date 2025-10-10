@@ -200,6 +200,11 @@
     "content": {
       "title": "Alles Beginnt mit einer Nachricht",
       "subtitle": "Nehmen Sie Kontakt auf, um neue Ideen, Inspirationen und Projekte zu teilen"
+    },
+    "info": {
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "address": "Adresse"
     }
   },
   "home": {

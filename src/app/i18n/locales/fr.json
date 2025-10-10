@@ -200,6 +200,11 @@
     "content": {
       "title": "Tout Commence par un Message",
       "subtitle": "Contactez-nous pour partager de nouvelles idées, inspirations et projets"
+    },
+    "info": {
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "address": "Adresse"
     }
   },
   "home": {

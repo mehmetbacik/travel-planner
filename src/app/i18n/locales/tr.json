@@ -200,6 +200,11 @@
     "content": {
       "title": "Bir Mesajla Başlar Her Şey",
       "subtitle": "Yeni fikirler, ilhamlar ve projeler paylaşmak için iletişime geçin"
+    },
+    "info": {
+      "email": "E-Posta",
+      "phone": "Telefon",
+      "address": "Adres"
     }
   },
   "home": {
