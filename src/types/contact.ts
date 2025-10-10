@@ -1,7 +1,7 @@
 export type titleKey =
   | "email"
   | "phone"
-  | "adress";
+  | "address";
 
 export interface ContactItem  {
   icon: string;
