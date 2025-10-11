@@ -205,6 +205,16 @@
       "email": "E-Posta",
       "phone": "Telefon",
       "address": "Adres"
+    },
+    "form": {
+      "name": "Adınız",
+      "nametooltip": "Adınızı ve soyadınızı girin",
+      "email": "E-posta adresiniz",
+      "emailtooltip": "Geçerli bir e-posta adresi girin",
+      "message": "Mesajınız",
+      "messagetooltip": "Mesajınızı yazın",
+      "send": "Gönder",
+      "successmessage": "Mesaj başarıyla gönderildi!"
     }
   },
   "home": {

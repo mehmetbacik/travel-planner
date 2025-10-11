@@ -29,10 +29,10 @@ export default function Contact({ lang, dict }: ContactProps) {
               visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
             }}
           >
-            <ContactInfo dict={dict}/>
+            <ContactInfo dict={dict} />
           </motion.div>
 
-          <ContactForm />
+          <ContactForm dict={dict}/>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}

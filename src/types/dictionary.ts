@@ -172,6 +172,16 @@ export interface Dictionary {
       phone: string;
       address: string;
     };
+    form: {
+      name: string;
+      nametooltip: string;
+      email: string;
+      emailtooltip: string;
+      message: string;
+      messagetooltip: string;
+      send: string;
+      successmessage: string;
+    }
   };
   home: {
     hero: {

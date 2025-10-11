@@ -3,7 +3,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function ContactForm() {
+import { Dictionary } from "@/types/dictionary";
+
+interface ContactFormProps {
+  dict: Dictionary;
+}
+
+export default function ContactForm({ dict }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,32 +35,32 @@ export default function ContactForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
-      <div className="contact__form-group" data-tooltip="Enter your full name">
+      <div className="contact__form-group" data-tooltip={dict.contact.form.nametooltip}>
         <input
           type="text"
           name="name"
-          placeholder="Your Name"
+          placeholder={dict.contact.form.name}
           value={formData.name}
           onChange={handleChange}
           required
         />
       </div>
 
-      <div className="contact__form-group" data-tooltip="Provide a valid email">
+      <div className="contact__form-group" data-tooltip={dict.contact.form.emailtooltip}>
         <input
           type="email"
           name="email"
-          placeholder="Your Email"
+          placeholder={dict.contact.form.email}
           value={formData.email}
           onChange={handleChange}
           required
         />
       </div>
 
-      <div className="contact__form-group" data-tooltip="Write your message">
+      <div className="contact__form-group" data-tooltip={dict.contact.form.messagetooltip}>
         <textarea
           name="message"
-          placeholder="Your Message"
+          placeholder={dict.contact.form.message}
           rows={5}
           value={formData.message}
           onChange={handleChange}
@@ -68,10 +74,10 @@ export default function ContactForm() {
         type="submit"
         className="contact__button"
       >
-        Send Message
+        {dict.contact.form.send}
       </motion.button>
 
-      {submitted && <p className="contact__success">Message sent successfully!</p>}
+      {submitted && <p className="contact__success">{dict.contact.form.successmessage}</p>}
     </motion.form>
   );
 }

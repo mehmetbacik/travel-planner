@@ -205,6 +205,16 @@
       "email": "E-Mail",
       "phone": "Telefon",
       "address": "Adresse"
+    },
+    "form": {
+      "name": "Ihr Name",
+      "nametooltip": "Geben Sie Ihren vollständigen Namen ein",
+      "email": "Ihre E-Mail-Adresse",
+      "emailtooltip": "Geben Sie eine gültige E-Mail-Adresse ein",
+      "message": "Ihre Nachricht",
+      "messagetooltip": "Schreiben Sie Ihre Nachricht",
+      "send": "Nachricht senden",
+      "successmessage": "Nachricht erfolgreich gesendet!"
     }
   },
   "home": {
