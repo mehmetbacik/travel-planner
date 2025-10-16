@@ -11,7 +11,6 @@ interface ContactInfoProps {
 }
 
 export default function ContactInfo({ dict }: ContactInfoProps) {
-
   return (
     <div className="contact__info">
       {contactItems.map((item, index) => (
@@ -24,9 +23,18 @@ export default function ContactInfo({ dict }: ContactInfoProps) {
           }}
           transition={{ duration: 0.4 }}
         >
-          <Icon icon={item.icon} className="contact__icon" />
-          <h3>{dict.contact.info[item.titleContact] ?? item.titleContact}</h3>
-          <p>{item.value}</p>
+          <div className="contact__card-headline">
+            <span className="contact__card-label">
+              {dict.contact.info[item.titleContact] ?? item.titleContact}
+            </span>
+            <Icon
+              className="contact__card-icon"
+              icon={item.icon}
+              width={32}
+              height={32}
+            />
+          </div>
+          <span className="contact__card-number">{item.value}</span>
         </motion.div>
       ))}
     </div>
