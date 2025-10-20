@@ -284,135 +284,48 @@ export default function InteractiveWorldMap({
 
         <div className="interactiveWorldMap__content">
           <motion.div
-            className="world-map-container"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            className="continents-grid"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <svg viewBox="0 0 400 220" className="world-map">
-              {/* Background ocean */}
-              <defs>
-                <linearGradient
-                  id="oceanGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop
-                    offset="0%"
-                    style={{ stopColor: "#E3F2FD", stopOpacity: 1 }}
-                  />
-                  <stop
-                    offset="100%"
-                    style={{ stopColor: "#BBDEFB", stopOpacity: 1 }}
-                  />
-                </linearGradient>
-              </defs>
-
-              <rect
-                x="0"
-                y="0"
-                width="400"
-                height="220"
-                fill="url(#oceanGradient)"
-                className="ocean-bg"
-              />
-
-              {/* Continents */}
-              {continents.map((continent, index) => (
-                <motion.path
-                  key={continent.id}
-                  d={continent.path}
-                  className={`continent-path ${
-                    hoveredContinent === continent.id ? "hovered" : ""
-                  }`}
-                  fill={continent.color}
-                  stroke="#fff"
-                  strokeWidth="2"
-                  onMouseEnter={() => setHoveredContinent(continent.id)}
-                  onMouseLeave={() => setHoveredContinent(null)}
-                  onClick={() => handleContinentClick(continent)}
-                  whileHover={{
-                    scale: 1.02,
-                    transition: { duration: 0.2 },
-                  }}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.1,
-                  }}
-                />
-              ))}
-
-              {/* Continent labels */}
-              {continents.map((continent) => (
-                <text
-                  key={`label-${continent.id}`}
-                  x={
-                    continent.id === "north-america"
-                      ? 115
-                      : continent.id === "south-america"
-                      ? 150
-                      : continent.id === "europe"
-                      ? 235
-                      : continent.id === "africa"
-                      ? 235
-                      : continent.id === "asia"
-                      ? 305
-                      : 350
-                  }
-                  y={
-                    continent.id === "north-america"
-                      ? 75
-                      : continent.id === "south-america"
-                      ? 150
-                      : continent.id === "europe"
-                      ? 70
-                      : continent.id === "africa"
-                      ? 130
-                      : continent.id === "asia"
-                      ? 80
-                      : 150
-                  }
-                  className="continent-label"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  fill="#fff"
-                  fontSize="12"
-                  fontWeight="bold"
-                >
-                  {continent.name}
-                </text>
-              ))}
-            </svg>
-
-            {/* Continent tooltip */}
-            {hoveredContinent && (
+            {continents.map((continent, index) => (
               <motion.div
-                className="continent-tooltip"
+                key={continent.id}
+                className={`continent-card ${
+                  hoveredContinent === continent.id ? "hovered" : ""
+                }`}
                 style={{
-                  left: "50%",
-                  top: "50%",
-                  transform: "translate(-50%, -50%)",
+                  backgroundColor: continent.color,
+                  "--hover-color": continent.hoverColor,
+                } as React.CSSProperties}
+                onMouseEnter={() => setHoveredContinent(continent.id)}
+                onMouseLeave={() => setHoveredContinent(null)}
+                onClick={() => handleContinentClick(continent)}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.2 },
                 }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.2 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1,
+                }}
               >
-                <h4>
-                  {continents.find((c) => c.id === hoveredContinent)?.name}
-                </h4>
-                <p>
-                  {
-                    continents.find((c) => c.id === hoveredContinent)
-                      ?.description
-                  }
-                </p>
+                <div className="continent-card__content">
+                  <h3 className="continent-card__title">{continent.name}</h3>
+                  <p className="continent-card__description">
+                    {continent.description}
+                  </p>
+                  <div className="continent-card__countries-count">
+                    {continent.countries.length} countries
+                  </div>
+                </div>
+                <div className="continent-card__overlay"></div>
               </motion.div>
-            )}
+            ))}
           </motion.div>
         </div>
       </div>
@@ -480,6 +393,7 @@ export default function InteractiveWorldMap({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsModalOpen(false)}
+            style={{ zIndex: 3000 }}
           >
             <motion.div
               className="country-modal"

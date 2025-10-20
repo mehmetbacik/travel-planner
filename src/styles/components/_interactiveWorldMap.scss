@@ -33,63 +33,105 @@
 
   &__content {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
 
-    .world-map-container {
-      position: relative;
-      width: 100%;
-      height: 600px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      border-radius: 20px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-      overflow: hidden;
+    .continents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: $spacing-xl;
+      padding: $spacing-lg;
+
+      @media (max-width: $lg-breakpoint) {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: $spacing-lg;
+      }
 
       @media (max-width: $md-breakpoint) {
-        height: 500px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: $spacing-md;
+        padding: $spacing-md;
       }
 
       @media (max-width: $sm-breakpoint) {
-        height: 400px;
+        grid-template-columns: 1fr;
+        gap: $spacing-md;
+        padding: $spacing-sm;
       }
     }
 
-    .world-map {
-      width: 100%;
-      height: 100%;
-      max-width: 800px;
-      max-height: 440px;
+    .continent-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
       cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      .ocean-bg {
-        fill: url(#oceanGradient);
-        transition: fill 0.3s ease;
-      }
+      &:hover {
+        background-color: var(--hover-color) !important;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+        transform: translateY(-8px);
 
-      .continent-path {
-        transition: all 0.3s ease;
-        cursor: pointer;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-
-        &:hover {
-          filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
-          transform: scale(1.02);
-        }
-
-        &.hovered {
-          filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
-          animation: continentPulse 1.5s ease-in-out infinite;
+        .continent-card__overlay {
+          opacity: 0.1;
         }
       }
 
-      .continent-label {
-        font-family: 'Arial', sans-serif;
-        pointer-events: none;
-        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+      &.hovered {
+        animation: continentCardPulse 2s ease-in-out infinite;
+      }
+
+      &__content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: $spacing-xl;
+        color: white;
+        width: 100%;
+      }
+
+      &__title {
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-bold;
+        margin: 0 0 $spacing-md 0;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      &__description {
+        font-size: $font-size-md;
+        margin: 0 0 $spacing-lg 0;
+        line-height: 1.6;
+        opacity: 0.95;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      &__countries-count {
+        font-size: $font-size-base;
+        font-weight: $font-weight-semibold;
+        background: rgba(255, 255, 255, 0.2);
+        padding: $spacing-sm $spacing-md;
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        display: inline-block;
+      }
+
+      &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
       }
     }
   }
@@ -255,7 +297,7 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
-  z-index: 1000;
+  z-index: 3000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -412,15 +454,15 @@
   }
 }
 
-@keyframes continentPulse {
+@keyframes continentCardPulse {
   0% {
-    transform: scale(1);
+    transform: translateY(-8px) scale(1);
   }
   50% {
-    transform: scale(1.02);
+    transform: translateY(-12px) scale(1.02);
   }
   100% {
-    transform: scale(1);
+    transform: translateY(-8px) scale(1);
   }
 }
 
@@ -438,34 +480,12 @@
 
 // Responsive adjustments
 @media (max-width: $lg-breakpoint) {
-  .interactiveWorldMap {
-    &__content {
-      .world-map-container {
-        .world-map {
-          max-width: 700px;
-          max-height: 385px;
-        }
-      }
-    }
-  }
-
   .countries-sidebar {
     max-width: 400px;
   }
 }
 
 @media (max-width: $md-breakpoint) {
-  .interactiveWorldMap {
-    &__content {
-      .world-map-container {
-        .world-map {
-          max-width: 600px;
-          max-height: 330px;
-        }
-      }
-    }
-  }
-
   .countries-sidebar {
     max-width: 350px;
 
@@ -478,17 +498,6 @@
 }
 
 @media (max-width: $sm-breakpoint) {
-  .interactiveWorldMap {
-    &__content {
-      .world-map-container {
-        .world-map {
-          max-width: 500px;
-          max-height: 275px;
-        }
-      }
-    }
-  }
-
   .countries-sidebar {
     max-width: 100%;
 
