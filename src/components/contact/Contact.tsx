@@ -32,7 +32,17 @@ export default function Contact({ lang, dict }: ContactProps) {
             <ContactInfo dict={dict} />
           </motion.div>
 
-          <ContactForm dict={dict}/>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+            }}
+            style={{ marginTop: "2rem" }}
+          >
+            <ContactForm dict={dict} />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}

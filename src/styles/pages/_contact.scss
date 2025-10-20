@@ -65,12 +65,14 @@
       box-shadow: $shadow-lg;
       outline: none;
     }
+
     &-headline {
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
     }
+
     &-label {
       font-size: $font-size-base;
       color: $color-text;
@@ -80,9 +82,11 @@
         font-size: $font-size-md;
       }
     }
+
     &-icon {
       color: $primary;
     }
+
     &-number {
       width: 100%;
       font-size: $font-size-md;
@@ -95,31 +99,26 @@
       }
     }
   }
-}
-
-.contact {
 
   &__form {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    background: $color-white;
+    border-radius: 8px;
+    padding: $spacing-lg;
+    box-shadow: $shadow-md;
 
     &-group {
-      margin-bottom: 1.2rem;
-
+      margin-bottom: $spacing-md;
       input,
       textarea {
         width: 100%;
-        padding: 0.8rem;
-        border: 1px solid #d1d5db;
+        padding: $spacing-sm;
+        border: 1px solid $border-color;
         border-radius: 8px;
-        font-size: 1rem;
-        color: #374151;
+        font-size: $font-size-base;
+        color: $color-text;
         outline: none;
-
         &:focus {
-          border-color: #57cc99;
+          border-color: $primary;
           box-shadow: 0 0 0 3px rgba(87, 204, 153, 0.2);
         }
       }
@@ -129,55 +128,37 @@
   &__button {
     width: 100%;
     background: $primary;
-    color: #fff;
+    color: $color-white;
     border: none;
-    padding: 0.9rem;
+    padding: $spacing-sm;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: $font-size-base;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
+    transition: $transition-base;
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      background: darken($primary, 10%);
     }
   }
-}
 
-.contact__body {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  .contact__content {
-    .contact__form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-
-      .contact__form-group {
-        input,
-        textarea {
-          width: 100%;
-          padding: 0.75rem 1rem;
-          border-radius: 8px;
-          border: 1px solid $border-color;
-          font-size: 1rem;
-        }
-      }
-
-      .contact__button {
-        padding: 0.75rem 1rem;
-        border-radius: 8px;
-        border: none;
-        background: $primary;
-        color: #fff;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.3s;
-
-        &:hover {
-          background: darken($primary, 10%);
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    .contact__content {
+      .contact__form {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-sm;
+        .contact__form-group {
+          input,
+          textarea {
+            width: 100%;
+            padding: $spacing-md;
+            border-radius: 8px;
+            border: 1px solid $border-color;
+            font-size: $font-size-base;
+          }
         }
       }
     }

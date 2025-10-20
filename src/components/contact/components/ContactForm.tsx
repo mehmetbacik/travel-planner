@@ -35,7 +35,10 @@ export default function ContactForm({ dict }: ContactFormProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
-      <div className="contact__form-group" data-tooltip={dict.contact.form.nametooltip}>
+      <div
+        className="contact__form-group"
+        data-tooltip={dict.contact.form.nametooltip}
+      >
         <input
           type="text"
           name="name"
@@ -46,7 +49,10 @@ export default function ContactForm({ dict }: ContactFormProps) {
         />
       </div>
 
-      <div className="contact__form-group" data-tooltip={dict.contact.form.emailtooltip}>
+      <div
+        className="contact__form-group"
+        data-tooltip={dict.contact.form.emailtooltip}
+      >
         <input
           type="email"
           name="email"
@@ -57,7 +63,10 @@ export default function ContactForm({ dict }: ContactFormProps) {
         />
       </div>
 
-      <div className="contact__form-group" data-tooltip={dict.contact.form.messagetooltip}>
+      <div
+        className="contact__form-group"
+        data-tooltip={dict.contact.form.messagetooltip}
+      >
         <textarea
           name="message"
           placeholder={dict.contact.form.message}
@@ -68,16 +77,13 @@ export default function ContactForm({ dict }: ContactFormProps) {
         />
       </div>
 
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        type="submit"
-        className="contact__button"
-      >
+      <button type="submit" className="contact__button">
         {dict.contact.form.send}
-      </motion.button>
+      </button>
 
-      {submitted && <p className="contact__success">{dict.contact.form.successmessage}</p>}
+      {submitted && (
+        <p className="contact__success">{dict.contact.form.successmessage}</p>
+      )}
     </motion.form>
   );
 }
