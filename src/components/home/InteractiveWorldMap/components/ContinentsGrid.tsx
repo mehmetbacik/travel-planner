@@ -3,12 +3,14 @@
 import { motion } from "framer-motion";
 import ContinentCard from "./ContinentCard";
 import { Continent } from "@/types/continent";
+import { Dictionary } from "@/types/dictionary";
 
 interface ContinentsGridProps {
   continents: Continent[];
   hoveredContinent: string | null;
   setHoveredContinent: (id: string | null) => void;
   onContinentClick: (continent: Continent) => void;
+  dict: Dictionary;
 }
 
 export default function ContinentsGrid({
@@ -16,6 +18,7 @@ export default function ContinentsGrid({
   hoveredContinent,
   setHoveredContinent,
   onContinentClick,
+  dict,
 }: ContinentsGridProps) {
   return (
     <motion.div
@@ -32,6 +35,7 @@ export default function ContinentsGrid({
           setHoveredContinent={setHoveredContinent}
           onClick={() => onContinentClick(continent)}
           delay={index * 0.1}
+          dict={dict}
         />
       ))}
     </motion.div>

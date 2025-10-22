@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Continent } from "@/types/continent";
+import { continents } from "@/services/data/continents";
+import { Dictionary } from "@/types/dictionary";
 
 interface ContinentCardProps {
   continent: Continent;
@@ -9,6 +11,7 @@ interface ContinentCardProps {
   setHoveredContinent: (id: string | null) => void;
   onClick: () => void;
   delay: number;
+  dict: Dictionary;
 }
 
 export default function ContinentCard({
@@ -17,6 +20,7 @@ export default function ContinentCard({
   setHoveredContinent,
   onClick,
   delay,
+  dict,
 }: ContinentCardProps) {
   return (
     <motion.div
@@ -39,7 +43,7 @@ export default function ContinentCard({
       transition={{ duration: 0.6, delay }}
     >
       <div className="continent-card__content">
-        <h3 className="continent-card__title">{continent.name}</h3>
+        <h3 className="continent-card__title">{dict.interactiveWorldMap.continents[continent.name] ?? continent.name}</h3>
         <p className="continent-card__description">{continent.description}</p>
         <div className="continent-card__countries-count">
           {continent.countries.length} countries

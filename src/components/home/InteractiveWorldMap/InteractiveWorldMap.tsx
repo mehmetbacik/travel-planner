@@ -70,6 +70,7 @@ export default function InteractiveWorldMap({
             hoveredContinent={hoveredContinent}
             setHoveredContinent={setHoveredContinent}
             onContinentClick={handleContinentClick}
+            dict={dict}
           />
         </div>
 
@@ -80,6 +81,7 @@ export default function InteractiveWorldMap({
               continent={selectedContinent}
               onClose={() => setIsSidebarOpen(false)}
               onCountryClick={handleCountryClick}
+              dict={dict}
             />
           )}
         </AnimatePresence>

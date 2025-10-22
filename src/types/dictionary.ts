@@ -113,6 +113,9 @@ export interface Dictionary {
   interactiveWorldMap: {
     title: string;
     description: string;
+    continents: {
+      northAmerica: string;
+    }
   };
   planner: {
     title: string;

@@ -3,17 +3,20 @@
 import { motion } from "framer-motion";
 import CountryButton from "./CountryButton";
 import { Continent } from "@/types/continent";
+import { Dictionary } from "@/types/dictionary";
 
 interface CountriesSidebarProps {
   continent: Continent;
   onClose: () => void;
   onCountryClick: (countryName: string) => void;
+  dict: Dictionary;
 }
 
 export default function CountriesSidebar({
   continent,
   onClose,
   onCountryClick,
+  dict,
 }: CountriesSidebarProps) {
   return (
     <motion.div
@@ -32,7 +35,7 @@ export default function CountriesSidebar({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="sidebar-header">
-          <h3>{continent.name}</h3>
+          <h3>{dict.interactiveWorldMap.continents[continent.name] ?? continent.name}</h3>
           <button className="sidebar-close" onClick={onClose}>
             ×
           </button>

@@ -3,7 +3,7 @@ import { Continent } from "@/types/continent";
 export const continents: Continent[] = [
   {
     id: "north-america",
-    name: "North America",
+    name: "northAmerica",
     path: "M 50 30 L 180 30 L 180 120 L 50 120 Z",
     color: "#4CAF50",
     hoverColor: "#66BB6A",

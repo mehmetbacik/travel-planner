@@ -146,7 +146,10 @@
   },
   "interactiveWorldMap": {
     "title": "Explore le Monde",
-    "description": "Explore les pays sur la carte et commence ton propre voyage"
+    "description": "Explore les pays sur la carte et commence ton propre voyage",
+    "continents": {
+      "northAmerica": "Amérique du Nord"
+    }
   },
   "planner": {
     "title": "Personnalisez Votre Itinéraire de Voyage",

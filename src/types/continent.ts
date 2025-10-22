@@ -1,6 +1,9 @@
+export type ContinentKey =
+  | "northAmerica";
+
 export interface Continent {
   id: string;
-  name: string;
+  name: ContinentKey;
   path: string;
   color: string;
   hoverColor: string;
