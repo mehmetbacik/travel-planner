@@ -1,12 +1,4 @@
-export interface Continent {
-  id: string;
-  name: string;
-  path: string;
-  color: string;
-  hoverColor: string;
-  countries: string[];
-  description: string;
-}
+import { Continent } from "@/types/continent";
 
 export const continents: Continent[] = [
   {

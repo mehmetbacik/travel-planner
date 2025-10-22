@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import ContinentCard from "./ContinentCard";
-import { Continent } from "@/services/api/map/continents";
+import { Continent } from "@/types/continent";
 
 interface ContinentsGridProps {
   continents: Continent[];

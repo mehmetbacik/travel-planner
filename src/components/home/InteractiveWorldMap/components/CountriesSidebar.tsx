@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import CountryButton from "./CountryButton";
-import { Continent } from "@/services/api/map/continents";
+import { Continent } from "@/types/continent";
 
 interface CountriesSidebarProps {
   continent: Continent;
