@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Country } from "@/services/api/map";
-import { formatArea, formatNumber } from "../utils/formatters";
+import { formatArea, formatNumber } from "@/utils/formatters";
 import CountryDetailRow from "./CountryDetailRow";
 
 interface CountryModalProps {

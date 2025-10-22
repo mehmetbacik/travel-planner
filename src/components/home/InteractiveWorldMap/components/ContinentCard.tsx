@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Continent } from "../continents";
+import { Continent } from "@/services/api/map/continents";
 
 interface ContinentCardProps {
   continent: Continent;

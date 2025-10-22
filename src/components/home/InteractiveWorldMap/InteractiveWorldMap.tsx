@@ -4,8 +4,8 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Dictionary } from "@/types/dictionary";
 
-import { continents } from "./continents";
-import { useCountriesData } from "./hooks/useCountriesData";
+import { continents } from "@/services/api/map/continents";
+import { useCountriesData } from "@/hooks/useCountriesData";
 import { Country } from "@/services/api/map";
 
 import ContinentsGrid from "./components/ContinentsGrid";

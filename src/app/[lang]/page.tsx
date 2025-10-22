@@ -4,7 +4,7 @@ import Hero from "@/components/home/Hero";
 import Features from "@/components/home/Features";
 import Destinations from "@/components/home/Destinations";
 import Testimonials from "@/components/home/Testimonials";
-import InteractiveWorldMap from "@/components/home/InteractiveWorldMap";
+import InteractiveWorldMap from "@/components/home/InteractiveWorldMap/InteractiveWorldMap";
 
 export default async function Home({ params }: { params: { lang: Locale } }) {
   const lang = params.lang;
