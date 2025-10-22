@@ -52,56 +52,60 @@ export default function CountryModal({
             </div>
 
             <div className="modal-body">
-              <CountryDetailRow
-                label="Capital"
-                value={country.capital?.join(", ") || "N/A"}
-              />
-              <CountryDetailRow
-                label="Region"
-                value={country.region || "N/A"}
-              />
-              <CountryDetailRow
-                label="Subregion"
-                value={country.subregion || "N/A"}
-              />
-              <CountryDetailRow
-                label="Population"
-                value={
-                  country.population ? formatNumber(country.population) : "N/A"
-                }
-              />
-              <CountryDetailRow
-                label="Area"
-                value={country.area ? formatArea(country.area) : "N/A"}
-              />
-
-              {country.currencies && (
+              <div className="country-details">
                 <CountryDetailRow
-                  label="Currency"
-                  value={Object.values(country.currencies)
-                    .map((c) => `${c.name} (${c.symbol})`)
-                    .join(", ")}
+                  label="Capital"
+                  value={country.capital?.join(", ") || "N/A"}
                 />
-              )}
-
-              {country.languages && (
                 <CountryDetailRow
-                  label="Languages"
-                  value={Object.values(country.languages).join(", ")}
+                  label="Region"
+                  value={country.region || "N/A"}
                 />
-              )}
-
-              <CountryDetailRow
-                label="Timezones"
-                value={country.timezones?.join(", ") || "N/A"}
-              />
-
-              {country.borders?.length && (
                 <CountryDetailRow
-                  label="Borders"
-                  value={country.borders.join(", ")}
+                  label="Subregion"
+                  value={country.subregion || "N/A"}
                 />
-              )}
+                <CountryDetailRow
+                  label="Population"
+                  value={
+                    country.population
+                      ? formatNumber(country.population)
+                      : "N/A"
+                  }
+                />
+                <CountryDetailRow
+                  label="Area"
+                  value={country.area ? formatArea(country.area) : "N/A"}
+                />
+
+                {country.currencies && (
+                  <CountryDetailRow
+                    label="Currency"
+                    value={Object.values(country.currencies)
+                      .map((c) => `${c.name} (${c.symbol})`)
+                      .join(", ")}
+                  />
+                )}
+
+                {country.languages && (
+                  <CountryDetailRow
+                    label="Languages"
+                    value={Object.values(country.languages).join(", ")}
+                  />
+                )}
+
+                <CountryDetailRow
+                  label="Timezones"
+                  value={country.timezones?.join(", ") || "N/A"}
+                />
+
+                {country.borders?.length && (
+                  <CountryDetailRow
+                    label="Borders"
+                    value={country.borders.join(", ")}
+                  />
+                )}
+              </div>
             </div>
           </div>
         )}

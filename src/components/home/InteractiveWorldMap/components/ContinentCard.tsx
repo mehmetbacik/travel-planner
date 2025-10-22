@@ -39,8 +39,8 @@ export default function ContinentCard({
       transition={{ duration: 0.6, delay }}
     >
       <div className="continent-card__content">
-        <h3>{continent.name}</h3>
-        <p>{continent.description}</p>
+        <h3 className="continent-card__title">{continent.name}</h3>
+        <p className="continent-card__description">{continent.description}</p>
         <div className="continent-card__countries-count">
           {continent.countries.length} countries
         </div>

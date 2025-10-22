@@ -64,14 +64,14 @@ export default function InteractiveWorldMap({
             {dict.interactiveWorldMap.description}
           </p>
         </div>
-
-        {/* --- Continents Grid --- */}
-        <ContinentsGrid
-          continents={continents}
-          hoveredContinent={hoveredContinent}
-          setHoveredContinent={setHoveredContinent}
-          onContinentClick={handleContinentClick}
-        />
+        <div className="interactiveWorldMap__content">
+          <ContinentsGrid
+            continents={continents}
+            hoveredContinent={hoveredContinent}
+            setHoveredContinent={setHoveredContinent}
+            onContinentClick={handleContinentClick}
+          />
+        </div>
 
         {/* --- Sidebar --- */}
         <AnimatePresence>
