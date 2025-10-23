@@ -148,7 +148,12 @@
     "title": "Explora el Mundo",
     "description": "Explora países en el mapa y comienza tu propio viaje",
     "continents": {
-      "northAmerica": "América del Norte"
+      "nameNorthAmerica": "América del Norte",
+      "nameSouthAmerica": "América del Sur",
+      "nameEurope": "Europa",
+      "nameAfrica": "África",
+      "nameAsia": "Asia",
+      "nameOceania": "Oceanía"
     }
   },
   "planner": {

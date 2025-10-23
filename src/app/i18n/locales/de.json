@@ -148,7 +148,12 @@
     "title": "Entdecke die Welt",
     "description": "Erkunde Länder auf der Karte und starte deine eigene Reise",
     "continents": {
-      "northAmerica": "Nordamerika"
+      "nameNorthAmerica": "Nordamerika",
+      "nameSouthAmerica": "Südamerika",
+      "nameEurope": "Europa",
+      "nameAfrica": "Afrika",
+      "nameAsia": "Asien",
+      "nameOceania": "Ozeanien"
     }
   },
   "planner": {

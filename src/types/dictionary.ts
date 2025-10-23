@@ -114,7 +114,12 @@ export interface Dictionary {
     title: string;
     description: string;
     continents: {
-      northAmerica: string;
+      nameNorthAmerica: string;
+      nameSouthAmerica: string;
+      nameEurope: string;
+      nameAfrica: string;
+      nameAsia: string;
+      nameOceania: string;
     }
   };
   planner: {

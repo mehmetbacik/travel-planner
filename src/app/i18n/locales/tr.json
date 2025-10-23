@@ -148,7 +148,12 @@
     "title": "Dünyayı Keşfet",
     "description": "Harita üzerinden ülkeleri incele ve kendi yolculuğunu başlat",
     "continents": {
-      "northAmerica": "Kuzey Amerika"
+      "nameNorthAmerica": "Kuzey Amerika",
+      "nameSouthAmerica": "Güney Amerika",
+      "nameEurope": "Avrupa",
+      "nameAfrica": "Afrika",
+      "nameAsia": "Asya",
+      "nameOceania": "Okyanusya"
     }
   },
   "planner": {

@@ -1,5 +1,10 @@
 export type ContinentKey =
-  | "northAmerica";
+  | "nameNorthAmerica"
+  | "nameSouthAmerica"
+  | "nameEurope"
+  | "nameAfrica"
+  | "nameAsia"
+  | "nameOceania";
 
 export interface Continent {
   id: string;

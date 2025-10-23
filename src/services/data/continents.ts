@@ -3,7 +3,7 @@ import { Continent } from "@/types/continent";
 export const continents: Continent[] = [
   {
     id: "north-america",
-    name: "northAmerica",
+    name: "nameNorthAmerica",
     path: "M 50 30 L 180 30 L 180 120 L 50 120 Z",
     color: "#4CAF50",
     hoverColor: "#66BB6A",
@@ -28,7 +28,7 @@ export const continents: Continent[] = [
   },
   {
     id: "south-america",
-    name: "South America",
+    name: "nameSouthAmerica",
     path: "M 100 100 L 200 100 L 200 200 L 100 200 Z",
     color: "#FF9800",
     hoverColor: "#FFB74D",
@@ -51,7 +51,7 @@ export const continents: Continent[] = [
   },
   {
     id: "europe",
-    name: "Europe",
+    name: "nameEurope",
     path: "M 190 40 L 280 40 L 280 100 L 190 100 Z",
     color: "#2196F3",
     hoverColor: "#42A5F5",
@@ -80,7 +80,7 @@ export const continents: Continent[] = [
   },
   {
     id: "africa",
-    name: "Africa",
+    name: "nameAfrica",
     path: "M 190 80 L 280 80 L 280 180 L 190 180 Z",
     color: "#9C27B0",
     hoverColor: "#BA68C8",
@@ -106,7 +106,7 @@ export const continents: Continent[] = [
   },
   {
     id: "asia",
-    name: "Asia",
+    name: "nameAsia",
     path: "M 230 30 L 380 30 L 380 130 L 230 130 Z",
     color: "#F44336",
     hoverColor: "#EF5350",
@@ -142,7 +142,7 @@ export const continents: Continent[] = [
   },
   {
     id: "oceania",
-    name: "Oceania",
+    name: "nameOceania",
     path: "M 320 120 L 380 120 L 380 180 L 320 180 Z",
     color: "#00BCD4",
     hoverColor: "#26C6DA",

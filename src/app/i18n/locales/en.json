@@ -148,7 +148,12 @@
     "title": "Explore the World",
     "description": "Browse countries on the map and start your own journey",
     "continents": {
-      "northAmerica": "North America"
+      "nameNorthAmerica": "North America",
+      "nameSouthAmerica": "South America",
+      "nameEurope": "Europe",
+      "nameAfrica": "Africa",
+      "nameAsia": "Asia",
+      "nameOceania": "Oceania"
     }
   },
   "planner": {
