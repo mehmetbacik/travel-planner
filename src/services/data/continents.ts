@@ -136,8 +136,7 @@ export const continents: Continent[] = [
       "Jordan",
       "Syria",
     ],
-    description:
-      "The largest continent with ancient civilizations and modern cities",
+    description: "descriptionAsia",
   },
   {
     id: "oceania",

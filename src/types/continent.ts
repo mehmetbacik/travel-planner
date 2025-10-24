@@ -8,6 +8,7 @@ export type ContinentKey =
   | "nameAfrica"
   | "descriptionAfrica"
   | "nameAsia"
+  | "descriptionAsia"
   | "nameOceania";
 
 export interface Continent {
