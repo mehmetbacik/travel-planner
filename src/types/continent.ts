@@ -6,6 +6,7 @@ export type ContinentKey =
   | "nameEurope"
   | "descriptionEurope"
   | "nameAfrica"
+  | "descriptionAfrica"
   | "nameAsia"
   | "nameOceania";
 

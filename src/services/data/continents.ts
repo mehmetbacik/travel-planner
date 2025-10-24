@@ -101,7 +101,7 @@ export const continents: Continent[] = [
       "Ivory Coast",
       "Cameroon",
     ],
-    description: "The cradle of humanity with diverse landscapes and cultures",
+    description: "descriptionAfrica",
   },
   {
     id: "asia",

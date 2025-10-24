@@ -123,6 +123,7 @@ export interface Dictionary {
       descriptionNorthAmerica: string;
       descriptionSouthAmerica: string;
       descriptionEurope: string;
+      descriptionAfrica: string;
     }
   };
   planner: {
