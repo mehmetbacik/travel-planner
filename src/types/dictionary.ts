@@ -125,6 +125,7 @@ export interface Dictionary {
       descriptionEurope: string;
       descriptionAfrica: string;
       descriptionAsia: string;
+      descriptionOceania: string;
     }
   };
   planner: {

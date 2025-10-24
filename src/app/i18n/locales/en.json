@@ -158,7 +158,8 @@
       "descriptionAfrica": "The cradle of humanity with diverse landscapes and cultures",
       "nameAsia": "Asia",
       "descriptionAsia": "The largest continent with ancient civilizations and modern cities",
-      "nameOceania": "Oceania"
+      "nameOceania": "Oceania",
+      "descriptionOceania": "Islands scattered across the Pacific Ocean"
     }
   },
   "planner": {

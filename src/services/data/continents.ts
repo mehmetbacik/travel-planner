@@ -158,6 +158,6 @@ export const continents: Continent[] = [
       "Palau",
       "Marshall Islands",
     ],
-    description: "Islands scattered across the Pacific Ocean",
+    description: "descriptionOceania",
   },
 ];
