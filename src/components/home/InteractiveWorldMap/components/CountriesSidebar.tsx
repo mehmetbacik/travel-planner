@@ -42,7 +42,7 @@ export default function CountriesSidebar({
         </div>
 
         <div className="sidebar-content">
-          <p className="continent-description">{continent.description}</p>
+          <p className="continent-description">{dict.interactiveWorldMap.continents[continent.description] ?? continent.description}</p>
           <div className="countries-grid">
             {continent.countries.map((name) => (
               <CountryButton

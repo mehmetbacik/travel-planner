@@ -23,8 +23,7 @@ export const continents: Continent[] = [
       "Costa Rica",
       "Panama",
     ],
-    description:
-      "From the frozen tundra of Canada to the tropical beaches of Mexico",
+    description: "descriptionNorthAmerica",
   },
   {
     id: "south-america",

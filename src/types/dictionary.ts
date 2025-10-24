@@ -120,6 +120,7 @@ export interface Dictionary {
       nameAfrica: string;
       nameAsia: string;
       nameOceania: string;
+      descriptionNorthAmerica: string;
     }
   };
   planner: {

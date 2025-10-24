@@ -149,6 +149,7 @@
     "description": "Harita üzerinden ülkeleri incele ve kendi yolculuğunu başlat",
     "continents": {
       "nameNorthAmerica": "Kuzey Amerika",
+      "descriptionNorthAmerica": "Kanada’nın donmuş tundralarından Meksika’nın tropik kumsallarına",
       "nameSouthAmerica": "Güney Amerika",
       "nameEurope": "Avrupa",
       "nameAfrica": "Afrika",

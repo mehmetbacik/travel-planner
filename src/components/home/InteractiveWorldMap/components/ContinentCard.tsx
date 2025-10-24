@@ -44,7 +44,7 @@ export default function ContinentCard({
     >
       <div className="continent-card__content">
         <h3 className="continent-card__title">{dict.interactiveWorldMap.continents[continent.name] ?? continent.name}</h3>
-        <p className="continent-card__description">{continent.description}</p>
+        <p className="continent-card__description">{dict.interactiveWorldMap.continents[continent.description] ?? continent.description}</p>
         <div className="continent-card__countries-count">
           {continent.countries.length} countries
         </div>

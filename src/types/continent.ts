@@ -1,5 +1,6 @@
 export type ContinentKey =
   | "nameNorthAmerica"
+  | "descriptionNorthAmerica"
   | "nameSouthAmerica"
   | "nameEurope"
   | "nameAfrica"
@@ -13,5 +14,5 @@ export interface Continent {
   color: string;
   hoverColor: string;
   countries: string[];
-  description: string;
+  description: ContinentKey;
 }
