@@ -75,7 +75,7 @@ export const continents: Continent[] = [
       "Greece",
       "Turkey",
     ],
-    description: "Rich in history, culture, and architectural wonders",
+    description: "descriptionEurope",
   },
   {
     id: "africa",
