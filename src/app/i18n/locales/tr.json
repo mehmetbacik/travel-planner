@@ -159,7 +159,8 @@
       "nameAsia": "Asya",
       "descriptionAsia": "Antik uygarlıklar ve modern şehirlerle en büyük kıta",
       "nameOceania": "Okyanusya",
-      "descriptionOceania": "Pasifik Okyanusu boyunca dağılmış adalar"
+      "descriptionOceania": "Pasifik Okyanusu boyunca dağılmış adalar",
+      "countriesTitle": "Ülke"
     }
   },
   "planner": {

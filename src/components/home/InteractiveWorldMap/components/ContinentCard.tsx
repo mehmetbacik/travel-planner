@@ -43,10 +43,17 @@ export default function ContinentCard({
       transition={{ duration: 0.6, delay }}
     >
       <div className="continent-card__content">
-        <h3 className="continent-card__title">{dict.interactiveWorldMap.continents[continent.name] ?? continent.name}</h3>
-        <p className="continent-card__description">{dict.interactiveWorldMap.continents[continent.description] ?? continent.description}</p>
+        <h3 className="continent-card__title">
+          {dict.interactiveWorldMap.continents[continent.name] ??
+            continent.name}
+        </h3>
+        <p className="continent-card__description">
+          {dict.interactiveWorldMap.continents[continent.description] ??
+            continent.description}
+        </p>
         <div className="continent-card__countries-count">
-          {continent.countries.length} countries
+          {continent.countries.length}&nbsp;
+          {dict.interactiveWorldMap.continents.countriesTitle}
         </div>
       </div>
       <div className="continent-card__overlay"></div>

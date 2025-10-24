@@ -159,7 +159,8 @@
       "nameAsia": "Asia",
       "descriptionAsia": "El continente más grande con civilizaciones antiguas y ciudades modernas",
       "nameOceania": "Oceanía",
-      "descriptionOceania": "Islas dispersas a lo largo del océano Pacífico"
+      "descriptionOceania": "Islas dispersas a lo largo del océano Pacífico",
+      "countriesTitle": "Países"
     }
   },
   "planner": {
