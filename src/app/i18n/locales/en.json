@@ -149,7 +149,9 @@
     "description": "Browse countries on the map and start your own journey",
     "continents": {
       "nameNorthAmerica": "North America",
+      "descriptionNorthAmerica": "From the frozen tundra of Canada to the tropical beaches of Mexico",
       "nameSouthAmerica": "South America",
+      "descriptionSouthAmerica": "Home to the Amazon rainforest and the Andes mountains",
       "nameEurope": "Europe",
       "nameAfrica": "Africa",
       "nameAsia": "Asia",

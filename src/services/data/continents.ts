@@ -46,7 +46,7 @@ export const continents: Continent[] = [
       "Suriname",
       "French Guiana",
     ],
-    description: "Home to the Amazon rainforest and the Andes mountains",
+    description: "descriptionSouthAmerica",
   },
   {
     id: "europe",

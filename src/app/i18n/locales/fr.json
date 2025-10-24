@@ -149,7 +149,9 @@
     "description": "Explore les pays sur la carte et commence ton propre voyage",
     "continents": {
       "nameNorthAmerica": "Amérique du Nord",
+      "descriptionNorthAmerica": "Des toundras gelées du Canada aux plages tropicales du Mexique",
       "nameSouthAmerica": "Amérique du Sud",
+      "descriptionSouthAmerica": "Abritant la forêt amazonienne et la chaîne des Andes",
       "nameEurope": "Europe",
       "nameAfrica": "Afrique",
       "nameAsia": "Asie",

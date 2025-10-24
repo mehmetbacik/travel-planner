@@ -2,6 +2,7 @@ export type ContinentKey =
   | "nameNorthAmerica"
   | "descriptionNorthAmerica"
   | "nameSouthAmerica"
+  | "descriptionSouthAmerica"
   | "nameEurope"
   | "nameAfrica"
   | "nameAsia"

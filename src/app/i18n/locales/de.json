@@ -149,7 +149,9 @@
     "description": "Erkunde Länder auf der Karte und starte deine eigene Reise",
     "continents": {
       "nameNorthAmerica": "Nordamerika",
+      "descriptionNorthAmerica": "Von der gefrorenen Tundra Kanadas bis zu den tropischen Stränden Mexikos",
       "nameSouthAmerica": "Südamerika",
+      "descriptionSouthAmerica": "Heimat des Amazonas-Regenwaldes und der Anden",
       "nameEurope": "Europa",
       "nameAfrica": "Afrika",
       "nameAsia": "Asien",

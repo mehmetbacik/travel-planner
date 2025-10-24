@@ -149,7 +149,9 @@
     "description": "Explora países en el mapa y comienza tu propio viaje",
     "continents": {
       "nameNorthAmerica": "América del Norte",
+      "descriptionNorthAmerica": "Desde la tundra helada de Canadá hasta las playas tropicales de México",
       "nameSouthAmerica": "América del Sur",
+      "descriptionSouthAmerica": "Hogar de la selva amazónica y de los Andes",
       "nameEurope": "Europa",
       "nameAfrica": "África",
       "nameAsia": "Asia",
