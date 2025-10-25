@@ -24,15 +24,7 @@ export default function ContinentCard({
 }: ContinentCardProps) {
   return (
     <motion.div
-      className={`continent-card ${
-        hoveredContinent === continent.id ? "hovered" : ""
-      }`}
-      style={
-        {
-          backgroundColor: continent.color,
-          "--hover-color": continent.hoverColor,
-        } as React.CSSProperties
-      }
+      className="continent-card"
       onMouseEnter={() => setHoveredContinent(continent.id)}
       onMouseLeave={() => setHoveredContinent(null)}
       onClick={onClick}
