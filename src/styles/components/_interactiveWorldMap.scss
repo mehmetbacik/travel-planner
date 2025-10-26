@@ -145,8 +145,6 @@
   }
 }
 
-
-// Countries Sidebar
 .countries-sidebar-overlay {
   position: fixed;
   top: 0;
@@ -161,14 +159,13 @@
 }
 
 .countries-sidebar {
-  background: white;
+  background: $color-white;
   width: 100%;
   max-width: 450px;
   height: 100vh;
   overflow-y: auto;
   box-shadow: -8px 0 32px rgba(0, 0, 0, 0.2);
   position: relative;
-
   .sidebar-header {
     display: flex;
     align-items: center;
@@ -176,25 +173,23 @@
     padding: $spacing-xl;
     background: linear-gradient(
       135deg,
-      $color-primary 0%,
-      darken($color-primary, 10%) 100%
+      $primary 0%,
+      darken($primary, 10%) 100%
     );
-    color: white;
+    color: $color-white;
     position: sticky;
     top: 0;
     z-index: 10;
-
     h3 {
       margin: 0;
       font-size: $font-size-xl;
       font-weight: $font-weight-bold;
     }
-
     .sidebar-close {
       background: rgba(255, 255, 255, 0.2);
       border: none;
-      color: white;
-      font-size: 24px;
+      color: $color-white;
+      font-size: $font-size-md;
       width: 36px;
       height: 36px;
       border-radius: 50%;
@@ -202,18 +197,15 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.3s ease;
-
+      transition: $transition-base;
       &:hover {
         background: rgba(255, 255, 255, 0.3);
         transform: scale(1.1);
       }
     }
   }
-
   .sidebar-content {
     padding: $spacing-xl;
-
     .continent-description {
       color: $color-text-light;
       font-size: $font-size-md;
@@ -224,14 +216,12 @@
       border-radius: 12px;
       border-left: 4px solid $color-primary;
     }
-
     .countries-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
       gap: $spacing-md;
-
       .country-card {
-        background: white;
+        background: $color-white;
         border: 2px solid $color-background;
         border-radius: 12px;
         padding: $spacing-md;
@@ -239,13 +229,11 @@
         transition: all 0.3s ease;
         text-align: center;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-
         &:hover {
-          border-color: $color-primary;
+          border-color: $primary;
           box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
           transform: translateY(-2px);
         }
-
         .country-name {
           font-size: $font-size-base;
           font-weight: $font-weight-bold;
@@ -257,7 +245,6 @@
   }
 }
 
-// Country Modal Styles
 .country-modal-overlay {
   position: fixed;
   top: 0;
@@ -272,16 +259,14 @@
   align-items: center;
   padding: $spacing-lg;
 }
-
 .country-modal {
-  background: white;
+  background: $color-white;
   border-radius: 20px;
   max-width: 700px;
   width: 100%;
   max-height: 85vh;
   overflow: hidden;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
-
   .modal-loading {
     display: flex;
     flex-direction: column;
@@ -289,22 +274,19 @@
     justify-content: center;
     padding: $spacing-2xl;
     gap: $spacing-lg;
-
     .loading-spinner {
       width: 48px;
       height: 48px;
       border: 4px solid #f3f3f3;
-      border-top: 4px solid $color-primary;
+      border-top: 4px solid $primary;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
-
     p {
       color: $color-text-light;
       font-size: $font-size-lg;
     }
   }
-
   .modal-content {
     .modal-header {
       display: flex;
@@ -314,32 +296,27 @@
       border-bottom: 1px solid $border-color;
       position: relative;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-
       .country-flag {
         width: 80px;
         height: 54px;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        border: 2px solid white;
-
+        border: 2px solid $color-white;
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
-
       .country-info {
         flex: 1;
-
         h3 {
           font-size: $font-size-2xl;
           font-weight: $font-weight-bold;
           color: $color-text;
           margin: 0 0 $spacing-sm 0;
         }
-
         .official-name {
           font-size: $font-size-md;
           color: $color-text-light;
@@ -347,14 +324,13 @@
           font-style: italic;
         }
       }
-
       .modal-close {
         position: absolute;
         top: $spacing-lg;
         right: $spacing-lg;
         background: rgba(0, 0, 0, 0.1);
         border: none;
-        font-size: 24px;
+        font-size: $font-size-md;
         color: $color-text;
         cursor: pointer;
         width: 40px;
@@ -363,8 +339,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.3s ease;
-
+        transition: $transition-base;
         &:hover {
           background: rgba(0, 0, 0, 0.2);
           transform: scale(1.1);
@@ -376,23 +351,19 @@
       padding: $spacing-xl;
       max-height: 60vh;
       overflow-y: auto;
-
       .country-details {
         display: flex;
         flex-direction: column;
         gap: $spacing-md;
-
         .detail-row {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
           padding: $spacing-md 0;
           border-bottom: 1px solid $border-color;
-
           &:last-child {
             border-bottom: none;
           }
-
           .label {
             font-weight: $font-weight-semibold;
             color: $color-text;
@@ -400,7 +371,6 @@
             margin-right: $spacing-lg;
             font-size: $font-size-md;
           }
-
           .value {
             color: $color-text-light;
             text-align: right;
@@ -435,7 +405,6 @@
   }
 }
 
-// Animation keyframes for map loading
 @keyframes mapFadeIn {
   from {
     opacity: 0;
@@ -447,7 +416,6 @@
   }
 }
 
-// Responsive adjustments
 @media (max-width: $lg-breakpoint) {
   .countries-sidebar {
     max-width: 400px;
@@ -457,7 +425,6 @@
 @media (max-width: $md-breakpoint) {
   .countries-sidebar {
     max-width: 350px;
-
     .sidebar-content {
       .countries-grid {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -469,15 +436,12 @@
 @media (max-width: $sm-breakpoint) {
   .countries-sidebar {
     max-width: 100%;
-
     .sidebar-content {
       .countries-grid {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: $spacing-sm;
-
         .country-card {
           padding: $spacing-sm;
-
           .country-name {
             font-size: 12px;
           }
@@ -489,18 +453,15 @@
   .country-modal {
     margin: $spacing-md;
     max-height: 90vh;
-
     .modal-content {
       .modal-header {
         flex-direction: column;
         text-align: center;
         gap: $spacing-md;
-
         .country-flag {
           width: 60px;
           height: 40px;
         }
-
         .modal-close {
           position: relative;
           top: auto;
