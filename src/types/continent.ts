@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export type ContinentKey =
   | "nameNorthAmerica"
   | "descriptionNorthAmerica"
@@ -16,6 +18,7 @@ export interface Continent {
   id: string;
   name: ContinentKey;
   path: string;
+  image: StaticImageData;
   color: string;
   hoverColor: string;
   countries: string[];

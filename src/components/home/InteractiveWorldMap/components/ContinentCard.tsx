@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Continent } from "@/types/continent";
 import { continents } from "@/services/data/continents";
 import { Dictionary } from "@/types/dictionary";
@@ -35,6 +36,10 @@ export default function ContinentCard({
       transition={{ duration: 0.6, delay }}
     >
       <div className="continent-card__content">
+        <div className="continent-card__image">
+          <Image src={continent.image} alt={dict.interactiveWorldMap.continents[continent.name] ??
+            continent.name} />
+        </div>
         <h3 className="continent-card__title">
           {dict.interactiveWorldMap.continents[continent.name] ??
             continent.name}
