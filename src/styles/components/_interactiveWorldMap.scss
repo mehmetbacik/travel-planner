@@ -35,7 +35,6 @@
     position: relative;
     z-index: 2;
     text-align: center;
-    color: $primary;
     .continents-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -83,22 +82,31 @@
         }
       }
       &__title {
-        font-size: $font-size-2xl;
-        font-weight: $font-weight-bold;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        color: $color-text;
+        padding-inline: $spacing-lg;
+        padding-top: $spacing-md;
+        transition: $transition-base;
       }
       &__description {
         font-size: $font-size-md;
-        line-height: 1.6;
+        color: $color-text-light;
+        text-align: center;
+        line-height: 1.5;
+        padding-inline: $spacing-lg;
+        padding-block: $spacing-md;
       }
       &__countries-count {
-        font-size: $font-size-base;
+        font-size: $font-size-base * 0.80;
         font-weight: $font-weight-semibold;
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 90, 95, 0.2);
         padding: $spacing-sm $spacing-md;
         border-radius: 20px;
         backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 90, 95, 0.3);
         display: inline-block;
+        margin-bottom: $spacing-md;
       }
     }
   }
@@ -230,7 +238,6 @@
         &:hover {
           border-color: $primary;
           box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-          transform: translateY(-2px);
         }
         .country-name {
           font-size: $font-size-base;
