@@ -9,7 +9,6 @@ import { Dictionary } from "@/types/dictionary";
 interface ContinentCardProps {
   continent: Continent;
   hoveredContinent: string | null;
-  setHoveredContinent: (id: string | null) => void;
   onClick: () => void;
   delay: number;
   dict: Dictionary;
@@ -17,23 +16,13 @@ interface ContinentCardProps {
 
 export default function ContinentCard({
   continent,
-  hoveredContinent,
-  setHoveredContinent,
   onClick,
-  delay,
   dict,
 }: ContinentCardProps) {
   return (
     <motion.div
       className="continent-card"
-      onMouseEnter={() => setHoveredContinent(continent.id)}
-      onMouseLeave={() => setHoveredContinent(null)}
       onClick={onClick}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay }}
     >
       <div className="continent-card__content">
         <div className="continent-card__image">
@@ -53,7 +42,6 @@ export default function ContinentCard({
           {dict.interactiveWorldMap.continents.countriesTitle}
         </div>
       </div>
-      <div className="continent-card__overlay"></div>
     </motion.div>
   );
 }
