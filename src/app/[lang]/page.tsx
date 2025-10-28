@@ -1,7 +1,7 @@
 import { getDictionary } from "../i18n/getDictionary";
 import { Locale } from "../i18n/settings";
 import Hero from "@/components/home/Hero";
-import Features from "@/components/home/Features";
+import Features from "@/components/home/Features/Features";
 import Destinations from "@/components/home/Destinations/Destinations";
 import Testimonials from "@/components/home/Testimonials";
 import InteractiveWorldMap from "@/components/home/InteractiveWorldMap/InteractiveWorldMap";
