@@ -66,6 +66,11 @@
         padding-right: $spacing-unit * 25;
         @media (max-width: $md-breakpoint) {
           padding-right: 0;
+          padding-inline: $spacing-lg;
+        }
+        @media (max-width: $sm-breakpoint) {
+          font-size: $font-size-3xl;
+          padding-inline: $spacing-md;
         }
       }
       .hero__description {

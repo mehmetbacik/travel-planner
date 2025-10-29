@@ -22,7 +22,7 @@ export default function DestinationsSlider({ dict }: DestinationsSliderProps) {
       pagination={{ clickable: true }}
       breakpoints={{
         0: { slidesPerView: 1 },
-        600: { slidesPerView: 3 },
+        600: { slidesPerView: 2 },
         900: { slidesPerView: 4 },
       }}
       autoplay={{ delay: 2500, disableOnInteraction: false }}

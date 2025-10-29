@@ -22,15 +22,20 @@
           align-items: flex-start;
           justify-content: center;
           gap: $spacing-sm;
+          @media (max-width: $md-breakpoint) {
+            width: 100%;
+          }
           &-title {
             color: $color-white;
             font-weight: $font-weight-bold;
             font-size: $font-size-xl;
+            text-align: center;
           }
           &-description {
             color: $color-white;
             font-weight: $font-weight-light;
             font-size: $font-size-md;
+            text-align: center;
           }
         }
         .footer__newsletter-form {
@@ -57,6 +62,9 @@
             max-width: 350px;
             background-color: $background-light;
             color: $color-white;
+            @media (max-width: $md-breakpoint) {
+              max-width: 100%;
+            }
             &:focus {
               outline: none;
               border-color: $primary;
