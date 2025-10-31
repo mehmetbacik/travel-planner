@@ -58,15 +58,29 @@
       }
       .chero__subtitle {
         font-size: $font-size-lg;
+        @media (max-width: $sm-breakpoint) {
+          font-size: $font-size-md;
+        }
       }
       .chero__title {
         font-size: $font-size-4xl;
         font-weight: $font-weight-bold;
         line-height: normal;
+        @media (max-width: $md-breakpoint) {
+          padding-right: 0;
+          padding-inline: $spacing-lg;
+        }
+        @media (max-width: $sm-breakpoint) {
+          font-size: $font-size-2xl;
+          padding-inline: $spacing-md;
+        }
       }
       .chero__description {
         font-size: $font-size-lg;
         text-align: center;
+        @media (max-width: $sm-breakpoint) {
+          font-size: $font-size-md;
+        }
       }
     }
   }

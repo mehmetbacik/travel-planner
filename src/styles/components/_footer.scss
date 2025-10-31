@@ -83,7 +83,8 @@
             border-radius: 8px;
             cursor: pointer;
             transition: $transition-base;
-            @media (max-width: $lg-breakpoint) {
+            min-width: 125px;
+            @media (max-width: $md-breakpoint) {
               width: 100%;
             }
             &:hover {

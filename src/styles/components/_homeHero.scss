@@ -58,6 +58,9 @@
       }
       .hero__subtitle {
         font-size: $font-size-lg;
+        @media (max-width: $sm-breakpoint) {
+          font-size: $font-size-md;
+        }
       }
       .hero__title {
         font-size: $font-size-4xl;
@@ -69,12 +72,15 @@
           padding-inline: $spacing-lg;
         }
         @media (max-width: $sm-breakpoint) {
-          font-size: $font-size-3xl;
+          font-size: $font-size-2xl;
           padding-inline: $spacing-md;
         }
       }
       .hero__description {
         font-size: $font-size-lg;
+        @media (max-width: $sm-breakpoint) {
+          font-size: $font-size-md;
+        }
       }
     }
     &__action-wrapper {

@@ -26,12 +26,18 @@
     font-size: $font-size-2xl;
     font-weight: $font-weight-bold;
     color: $color-text;
+    @media (max-width: $sm-breakpoint) {
+      text-align: center;
+    }
   }
 
   &__description {
     font-size: $font-size-lg;
     color: $color-text-light;
     margin: 0 auto;
+    @media (max-width: $sm-breakpoint) {
+      text-align: center;
+    }
   }
 
   &__content {
@@ -68,12 +74,18 @@
       font-size: $font-size-2xl;
       font-weight: $font-weight-bold;
       color: $color-text;
+      @media (max-width: $sm-breakpoint) {
+        text-align: center;
+      }
     }
 
     &-description {
       font-size: $font-size-lg;
       color: $color-text-light;
       margin: 0 auto;
+      @media (max-width: $sm-breakpoint) {
+        text-align: center;
+      }
     }
 
     &-slider {
@@ -176,12 +188,18 @@
       font-size: $font-size-2xl;
       font-weight: $font-weight-bold;
       color: $color-text;
+      @media (max-width: $sm-breakpoint) {
+        text-align: center;
+      }
     }
 
     &-description {
       font-size: $font-size-lg;
       color: $color-text-light;
       margin: 0 auto;
+      @media (max-width: $sm-breakpoint) {
+        text-align: center;
+      }
     }
 
     &-content {
@@ -191,6 +209,9 @@
       gap: $spacing-xl;
       padding-block: $spacing-2xl;
       padding-inline: $spacing-md;
+      @media (max-width: $sm-breakpoint) {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 
