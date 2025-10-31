@@ -50,7 +50,7 @@ export const instagramPosts: InstagramPost[] = [
   {
     id: 6,
     username: "mountain_spirit",
-    location: "Swiss Alps, Switzerland",
+    location: "Alps, Switzerland",
     image: InstagramImg6,
     caption: "Hiking above the clouds 🏔️",
   },

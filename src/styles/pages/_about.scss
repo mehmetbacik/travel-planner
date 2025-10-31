@@ -80,18 +80,13 @@
         justify-content: center;
         gap: $spacing-sm;
         font-weight: 500;
-        background-color: $background-light;
+        background-color: $color-white;
         color: $primary;
         cursor: pointer;
         border: solid 1px $primary;
         padding: $spacing-sm;
         border-radius: 8px;
         transition: $transition-base;
-        &:hover {
-          background-color: $primary;
-          border-color: $primary;
-          color: $color-white;
-        }
         svg {
           transition: transform 0.3s ease;
           transform: rotate(0deg);
@@ -163,6 +158,9 @@
               background: $primary;
             }
           }
+          @media (max-width: $sm-breakpoint) {
+            display: none;
+          }
         }
       }
     }
@@ -191,6 +189,12 @@
       font-size: $font-size-base * 0.85;
       font-weight: $font-weight-bold;
       color: $color-text;
+      @media (max-width: $sm-breakpoint) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-unit;
+      }
     }
 
     &-image {
@@ -202,6 +206,9 @@
         height: 100%;
         object-fit: cover;
       }
+      @media (max-width: $sm-breakpoint) {
+        height: 150px;
+      }
     }
 
     &-caption {
@@ -209,6 +216,9 @@
       font-size: $font-size-base * 0.85;
       color: $color-text;
       text-align: left;
+      @media (max-width: $sm-breakpoint) {
+        text-align: center;
+      }
     }
   }
 
@@ -255,8 +265,14 @@
       gap: $spacing-xl;
       padding-block: $spacing-2xl;
       padding-inline: $spacing-md;
-      @media (max-width: $sm-breakpoint) {
+      @media (max-width: $lg-breakpoint) {
         grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: $md-breakpoint) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: $sm-breakpoint) {
+        grid-template-columns: 1fr;
       }
     }
   }
@@ -290,7 +306,7 @@
       font-weight: 600;
       text-align: left;
       @media (max-width: $md-breakpoint) {
-        font-size: $font-size-md;
+        font-size: $font-size-base * 0.85;
       }
     }
     &-icon {

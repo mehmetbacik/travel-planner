@@ -32,8 +32,9 @@ export default function InstagramSlider({ dict }: AboutContentProps) {
           pagination={{ clickable: true }}
           breakpoints={{
             0: { slidesPerView: 1 },
-            600: { slidesPerView: 2 },
-            900: { slidesPerView: 3 },
+            600: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1200: { slidesPerView: 3 },
           }}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
         >
