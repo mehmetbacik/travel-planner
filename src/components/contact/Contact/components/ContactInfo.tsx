@@ -34,7 +34,7 @@ export default function ContactInfo({ dict }: ContactInfoProps) {
               height={32}
             />
           </div>
-          <span className="contact__card-number">{item.value}</span>
+          <span className="contact__card-value">{item.value}</span>
         </motion.div>
       ))}
     </div>

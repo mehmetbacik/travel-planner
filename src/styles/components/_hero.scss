@@ -58,6 +58,7 @@
       }
       .chero__subtitle {
         font-size: $font-size-lg;
+        text-align: center;
         @media (max-width: $sm-breakpoint) {
           font-size: $font-size-md;
         }
@@ -66,6 +67,7 @@
         font-size: $font-size-4xl;
         font-weight: $font-weight-bold;
         line-height: normal;
+        text-align: center;
         @media (max-width: $md-breakpoint) {
           padding-right: 0;
           padding-inline: $spacing-lg;
