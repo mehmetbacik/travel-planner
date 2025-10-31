@@ -40,6 +40,9 @@
     grid-template-columns: repeat(4, 1fr);
     gap: $spacing-xl;
     padding: $spacing-md;
+    @media (max-width: $lg-breakpoint) {
+      grid-template-columns: repeat(2, 2fr);
+    }
     @media (max-width: $md-breakpoint) {
       grid-template-columns: repeat(2, 2fr);
     }

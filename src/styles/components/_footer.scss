@@ -12,7 +12,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: $spacing-lg;
-        @media (max-width: $md-breakpoint) {
+        @media (max-width: $lg-breakpoint) {
           flex-direction: column;
         }
         .footer__newsletter-content {
@@ -22,7 +22,7 @@
           align-items: flex-start;
           justify-content: center;
           gap: $spacing-sm;
-          @media (max-width: $md-breakpoint) {
+          @media (max-width: $lg-breakpoint) {
             width: 100%;
           }
           &-title {
@@ -35,12 +35,14 @@
             color: $color-white;
             font-weight: $font-weight-light;
             font-size: $font-size-md;
-            text-align: center;
+            @media (max-width: $md-breakpoint) {
+              text-align: center;
+            }
           }
         }
         .footer__newsletter-form {
           flex: 1;
-          @media (max-width: $md-breakpoint) {
+          @media (max-width: $lg-breakpoint) {
             width: 100%;
           }
           form {
@@ -62,7 +64,7 @@
             max-width: 350px;
             background-color: $background-light;
             color: $color-white;
-            @media (max-width: $md-breakpoint) {
+            @media (max-width: $lg-breakpoint) {
               max-width: 100%;
             }
             &:focus {
@@ -81,7 +83,7 @@
             border-radius: 8px;
             cursor: pointer;
             transition: $transition-base;
-            @media (max-width: $md-breakpoint) {
+            @media (max-width: $lg-breakpoint) {
               width: 100%;
             }
             &:hover {
@@ -101,8 +103,18 @@
       align-items: flex-start;
       justify-content: space-between;
       gap: $spacing-xl;
+      @media (max-width: $lg-breakpoint) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        .footer__section {
+          &.appName {
+            grid-column: 1 / -1;
+          }
+        }
+      }
       @media (max-width: $md-breakpoint) {
-        flex-direction: column;
+        grid-template-columns: 1fr;
       }
       .footer {
         &__section {
