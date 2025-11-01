@@ -22,15 +22,6 @@ export const tripsApi = {
     return apiClient.delete<void>(`/trips/${id}`);
   },
 
-  async getRecommendations(destination: string, budget: number) {
-    return apiClient.post<{
-      activities: string[];
-      localTips: string[];
-      budgetTips: string[];
-      weatherInfo: string;
-    }>('/ai', { destination, budget });
-  },
-
   async generatePDF(tripData: Trip, recommendations: any) {
     const response = await apiClient.post<Blob>(
       '/pdf',

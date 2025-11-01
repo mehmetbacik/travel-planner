@@ -7,7 +7,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { tripSchema, TripFormData } from "@/schemas/tripSchema";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import React from "react";
 import { getDummyTripPlan } from "./dummyTripPlan";
 import { z } from "zod";
 import { useFieldArray } from "react-hook-form";
@@ -91,25 +90,12 @@ export default function TripPlanner({ dict, lang }: TripPlannerProps) {
   const onSubmit = async (data: TripFormData & { currency: string }) => {
     setIsSubmitting(true);
     setError(null);
+    
     try {
-      // TODO: API connection
-      // const response = await fetch("/api/trip", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(data),
-      // });
-      // if (!response.ok) {
-      //   throw new Error("Failed to generate trip plan");
-      // }
-      // const result = await response.json();
-
+      // Generate static trip plan
       const result = getDummyTripPlan(dict, data);
-      localStorage.setItem(
-        "tripPlan",
-        JSON.stringify({ ...result, currency: data.currency })
-      );
+
+      localStorage.setItem("tripPlan", JSON.stringify(result));
       router.push(
         `/${lang}/results?destination=${encodeURIComponent(
           data.destinations[0].destination
