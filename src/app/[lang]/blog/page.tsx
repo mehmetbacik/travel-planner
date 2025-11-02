@@ -12,9 +12,9 @@ export default async function BlogPage({
   const dict = await getDictionary(lang);
 
   return (
-    <main>
+    <div>
       <Hero dict={dict} />
       <Blog lang={lang} dict={dict} />
-    </main>
+    </div>
   );
 }

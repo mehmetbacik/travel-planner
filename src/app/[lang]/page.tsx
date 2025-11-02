@@ -11,12 +11,12 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
   const dict = await getDictionary(lang);
 
   return (
-    <main>
+    <div>
       <Hero dict={dict} currentLang={lang} />
       <Features dict={dict} />
       <Destinations dict={dict} />
       <InteractiveWorldMap dict={dict} />
       <Testimonials dict={dict} />
-    </main>
+    </div>
   );
 }

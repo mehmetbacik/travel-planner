@@ -12,9 +12,9 @@ export default async function PlannerPage({
   const dict = await getDictionary(lang);
 
   return (
-    <main>
+    <div>
       <Hero dict={dict} />
       <TripPlanner dict={dict} lang={lang} />
-    </main>
+    </div>
   );
 }

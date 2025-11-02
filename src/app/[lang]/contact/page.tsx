@@ -12,9 +12,9 @@ export default async function ContactPage({
   const dict = await getDictionary(lang);
 
   return (
-    <main>
+    <div>
       <Hero dict={dict} />
       <Contact lang={lang} dict={dict}/>
-    </main>
+    </div>
   );
 }

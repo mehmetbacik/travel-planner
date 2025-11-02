@@ -210,6 +210,7 @@
     font-weight: $font-weight-bold;
     margin-bottom: $spacing-sm;
     color: $color-white;
+    text-transform: capitalize;
   }
 
   &__duration {

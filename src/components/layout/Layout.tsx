@@ -14,7 +14,7 @@ export const Layout = ({ children, currentLang, dict }: LayoutProps) => {
   return (
     <div>
       <Navbar currentLang={currentLang}  dict={dict}/>
-      <main className="flex-grow">{children}</main>
+      <main>{children}</main>
       <Footer currentLang={currentLang}  dict={dict}/>
     </div>
   );

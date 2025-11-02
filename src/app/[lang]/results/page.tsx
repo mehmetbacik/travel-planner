@@ -1,5 +1,6 @@
 import { getDictionary } from '../../i18n/getDictionary'
 import { Locale } from '../../i18n/settings'
+import Hero from "@/components/planner/Hero";
 import TripResults from '@/components/planner/TripResults'
 
 export default async function ResultsPage({
@@ -12,8 +13,9 @@ export default async function ResultsPage({
   const dict = await getDictionary(lang)
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <div>
+      <Hero dict={dict} />
       <TripResults dict={dict} destination={searchParams.destination} />
-    </main>
+    </div>
   )
 } 

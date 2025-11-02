@@ -26,7 +26,7 @@ export default function ClientLayout({ children, lang, dict }: ClientLayoutProps
   return (
     <>
       <Navbar currentLang={lang} dict={dict} />
-      <main className="flex-grow">
+      <main>
         <NotificationProvider />
         {children}
       </main>

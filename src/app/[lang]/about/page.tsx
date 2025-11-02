@@ -12,9 +12,9 @@ export default async function AboutPage({
   const dict = await getDictionary(lang);
 
   return (
-    <main>
+    <div>
       <Hero dict={dict} />
       <About dict={dict} />
-    </main>
+    </div>
   );
 }
