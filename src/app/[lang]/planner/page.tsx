@@ -1,7 +1,7 @@
 import { getDictionary } from "../../i18n/getDictionary";
 import { Locale } from "../../i18n/settings";
 import Hero from "@/components/planner/Hero";
-import TripPlanner from "@/components/planner/TripPlanner";
+import TripPlanner from "@/components/planner/Planner/TripPlanner";
 
 export default async function PlannerPage({
   params,
