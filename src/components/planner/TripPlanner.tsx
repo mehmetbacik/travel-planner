@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { tripSchema, TripFormData } from "@/schemas/tripSchema";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { getDummyTripPlan } from "./dummyTripPlan";
+import { getDummyTripPlan } from "../results/dummyTripPlan";
 import { z } from "zod";
 import { useFieldArray } from "react-hook-form";
 
