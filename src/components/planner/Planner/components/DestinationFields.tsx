@@ -2,6 +2,7 @@ import { UseFormReturn, UseFieldArrayReturn } from "react-hook-form";
 import { TripFormData } from "@/schemas/tripSchema";
 import { Dictionary } from "@/types/dictionary";
 import getLocalizedError from "../helpers/getLocalizedError";
+import { Icon } from "@iconify/react";
 
 interface Props {
   form: UseFormReturn<TripFormData & { currency: string }>;
@@ -86,7 +87,7 @@ export default function DestinationFields({
               onClick={() => remove(idx)}
               className="trip-planner__button trip-planner__button--remove"
             >
-              ✕
+              <Icon icon="mdi:close" width="20" height="20" />
             </button>
           )}
 

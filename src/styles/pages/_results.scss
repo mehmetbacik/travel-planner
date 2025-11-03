@@ -426,8 +426,14 @@
   }
 
   &__activity-location {
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit;
     font-size: $font-size-base * 0.9;
     color: $text-secondary;
+    svg {
+      color: $primary;
+    }
   }
 
   &__recommendations-grid {

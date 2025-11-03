@@ -178,21 +178,26 @@
       }
     }
     &--remove {
-      background: $error;
-      color: $color-white;
+      color: $error;
       position: absolute;
-      border-radius: 50%;
-      right: 2px;
-      top: 2px;
-      padding: $spacing-unit;
+      right: -3px;
+      top: -4px;
       font-size: $font-size-md;
-      &:hover {
-        background: darken($error, 10%);
-      }
+      transition: $transition-base;
       @media (max-width: $md-breakpoint) {
         position: static;
         margin-top: $spacing-sm;
         width: 100%;
+        background-color: $primary;
+        color: $color-white;
+      }
+      &:hover {
+        @media (min-width: $lg-breakpoint) {
+          transform: rotate(360deg);
+        }
+        @media (max-width: $md-breakpoint) {
+          background: darken($error, 10%);
+        }
       }
     }
   }
