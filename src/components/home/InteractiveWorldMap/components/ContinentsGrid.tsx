@@ -8,7 +8,6 @@ import { Dictionary } from "@/types/dictionary";
 interface ContinentsGridProps {
   continents: Continent[];
   hoveredContinent: string | null;
-  setHoveredContinent: (id: string | null) => void;
   onContinentClick: (continent: Continent) => void;
   dict: Dictionary;
 }
@@ -16,7 +15,6 @@ interface ContinentsGridProps {
 export default function ContinentsGrid({
   continents,
   hoveredContinent,
-  setHoveredContinent,
   onContinentClick,
   dict,
 }: ContinentsGridProps) {
@@ -32,7 +30,6 @@ export default function ContinentsGrid({
           key={continent.id}
           continent={continent}
           hoveredContinent={hoveredContinent}
-          setHoveredContinent={setHoveredContinent}
           onClick={() => onContinentClick(continent)}
           delay={index * 0.1}
           dict={dict}
