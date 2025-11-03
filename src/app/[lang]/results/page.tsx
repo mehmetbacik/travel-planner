@@ -1,7 +1,7 @@
 import { getDictionary } from '../../i18n/getDictionary'
 import { Locale } from '../../i18n/settings'
 import Hero from "@/components/results/Hero";
-import TripResults from '@/components/results/TripResults'
+import TripResults from '@/components/results/Results/TripResults'
 
 export default async function ResultsPage({
   params: { lang },

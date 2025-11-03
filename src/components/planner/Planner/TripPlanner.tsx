@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { tripSchema, TripFormData } from "@/schemas/tripSchema";
-import { getDummyTripPlan } from "../../results/dummyTripPlan";
+import { getDummyTripPlan } from "../../results/Results/helpers/dummyTripPlan";
 import { Dictionary } from "@/types/dictionary";
 import PlannerTabs from "./components/PlannerTabs";
 import TripPlannerForm from "./components/TripPlannerForm";
