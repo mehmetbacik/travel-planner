@@ -9,6 +9,7 @@ import { Dictionary } from "@/types/dictionary";
 interface ContinentCardProps {
   continent: Continent;
   hoveredContinent: string | null;
+  setHoveredContinent?: (id: string | null) => void;
   onClick: () => void;
   delay: number;
   dict: Dictionary;
