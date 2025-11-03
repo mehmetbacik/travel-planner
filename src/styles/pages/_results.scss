@@ -494,6 +494,7 @@
     color: $text-primary;
     font-size: $font-size-base;
     flex: 1;
+    text-transform: capitalize;
   }
 
   &__rating {

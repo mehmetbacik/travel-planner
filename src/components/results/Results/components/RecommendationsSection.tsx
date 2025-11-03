@@ -32,15 +32,7 @@ export default function RecommendationsSection({
                       {restaurant.name}
                     </p>
                     <div className="trip-results__rating">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z" />
-                      </svg>
+                      <Icon icon="mdi:star" width="24" height="24" />
                       {restaurant.rating}
                     </div>
                   </div>
@@ -65,15 +57,7 @@ export default function RecommendationsSection({
                       {attraction.name}
                     </p>
                     <div className="trip-results__rating">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z" />
-                      </svg>
+                      <Icon icon="mdi:star" width="24" height="24" />
                       {attraction.rating}
                     </div>
                   </div>
