@@ -1,6 +1,6 @@
 # Travel Planner
 
-Travel Planner is a frontend-focused, AI-powered web application that generates personalized travel plans based on user input, including travel dates, destinations, and interests. Users receive optimized recommendations for sightseeing, popular events, restaurants, local tips, and transportation options. Plans can be exported as PDF files for offline use.
+Travel Planner is a frontend-focused, web application that generates personalized travel plans based on user input, including travel dates, destinations, and interests. Users receive optimized recommendations for sightseeing, popular events, restaurants, local tips, and transportation options. Plans can be exported as PDF files for offline use.
 
 ## Features
 
