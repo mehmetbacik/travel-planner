@@ -10,7 +10,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "TravelPlanner",
-  description: "Plan your perfect trip with AI",
+  description: "Plan your perfect trip",
 };
 
 export default function RootLayout({
